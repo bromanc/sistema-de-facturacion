@@ -117,32 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ModifyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ModifyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAALRSURBVFhHzdjLq41RGMfx7ZJLRCkGJPfLwJBETFAM+BNEmRgochkxkML0DCgyUiIDBkZuAxIG
+        IkrJrRgoSQm5X7/fzn5qtXvfvffZvWu/51ef9jmnXfs5a61nrfXuRo2ZigO4j4fYj5kYFrG4O/iJv02/
+        cBuLUFtGYBau4g/+tbDIW1iKWjIPV/AbrcUFC7+BuehrxmEA7YoLTv1dLEbfMgqb8BxF09vK95xC9kzD
+        lMEfG6OxAi9QVFTKxvmAbLEhFuA8jsHONSOxDhbZbiQt8DGyZQ6uwzX3HccxCZGVeAMLKSruK7YiSxyt
+        a0gb4htOwrVoHOHVeIm0OH3CPoxF5ZkON+Gi6fsBp3wyIuthkb7fkbO4vciSOCHKthILcAs5ixhJ1+Ry
+        PMFH7MB4VBqnazbKToiURTqSpxHdHY2zGRP8Q9WZD4vrZhMONs4JRJFZ4si521/CUIoLNs5heMpUHovz
+        5nERHvJFBbTjVLvmdiJLt1rcBfRSnOxWG6LyNefIueac1l5HLraSyrvVeJ/rdGUqY3GeEG7CWeI+N9Ru
+        TdV2QnSSTmuWdDohOsl6QrR7hujEkXuLPchyQnTzDFHG4r7AfS7LVuI+1+sJIUfO4tKbSyWxuIXodRN2
+        5Fxz2aZ12J4QxtHbgvdwJIoKKJNuJVlOiIj/+RF40+i2SN+X9YQwM5qvxoXtNciLZVFBrWLNZTkhjE3h
+        XrcM3m6Nd7Sj8IpeVJTSac2a7fCDnmGVf2jGx8TdKBvJbCdEGhvjHOxaR+QeNiBG0jV5EF7RY036mvWE
+        SDMRfokYo+KHP4IP1hZvnG6LjMbJdkIUxaex14gC5enxAGsRsXFck0+R5YQoi43xGWmBcqS8wfjMmk73
+        muZr37INZeetNxgbxyJryxnE4g/+btGOrM3gdypjUEtewYLknvcOrrPL2AWfe6NZaokjeBOHsBFL4NN+
+        rUUNptH4DzTI3i6JUsr+AAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="InventoryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>InventoryIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Webp.net-resizeimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Webp.net-resizeimage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icon minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon maximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icon maximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="heyti" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heyti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon cerrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icon cerrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>AddIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deleteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deleteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABzSURBVFhH7ZMxCsAwDMQyden/39vGa+olyAVDJNByFKOhGUVc02cxtjYYSDGQYiDFQIqBFAMp
+        BlLODoxD1Hu6BsaWfbvr53A307GT6djJdOxk+mPu+usjqSAOrYFlxyswkGIgxUCKgRQDKQZSDKScGjjG
+        C0DsMjz3OoWlAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
