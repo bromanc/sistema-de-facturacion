@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using sistema_de_facturacion.Principal;
 namespace sistema_de_facturacion
 {
     static class Program
@@ -16,7 +16,7 @@ namespace sistema_de_facturacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new InterfazInicial());
         }
     }
 }
