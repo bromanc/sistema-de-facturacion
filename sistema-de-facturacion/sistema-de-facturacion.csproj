@@ -58,29 +58,23 @@
     <Compile Include="Clientes\ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\EliminarCliente.cs">
+    <Compile Include="Estadísticas\GananciasCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\EliminarCliente.Designer.cs">
-      <DependentUpon>EliminarCliente.cs</DependentUpon>
+    <Compile Include="Estadísticas\GananciasCategoria.Designer.cs">
+      <DependentUpon>GananciasCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\ModificarCliente.cs">
+    <Compile Include="Estadísticas\VentasPeriodo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\ModificarCliente.Designer.cs">
-      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    <Compile Include="Estadísticas\VentasPeriodo.Designer.cs">
+      <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inventarios\Inventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventarios\Inventario.Designer.cs">
-      <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal\InterfazInicial.cs">
       <SubType>Form</SubType>
@@ -102,32 +96,23 @@
     <Compile Include="Proveedores\ConsultarProveedor.Designer.cs">
       <DependentUpon>ConsultarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedores\EliminarProveedor.cs">
+    <Compile Include="Usuarios\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedores\EliminarProveedor.Designer.cs">
-      <DependentUpon>EliminarProveedor.cs</DependentUpon>
+    <Compile Include="Usuarios\AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedores\ModificarProveedor.cs">
+    <Compile Include="Usuarios\ConsultarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedores\ModificarProveedor.Designer.cs">
-      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    <Compile Include="Usuarios\ConsultarUsuario.Designer.cs">
+      <DependentUpon>ConsultarUsuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Clientes\AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\ConsultarCliente.resx">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\EliminarCliente.resx">
-      <DependentUpon>EliminarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\ModificarCliente.resx">
-      <DependentUpon>ModificarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inventarios\Inventario.resx">
-      <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\InterfazInicial.resx">
       <DependentUpon>InterfazInicial.cs</DependentUpon>
@@ -143,11 +128,11 @@
     <EmbeddedResource Include="Proveedores\ConsultarProveedor.resx">
       <DependentUpon>ConsultarProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proveedores\EliminarProveedor.resx">
-      <DependentUpon>EliminarProveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proveedores\ModificarProveedor.resx">
-      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\ConsultarUsuario.resx">
+      <DependentUpon>ConsultarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\AddIcon.png" />
     <None Include="Properties\Settings.settings">
@@ -169,11 +154,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Estadísticas\" />
     <Folder Include="Estimados\" />
     <Folder Include="Facturación\" />
+    <Folder Include="Inventarios\" />
     <Folder Include="Parámetros\" />
-    <Folder Include="Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />

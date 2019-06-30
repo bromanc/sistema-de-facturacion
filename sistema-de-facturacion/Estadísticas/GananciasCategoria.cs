@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sistema_de_facturacion.Inventarios
+namespace sistema_de_facturacion.Estadísticas
 {
-    public partial class Inventario : Form
+    public partial class GananciasCategoria : Form
     {
-        public Inventario()
+        public GananciasCategoria()
         {
             InitializeComponent();
         }

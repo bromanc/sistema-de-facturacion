@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using sistema_de_facturacion.Clientes;
 using sistema_de_facturacion.Proveedores;
+using sistema_de_facturacion.Usuarios;
 namespace sistema_de_facturacion.Principal
 {
     public partial class InterfazInicial : Form
@@ -83,6 +84,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
         }
 
         private void Button7_Click(object sender, EventArgs e)
@@ -108,7 +110,7 @@ namespace sistema_de_facturacion.Principal
         private void Button8_Click(object sender, EventArgs e)
         {
            
-            new ModificarCliente(this).Visible = true;
+            new ConsultarCliente("modificar",this).Visible = true;
             submenuClientes.Visible = false;
             this.Visible = false;
         }
@@ -116,7 +118,7 @@ namespace sistema_de_facturacion.Principal
         private void Button9_Click(object sender, EventArgs e)
         {
            
-            new EliminarCliente(this).Visible = true;
+            new ConsultarCliente("eliminar",this).Visible = true;
             submenuClientes.Visible = false;
             this.Visible = false;
         }
@@ -129,6 +131,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
 
         }
 
@@ -140,6 +143,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = true;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -150,6 +154,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
         }
 
         private void Button5_Click(object sender, EventArgs e)
@@ -160,6 +165,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = true;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
         }
 
         private void Button6_Click(object sender, EventArgs e)
@@ -170,6 +176,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = true;
         }
 
         private void Button11_Click(object sender, EventArgs e)
@@ -181,28 +188,28 @@ namespace sistema_de_facturacion.Principal
 
         private void Button6_Click_1(object sender, EventArgs e)
         {
-            new ConsultarCliente(this).Visible = true;
+            new ConsultarCliente("consultar",this).Visible = true;
             submenuClientes.Visible = false;
             this.Visible = false;
         }
 
         private void Button5_Click_1(object sender, EventArgs e)
         {
-            new ConsultarProveedor(this).Visible = true;
+            new ConsultarProveedor("consultar",this).Visible = true;
             submenuProveedores.Visible = false;
             this.Visible = false;
         }
 
         private void ModificarProveedorButton_Click(object sender, EventArgs e)
         {
-            new ModificarProveedor(this).Visible = true;
+            new ConsultarProveedor("modificar", this).Visible = true;
             submenuProveedores.Visible = false;
             this.Visible = false;
         }
 
         private void EliminarProveedorButton_Click(object sender, EventArgs e)
         {
-            new EliminarProveedor(this).Visible = true;
+            new ConsultarProveedor("eliminar", this).Visible = true;
             submenuProveedores.Visible = false;
             this.Visible = false;
         }
@@ -215,6 +222,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = true;
+            submenuEstadisticas.Visible = false;
         }
 
         private void Button8_Click_1(object sender, EventArgs e)
@@ -225,6 +233,35 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Button18_Click(object sender, EventArgs e)
+        {
+            new AgregarUsuario(this).Visible = true;
+            submenuUsuarios.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button15_Click(object sender, EventArgs e)
+        {
+            new ConsultarUsuario("consultar",this).Visible = true;
+            submenuUsuarios.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            new ConsultarUsuario("modificar", this).Visible = true;
+            submenuUsuarios.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button16_Click(object sender, EventArgs e)
+        {
+            new ConsultarUsuario("eliminar", this).Visible = true;
+            submenuUsuarios.Visible = false;
+            this.Visible = false;
         }
     }
 }
