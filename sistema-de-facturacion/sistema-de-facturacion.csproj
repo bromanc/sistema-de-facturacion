@@ -70,6 +70,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventarios\NuevoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\NuevoProducto.Designer.cs">
+      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventarios\OperacionesInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\OperacionesInventario.Designer.cs">
+      <DependentUpon>OperacionesInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal\InterfazInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\VentasPeriodo.resx">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\NuevoProducto.resx">
+      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\OperacionesInventario.resx">
+      <DependentUpon>OperacionesInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\InterfazInicial.resx">
       <DependentUpon>InterfazInicial.cs</DependentUpon>
@@ -153,7 +171,6 @@
   <ItemGroup>
     <Folder Include="Estimados\" />
     <Folder Include="Facturación\" />
-    <Folder Include="Inventarios\" />
     <Folder Include="Parámetros\" />
   </ItemGroup>
   <ItemGroup>
