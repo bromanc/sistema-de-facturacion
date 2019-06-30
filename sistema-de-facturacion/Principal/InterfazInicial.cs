@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using sistema_de_facturacion.Clientes;
+using sistema_de_facturacion.Proveedores;
 namespace sistema_de_facturacion.Principal
 {
     public partial class InterfazInicial : Form
@@ -78,6 +79,10 @@ namespace sistema_de_facturacion.Principal
         {
             submenuClientes.Visible = true;
             submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
         }
 
         private void Button7_Click(object sender, EventArgs e)
@@ -120,35 +125,106 @@ namespace sistema_de_facturacion.Principal
         {
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
+            submenuInventario.Visible = true;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            submenuProveedores.Visible = false;
             submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = true;
+            submenuUsuarios.Visible = false;
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
             submenuClientes.Visible = false;
             submenuProveedores.Visible = true;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = true;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
         }
 
         private void Button11_Click(object sender, EventArgs e)
         {
+            new AgregarProveedor(this).Visible = true;
+            submenuProveedores.Visible = false;
+            this.Visible = false;
+        }
 
+        private void Button6_Click_1(object sender, EventArgs e)
+        {
+            new ConsultarCliente(this).Visible = true;
+            submenuClientes.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button5_Click_1(object sender, EventArgs e)
+        {
+            new ConsultarProveedor(this).Visible = true;
+            submenuProveedores.Visible = false;
+            this.Visible = false;
+        }
+
+        private void ModificarProveedorButton_Click(object sender, EventArgs e)
+        {
+            new ModificarProveedor(this).Visible = true;
+            submenuProveedores.Visible = false;
+            this.Visible = false;
+        }
+
+        private void EliminarProveedorButton_Click(object sender, EventArgs e)
+        {
+            new EliminarProveedor(this).Visible = true;
+            submenuProveedores.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button7_Click_1(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = true;
+        }
+
+        private void Button8_Click_1(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
         }
     }
 }

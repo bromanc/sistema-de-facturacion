@@ -11,13 +11,23 @@ using System.Windows.Forms;
 
 namespace sistema_de_facturacion.Proveedores
 {
-    public partial class ModificarProveedor : Form
+    public partial class ConsultarProveedor : Form
     {
         public Form inicial;
-        public ModificarProveedor(Form interfazInicial)
+        public ConsultarProveedor(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+        }
+
+        private void ConsultarProveedor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -56,16 +66,6 @@ namespace sistema_de_facturacion.Proveedores
         {
             inicial.Visible = true;
             this.Close();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > -1) //Cambiar a 0.
-            {
-                //Obtengo el cliente y despliego ventana con información.
-                new AgregarProveedor(true, this).Visible = true;
-                this.Visible = false;
-            }
         }
     }
 }

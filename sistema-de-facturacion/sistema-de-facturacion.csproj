@@ -96,6 +96,12 @@
     <Compile Include="Proveedores\AgregarProveedor.Designer.cs">
       <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedores\ConsultarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\ConsultarProveedor.Designer.cs">
+      <DependentUpon>ConsultarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores\EliminarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <EmbeddedResource Include="Proveedores\AgregarProveedor.resx">
       <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\ConsultarProveedor.resx">
+      <DependentUpon>ConsultarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\EliminarProveedor.resx">
       <DependentUpon>EliminarProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +172,8 @@
     <Folder Include="Estadísticas\" />
     <Folder Include="Estimados\" />
     <Folder Include="Facturación\" />
+    <Folder Include="Parámetros\" />
+    <Folder Include="Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />

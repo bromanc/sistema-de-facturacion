@@ -61,5 +61,27 @@ namespace sistema_de_facturacion.Clientes
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            inicial.Visible = true;
+            this.Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > -1) //Cambiar a 0.
+            {
+                //Obtengo el cliente y despliego ventana con información.
+                new AgregarCliente(true, this).Visible = true;
+                
+                this.Visible = false;
+            }
+        }
     }
 }
