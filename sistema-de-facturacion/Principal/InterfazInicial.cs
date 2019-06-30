@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using sistema_de_facturacion.Clientes;
 using sistema_de_facturacion.Proveedores;
 using sistema_de_facturacion.Usuarios;
+using sistema_de_facturacion.Estadísticas;
 namespace sistema_de_facturacion.Principal
 {
     public partial class InterfazInicial : Form
@@ -261,6 +262,13 @@ namespace sistema_de_facturacion.Principal
         {
             new ConsultarUsuario("eliminar", this).Visible = true;
             submenuUsuarios.Visible = false;
+            this.Visible = false;
+        }
+
+        private void VentasPeriodoButton_Click(object sender, EventArgs e)
+        {
+            new VentasPeriodo(this).Visible = true;
+            submenuEstadisticas.Visible = false;
             this.Visible = false;
         }
     }

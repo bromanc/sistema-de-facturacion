@@ -58,12 +58,6 @@
     <Compile Include="Clientes\ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadísticas\GananciasCategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\GananciasCategoria.Designer.cs">
-      <DependentUpon>GananciasCategoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="Estadísticas\VentasPeriodo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\ConsultarCliente.resx">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\VentasPeriodo.resx">
+      <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\InterfazInicial.resx">
       <DependentUpon>InterfazInicial.cs</DependentUpon>

@@ -38,6 +38,8 @@
             this.submenuInventario = new System.Windows.Forms.Panel();
             this.submenuProveedores = new System.Windows.Forms.Panel();
             this.submenuClientes = new System.Windows.Forms.Panel();
+            this.submenuEstadisticas = new System.Windows.Forms.Panel();
+            this.ventasPeriodoButton = new System.Windows.Forms.Button();
             this.gestionarUsuarioButton = new System.Windows.Forms.Button();
             this.eliminarUsuarioButton = new System.Windows.Forms.Button();
             this.modificarUsuarioButton = new System.Windows.Forms.Button();
@@ -73,9 +75,6 @@
             this.facturacionButton = new System.Windows.Forms.Button();
             this.inventarioButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.submenuEstadisticas = new System.Windows.Forms.Panel();
-            this.gananciasButton = new System.Windows.Forms.Button();
-            this.ventasPeriodoButton = new System.Windows.Forms.Button();
             this.panelVertical.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contenedor.SuspendLayout();
@@ -85,12 +84,12 @@
             this.submenuInventario.SuspendLayout();
             this.submenuProveedores.SuspendLayout();
             this.submenuClientes.SuspendLayout();
+            this.submenuEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.submenuEstadisticas.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelVertical
@@ -210,6 +209,32 @@
             this.submenuClientes.TabIndex = 0;
             this.submenuClientes.Visible = false;
             this.submenuClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // submenuEstadisticas
+            // 
+            this.submenuEstadisticas.Controls.Add(this.ventasPeriodoButton);
+            this.submenuEstadisticas.Location = new System.Drawing.Point(705, 431);
+            this.submenuEstadisticas.Name = "submenuEstadisticas";
+            this.submenuEstadisticas.Size = new System.Drawing.Size(282, 59);
+            this.submenuEstadisticas.TabIndex = 8;
+            this.submenuEstadisticas.Visible = false;
+            // 
+            // ventasPeriodoButton
+            // 
+            this.ventasPeriodoButton.FlatAppearance.BorderSize = 0;
+            this.ventasPeriodoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.ventasPeriodoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ventasPeriodoButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ventasPeriodoButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.ventasPeriodoButton.Image = ((System.Drawing.Image)(resources.GetObject("ventasPeriodoButton.Image")));
+            this.ventasPeriodoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ventasPeriodoButton.Location = new System.Drawing.Point(0, 3);
+            this.ventasPeriodoButton.Name = "ventasPeriodoButton";
+            this.ventasPeriodoButton.Size = new System.Drawing.Size(286, 52);
+            this.ventasPeriodoButton.TabIndex = 4;
+            this.ventasPeriodoButton.Text = "Resumen de Ventas";
+            this.ventasPeriodoButton.UseVisualStyleBackColor = true;
+            this.ventasPeriodoButton.Click += new System.EventHandler(this.VentasPeriodoButton_Click);
             // 
             // gestionarUsuarioButton
             // 
@@ -772,49 +797,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // submenuEstadisticas
-            // 
-            this.submenuEstadisticas.Controls.Add(this.gananciasButton);
-            this.submenuEstadisticas.Controls.Add(this.ventasPeriodoButton);
-            this.submenuEstadisticas.Location = new System.Drawing.Point(705, 431);
-            this.submenuEstadisticas.Name = "submenuEstadisticas";
-            this.submenuEstadisticas.Size = new System.Drawing.Size(282, 116);
-            this.submenuEstadisticas.TabIndex = 8;
-            this.submenuEstadisticas.Visible = false;
-            // 
-            // gananciasButton
-            // 
-            this.gananciasButton.FlatAppearance.BorderSize = 0;
-            this.gananciasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.gananciasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gananciasButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gananciasButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.gananciasButton.Image = ((System.Drawing.Image)(resources.GetObject("gananciasButton.Image")));
-            this.gananciasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.gananciasButton.Location = new System.Drawing.Point(0, 61);
-            this.gananciasButton.Name = "gananciasButton";
-            this.gananciasButton.Size = new System.Drawing.Size(286, 52);
-            this.gananciasButton.TabIndex = 5;
-            this.gananciasButton.Text = "Ganancias por Categoría";
-            this.gananciasButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.gananciasButton.UseVisualStyleBackColor = true;
-            // 
-            // ventasPeriodoButton
-            // 
-            this.ventasPeriodoButton.FlatAppearance.BorderSize = 0;
-            this.ventasPeriodoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.ventasPeriodoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ventasPeriodoButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ventasPeriodoButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.ventasPeriodoButton.Image = ((System.Drawing.Image)(resources.GetObject("ventasPeriodoButton.Image")));
-            this.ventasPeriodoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ventasPeriodoButton.Location = new System.Drawing.Point(0, 3);
-            this.ventasPeriodoButton.Name = "ventasPeriodoButton";
-            this.ventasPeriodoButton.Size = new System.Drawing.Size(286, 52);
-            this.ventasPeriodoButton.TabIndex = 4;
-            this.ventasPeriodoButton.Text = "Ventas por periodo";
-            this.ventasPeriodoButton.UseVisualStyleBackColor = true;
-            // 
             // InterfazInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,12 +817,12 @@
             this.submenuInventario.ResumeLayout(false);
             this.submenuProveedores.ResumeLayout(false);
             this.submenuClientes.ResumeLayout(false);
+            this.submenuEstadisticas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.submenuEstadisticas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -892,7 +874,6 @@
         private System.Windows.Forms.Button modificarUsuarioButton;
         private System.Windows.Forms.Button agregarUsuarioButton;
         private System.Windows.Forms.Panel submenuEstadisticas;
-        private System.Windows.Forms.Button gananciasButton;
         private System.Windows.Forms.Button ventasPeriodoButton;
     }
 }
