@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using sistema_de_facturacion.Clientes;
 namespace sistema_de_facturacion.Principal
 {
     public partial class InterfazInicial : Form
     {
+        public Form inicial;
+        public Boolean abierto = false;
         public InterfazInicial()
         {
             InitializeComponent();
@@ -64,6 +67,88 @@ namespace sistema_de_facturacion.Principal
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void ClientesButton_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = true;
+            submenuProveedores.Visible = false;
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            new AgregarCliente(this).Visible = true;
+            submenuClientes.Visible = false;
+            this.Visible = false;
+            
+
+        }
+        private void AbrirFormInPanel(object Formhijo)
+        {
+            if (this.contenedor.Controls.Count > 0)
+                this.contenedor.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.contenedor.Controls.Add(fh);
+            this.contenedor.Tag = fh;
+            fh.Show();
+            abierto = true;
+        }
+        private void Button8_Click(object sender, EventArgs e)
+        {
+           
+            new ModificarCliente(this).Visible = true;
+            submenuClientes.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+           
+            new EliminarCliente(this).Visible = true;
+            submenuClientes.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            submenuProveedores.Visible = false;
+            submenuClientes.Visible = false;
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = true;
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
