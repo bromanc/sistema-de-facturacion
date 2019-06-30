@@ -6,18 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
-namespace sistema_de_facturacion.Proveedores
+namespace sistema_de_facturacion.Estadísticas
 {
-    public partial class ModificarProveedor : Form
+    public partial class VentasPeriodo : Form
     {
         public Form inicial;
-        public ModificarProveedor(Form interfazInicial)
+        public VentasPeriodo(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+        }
+
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -52,20 +57,10 @@ namespace sistema_de_facturacion.Proveedores
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             inicial.Visible = true;
             this.Close();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > -1) //Cambiar a 0.
-            {
-                //Obtengo el cliente y despliego ventana con información.
-                new AgregarProveedor(true, this).Visible = true;
-                this.Visible = false;
-            }
         }
     }
 }

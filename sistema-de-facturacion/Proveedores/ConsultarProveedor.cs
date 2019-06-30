@@ -14,10 +14,24 @@ namespace sistema_de_facturacion.Proveedores
     public partial class ConsultarProveedor : Form
     {
         public Form inicial;
-        public ConsultarProveedor(Form interfazInicial)
+        public String tipo;
+        public ConsultarProveedor(String type, Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            this.tipo = type;
+            if (type.Equals("consultar"))
+            {
+                accionV.Visible = false;
+            }
+            if (type.Equals("modificar"))
+            {
+                accionV.Text = "Modificar datos del proveedor";
+            }
+            if (type.Equals("eliminar"))
+            {
+                accionV.Text = "Eliminar proveedor seleccionado";
+            }
         }
 
         private void ConsultarProveedor_Load(object sender, EventArgs e)
@@ -66,6 +80,22 @@ namespace sistema_de_facturacion.Proveedores
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void AccionButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            {
+                //Obtengo el proveedor y despliego ventana con información.
+                new AgregarProveedor(true, this).Visible = true;
+                this.Visible = false;
+            }
+            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            {
+                //Elimino proveedor seleccionado.
+                
+                
+            }
         }
     }
 }

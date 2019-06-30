@@ -9,15 +9,45 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace sistema_de_facturacion.Clientes
+namespace sistema_de_facturacion.Usuarios
 {
-    public partial class EliminarCliente : Form
+    public partial class ConsultarUsuario : Form
     {
         public Form inicial;
-        public EliminarCliente(Form interfazInicial)
+        public String tipo;
+        public ConsultarUsuario(String type, Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            this.tipo = type;
+            if (type.Equals("consultar"))
+            {
+                accionV.Visible = false;
+            }
+            if (type.Equals("modificar"))
+            {
+                accionV.Text = "Modificar datos del usuario";
+            }
+            if (type.Equals("eliminar"))
+            {
+                accionV.Text = "Eliminar usuario seleccionado";
+            }
+        }
+
+        private void AccionV_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            {
+                //Obtengo el usuario y despliego ventana con información.
+                new AgregarUsuario(true, this).Visible = true;
+
+                this.Visible = false;
+            }
+            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            {
+                //Elimino el usuario seleccionado.
+
+            }
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -37,15 +67,15 @@ namespace sistema_de_facturacion.Clientes
                 this.WindowState = FormWindowState.Maximized;
             }
         }
-
-        private void Minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void Minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private void Panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

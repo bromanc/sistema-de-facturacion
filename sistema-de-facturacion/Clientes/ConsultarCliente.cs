@@ -14,10 +14,24 @@ namespace sistema_de_facturacion.Clientes
     public partial class ConsultarCliente : Form
     {
         public Form inicial;
-        public ConsultarCliente(Form interfazInicial)
+        public String tipo;
+        public ConsultarCliente(String type,Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            this.tipo = type;
+            if(type.Equals("consultar"))
+            {
+                accionV.Visible = false;
+            }
+            if (type.Equals("modificar"))
+            {
+                accionV.Text = "Modificar datos del cliente";
+            }
+            if (type.Equals("eliminar"))
+            {
+                accionV.Text = "Eliminar cliente seleccionado";
+            }
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
@@ -56,6 +70,22 @@ namespace sistema_de_facturacion.Clientes
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            {
+                //Obtengo el cliente y despliego ventana con información.
+                new AgregarCliente(true, this).Visible = true;
+
+                this.Visible = false;
+            }
+            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            {
+                //Elimino el cliente seleccionado.
+                
+            }
         }
     }
 }
