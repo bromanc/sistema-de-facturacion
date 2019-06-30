@@ -15,13 +15,28 @@ namespace sistema_de_facturacion.Clientes
     {
         public Form inicial;
         public List<TextBox> fieldList = new List<TextBox>();
+        public Boolean modificar;
         public AgregarCliente(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
 
         }
+        public AgregarCliente(Boolean modificacion, Form ventana)
+        {
+            InitializeComponent();
+            this.modificar = modificacion;
+            this.inicial = ventana;
+            modificarF();
 
+        }
+        public void modificarF()
+        {
+            cedulaRUCField.ReadOnly = true;
+            nombreField.ReadOnly = true;
+            registrarButton.Text = "Guardar Cambios";
+            limpiarButton.Visible = false;
+        }
         private void Cerrar_Click(object sender, EventArgs e)
         {
             inicial.Visible = true;
@@ -77,11 +92,34 @@ namespace sistema_de_facturacion.Clientes
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);
-            foreach(TextBox singleItem in fieldList) {
-                if (singleItem.Text.Equals(""))
+            
+            if(modificar == false)
+            {
+                //Registro cliente
+                foreach (TextBox singleItem in fieldList)
                 {
-                    MessageBox.Show("Se requiere llenar todos los campos.");
-                    break;
+                    if (singleItem.Text.Equals(""))
+                    {
+                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        break;
+                    }
+                    inicial.Visible = true;
+                    this.Close();
+                }
+            }
+            else
+            {
+                //Guardo cliente modificado
+                
+                foreach (TextBox singleItem in fieldList)
+                {
+                    if (singleItem.Text.Equals(""))
+                    {
+                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        break;
+                    }
+                    inicial.Visible = true;
+                    this.Close();
                 }
             }
         }
