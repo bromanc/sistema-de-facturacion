@@ -292,6 +292,14 @@ namespace sistema_de_facturacion.Principal
             this.Visible = false;
         }
 
+        private void AnularProformaButton_Click(object sender, EventArgs e)
+        {
+            new VerProforma(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+
+        }
+
         private void NuevaFacturaButton_Click(object sender, EventArgs e)
         {
             new Facturas(this).Visible = true;
@@ -342,12 +350,6 @@ namespace sistema_de_facturacion.Principal
             this.Visible = false;
         }
 
-        private void AnularProformaButton_Click(object sender, EventArgs e)
-        {
-            new VerInventario(this).Visible = true;
-            submenuEstimados.Visible = false;
-            this.Visible = false;
-
-        }
+        
     }
 }
