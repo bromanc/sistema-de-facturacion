@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace sistema_de_facturacion.Inventarios
 {
-    public partial class Inventario : Form
+    public partial class OperacionesInventario : Form
     {
         public Form inicial;
-        public Inventario(Form interfazInicial)
+        public OperacionesInventario(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
         }
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
 
         private void Minimizar_Click(object sender, EventArgs e)
         {
