@@ -12,7 +12,11 @@ using sistema_de_facturacion.Clientes;
 using sistema_de_facturacion.Proveedores;
 using sistema_de_facturacion.Usuarios;
 using sistema_de_facturacion.Estadísticas;
+using sistema_de_facturacion.Estimados;
+using sistema_de_facturacion.Facturacion;
+using sistema_de_facturacion.Inventarios;
 using sistema_de_facturacion.Parámetros;
+
 namespace sistema_de_facturacion.Principal
 {
     public partial class InterfazInicial : Form
@@ -279,8 +283,8 @@ namespace sistema_de_facturacion.Principal
             submenuEstadisticas.Visible = false;
             this.Visible = false;
         }
-
-        private void NuevaFacturaButton_Click(object sender, EventArgs e)
+        
+         private void NuevaFacturaButton_Click(object sender, EventArgs e)
         {
         //    new Facturas(this).Visible = true;
             submenuEstimados.Visible = false;
@@ -289,28 +293,27 @@ namespace sistema_de_facturacion.Principal
 
         private void NuevaProformaButton_Click(object sender, EventArgs e)
         {
-        //    new Proforma(this).Visible = true;
+          // new Proforma(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
-        }
 
         private void RevisarProformaButton_Click(object sender, EventArgs e)
         {
-        //    new VerProforma(this).Visible = true;
+          //  new VerProforma(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void RevisarFacturaButton_Click(object sender, EventArgs e)
         {
-        //    new VerFactura(this).Visible = true;
+           // new VerFactura(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
-        }
 
+        }
         private void AnularFacturaButton_Click(object sender, EventArgs e)
         {
-        //    new VerFactura(this).Visible = true;
+          //  new VerFactura(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
@@ -321,10 +324,10 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
-
-        private void ConsultarProductoButton_Click(object sender, EventArgs e)
+        
+         private void ConsultarProductoButton_Click(object sender, EventArgs e)
         {
-        //    new VerInventario(this).Visible = true;
+          //  new VerInventario(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
