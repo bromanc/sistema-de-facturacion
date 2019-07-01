@@ -64,23 +64,47 @@
     <Compile Include="Estadísticas\VentasPeriodo.Designer.cs">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estimados\Proforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estimados\Proforma.Designer.cs">
+      <DependentUpon>Proforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estimados\VerProforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estimados\VerProforma.Designer.cs">
+      <DependentUpon>VerProforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\VerFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\VerFactura.Designer.cs">
+      <DependentUpon>VerFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventarios\NuevoProducto.cs">
+    <Compile Include="Inventarios\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios\NuevoProducto.Designer.cs">
-      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    <Compile Include="Inventarios\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventarios\OperacionesInventario.cs">
+    <Compile Include="Inventarios\VerInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios\OperacionesInventario.Designer.cs">
-      <DependentUpon>OperacionesInventario.cs</DependentUpon>
+    <Compile Include="Inventarios\VerInventario.Designer.cs">
+      <DependentUpon>VerInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal\InterfazInicial.cs">
       <SubType>Form</SubType>
@@ -123,11 +147,23 @@
     <EmbeddedResource Include="Estadísticas\VentasPeriodo.resx">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventarios\NuevoProducto.resx">
-      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Estimados\Proforma.resx">
+      <DependentUpon>Proforma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventarios\OperacionesInventario.resx">
-      <DependentUpon>OperacionesInventario.cs</DependentUpon>
+    <EmbeddedResource Include="Estimados\VerProforma.resx">
+      <DependentUpon>VerProforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\VerFactura.resx">
+      <DependentUpon>VerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\VerInventario.resx">
+      <DependentUpon>VerInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\InterfazInicial.resx">
       <DependentUpon>InterfazInicial.cs</DependentUpon>
@@ -169,8 +205,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Estimados\" />
-    <Folder Include="Facturación\" />
     <Folder Include="Parámetros\" />
   </ItemGroup>
   <ItemGroup>

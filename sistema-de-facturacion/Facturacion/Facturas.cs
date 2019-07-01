@@ -9,22 +9,20 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace sistema_de_facturacion.Inventarios
+namespace sistema_de_facturacion.Facturacion
 {
-    public partial class NuevoProducto : Form
+    public partial class Facturas : Form
     {
         public Form inicial;
-        public NuevoProducto(Form interfazInicial)
+        public Facturas(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
         }
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
         private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
