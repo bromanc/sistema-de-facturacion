@@ -15,7 +15,7 @@ using sistema_de_facturacion.Estadísticas;
 using sistema_de_facturacion.Estimados;
 using sistema_de_facturacion.Facturacion;
 using sistema_de_facturacion.Inventarios;
-
+using sistema_de_facturacion.Parámetros;
 
 namespace sistema_de_facturacion.Principal
 {
@@ -26,6 +26,7 @@ namespace sistema_de_facturacion.Principal
         public InterfazInicial()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -36,7 +37,11 @@ namespace sistema_de_facturacion.Principal
         {
 
         }
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             if (panelVertical.Width == 280)
@@ -53,7 +58,7 @@ namespace sistema_de_facturacion.Principal
         {
             Application.Exit();
         }
-
+        
         private void Maximizar_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -240,6 +245,8 @@ namespace sistema_de_facturacion.Principal
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
+            new Parametro(this).Visible = true;
+            this.Visible = false;
         }
 
         private void Button18_Click(object sender, EventArgs e)
@@ -276,80 +283,232 @@ namespace sistema_de_facturacion.Principal
             submenuEstadisticas.Visible = false;
             this.Visible = false;
         }
+        
+         private void NuevaFacturaButton_Click(object sender, EventArgs e)
+        {
+        //    new Facturas(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
 
         private void NuevaProformaButton_Click(object sender, EventArgs e)
         {
-            new Proforma(this).Visible = true;
+          // new Proforma(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
-
-        }
 
         private void RevisarProformaButton_Click(object sender, EventArgs e)
         {
-            new VerProforma(this).Visible = true;
-            submenuEstimados.Visible = false;
-            this.Visible = false;
-        }
-
-        private void AnularProformaButton_Click(object sender, EventArgs e)
-        {
-            new VerProforma(this).Visible = true;
-            submenuEstimados.Visible = false;
-            this.Visible = false;
-
-        }
-
-        private void NuevaFacturaButton_Click(object sender, EventArgs e)
-        {
-            new Facturas(this).Visible = true;
+          //  new VerProforma(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void RevisarFacturaButton_Click(object sender, EventArgs e)
         {
-            new VerFactura(this).Visible = true;
+           // new VerFactura(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
 
         }
         private void AnularFacturaButton_Click(object sender, EventArgs e)
         {
-            new VerFactura(this).Visible = true;
+          //  new VerFactura(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void NuevoProductoButton_Click(object sender, EventArgs e)
         {
-            new Inventario(this).Visible = true;
+        //    new Inventario(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
-
-        private void ConsultarProductoButton_Click(object sender, EventArgs e)
+        
+         private void ConsultarProductoButton_Click(object sender, EventArgs e)
         {
-            new VerInventario(this).Visible = true;
+          //  new VerInventario(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void EditarProductoButton_Click(object sender, EventArgs e)
         {
-            new VerInventario(this).Visible = true;
+         //   new VerInventario(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
-
         }
 
         private void EliminarProductoButton_Click(object sender, EventArgs e)
         {
-            new VerInventario(this).Visible = true;
+        //    new VerInventario(this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
-        
+        private void AnularProformaButton_Click(object sender, EventArgs e)
+        {
+        //    new VerProforma(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Lblhora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Timer1_Tick_1(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void InventarioButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            submenuInventario.Visible = true;
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void InventarioButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuInventario.Visible = true;
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void FacturacionButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = true;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void ClientesButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = true;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void ProveedoresButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = true;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void EstimadosButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = true;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void EstadisticasButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = true;
+        }
+
+        private void Button7_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = true;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Contenedor_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Button8_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Contenedor_MouseDown(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void PanelVertical_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void Contenedor_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void PanelVertical_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void LblFecha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

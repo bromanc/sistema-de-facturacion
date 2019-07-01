@@ -21,7 +21,9 @@ namespace sistema_de_facturacion.Clientes
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-
+            nombreField.ReadOnly = true;
+            apellidoField.ReadOnly = true;
+            razonField.ReadOnly = true;
         }
         public AgregarCliente(Boolean modificacion, Form ventana)
         {
@@ -37,6 +39,9 @@ namespace sistema_de_facturacion.Clientes
             huellaButton.Enabled = false;
             cedulaRUCField.ReadOnly = true;
             nombreField.ReadOnly = true;
+            razonField.ReadOnly = true;
+            natural.Enabled = false;
+            juridica.Enabled = false;
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;
         }
@@ -91,11 +96,20 @@ namespace sistema_de_facturacion.Clientes
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
             fieldList.Add(cedulaRUCField);
+            if (natural.Checked)
+            {
+                fieldList.Add(nombreField);
+                fieldList.Add(apellidoField);
+            }
+            if (juridica.Checked)
+            {
+                fieldList.Add(razonField);
+            }
             fieldList.Add(nombreField);
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);
-            
+            Boolean lleno = false;
             if(modificar == false)
             {
                 //Registro cliente
@@ -103,9 +117,18 @@ namespace sistema_de_facturacion.Clientes
                 {
                     if (singleItem.Text.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        lleno = true;
                         break;
                     }
+                    
+                }
+                if (lleno || (!(natural.Checked) && !(juridica.Checked)))
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente registrado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
@@ -118,9 +141,18 @@ namespace sistema_de_facturacion.Clientes
                 {
                     if (singleItem.Text.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        lleno = true;
                         break;
                     }
+                    
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente modificado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
@@ -130,7 +162,15 @@ namespace sistema_de_facturacion.Clientes
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
             fieldList.Add(cedulaRUCField);
-            fieldList.Add(nombreField);
+            if (natural.Checked)
+            {
+                fieldList.Add(nombreField);
+                fieldList.Add(apellidoField);
+            }
+            if (juridica.Checked)
+            {
+                fieldList.Add(razonField);
+            }
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);
@@ -138,6 +178,42 @@ namespace sistema_de_facturacion.Clientes
             {
                 singleItem.Text = "";
             }
+        }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Juridica_CheckedChanged(object sender, EventArgs e)
+        {
+            nombreField.ReadOnly = true;
+            apellidoField.ReadOnly = true;
+            razonField.ReadOnly = false;
+            razonField.Text = "";
+        }
+
+        private void AgregarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Natural_CheckedChanged(object sender, EventArgs e)
+        {
+            nombreField.ReadOnly = false;
+            apellidoField.ReadOnly = false;
+            razonField.ReadOnly = true;
+            nombreField.Text = "";
         }
     }
 }

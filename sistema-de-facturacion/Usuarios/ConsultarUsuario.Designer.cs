@@ -40,14 +40,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.accionV = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.cedulaPasaporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.accionV = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -194,7 +195,8 @@
             this.NombreUsuario,
             this.Telefono,
             this.Direccion,
-            this.Correo});
+            this.Correo,
+            this.tipoUsuario});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 112);
             this.dataGridView1.Name = "dataGridView1";
@@ -202,6 +204,42 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(800, 403);
             this.dataGridView1.TabIndex = 14;
+            // 
+            // cedulaPasaporte
+            // 
+            this.cedulaPasaporte.HeaderText = "Cédula/Pasaporte";
+            this.cedulaPasaporte.Name = "cedulaPasaporte";
+            this.cedulaPasaporte.Width = 118;
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.HeaderText = "Nombre de Usuario";
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.Width = 123;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Número de teléfono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Width = 125;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Width = 77;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo Electrónico";
+            this.Correo.Name = "Correo";
+            this.Correo.Width = 119;
+            // 
+            // tipoUsuario
+            // 
+            this.tipoUsuario.HeaderText = "Tipo de Usuario";
+            this.tipoUsuario.Name = "tipoUsuario";
+            this.tipoUsuario.Width = 107;
             // 
             // tableLayoutPanel4
             // 
@@ -240,36 +278,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // cedulaPasaporte
-            // 
-            this.cedulaPasaporte.HeaderText = "Cédula/Pasaporte";
-            this.cedulaPasaporte.Name = "cedulaPasaporte";
-            this.cedulaPasaporte.Width = 118;
-            // 
-            // NombreUsuario
-            // 
-            this.NombreUsuario.HeaderText = "Nombre de Usuario";
-            this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.Width = 123;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Número de teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 125;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.Width = 77;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo Electrónico";
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 119;
-            // 
             // ConsultarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +289,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarUsuario";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
@@ -317,5 +326,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoUsuario;
     }
 }

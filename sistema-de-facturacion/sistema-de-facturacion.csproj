@@ -105,6 +105,17 @@
     </Compile>
     <Compile Include="Inventarios\VerInventario.Designer.cs">
       <DependentUpon>VerInventario.cs</DependentUpon>
+    <Compile Include="Login\IngresoAlSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\IngresoAlSistema.Designer.cs">
+      <DependentUpon>IngresoAlSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parámetros\Parametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parámetros\Parametro.Designer.cs">
+      <DependentUpon>Parametro.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal\InterfazInicial.cs">
       <SubType>Form</SubType>
@@ -164,6 +175,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventarios\VerInventario.resx">
       <DependentUpon>VerInventario.cs</DependentUpon>
+    <EmbeddedResource Include="Login\IngresoAlSistema.resx">
+      <DependentUpon>IngresoAlSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parámetros\Parametro.resx">
+      <DependentUpon>Parametro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\InterfazInicial.resx">
       <DependentUpon>InterfazInicial.cs</DependentUpon>
@@ -206,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Parámetros\" />
+    <Folder Include="Estimados\" />
+    <Folder Include="Facturación\" />
+    <Folder Include="Inventarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />
