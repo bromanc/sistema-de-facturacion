@@ -67,25 +67,25 @@
     <Compile Include="Estimados\Proforma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estimados\Proforma.Designer.cs">
+    <Compile Include="Estimados\Proforma.designer.cs">
       <DependentUpon>Proforma.cs</DependentUpon>
     </Compile>
     <Compile Include="Estimados\VerProforma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estimados\VerProforma.Designer.cs">
+    <Compile Include="Estimados\VerProforma.designer.cs">
       <DependentUpon>VerProforma.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\Facturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\Facturas.Designer.cs">
+    <Compile Include="Facturacion\Facturas.designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\VerFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\VerFactura.Designer.cs">
+    <Compile Include="Facturacion\VerFactura.designer.cs">
       <DependentUpon>VerFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -97,14 +97,15 @@
     <Compile Include="Inventarios\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios\Inventario.Designer.cs">
+    <Compile Include="Inventarios\Inventario.designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventarios\VerInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios\VerInventario.Designer.cs">
+    <Compile Include="Inventarios\VerInventario.designer.cs">
       <DependentUpon>VerInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\IngresoAlSistema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +176,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventarios\VerInventario.resx">
       <DependentUpon>VerInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\IngresoAlSistema.resx">
       <DependentUpon>IngresoAlSistema.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,12 +222,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Parámetros\" />
-    <Folder Include="Estimados\" />
-    <Folder Include="Facturación\" />
-    <Folder Include="Inventarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />
   </ItemGroup>
