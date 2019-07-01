@@ -47,5 +47,10 @@ namespace sistema_de_facturacion.Estimados
             inicial.Visible = true;
             this.Close();
         }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

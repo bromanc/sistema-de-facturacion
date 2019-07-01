@@ -486,6 +486,7 @@
             this.anularProformaButton.TabIndex = 4;
             this.anularProformaButton.Text = "Anular Proforma";
             this.anularProformaButton.UseVisualStyleBackColor = true;
+            this.anularProformaButton.Click += new System.EventHandler(this.AnularProformaButton_Click);
             // 
             // nuevaProformaButton
             // 
@@ -562,7 +563,7 @@
             this.nuevaFacturaButton.Name = "nuevaFacturaButton";
             this.nuevaFacturaButton.Size = new System.Drawing.Size(286, 52);
             this.nuevaFacturaButton.TabIndex = 4;
-            this.nuevaFacturaButton.Text = "Nueva Factura";
+            this.nuevaFacturaButton.Text = "Generar Factura";
             this.nuevaFacturaButton.UseVisualStyleBackColor = true;
             this.nuevaFacturaButton.Click += new System.EventHandler(this.NuevaFacturaButton_Click);
             // 
