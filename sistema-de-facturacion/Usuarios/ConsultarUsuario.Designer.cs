@@ -48,6 +48,7 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -194,7 +195,8 @@
             this.NombreUsuario,
             this.Telefono,
             this.Direccion,
-            this.Correo});
+            this.Correo,
+            this.tipoUsuario});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 112);
             this.dataGridView1.Name = "dataGridView1";
@@ -270,6 +272,12 @@
             this.Correo.Name = "Correo";
             this.Correo.Width = 119;
             // 
+            // tipoUsuario
+            // 
+            this.tipoUsuario.HeaderText = "Tipo de Usuario";
+            this.tipoUsuario.Name = "tipoUsuario";
+            this.tipoUsuario.Width = 107;
+            // 
             // ConsultarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +325,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoUsuario;
     }
 }

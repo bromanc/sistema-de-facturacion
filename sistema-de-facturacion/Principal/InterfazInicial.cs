@@ -12,6 +12,7 @@ using sistema_de_facturacion.Clientes;
 using sistema_de_facturacion.Proveedores;
 using sistema_de_facturacion.Usuarios;
 using sistema_de_facturacion.Estadísticas;
+using sistema_de_facturacion.Parámetros;
 namespace sistema_de_facturacion.Principal
 {
     public partial class InterfazInicial : Form
@@ -31,7 +32,11 @@ namespace sistema_de_facturacion.Principal
         {
 
         }
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             if (panelVertical.Width == 280)
@@ -48,7 +53,7 @@ namespace sistema_de_facturacion.Principal
         {
             Application.Exit();
         }
-
+        
         private void Maximizar_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -235,6 +240,8 @@ namespace sistema_de_facturacion.Principal
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
+            new Parametro(this).Visible = true;
+            this.Visible = false;
         }
 
         private void Button18_Click(object sender, EventArgs e)
@@ -270,6 +277,87 @@ namespace sistema_de_facturacion.Principal
             new VentasPeriodo(this).Visible = true;
             submenuEstadisticas.Visible = false;
             this.Visible = false;
+        }
+
+        private void NuevaFacturaButton_Click(object sender, EventArgs e)
+        {
+        //    new Facturas(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void NuevaProformaButton_Click(object sender, EventArgs e)
+        {
+        //    new Proforma(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void RevisarProformaButton_Click(object sender, EventArgs e)
+        {
+        //    new VerProforma(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void RevisarFacturaButton_Click(object sender, EventArgs e)
+        {
+        //    new VerFactura(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void AnularFacturaButton_Click(object sender, EventArgs e)
+        {
+        //    new VerFactura(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void NuevoProductoButton_Click(object sender, EventArgs e)
+        {
+        //    new Inventario(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void ConsultarProductoButton_Click(object sender, EventArgs e)
+        {
+        //    new VerInventario(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void EditarProductoButton_Click(object sender, EventArgs e)
+        {
+         //   new VerInventario(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void EliminarProductoButton_Click(object sender, EventArgs e)
+        {
+        //    new VerInventario(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void AnularProformaButton_Click(object sender, EventArgs e)
+        {
+        //    new VerProforma(this).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+
+        private void Lblhora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Timer1_Tick_1(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
+            lblFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

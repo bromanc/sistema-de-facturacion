@@ -94,7 +94,7 @@ namespace sistema_de_facturacion.Clientes
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);
-            
+            Boolean lleno = false;
             if(modificar == false)
             {
                 //Registro cliente
@@ -102,9 +102,19 @@ namespace sistema_de_facturacion.Clientes
                 {
                     if (singleItem.Text.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        
+                        lleno = true;
                         break;
                     }
+                    
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente registrado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
@@ -117,9 +127,18 @@ namespace sistema_de_facturacion.Clientes
                 {
                     if (singleItem.Text.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        lleno = true;
                         break;
                     }
+                    
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente modificado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
