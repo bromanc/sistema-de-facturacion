@@ -6,15 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
-namespace sistema_de_facturacion.Inventarios
+namespace sistema_de_facturacion.Facturacion
 {
-    public partial class NuevoProducto : Form
+    public partial class VerFactura : Form
     {
         public Form inicial;
-        public NuevoProducto(Form interfazInicial)
+        public VerFactura(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;

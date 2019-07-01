@@ -64,11 +64,47 @@
     <Compile Include="Estadísticas\VentasPeriodo.Designer.cs">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estimados\Proforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estimados\Proforma.designer.cs">
+      <DependentUpon>Proforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estimados\VerProforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estimados\VerProforma.designer.cs">
+      <DependentUpon>VerProforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\Facturas.designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\VerFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\VerFactura.designer.cs">
+      <DependentUpon>VerFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventarios\Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\Inventario.designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventarios\VerInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\VerInventario.designer.cs">
+      <DependentUpon>VerInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\IngresoAlSistema.cs">
       <SubType>Form</SubType>
@@ -123,6 +159,24 @@
     <EmbeddedResource Include="Estadísticas\VentasPeriodo.resx">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estimados\Proforma.resx">
+      <DependentUpon>Proforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estimados\VerProforma.resx">
+      <DependentUpon>VerProforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\VerFactura.resx">
+      <DependentUpon>VerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\VerInventario.resx">
+      <DependentUpon>VerInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\IngresoAlSistema.resx">
       <DependentUpon>IngresoAlSistema.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,11 +222,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Estimados\" />
-    <Folder Include="Facturación\" />
-    <Folder Include="Inventarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />
   </ItemGroup>
