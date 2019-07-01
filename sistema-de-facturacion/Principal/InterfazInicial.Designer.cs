@@ -113,6 +113,8 @@
             this.panelVertical.Name = "panelVertical";
             this.panelVertical.Size = new System.Drawing.Size(280, 750);
             this.panelVertical.TabIndex = 0;
+            this.panelVertical.Click += new System.EventHandler(this.PanelVertical_Click);
+            this.panelVertical.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelVertical_MouseDown);
             // 
             // button8
             // 
@@ -130,6 +132,7 @@
             this.button8.Text = "Parámetros";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click_1);
+            this.button8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button8_MouseMove);
             // 
             // button7
             // 
@@ -147,6 +150,7 @@
             this.button7.Text = "Usuarios";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click_1);
+            this.button7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button7_MouseMove);
             // 
             // estadisticasButton
             // 
@@ -164,6 +168,7 @@
             this.estadisticasButton.Text = "Estadísticas";
             this.estadisticasButton.UseVisualStyleBackColor = true;
             this.estadisticasButton.Click += new System.EventHandler(this.Button6_Click);
+            this.estadisticasButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EstadisticasButton_MouseMove);
             // 
             // estimadosButton
             // 
@@ -181,6 +186,7 @@
             this.estimadosButton.Text = "Estimados";
             this.estimadosButton.UseVisualStyleBackColor = true;
             this.estimadosButton.Click += new System.EventHandler(this.Button5_Click);
+            this.estimadosButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EstimadosButton_MouseMove);
             // 
             // proveedoresButton
             // 
@@ -198,6 +204,7 @@
             this.proveedoresButton.Text = "Proveedores";
             this.proveedoresButton.UseVisualStyleBackColor = true;
             this.proveedoresButton.Click += new System.EventHandler(this.Button4_Click);
+            this.proveedoresButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProveedoresButton_MouseMove);
             // 
             // clientesButton
             // 
@@ -215,6 +222,7 @@
             this.clientesButton.Text = "Clientes";
             this.clientesButton.UseVisualStyleBackColor = true;
             this.clientesButton.Click += new System.EventHandler(this.ClientesButton_Click);
+            this.clientesButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ClientesButton_MouseMove);
             // 
             // facturacionButton
             // 
@@ -232,6 +240,7 @@
             this.facturacionButton.Text = "Facturación";
             this.facturacionButton.UseVisualStyleBackColor = true;
             this.facturacionButton.Click += new System.EventHandler(this.Button2_Click);
+            this.facturacionButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FacturacionButton_MouseMove);
             // 
             // inventarioButton
             // 
@@ -249,6 +258,8 @@
             this.inventarioButton.Text = "Inventario";
             this.inventarioButton.UseVisualStyleBackColor = true;
             this.inventarioButton.Click += new System.EventHandler(this.Button1_Click);
+            this.inventarioButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InventarioButton_MouseDown);
+            this.inventarioButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.InventarioButton_MouseMove);
             // 
             // pictureBox2
             // 
@@ -340,29 +351,37 @@
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(1020, 700);
             this.contenedor.TabIndex = 2;
+            this.contenedor.Click += new System.EventHandler(this.Contenedor_Click);
             this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
+            this.contenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Contenedor_MouseDown);
+            this.contenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Contenedor_MouseMove);
             // 
             // lblFecha
             // 
-            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblFecha.Location = new System.Drawing.Point(270, 345);
+            this.lblFecha.Location = new System.Drawing.Point(318, 343);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(516, 40);
             this.lblFecha.TabIndex = 30;
             this.lblFecha.Text = "Miercoles, 10  noviembre  2017";
+            this.lblFecha.Click += new System.EventHandler(this.LblFecha_Click);
             // 
             // lblhora
             // 
-            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblhora.AutoSize = true;
             this.lblhora.BackColor = System.Drawing.Color.Transparent;
             this.lblhora.Font = new System.Drawing.Font("Century Gothic", 80F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblhora.Location = new System.Drawing.Point(295, 216);
+            this.lblhora.Location = new System.Drawing.Point(340, 214);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(467, 129);
             this.lblhora.TabIndex = 29;

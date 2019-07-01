@@ -22,6 +22,7 @@ namespace sistema_de_facturacion.Principal
         public InterfazInicial()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -358,6 +359,153 @@ namespace sistema_de_facturacion.Principal
         {
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
             lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void InventarioButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            submenuInventario.Visible = true;
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void InventarioButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuInventario.Visible = true;
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void FacturacionButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = true;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void ClientesButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = true;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void ProveedoresButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = true;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void EstimadosButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = true;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void EstadisticasButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = true;
+        }
+
+        private void Button7_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = true;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Contenedor_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Button8_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void Contenedor_MouseDown(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void PanelVertical_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void Contenedor_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void PanelVertical_Click(object sender, EventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void LblFecha_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

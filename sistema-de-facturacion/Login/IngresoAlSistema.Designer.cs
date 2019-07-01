@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoAlSistema));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.usuarioField = new System.Windows.Forms.TextBox();
             this.passwordField = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -56,6 +56,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(585, 50);
             this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(216, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 18);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Ingreso al Sistema";
             // 
             // cerrar
             // 
@@ -88,23 +99,12 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(585, 145);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(216, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 18);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Ingreso al Sistema";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 27);
+            this.label2.Location = new System.Drawing.Point(24, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 7;
@@ -124,18 +124,18 @@
             // usuarioField
             // 
             this.usuarioField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.usuarioField.Location = new System.Drawing.Point(116, 26);
+            this.usuarioField.Location = new System.Drawing.Point(117, 26);
             this.usuarioField.Name = "usuarioField";
-            this.usuarioField.Size = new System.Drawing.Size(466, 20);
+            this.usuarioField.Size = new System.Drawing.Size(465, 20);
             this.usuarioField.TabIndex = 9;
             // 
             // passwordField
             // 
             this.passwordField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordField.Location = new System.Drawing.Point(116, 98);
+            this.passwordField.Location = new System.Drawing.Point(117, 98);
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '*';
-            this.passwordField.Size = new System.Drawing.Size(466, 20);
+            this.passwordField.Size = new System.Drawing.Size(465, 20);
             this.passwordField.TabIndex = 10;
             this.passwordField.TextChanged += new System.EventHandler(this.PasswordField_TextChanged);
             this.passwordField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordField_KeyPress);
@@ -155,6 +155,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(585, 61);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.Location = new System.Drawing.Point(361, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 42);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Ingreso por huella dactilar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -166,16 +176,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(361, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ingreso por huella dactilar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // IngresoAlSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +186,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IngresoAlSistema";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoAlSistema";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
