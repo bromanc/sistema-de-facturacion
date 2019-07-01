@@ -51,17 +51,34 @@ namespace sistema_de_facturacion.Usuarios
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);
-
+            string selected = this.usuarioBox.GetItemText(this.usuarioBox.SelectedItem);
+            Boolean lleno = false;
             if (modificar == false)
             {
+                
                 //Registro usuario
                 foreach (TextBox singleItem in fieldList)
                 {
-                    if (singleItem.Text.Equals(""))
+                    if (selected.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        
+                        lleno = true;
                         break;
                     }
+                    if (singleItem.Text.Equals("") )
+                    {
+                        lleno = true;
+                        break;
+                    }
+                    
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario registrado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
@@ -69,14 +86,28 @@ namespace sistema_de_facturacion.Usuarios
             else
             {
                 //Guardo usuario modificado
-
+                
                 foreach (TextBox singleItem in fieldList)
                 {
-                    if (singleItem.Text.Equals(""))
+                    if (selected.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        lleno = true;
                         break;
                     }
+                    if (singleItem.Text.Equals(""))
+                    {
+                        lleno = true;
+                        break;
+                    }
+                   
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario modificado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }

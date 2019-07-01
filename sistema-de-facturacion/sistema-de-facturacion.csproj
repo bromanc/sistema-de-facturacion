@@ -70,17 +70,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventarios\NuevoProducto.cs">
+    <Compile Include="Login\IngresoAlSistema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios\NuevoProducto.Designer.cs">
-      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    <Compile Include="Login\IngresoAlSistema.Designer.cs">
+      <DependentUpon>IngresoAlSistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventarios\OperacionesInventario.cs">
+    <Compile Include="Parámetros\Parametro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios\OperacionesInventario.Designer.cs">
-      <DependentUpon>OperacionesInventario.cs</DependentUpon>
+    <Compile Include="Parámetros\Parametro.Designer.cs">
+      <DependentUpon>Parametro.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal\InterfazInicial.cs">
       <SubType>Form</SubType>
@@ -123,11 +123,11 @@
     <EmbeddedResource Include="Estadísticas\VentasPeriodo.resx">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventarios\NuevoProducto.resx">
-      <DependentUpon>NuevoProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Login\IngresoAlSistema.resx">
+      <DependentUpon>IngresoAlSistema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventarios\OperacionesInventario.resx">
-      <DependentUpon>OperacionesInventario.cs</DependentUpon>
+    <EmbeddedResource Include="Parámetros\Parametro.resx">
+      <DependentUpon>Parametro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\InterfazInicial.resx">
       <DependentUpon>InterfazInicial.cs</DependentUpon>
@@ -171,7 +171,7 @@
   <ItemGroup>
     <Folder Include="Estimados\" />
     <Folder Include="Facturación\" />
-    <Folder Include="Parámetros\" />
+    <Folder Include="Inventarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />

@@ -72,6 +72,7 @@ namespace sistema_de_facturacion.Proveedores
             fieldList.Add(ciudadField);
             fieldList.Add(contactoField);
             fieldList.Add(telefonoCField);
+            Boolean lleno = false;
             if (modificacion == false)
             {
                 //Registro proveedor
@@ -79,9 +80,17 @@ namespace sistema_de_facturacion.Proveedores
                 {
                     if (singleItem.Text.Equals(""))
                     {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
+                        lleno = true;
                         break;
                     }
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor registrado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
@@ -92,11 +101,23 @@ namespace sistema_de_facturacion.Proveedores
 
                 foreach (TextBox singleItem in fieldList)
                 {
-                    if (singleItem.Text.Equals(""))
-                    {
-                        MessageBox.Show("Se requiere llenar todos los campos.");
-                        break;
-                    }
+                    
+                        if (singleItem.Text.Equals(""))
+                        {
+
+                            lleno = true;
+                            break;
+                        }
+                    
+                    
+                }
+                if (lleno)
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor modificado exitosamente.");
                     inicial.Visible = true;
                     this.Close();
                 }
