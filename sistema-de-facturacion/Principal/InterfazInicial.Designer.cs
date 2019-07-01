@@ -46,8 +46,6 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contenedor = new System.Windows.Forms.Panel();
-            this.submenuEstadisticas = new System.Windows.Forms.Panel();
-            this.ventasPeriodoButton = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.submenuUsuarios = new System.Windows.Forms.Panel();
@@ -61,15 +59,6 @@
             this.revisarProformaButton = new System.Windows.Forms.Button();
             this.anularProformaButton = new System.Windows.Forms.Button();
             this.nuevaProformaButton = new System.Windows.Forms.Button();
-            this.submenuFacturacion = new System.Windows.Forms.Panel();
-            this.revisarFacturaButton = new System.Windows.Forms.Button();
-            this.anularFacturaButton = new System.Windows.Forms.Button();
-            this.nuevaFacturaButton = new System.Windows.Forms.Button();
-            this.submenuInventario = new System.Windows.Forms.Panel();
-            this.consultarProductoButton = new System.Windows.Forms.Button();
-            this.eliminarProductoButton = new System.Windows.Forms.Button();
-            this.editarProductoButton = new System.Windows.Forms.Button();
-            this.nuevoProductoButton = new System.Windows.Forms.Button();
             this.submenuProveedores = new System.Windows.Forms.Panel();
             this.consultarProveedorButton = new System.Windows.Forms.Button();
             this.eliminarProveedorButton = new System.Windows.Forms.Button();
@@ -98,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contenedor.SuspendLayout();
-            this.submenuEstadisticas.SuspendLayout();
             this.submenuUsuarios.SuspendLayout();
             this.submenuEstadisticas.SuspendLayout();
             this.submenuEstimados.SuspendLayout();
@@ -121,7 +109,6 @@
             this.panelVertical.Controls.Add(this.inventarioButton);
             this.panelVertical.Controls.Add(this.pictureBox2);
             this.panelVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelVertical.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelVertical.Location = new System.Drawing.Point(0, 0);
             this.panelVertical.Name = "panelVertical";
             this.panelVertical.Size = new System.Drawing.Size(280, 750);
@@ -284,152 +271,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 545);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(280, 52);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Parámetros";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click_1);
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 481);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(280, 52);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Usuarios";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click_1);
-            // 
-            // estadisticasButton
-            // 
-            this.estadisticasButton.FlatAppearance.BorderSize = 0;
-            this.estadisticasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.estadisticasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.estadisticasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estadisticasButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.estadisticasButton.Image = ((System.Drawing.Image)(resources.GetObject("estadisticasButton.Image")));
-            this.estadisticasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.estadisticasButton.Location = new System.Drawing.Point(0, 423);
-            this.estadisticasButton.Name = "estadisticasButton";
-            this.estadisticasButton.Size = new System.Drawing.Size(280, 52);
-            this.estadisticasButton.TabIndex = 3;
-            this.estadisticasButton.Text = "Estadísticas";
-            this.estadisticasButton.UseVisualStyleBackColor = true;
-            this.estadisticasButton.Click += new System.EventHandler(this.Button6_Click);
-            // 
-            // estimadosButton
-            // 
-            this.estimadosButton.FlatAppearance.BorderSize = 0;
-            this.estimadosButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.estimadosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.estimadosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimadosButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.estimadosButton.Image = ((System.Drawing.Image)(resources.GetObject("estimadosButton.Image")));
-            this.estimadosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.estimadosButton.Location = new System.Drawing.Point(0, 365);
-            this.estimadosButton.Name = "estimadosButton";
-            this.estimadosButton.Size = new System.Drawing.Size(280, 52);
-            this.estimadosButton.TabIndex = 3;
-            this.estimadosButton.Text = "Estimados";
-            this.estimadosButton.UseVisualStyleBackColor = true;
-            this.estimadosButton.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // proveedoresButton
-            // 
-            this.proveedoresButton.FlatAppearance.BorderSize = 0;
-            this.proveedoresButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.proveedoresButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.proveedoresButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proveedoresButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.proveedoresButton.Image = ((System.Drawing.Image)(resources.GetObject("proveedoresButton.Image")));
-            this.proveedoresButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.proveedoresButton.Location = new System.Drawing.Point(0, 307);
-            this.proveedoresButton.Name = "proveedoresButton";
-            this.proveedoresButton.Size = new System.Drawing.Size(280, 52);
-            this.proveedoresButton.TabIndex = 3;
-            this.proveedoresButton.Text = "Proveedores";
-            this.proveedoresButton.UseVisualStyleBackColor = true;
-            this.proveedoresButton.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // clientesButton
-            // 
-            this.clientesButton.FlatAppearance.BorderSize = 0;
-            this.clientesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.clientesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clientesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientesButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.clientesButton.Image = ((System.Drawing.Image)(resources.GetObject("clientesButton.Image")));
-            this.clientesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clientesButton.Location = new System.Drawing.Point(0, 249);
-            this.clientesButton.Name = "clientesButton";
-            this.clientesButton.Size = new System.Drawing.Size(280, 52);
-            this.clientesButton.TabIndex = 3;
-            this.clientesButton.Text = "Clientes";
-            this.clientesButton.UseVisualStyleBackColor = true;
-            this.clientesButton.Click += new System.EventHandler(this.ClientesButton_Click);
-            // 
-            // facturacionButton
-            // 
-            this.facturacionButton.FlatAppearance.BorderSize = 0;
-            this.facturacionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.facturacionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.facturacionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.facturacionButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.facturacionButton.Image = ((System.Drawing.Image)(resources.GetObject("facturacionButton.Image")));
-            this.facturacionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.facturacionButton.Location = new System.Drawing.Point(0, 191);
-            this.facturacionButton.Name = "facturacionButton";
-            this.facturacionButton.Size = new System.Drawing.Size(280, 52);
-            this.facturacionButton.TabIndex = 3;
-            this.facturacionButton.Text = "Facturación";
-            this.facturacionButton.UseVisualStyleBackColor = true;
-            this.facturacionButton.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // inventarioButton
-            // 
-            this.inventarioButton.FlatAppearance.BorderSize = 0;
-            this.inventarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.inventarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inventarioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventarioButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.inventarioButton.Image = ((System.Drawing.Image)(resources.GetObject("inventarioButton.Image")));
-            this.inventarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inventarioButton.Location = new System.Drawing.Point(0, 133);
-            this.inventarioButton.Name = "inventarioButton";
-            this.inventarioButton.Size = new System.Drawing.Size(280, 52);
-            this.inventarioButton.TabIndex = 2;
-            this.inventarioButton.Text = "Inventario";
-            this.inventarioButton.UseVisualStyleBackColor = true;
-            this.inventarioButton.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(274, 88);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.minimizar);
@@ -439,7 +280,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(280, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1020, 68);
+            this.panel2.Size = new System.Drawing.Size(1020, 50);
             this.panel2.TabIndex = 1;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel2_MouseDown);
             // 
@@ -496,22 +337,6 @@
             // 
             // contenedor
             // 
-            this.contenedor.Controls.Add(this.submenuEstadisticas);
-            this.contenedor.Controls.Add(this.submenuUsuarios);
-            this.contenedor.Controls.Add(this.submenuEstimados);
-            this.contenedor.Controls.Add(this.submenuFacturacion);
-            this.contenedor.Controls.Add(this.submenuInventario);
-            this.contenedor.Controls.Add(this.submenuProveedores);
-            this.contenedor.Controls.Add(this.submenuClientes);
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(280, 68);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1020, 582);
-            this.contenedor.TabIndex = 2;
-            this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
-            // 
-            // submenuEstadisticas
-            // 
             this.contenedor.Controls.Add(this.lblFecha);
             this.contenedor.Controls.Add(this.lblhora);
             this.contenedor.Controls.Add(this.submenuUsuarios);
@@ -565,20 +390,6 @@
             // 
             // submenuUsuarios
             // 
-            this.ventasPeriodoButton.FlatAppearance.BorderSize = 0;
-            this.ventasPeriodoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.ventasPeriodoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ventasPeriodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ventasPeriodoButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.ventasPeriodoButton.Image = ((System.Drawing.Image)(resources.GetObject("ventasPeriodoButton.Image")));
-            this.ventasPeriodoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ventasPeriodoButton.Location = new System.Drawing.Point(0, 3);
-            this.ventasPeriodoButton.Name = "ventasPeriodoButton";
-            this.ventasPeriodoButton.Size = new System.Drawing.Size(286, 52);
-            this.ventasPeriodoButton.TabIndex = 4;
-            this.ventasPeriodoButton.Text = "Resumen de Ventas";
-            this.ventasPeriodoButton.UseVisualStyleBackColor = true;
-            this.ventasPeriodoButton.Click += new System.EventHandler(this.VentasPeriodoButton_Click);
             this.submenuUsuarios.Controls.Add(this.gestionarUsuarioButton);
             this.submenuUsuarios.Controls.Add(this.eliminarUsuarioButton);
             this.submenuUsuarios.Controls.Add(this.modificarUsuarioButton);
@@ -589,25 +400,13 @@
             this.submenuUsuarios.TabIndex = 7;
             this.submenuUsuarios.Visible = false;
             // 
-            // submenuUsuarios
-            // 
-            this.submenuUsuarios.Controls.Add(this.gestionarUsuarioButton);
-            this.submenuUsuarios.Controls.Add(this.eliminarUsuarioButton);
-            this.submenuUsuarios.Controls.Add(this.modificarUsuarioButton);
-            this.submenuUsuarios.Controls.Add(this.agregarUsuarioButton);
-            this.submenuUsuarios.Location = new System.Drawing.Point(704, 193);
-            this.submenuUsuarios.Name = "submenuUsuarios";
-            this.submenuUsuarios.Size = new System.Drawing.Size(273, 232);
-            this.submenuUsuarios.TabIndex = 7;
-            this.submenuUsuarios.Visible = false;
-            // 
             // gestionarUsuarioButton
             // 
             this.gestionarUsuarioButton.FlatAppearance.BorderSize = 0;
             this.gestionarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.gestionarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestionarUsuarioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionarUsuarioButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.gestionarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestionarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.gestionarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("gestionarUsuarioButton.Image")));
             this.gestionarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.gestionarUsuarioButton.Location = new System.Drawing.Point(-3, 61);
@@ -623,8 +422,8 @@
             this.eliminarUsuarioButton.FlatAppearance.BorderSize = 0;
             this.eliminarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.eliminarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarUsuarioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarUsuarioButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.eliminarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.eliminarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("eliminarUsuarioButton.Image")));
             this.eliminarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eliminarUsuarioButton.Location = new System.Drawing.Point(0, 177);
@@ -640,8 +439,8 @@
             this.modificarUsuarioButton.FlatAppearance.BorderSize = 0;
             this.modificarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.modificarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificarUsuarioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarUsuarioButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.modificarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.modificarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("modificarUsuarioButton.Image")));
             this.modificarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.modificarUsuarioButton.Location = new System.Drawing.Point(-3, 119);
@@ -657,8 +456,8 @@
             this.agregarUsuarioButton.FlatAppearance.BorderSize = 0;
             this.agregarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.agregarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.agregarUsuarioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarUsuarioButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.agregarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.agregarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarUsuarioButton.Image")));
             this.agregarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarUsuarioButton.Location = new System.Drawing.Point(-3, 3);
@@ -700,7 +499,6 @@
             this.submenuEstimados.Controls.Add(this.revisarProformaButton);
             this.submenuEstimados.Controls.Add(this.anularProformaButton);
             this.submenuEstimados.Controls.Add(this.nuevaProformaButton);
-            this.submenuEstimados.Location = new System.Drawing.Point(691, 6);
             this.submenuEstimados.Location = new System.Drawing.Point(0, 315);
             this.submenuEstimados.Name = "submenuEstimados";
             this.submenuEstimados.Size = new System.Drawing.Size(273, 171);
@@ -712,8 +510,8 @@
             this.revisarProformaButton.FlatAppearance.BorderSize = 0;
             this.revisarProformaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.revisarProformaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.revisarProformaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revisarProformaButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.revisarProformaButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revisarProformaButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.revisarProformaButton.Image = ((System.Drawing.Image)(resources.GetObject("revisarProformaButton.Image")));
             this.revisarProformaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.revisarProformaButton.Location = new System.Drawing.Point(0, 61);
@@ -729,8 +527,8 @@
             this.anularProformaButton.FlatAppearance.BorderSize = 0;
             this.anularProformaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.anularProformaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anularProformaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anularProformaButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.anularProformaButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anularProformaButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.anularProformaButton.Image = ((System.Drawing.Image)(resources.GetObject("anularProformaButton.Image")));
             this.anularProformaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.anularProformaButton.Location = new System.Drawing.Point(0, 119);
@@ -746,8 +544,8 @@
             this.nuevaProformaButton.FlatAppearance.BorderSize = 0;
             this.nuevaProformaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.nuevaProformaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevaProformaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevaProformaButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.nuevaProformaButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevaProformaButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.nuevaProformaButton.Image = ((System.Drawing.Image)(resources.GetObject("nuevaProformaButton.Image")));
             this.nuevaProformaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.nuevaProformaButton.Location = new System.Drawing.Point(0, 3);
@@ -757,51 +555,6 @@
             this.nuevaProformaButton.Text = "Nueva Proforma";
             this.nuevaProformaButton.UseVisualStyleBackColor = true;
             this.nuevaProformaButton.Click += new System.EventHandler(this.NuevaProformaButton_Click);
-            // 
-            // submenuFacturacion
-            // 
-            this.submenuFacturacion.Controls.Add(this.revisarFacturaButton);
-            this.submenuFacturacion.Controls.Add(this.anularFacturaButton);
-            this.submenuFacturacion.Controls.Add(this.nuevaFacturaButton);
-            this.submenuFacturacion.Location = new System.Drawing.Point(32, 24);
-            this.submenuFacturacion.Name = "submenuFacturacion";
-            this.submenuFacturacion.Size = new System.Drawing.Size(273, 171);
-            this.submenuFacturacion.TabIndex = 3;
-            this.submenuFacturacion.Visible = false;
-            // 
-            // revisarFacturaButton
-            // 
-            this.revisarFacturaButton.FlatAppearance.BorderSize = 0;
-            this.revisarFacturaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.revisarFacturaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.revisarFacturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revisarFacturaButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.revisarFacturaButton.Image = ((System.Drawing.Image)(resources.GetObject("revisarFacturaButton.Image")));
-            this.revisarFacturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.revisarFacturaButton.Location = new System.Drawing.Point(0, 61);
-            this.revisarFacturaButton.Name = "revisarFacturaButton";
-            this.revisarFacturaButton.Size = new System.Drawing.Size(286, 52);
-            this.revisarFacturaButton.TabIndex = 5;
-            this.revisarFacturaButton.Text = "Revisar Factura";
-            this.revisarFacturaButton.UseVisualStyleBackColor = true;
-            this.revisarFacturaButton.Click += new System.EventHandler(this.RevisarFacturaButton_Click);
-            // 
-            // anularFacturaButton
-            // 
-            this.anularFacturaButton.FlatAppearance.BorderSize = 0;
-            this.anularFacturaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.anularFacturaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anularFacturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anularFacturaButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.anularFacturaButton.Image = ((System.Drawing.Image)(resources.GetObject("anularFacturaButton.Image")));
-            this.anularFacturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.anularFacturaButton.Location = new System.Drawing.Point(0, 119);
-            this.anularFacturaButton.Name = "anularFacturaButton";
-            this.anularFacturaButton.Size = new System.Drawing.Size(286, 52);
-            this.anularFacturaButton.TabIndex = 4;
-            this.anularFacturaButton.Text = "Anular Factura";
-            this.anularFacturaButton.UseVisualStyleBackColor = true;
-            this.anularFacturaButton.Click += new System.EventHandler(this.AnularFacturaButton_Click);
             // 
             // submenuProveedores
             // 
@@ -817,32 +570,6 @@
             // 
             // consultarProveedorButton
             // 
-            this.nuevaFacturaButton.FlatAppearance.BorderSize = 0;
-            this.nuevaFacturaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.nuevaFacturaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevaFacturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevaFacturaButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.nuevaFacturaButton.Image = ((System.Drawing.Image)(resources.GetObject("nuevaFacturaButton.Image")));
-            this.nuevaFacturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nuevaFacturaButton.Location = new System.Drawing.Point(0, 3);
-            this.nuevaFacturaButton.Name = "nuevaFacturaButton";
-            this.nuevaFacturaButton.Size = new System.Drawing.Size(286, 52);
-            this.nuevaFacturaButton.TabIndex = 4;
-            this.nuevaFacturaButton.Text = "Generar Factura";
-            this.nuevaFacturaButton.UseVisualStyleBackColor = true;
-            this.nuevaFacturaButton.Click += new System.EventHandler(this.NuevaFacturaButton_Click);
-            // 
-            // submenuInventario
-            // 
-            this.submenuInventario.Controls.Add(this.consultarProductoButton);
-            this.submenuInventario.Controls.Add(this.eliminarProductoButton);
-            this.submenuInventario.Controls.Add(this.editarProductoButton);
-            this.submenuInventario.Controls.Add(this.nuevoProductoButton);
-            this.submenuInventario.Location = new System.Drawing.Point(339, 24);
-            this.submenuInventario.Name = "submenuInventario";
-            this.submenuInventario.Size = new System.Drawing.Size(273, 227);
-            this.submenuInventario.TabIndex = 2;
-            this.submenuInventario.Visible = false;
             this.consultarProveedorButton.FlatAppearance.BorderSize = 0;
             this.consultarProveedorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.consultarProveedorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -859,118 +586,6 @@
             this.consultarProveedorButton.Click += new System.EventHandler(this.Button5_Click_1);
             // 
             // eliminarProveedorButton
-            // 
-            this.consultarProductoButton.FlatAppearance.BorderSize = 0;
-            this.consultarProductoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.consultarProductoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.consultarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultarProductoButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.consultarProductoButton.Image = ((System.Drawing.Image)(resources.GetObject("consultarProductoButton.Image")));
-            this.consultarProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.consultarProductoButton.Location = new System.Drawing.Point(0, 61);
-            this.consultarProductoButton.Name = "consultarProductoButton";
-            this.consultarProductoButton.Size = new System.Drawing.Size(286, 52);
-            this.consultarProductoButton.TabIndex = 5;
-            this.consultarProductoButton.Text = "Consultar Producto";
-            this.consultarProductoButton.UseVisualStyleBackColor = true;
-            this.consultarProductoButton.Click += new System.EventHandler(this.ConsultarProductoButton_Click);
-            // 
-            // eliminarProductoButton
-            // 
-            this.eliminarProductoButton.FlatAppearance.BorderSize = 0;
-            this.eliminarProductoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.eliminarProductoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarProductoButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.eliminarProductoButton.Image = ((System.Drawing.Image)(resources.GetObject("eliminarProductoButton.Image")));
-            this.eliminarProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eliminarProductoButton.Location = new System.Drawing.Point(0, 175);
-            this.eliminarProductoButton.Name = "eliminarProductoButton";
-            this.eliminarProductoButton.Size = new System.Drawing.Size(286, 52);
-            this.eliminarProductoButton.TabIndex = 4;
-            this.eliminarProductoButton.Text = "Eliminar Producto";
-            this.eliminarProductoButton.UseVisualStyleBackColor = true;
-            this.eliminarProductoButton.Click += new System.EventHandler(this.EliminarProductoButton_Click);
-            // 
-            // editarProductoButton
-            // 
-            this.editarProductoButton.FlatAppearance.BorderSize = 0;
-            this.editarProductoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.editarProductoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editarProductoButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.editarProductoButton.Image = ((System.Drawing.Image)(resources.GetObject("editarProductoButton.Image")));
-            this.editarProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editarProductoButton.Location = new System.Drawing.Point(0, 119);
-            this.editarProductoButton.Name = "editarProductoButton";
-            this.editarProductoButton.Size = new System.Drawing.Size(286, 52);
-            this.editarProductoButton.TabIndex = 4;
-            this.editarProductoButton.Text = "Editar Producto";
-            this.editarProductoButton.UseVisualStyleBackColor = true;
-            this.editarProductoButton.Click += new System.EventHandler(this.EditarProductoButton_Click);
-            // 
-            // nuevoProductoButton
-            // 
-            this.nuevoProductoButton.FlatAppearance.BorderSize = 0;
-            this.nuevoProductoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.nuevoProductoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevoProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevoProductoButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.nuevoProductoButton.Image = ((System.Drawing.Image)(resources.GetObject("nuevoProductoButton.Image")));
-            this.nuevoProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nuevoProductoButton.Location = new System.Drawing.Point(0, 3);
-            this.nuevoProductoButton.Name = "nuevoProductoButton";
-            this.nuevoProductoButton.Size = new System.Drawing.Size(286, 52);
-            this.nuevoProductoButton.TabIndex = 4;
-            this.nuevoProductoButton.Text = "Nuevo Producto";
-            this.nuevoProductoButton.UseVisualStyleBackColor = true;
-            this.nuevoProductoButton.Click += new System.EventHandler(this.NuevoProductoButton_Click);
-            // 
-            // submenuProveedores
-            // 
-            this.submenuProveedores.Controls.Add(this.consultarProveedorButton);
-            this.submenuProveedores.Controls.Add(this.eliminarProveedorButton);
-            this.submenuProveedores.Controls.Add(this.modificarProveedorButton);
-            this.submenuProveedores.Controls.Add(this.agregarProveedorButton);
-            this.submenuProveedores.Location = new System.Drawing.Point(0, 260);
-            this.submenuProveedores.Name = "submenuProveedores";
-            this.submenuProveedores.Size = new System.Drawing.Size(273, 233);
-            this.submenuProveedores.TabIndex = 1;
-            this.submenuProveedores.Visible = false;
-            // 
-            // consultarProveedorButton
-            // 
-            this.consultarProveedorButton.FlatAppearance.BorderSize = 0;
-            this.consultarProveedorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.consultarProveedorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.consultarProveedorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultarProveedorButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.consultarProveedorButton.Image = ((System.Drawing.Image)(resources.GetObject("consultarProveedorButton.Image")));
-            this.consultarProveedorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.consultarProveedorButton.Location = new System.Drawing.Point(0, 61);
-            this.consultarProveedorButton.Name = "consultarProveedorButton";
-            this.consultarProveedorButton.Size = new System.Drawing.Size(286, 52);
-            this.consultarProveedorButton.TabIndex = 6;
-            this.consultarProveedorButton.Text = "Consultar Proveedor";
-            this.consultarProveedorButton.UseVisualStyleBackColor = true;
-            this.consultarProveedorButton.Click += new System.EventHandler(this.Button5_Click_1);
-            // 
-            // eliminarProveedorButton
-            // 
-            this.eliminarProveedorButton.FlatAppearance.BorderSize = 0;
-            this.eliminarProveedorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.eliminarProveedorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarProveedorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarProveedorButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.eliminarProveedorButton.Image = ((System.Drawing.Image)(resources.GetObject("eliminarProveedorButton.Image")));
-            this.eliminarProveedorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eliminarProveedorButton.Location = new System.Drawing.Point(0, 178);
-            this.eliminarProveedorButton.Name = "eliminarProveedorButton";
-            this.eliminarProveedorButton.Size = new System.Drawing.Size(286, 52);
-            this.eliminarProveedorButton.TabIndex = 4;
-            this.eliminarProveedorButton.Text = "Eliminar Proveedor";
-            this.eliminarProveedorButton.UseVisualStyleBackColor = true;
-            this.eliminarProveedorButton.Click += new System.EventHandler(this.EliminarProveedorButton_Click);
             // 
             this.eliminarProveedorButton.FlatAppearance.BorderSize = 0;
             this.eliminarProveedorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
@@ -992,8 +607,8 @@
             this.modificarProveedorButton.FlatAppearance.BorderSize = 0;
             this.modificarProveedorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.modificarProveedorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificarProveedorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarProveedorButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.modificarProveedorButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarProveedorButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.modificarProveedorButton.Image = ((System.Drawing.Image)(resources.GetObject("modificarProveedorButton.Image")));
             this.modificarProveedorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.modificarProveedorButton.Location = new System.Drawing.Point(0, 119);
@@ -1009,8 +624,8 @@
             this.agregarProveedorButton.FlatAppearance.BorderSize = 0;
             this.agregarProveedorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.agregarProveedorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.agregarProveedorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarProveedorButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.agregarProveedorButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarProveedorButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.agregarProveedorButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarProveedorButton.Image")));
             this.agregarProveedorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarProveedorButton.Location = new System.Drawing.Point(3, 3);
@@ -1027,7 +642,6 @@
             this.submenuClientes.Controls.Add(this.eliminarClienteButton);
             this.submenuClientes.Controls.Add(this.modificarClienteButton);
             this.submenuClientes.Controls.Add(this.agregarClienteButton);
-            this.submenuClientes.Location = new System.Drawing.Point(339, 263);
             this.submenuClientes.Location = new System.Drawing.Point(3, 194);
             this.submenuClientes.Name = "submenuClientes";
             this.submenuClientes.Size = new System.Drawing.Size(273, 232);
@@ -1040,8 +654,8 @@
             this.consultarClienteButton.FlatAppearance.BorderSize = 0;
             this.consultarClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.consultarClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.consultarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultarClienteButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.consultarClienteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultarClienteButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.consultarClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("consultarClienteButton.Image")));
             this.consultarClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.consultarClienteButton.Location = new System.Drawing.Point(-3, 61);
@@ -1057,8 +671,8 @@
             this.eliminarClienteButton.FlatAppearance.BorderSize = 0;
             this.eliminarClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.eliminarClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarClienteButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.eliminarClienteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarClienteButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.eliminarClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("eliminarClienteButton.Image")));
             this.eliminarClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eliminarClienteButton.Location = new System.Drawing.Point(0, 177);
@@ -1074,8 +688,8 @@
             this.modificarClienteButton.FlatAppearance.BorderSize = 0;
             this.modificarClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.modificarClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarClienteButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.modificarClienteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarClienteButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.modificarClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("modificarClienteButton.Image")));
             this.modificarClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.modificarClienteButton.Location = new System.Drawing.Point(-3, 119);
@@ -1091,8 +705,8 @@
             this.agregarClienteButton.FlatAppearance.BorderSize = 0;
             this.agregarClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
             this.agregarClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.agregarClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarClienteButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.agregarClienteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarClienteButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.agregarClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarClienteButton.Image")));
             this.agregarClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarClienteButton.Location = new System.Drawing.Point(-3, 3);
@@ -1269,7 +883,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contenedor.ResumeLayout(false);
-            this.submenuEstadisticas.ResumeLayout(false);
             this.contenedor.PerformLayout();
             this.submenuUsuarios.ResumeLayout(false);
             this.submenuEstadisticas.ResumeLayout(false);
