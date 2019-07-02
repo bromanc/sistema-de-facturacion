@@ -14,10 +14,28 @@ namespace sistema_de_facturacion.Inventarios
     public partial class VerInventario : Form
     {
         public Form inicial;
-        public VerInventario(Form interfazInicial)
+        public VerInventario(Form interfazInicial, int op)
         {
+
             InitializeComponent();
             this.inicial = interfazInicial;
+            //op 1 consultar
+            //op 2 editar
+            //op 3 eliminar
+            switch (op)
+            {
+                case 1:
+                    btnGeneral.Text = "Consultar Producto";
+                    break;
+
+                case 2:
+                    btnGeneral.Text = "Editar Producto";
+                    break;
+
+                case 3:
+                    btnGeneral.Text = "Eliminar Producto";
+                    break;
+            }
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

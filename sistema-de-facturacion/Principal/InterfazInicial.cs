@@ -299,23 +299,18 @@ namespace sistema_de_facturacion.Principal
             this.Visible = false;
         }
 
-        private void RevisarProformaButton_Click(object sender, EventArgs e)
-        {
-            new VerProforma(this).Visible = true;
-            submenuEstimados.Visible = false;
-            this.Visible = false;
-        }
-
+        //op 1 revisar
+        //op 2 anular
         private void RevisarFacturaButton_Click(object sender, EventArgs e)
         {
-            new VerFactura(this).Visible = true;
+            new VerFactura(this, 1).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void AnularFacturaButton_Click(object sender, EventArgs e)
         {
-            new VerFactura(this).Visible = true;
+            new VerFactura(this, 2).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
@@ -326,31 +321,41 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
-
+        //op 1 consultar
+        //op 2 editar
+        //op 3 eliminar
         private void ConsultarProductoButton_Click(object sender, EventArgs e)
         {
-           new VerInventario(this).Visible = true;
+           new VerInventario(this, 1).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void EditarProductoButton_Click(object sender, EventArgs e)
         {
-            new VerInventario(this).Visible = true;
+            new VerInventario(this, 2).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void EliminarProductoButton_Click(object sender, EventArgs e)
         {
-            new VerInventario(this).Visible = true;
+            new VerInventario(this, 3).Visible = true;
+            submenuEstimados.Visible = false;
+            this.Visible = false;
+        }
+        //op1 revisar
+        //op2 anular
+        private void RevisarProformaButton_Click(object sender, EventArgs e)
+        {
+            new VerProforma(this, 1).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void AnularProformaButton_Click(object sender, EventArgs e)
         {
-            new VerProforma(this).Visible = true;
+            new VerProforma(this, 2).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }

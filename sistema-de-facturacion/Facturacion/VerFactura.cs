@@ -14,12 +14,22 @@ namespace sistema_de_facturacion.Facturacion
     public partial class VerFactura : Form
     {
         public Form inicial;
-        public VerFactura(Form interfazInicial)
+        //op 1 revisar
+        //op 2 anular
+        public VerFactura(Form interfazInicial, int op)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            switch(op){
+                case 1:
+                    this.btnGeneral.Text = "Revisar Factura";
+                    break;
+                case 2:
+                    this.btnGeneral.Text = "Anular Factura";
+                    break;
+            }
         }
-
+      
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

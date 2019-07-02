@@ -34,8 +34,8 @@
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.txtProducto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.calendarioProforma = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
@@ -114,8 +114,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.83769F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.78534F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.37696F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblProducto, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtProducto, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
@@ -134,24 +134,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(765, 194);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // label1
+            // lblProducto
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Producto:";
+            this.lblProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(21, 9);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(78, 19);
+            this.lblProducto.TabIndex = 0;
+            this.lblProducto.Text = "Producto:";
             // 
-            // textBox1
+            // txtProducto
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(124, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(382, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProducto.Location = new System.Drawing.Point(124, 9);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(382, 20);
+            this.txtProducto.TabIndex = 1;
             // 
             // button1
             // 
@@ -228,7 +228,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.monthCalendar1);
+            this.panel2.Controls.Add(this.calendarioProforma);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(784, 50);
@@ -245,11 +245,11 @@
             this.button3.Text = "Confirmar Proforma";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // monthCalendar1
+            // calendarioProforma
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(23, 53);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 9;
+            this.calendarioProforma.Location = new System.Drawing.Point(23, 53);
+            this.calendarioProforma.Name = "calendarioProforma";
+            this.calendarioProforma.TabIndex = 9;
             // 
             // dataGridView1
             // 
@@ -290,8 +290,8 @@
         private System.Windows.Forms.PictureBox maximizar;
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
@@ -302,6 +302,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar calendarioProforma;
     }
 }
