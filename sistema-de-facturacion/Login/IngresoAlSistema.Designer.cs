@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoAlSistema));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelUsuario = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
             this.usuarioField = new System.Windows.Forms.TextBox();
             this.passwordField = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.huellaButton = new System.Windows.Forms.Button();
+            this.ingresarButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -49,7 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelIngreso);
             this.panel1.Controls.Add(this.cerrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -57,16 +57,16 @@
             this.panel1.Size = new System.Drawing.Size(585, 50);
             this.panel1.TabIndex = 3;
             // 
-            // label1
+            // labelIngreso
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(216, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 18);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Ingreso al Sistema";
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(216, 18);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(140, 18);
+            this.labelIngreso.TabIndex = 6;
+            this.labelIngreso.Text = "Ingreso al Sistema";
             // 
             // cerrar
             // 
@@ -86,8 +86,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.48718F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.51282F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelUsuario, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelPassword, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.usuarioField, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.passwordField, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -99,27 +99,27 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(585, 145);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // label2
+            // labelUsuario
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 18);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Usuario:";
+            this.labelUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.Location = new System.Drawing.Point(24, 27);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(66, 18);
+            this.labelUsuario.TabIndex = 7;
+            this.labelUsuario.Text = "Usuario:";
             // 
-            // label3
+            // labelPassword
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 18);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Contraseña:";
+            this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Location = new System.Drawing.Point(8, 99);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(97, 18);
+            this.labelPassword.TabIndex = 8;
+            this.labelPassword.Text = "Contraseña:";
             // 
             // usuarioField
             // 
@@ -145,8 +145,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.huellaButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ingresarButton, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 195);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -155,26 +155,26 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(585, 61);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // button2
+            // huellaButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(361, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ingreso por huella dactilar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.huellaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.huellaButton.Location = new System.Drawing.Point(361, 9);
+            this.huellaButton.Name = "huellaButton";
+            this.huellaButton.Size = new System.Drawing.Size(155, 42);
+            this.huellaButton.TabIndex = 1;
+            this.huellaButton.Text = "Ingreso por huella dactilar";
+            this.huellaButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ingresarButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(68, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.ingresarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ingresarButton.Location = new System.Drawing.Point(68, 9);
+            this.ingresarButton.Name = "ingresarButton";
+            this.ingresarButton.Size = new System.Drawing.Size(155, 42);
+            this.ingresarButton.TabIndex = 0;
+            this.ingresarButton.Text = "Ingresar";
+            this.ingresarButton.UseVisualStyleBackColor = true;
+            this.ingresarButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // IngresoAlSistema
             // 
@@ -201,15 +201,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelIngreso;
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelUsuario;
+        private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox usuarioField;
         private System.Windows.Forms.TextBox passwordField;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button huellaButton;
+        private System.Windows.Forms.Button ingresarButton;
     }
 }

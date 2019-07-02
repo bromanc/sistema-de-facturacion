@@ -22,28 +22,28 @@ namespace sistema_de_facturacion.Usuarios
             this.tipo = type;
             if (type.Equals("consultar"))
             {
-                accionV.Visible = false;
+                accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
             {
-                accionV.Text = "Modificar datos del usuario";
+                accionButton.Text = "Modificar datos del usuario";
             }
             if (type.Equals("eliminar"))
             {
-                accionV.Text = "Eliminar usuario seleccionado";
+                accionButton.Text = "Eliminar usuario seleccionado";
             }
         }
 
         private void AccionV_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            if (usuariosGrid.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
             {
                 //Obtengo el usuario y despliego ventana con información.
                 new AgregarUsuario(true, this).Visible = true;
 
                 this.Visible = false;
             }
-            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            if (usuariosGrid.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
             {
                 //Elimino el usuario seleccionado.
 

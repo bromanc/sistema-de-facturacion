@@ -22,15 +22,15 @@ namespace sistema_de_facturacion.Proveedores
             this.tipo = type;
             if (type.Equals("consultar"))
             {
-                accionV.Visible = false;
+                accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
             {
-                accionV.Text = "Modificar datos del proveedor";
+                accionButton.Text = "Modificar datos del proveedor";
             }
             if (type.Equals("eliminar"))
             {
-                accionV.Text = "Eliminar proveedor seleccionado";
+                accionButton.Text = "Eliminar proveedor seleccionado";
             }
         }
 
@@ -84,13 +84,13 @@ namespace sistema_de_facturacion.Proveedores
 
         private void AccionButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            if (proveedorGrid.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
             {
                 //Obtengo el proveedor y despliego ventana con información.
                 new AgregarProveedor(true, this).Visible = true;
                 this.Visible = false;
             }
-            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            if (proveedorGrid.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
             {
                 //Elimino proveedor seleccionado.
                 

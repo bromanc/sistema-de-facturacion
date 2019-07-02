@@ -32,7 +32,7 @@ namespace sistema_de_facturacion.Usuarios
         public void modificarF()
         {
             huellaButton.Enabled = false;
-            cedulaRUCField.ReadOnly = true;
+            cedulaField.ReadOnly = true;
             nombreField.ReadOnly = true;
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;
@@ -45,7 +45,7 @@ namespace sistema_de_facturacion.Usuarios
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaRUCField);
+            fieldList.Add(cedulaField);
             fieldList.Add(nombreField);
             fieldList.Add(passwordField);
             fieldList.Add(telefonoField);
@@ -142,7 +142,7 @@ namespace sistema_de_facturacion.Usuarios
 
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaRUCField);
+            fieldList.Add(cedulaField);
             fieldList.Add(nombreField);
             fieldList.Add(passwordField);
             fieldList.Add(telefonoField);

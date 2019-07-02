@@ -22,15 +22,15 @@ namespace sistema_de_facturacion.Clientes
             this.tipo = type;
             if(type.Equals("consultar"))
             {
-                accionV.Visible = false;
+                accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
             {
-                accionV.Text = "Modificar datos del cliente";
+                accionButton.Text = "Modificar datos del cliente";
             }
             if (type.Equals("eliminar"))
             {
-                accionV.Text = "Eliminar cliente seleccionado";
+                accionButton.Text = "Eliminar cliente seleccionado";
             }
         }
 
@@ -74,17 +74,17 @@ namespace sistema_de_facturacion.Clientes
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            if (clientesGrid.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
             {
                 //Obtengo el cliente y despliego ventana con información.
                 new AgregarCliente(true, this).Visible = true;
 
                 this.Visible = false;
             }
-            if (dataGridView1.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            if (clientesGrid.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
             {
                 //Elimino el cliente seleccionado.
-                
+                MessageBox.Show("Cliente eliminado exitosamente.");
             }
         }
     }
