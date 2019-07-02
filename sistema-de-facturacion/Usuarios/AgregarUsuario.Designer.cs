@@ -30,34 +30,34 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.minimizar = new System.Windows.Forms.PictureBox();
-            this.maximizar = new System.Windows.Forms.PictureBox();
-            this.cerrar = new System.Windows.Forms.PictureBox();
+            this.minimizarButton = new System.Windows.Forms.PictureBox();
+            this.maximizarButton = new System.Windows.Forms.PictureBox();
+            this.cerrarButton = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.passwordField = new System.Windows.Forms.TextBox();
             this.nombreField = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cedulaRUCField = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelCedula = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.cedulaField = new System.Windows.Forms.TextBox();
+            this.labelCorreo = new System.Windows.Forms.Label();
             this.correoField = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelDireccion = new System.Windows.Forms.Label();
             this.direccionField = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelTelefono = new System.Windows.Forms.Label();
             this.telefonoField = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelHuella = new System.Windows.Forms.Label();
             this.huellaButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelTipo = new System.Windows.Forms.Label();
             this.usuarioBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.registrarButton = new System.Windows.Forms.Button();
             this.limpiarButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,9 +65,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
-            this.panel1.Controls.Add(this.minimizar);
-            this.panel1.Controls.Add(this.maximizar);
-            this.panel1.Controls.Add(this.cerrar);
+            this.panel1.Controls.Add(this.minimizarButton);
+            this.panel1.Controls.Add(this.maximizarButton);
+            this.panel1.Controls.Add(this.cerrarButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -75,44 +75,44 @@
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             // 
-            // minimizar
+            // minimizarButton
             // 
-            this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
-            this.minimizar.Location = new System.Drawing.Point(703, 12);
-            this.minimizar.Name = "minimizar";
-            this.minimizar.Size = new System.Drawing.Size(24, 24);
-            this.minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.minimizar.TabIndex = 5;
-            this.minimizar.TabStop = false;
-            this.minimizar.Click += new System.EventHandler(this.Minimizar_Click);
+            this.minimizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizarButton.Image")));
+            this.minimizarButton.Location = new System.Drawing.Point(703, 12);
+            this.minimizarButton.Name = "minimizarButton";
+            this.minimizarButton.Size = new System.Drawing.Size(24, 24);
+            this.minimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.minimizarButton.TabIndex = 5;
+            this.minimizarButton.TabStop = false;
+            this.minimizarButton.Click += new System.EventHandler(this.Minimizar_Click);
             // 
-            // maximizar
+            // maximizarButton
             // 
-            this.maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.maximizar.Image = ((System.Drawing.Image)(resources.GetObject("maximizar.Image")));
-            this.maximizar.Location = new System.Drawing.Point(733, 12);
-            this.maximizar.Name = "maximizar";
-            this.maximizar.Size = new System.Drawing.Size(24, 24);
-            this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.maximizar.TabIndex = 4;
-            this.maximizar.TabStop = false;
-            this.maximizar.Click += new System.EventHandler(this.Maximizar_Click);
+            this.maximizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.maximizarButton.Image = ((System.Drawing.Image)(resources.GetObject("maximizarButton.Image")));
+            this.maximizarButton.Location = new System.Drawing.Point(733, 12);
+            this.maximizarButton.Name = "maximizarButton";
+            this.maximizarButton.Size = new System.Drawing.Size(24, 24);
+            this.maximizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.maximizarButton.TabIndex = 4;
+            this.maximizarButton.TabStop = false;
+            this.maximizarButton.Click += new System.EventHandler(this.Maximizar_Click);
             // 
-            // cerrar
+            // cerrarButton
             // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(763, 12);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(24, 24);
-            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cerrar.TabIndex = 3;
-            this.cerrar.TabStop = false;
-            this.cerrar.Click += new System.EventHandler(this.Cerrar_Click);
+            this.cerrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarButton.Image")));
+            this.cerrarButton.Location = new System.Drawing.Point(763, 12);
+            this.cerrarButton.Name = "cerrarButton";
+            this.cerrarButton.Size = new System.Drawing.Size(24, 24);
+            this.cerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cerrarButton.TabIndex = 3;
+            this.cerrarButton.TabStop = false;
+            this.cerrarButton.Click += new System.EventHandler(this.Cerrar_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -121,19 +121,19 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.125F));
             this.tableLayoutPanel1.Controls.Add(this.passwordField, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.nombreField, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cedulaRUCField, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelCedula, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelNombre, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cedulaField, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelCorreo, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.correoField, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.labelDireccion, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.direccionField, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.labelTelefono, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.telefonoField, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelPassword, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelHuella, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.huellaButton, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelTipo, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.usuarioBox, 1, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
@@ -168,46 +168,46 @@
             this.nombreField.Size = new System.Drawing.Size(587, 20);
             this.nombreField.TabIndex = 7;
             // 
-            // label1
+            // labelCedula
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cédula/Pasaporte:";
+            this.labelCedula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCedula.AutoSize = true;
+            this.labelCedula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCedula.Location = new System.Drawing.Point(24, 27);
+            this.labelCedula.Name = "labelCedula";
+            this.labelCedula.Size = new System.Drawing.Size(159, 21);
+            this.labelCedula.TabIndex = 0;
+            this.labelCedula.Text = "Cédula/Pasaporte:";
             // 
-            // label2
+            // labelNombre
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre:";
+            this.labelNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(65, 103);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(77, 21);
+            this.labelNombre.TabIndex = 1;
+            this.labelNombre.Text = "Nombre:";
             // 
-            // cedulaRUCField
+            // cedulaField
             // 
-            this.cedulaRUCField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cedulaRUCField.Location = new System.Drawing.Point(210, 28);
-            this.cedulaRUCField.Name = "cedulaRUCField";
-            this.cedulaRUCField.Size = new System.Drawing.Size(587, 20);
-            this.cedulaRUCField.TabIndex = 6;
+            this.cedulaField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cedulaField.Location = new System.Drawing.Point(210, 28);
+            this.cedulaField.Name = "cedulaField";
+            this.cedulaField.Size = new System.Drawing.Size(587, 20);
+            this.cedulaField.TabIndex = 6;
             // 
-            // label5
+            // labelCorreo
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 407);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Correo Electrónico:";
+            this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCorreo.AutoSize = true;
+            this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.Location = new System.Drawing.Point(24, 407);
+            this.labelCorreo.Name = "labelCorreo";
+            this.labelCorreo.Size = new System.Drawing.Size(158, 21);
+            this.labelCorreo.TabIndex = 4;
+            this.labelCorreo.Text = "Correo Electrónico:";
             // 
             // correoField
             // 
@@ -217,16 +217,16 @@
             this.correoField.Size = new System.Drawing.Size(587, 20);
             this.correoField.TabIndex = 10;
             // 
-            // label4
+            // labelDireccion
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 331);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Dirección Domiciliaria:";
+            this.labelDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelDireccion.AutoSize = true;
+            this.labelDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDireccion.Location = new System.Drawing.Point(13, 331);
+            this.labelDireccion.Name = "labelDireccion";
+            this.labelDireccion.Size = new System.Drawing.Size(180, 21);
+            this.labelDireccion.TabIndex = 3;
+            this.labelDireccion.Text = "Dirección Domiciliaria:";
             // 
             // direccionField
             // 
@@ -236,16 +236,16 @@
             this.direccionField.Size = new System.Drawing.Size(587, 20);
             this.direccionField.TabIndex = 9;
             // 
-            // label3
+            // labelTelefono
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 255);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Número de teléfono: ";
+            this.labelTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTelefono.AutoSize = true;
+            this.labelTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono.Location = new System.Drawing.Point(16, 255);
+            this.labelTelefono.Name = "labelTelefono";
+            this.labelTelefono.Size = new System.Drawing.Size(174, 21);
+            this.labelTelefono.TabIndex = 2;
+            this.labelTelefono.Text = "Número de teléfono: ";
             // 
             // telefonoField
             // 
@@ -255,27 +255,27 @@
             this.telefonoField.Size = new System.Drawing.Size(587, 20);
             this.telefonoField.TabIndex = 8;
             // 
-            // label7
+            // labelPassword
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label7.Location = new System.Drawing.Point(50, 179);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 21);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Contraseña:";
+            this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.labelPassword.Location = new System.Drawing.Point(50, 179);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(107, 21);
+            this.labelPassword.TabIndex = 12;
+            this.labelPassword.Text = "Contraseña:";
             // 
-            // label6
+            // labelHuella
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(39, 562);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 21);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Huella Dactilar:";
+            this.labelHuella.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelHuella.AutoSize = true;
+            this.labelHuella.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHuella.Location = new System.Drawing.Point(39, 562);
+            this.labelHuella.Name = "labelHuella";
+            this.labelHuella.Size = new System.Drawing.Size(128, 21);
+            this.labelHuella.TabIndex = 5;
+            this.labelHuella.Text = "Huella Dactilar:";
             // 
             // huellaButton
             // 
@@ -287,16 +287,16 @@
             this.huellaButton.Text = "Tomar Huella";
             this.huellaButton.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // labelTipo
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label8.Location = new System.Drawing.Point(38, 483);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 21);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Tipo de Usuario:";
+            this.labelTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTipo.AutoSize = true;
+            this.labelTipo.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.labelTipo.Location = new System.Drawing.Point(38, 483);
+            this.labelTipo.Name = "labelTipo";
+            this.labelTipo.Size = new System.Drawing.Size(131, 21);
+            this.labelTipo.TabIndex = 14;
+            this.labelTipo.Text = "Tipo de Usuario:";
             // 
             // usuarioBox
             // 
@@ -377,9 +377,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarUsuario";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -390,29 +390,29 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox minimizar;
-        private System.Windows.Forms.PictureBox maximizar;
-        private System.Windows.Forms.PictureBox cerrar;
+        private System.Windows.Forms.PictureBox minimizarButton;
+        private System.Windows.Forms.PictureBox maximizarButton;
+        private System.Windows.Forms.PictureBox cerrarButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox correoField;
         private System.Windows.Forms.TextBox direccionField;
         private System.Windows.Forms.TextBox telefonoField;
         private System.Windows.Forms.TextBox nombreField;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox cedulaRUCField;
+        private System.Windows.Forms.Label labelCedula;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label labelTelefono;
+        private System.Windows.Forms.Label labelDireccion;
+        private System.Windows.Forms.Label labelCorreo;
+        private System.Windows.Forms.Label labelHuella;
+        private System.Windows.Forms.TextBox cedulaField;
         private System.Windows.Forms.Button huellaButton;
         private System.Windows.Forms.TextBox passwordField;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button registrarButton;
         private System.Windows.Forms.Button limpiarButton;
         private System.Windows.Forms.Button cancelarButton;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.ComboBox usuarioBox;
     }
 }

@@ -30,7 +30,7 @@ namespace sistema_de_facturacion.Proveedores
         }
         public void modificarF()
         {
-            cedulaRUCField.ReadOnly = true;
+            RUCField.ReadOnly = true;
             nombreField.ReadOnly = true;
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;
@@ -64,7 +64,7 @@ namespace sistema_de_facturacion.Proveedores
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaRUCField);
+            fieldList.Add(RUCField);
             fieldList.Add(nombreField);
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
@@ -132,7 +132,7 @@ namespace sistema_de_facturacion.Proveedores
 
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaRUCField);
+            fieldList.Add(RUCField);
             fieldList.Add(nombreField);
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
