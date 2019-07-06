@@ -106,6 +106,9 @@
             // 
             // dgvInventario
             // 
+            this.dgvInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(12, 119);
             this.dgvInventario.Name = "dgvInventario";
@@ -122,18 +125,19 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnGeneral, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 513);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 525);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(777, 86);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 86);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // btnGeneral
             // 
             this.btnGeneral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGeneral.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGeneral.Location = new System.Drawing.Point(158, 18);
+            this.btnGeneral.Location = new System.Drawing.Point(165, 18);
             this.btnGeneral.Name = "btnGeneral";
             this.btnGeneral.Size = new System.Drawing.Size(149, 50);
             this.btnGeneral.TabIndex = 1;
@@ -144,7 +148,7 @@
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(468, 18);
+            this.btnCancelar.Location = new System.Drawing.Point(485, 18);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(149, 50);
             this.btnCancelar.TabIndex = 2;
@@ -193,7 +197,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.lblCombo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboParametro, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(589, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;

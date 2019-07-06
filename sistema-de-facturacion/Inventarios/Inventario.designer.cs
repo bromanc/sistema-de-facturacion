@@ -130,7 +130,8 @@
             this.tableLayoutPanel1.Controls.Add(this.txtPrecioNeto, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtGanancia, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtUnidadVenta, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 56);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -140,7 +141,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 451);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 559);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // lblCodigo
@@ -148,7 +149,7 @@
             this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(80, 22);
+            this.lblCodigo.Location = new System.Drawing.Point(83, 30);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(65, 19);
             this.lblCodigo.TabIndex = 0;
@@ -159,7 +160,7 @@
             this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(64, 86);
+            this.lblDescripcion.Location = new System.Drawing.Point(68, 109);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(96, 19);
             this.lblDescripcion.TabIndex = 1;
@@ -170,7 +171,7 @@
             this.lblStock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(86, 150);
+            this.lblStock.Location = new System.Drawing.Point(89, 188);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(53, 19);
             this.lblStock.TabIndex = 2;
@@ -181,7 +182,7 @@
             this.lblPrecioNeto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrecioNeto.AutoSize = true;
             this.lblPrecioNeto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioNeto.Location = new System.Drawing.Point(65, 214);
+            this.lblPrecioNeto.Location = new System.Drawing.Point(69, 267);
             this.lblPrecioNeto.Name = "lblPrecioNeto";
             this.lblPrecioNeto.Size = new System.Drawing.Size(94, 19);
             this.lblPrecioNeto.TabIndex = 3;
@@ -192,7 +193,7 @@
             this.lblGanancia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGanancia.AutoSize = true;
             this.lblGanancia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGanancia.Location = new System.Drawing.Point(56, 278);
+            this.lblGanancia.Location = new System.Drawing.Point(60, 346);
             this.lblGanancia.Name = "lblGanancia";
             this.lblGanancia.Size = new System.Drawing.Size(112, 19);
             this.lblGanancia.TabIndex = 4;
@@ -203,7 +204,7 @@
             this.lblUnidadVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnidadVenta.AutoSize = true;
             this.lblUnidadVenta.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidadVenta.Location = new System.Drawing.Point(47, 342);
+            this.lblUnidadVenta.Location = new System.Drawing.Point(51, 425);
             this.lblUnidadVenta.Name = "lblUnidadVenta";
             this.lblUnidadVenta.Size = new System.Drawing.Size(130, 19);
             this.lblUnidadVenta.TabIndex = 5;
@@ -214,7 +215,7 @@
             this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(71, 408);
+            this.lblCategoria.Location = new System.Drawing.Point(75, 507);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(82, 19);
             this.lblCategoria.TabIndex = 6;
@@ -224,57 +225,57 @@
             // 
             this.comboCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboCategoria.FormattingEnabled = true;
-            this.comboCategoria.Location = new System.Drawing.Point(228, 407);
+            this.comboCategoria.Location = new System.Drawing.Point(235, 506);
             this.comboCategoria.Name = "comboCategoria";
-            this.comboCategoria.Size = new System.Drawing.Size(531, 21);
+            this.comboCategoria.Size = new System.Drawing.Size(546, 21);
             this.comboCategoria.TabIndex = 7;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCodigo.Location = new System.Drawing.Point(228, 22);
+            this.txtCodigo.Location = new System.Drawing.Point(235, 29);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(531, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(546, 20);
             this.txtCodigo.TabIndex = 8;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescripcion.Location = new System.Drawing.Point(228, 86);
+            this.txtDescripcion.Location = new System.Drawing.Point(235, 108);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(531, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(546, 20);
             this.txtDescripcion.TabIndex = 9;
             // 
             // txtStock
             // 
             this.txtStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStock.Location = new System.Drawing.Point(228, 150);
+            this.txtStock.Location = new System.Drawing.Point(235, 187);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(531, 20);
+            this.txtStock.Size = new System.Drawing.Size(546, 20);
             this.txtStock.TabIndex = 10;
             // 
             // txtPrecioNeto
             // 
             this.txtPrecioNeto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioNeto.Location = new System.Drawing.Point(228, 214);
+            this.txtPrecioNeto.Location = new System.Drawing.Point(235, 266);
             this.txtPrecioNeto.Name = "txtPrecioNeto";
-            this.txtPrecioNeto.Size = new System.Drawing.Size(531, 20);
+            this.txtPrecioNeto.Size = new System.Drawing.Size(546, 20);
             this.txtPrecioNeto.TabIndex = 11;
             // 
             // txtGanancia
             // 
             this.txtGanancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGanancia.Location = new System.Drawing.Point(228, 278);
+            this.txtGanancia.Location = new System.Drawing.Point(235, 345);
             this.txtGanancia.Name = "txtGanancia";
-            this.txtGanancia.Size = new System.Drawing.Size(531, 20);
+            this.txtGanancia.Size = new System.Drawing.Size(546, 20);
             this.txtGanancia.TabIndex = 12;
             // 
             // txtUnidadVenta
             // 
             this.txtUnidadVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUnidadVenta.Location = new System.Drawing.Point(228, 342);
+            this.txtUnidadVenta.Location = new System.Drawing.Point(235, 424);
             this.txtUnidadVenta.Name = "txtUnidadVenta";
-            this.txtUnidadVenta.Size = new System.Drawing.Size(531, 20);
+            this.txtUnidadVenta.Size = new System.Drawing.Size(546, 20);
             this.txtUnidadVenta.TabIndex = 13;
             // 
             // tableLayoutPanel2
@@ -286,18 +287,19 @@
             this.tableLayoutPanel2.Controls.Add(this.btnGuardar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnLimpiar, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCancelar, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 525);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 501);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(762, 72);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 108);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGuardar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(47, 11);
+            this.btnGuardar.Location = new System.Drawing.Point(50, 29);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(160, 50);
             this.btnGuardar.TabIndex = 0;
@@ -308,7 +310,7 @@
             // 
             this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLimpiar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(301, 11);
+            this.btnLimpiar.Location = new System.Drawing.Point(311, 29);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(160, 50);
             this.btnLimpiar.TabIndex = 1;
@@ -319,7 +321,7 @@
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(555, 11);
+            this.btnCancelar.Location = new System.Drawing.Point(573, 29);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(160, 50);
             this.btnCancelar.TabIndex = 2;

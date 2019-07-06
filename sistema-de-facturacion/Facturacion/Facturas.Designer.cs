@@ -108,6 +108,8 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.83769F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.78534F));
@@ -211,6 +213,9 @@
             // 
             // dgvListaCompra
             // 
+            this.dgvListaCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaCompra.Location = new System.Drawing.Point(13, 257);
             this.dgvListaCompra.Name = "dgvListaCompra";
@@ -228,11 +233,11 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirmar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnConfirmar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Location = new System.Drawing.Point(0, 423);
+            this.btnConfirmar.Location = new System.Drawing.Point(0, 435);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(273, 50);
+            this.btnConfirmar.Size = new System.Drawing.Size(279, 50);
             this.btnConfirmar.TabIndex = 0;
             this.btnConfirmar.Text = "Confirmar compra";
             this.btnConfirmar.UseVisualStyleBackColor = true;

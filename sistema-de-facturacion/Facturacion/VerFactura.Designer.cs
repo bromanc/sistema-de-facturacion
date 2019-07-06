@@ -98,6 +98,9 @@
             // 
             // dgvFacturas
             // 
+            this.dgvFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas.Location = new System.Drawing.Point(12, 56);
             this.dgvFacturas.Name = "dgvFacturas";
@@ -114,20 +117,21 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnGeneral, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 458);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 470);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(945, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 80);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // btnGeneral
             // 
             this.btnGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGeneral.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGeneral.Location = new System.Drawing.Point(192, 15);
+            this.btnGeneral.Location = new System.Drawing.Point(197, 15);
             this.btnGeneral.Name = "btnGeneral";
-            this.btnGeneral.Size = new System.Drawing.Size(183, 50);
+            this.btnGeneral.Size = new System.Drawing.Size(188, 50);
             this.btnGeneral.TabIndex = 0;
             this.btnGeneral.Text = "Ver Factura";
             this.btnGeneral.UseVisualStyleBackColor = true;
@@ -136,9 +140,9 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(570, 15);
+            this.btnCancelar.Location = new System.Drawing.Point(585, 15);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(183, 50);
+            this.btnCancelar.Size = new System.Drawing.Size(188, 50);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;

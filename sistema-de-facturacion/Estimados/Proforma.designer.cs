@@ -110,6 +110,8 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.83769F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.78534F));
@@ -122,7 +124,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 56);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -218,7 +220,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(512, 123);
+            this.label4.Location = new System.Drawing.Point(512, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(250, 19);
             this.label4.TabIndex = 8;
@@ -238,21 +240,26 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 435);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button3.Location = new System.Drawing.Point(0, 447);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(272, 50);
+            this.button3.Size = new System.Drawing.Size(279, 50);
             this.button3.TabIndex = 0;
             this.button3.Text = "Confirmar Proforma";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // calendarioProforma
             // 
-            this.calendarioProforma.Location = new System.Drawing.Point(23, 53);
+            this.calendarioProforma.Dock = System.Windows.Forms.DockStyle.Top;
+            this.calendarioProforma.Location = new System.Drawing.Point(0, 0);
             this.calendarioProforma.Name = "calendarioProforma";
             this.calendarioProforma.TabIndex = 9;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 257);
             this.dataGridView1.Name = "dataGridView1";
