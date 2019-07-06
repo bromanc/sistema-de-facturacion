@@ -38,6 +38,7 @@ namespace sistema_de_facturacion.Clientes
             huellaButton.Enabled = false;
             cedulaRUCField.ReadOnly = true;
             nombreField.ReadOnly = true;
+            apellidoField.ReadOnly = true;
             razonField.ReadOnly = true;
             natural.Enabled = false;
             juridica.Enabled = false;
@@ -104,7 +105,6 @@ namespace sistema_de_facturacion.Clientes
             {
                 fieldList.Add(razonField);
             }
-            fieldList.Add(nombreField);
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);

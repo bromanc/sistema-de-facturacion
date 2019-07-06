@@ -39,12 +39,12 @@
             this.clientesButton = new System.Windows.Forms.Button();
             this.facturacionButton = new System.Windows.Forms.Button();
             this.inventarioButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pctrLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctrMenu = new System.Windows.Forms.PictureBox();
             this.contenedor = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
@@ -80,12 +80,12 @@
             this.nuevoProductoButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctrLogo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctrMenu)).BeginInit();
             this.contenedor.SuspendLayout();
             this.submenuUsuarios.SuspendLayout();
             this.submenuEstadisticas.SuspendLayout();
@@ -107,7 +107,7 @@
             this.panelVertical.Controls.Add(this.clientesButton);
             this.panelVertical.Controls.Add(this.facturacionButton);
             this.panelVertical.Controls.Add(this.inventarioButton);
-            this.panelVertical.Controls.Add(this.pictureBox2);
+            this.panelVertical.Controls.Add(this.pctrLogo);
             this.panelVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelVertical.Location = new System.Drawing.Point(0, 0);
             this.panelVertical.Name = "panelVertical";
@@ -261,22 +261,22 @@
             this.inventarioButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InventarioButton_MouseDown);
             this.inventarioButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.InventarioButton_MouseMove);
             // 
-            // pictureBox2
+            // pctrLogo
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(274, 88);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pctrLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctrLogo.Image")));
+            this.pctrLogo.Location = new System.Drawing.Point(3, 3);
+            this.pctrLogo.Name = "pctrLogo";
+            this.pctrLogo.Size = new System.Drawing.Size(274, 88);
+            this.pctrLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctrLogo.TabIndex = 0;
+            this.pctrLogo.TabStop = false;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.minimizar);
             this.panel2.Controls.Add(this.maximizar);
             this.panel2.Controls.Add(this.cerrar);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pctrMenu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(280, 0);
             this.panel2.Name = "panel2";
@@ -323,17 +323,17 @@
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
-            // pictureBox1
+            // pctrMenu
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            this.pctrMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctrMenu.Image = ((System.Drawing.Image)(resources.GetObject("pctrMenu.Image")));
+            this.pctrMenu.Location = new System.Drawing.Point(6, 9);
+            this.pctrMenu.Name = "pctrMenu";
+            this.pctrMenu.Size = new System.Drawing.Size(35, 35);
+            this.pctrMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctrMenu.TabIndex = 0;
+            this.pctrMenu.TabStop = false;
+            this.pctrMenu.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // contenedor
             // 
@@ -876,12 +876,12 @@
             this.Name = "InterfazInicial";
             this.Text = "InterazInicial";
             this.panelVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctrLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctrMenu)).EndInit();
             this.contenedor.ResumeLayout(false);
             this.contenedor.PerformLayout();
             this.submenuUsuarios.ResumeLayout(false);
@@ -898,9 +898,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panelVertical;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pctrLogo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctrMenu;
         private System.Windows.Forms.Panel contenedor;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox maximizar;
