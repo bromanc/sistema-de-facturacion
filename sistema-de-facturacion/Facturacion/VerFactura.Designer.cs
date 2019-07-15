@@ -35,8 +35,8 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnVerFactura = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.verButton = new System.Windows.Forms.Button();
+            this.anularButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -112,8 +112,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.btnVerFactura, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.verButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.anularButton, 3, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 458);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -121,27 +121,28 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(945, 80);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // btnVerFactura
+            // verButton
             // 
-            this.btnVerFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerFactura.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerFactura.Location = new System.Drawing.Point(192, 15);
-            this.btnVerFactura.Name = "btnVerFactura";
-            this.btnVerFactura.Size = new System.Drawing.Size(183, 50);
-            this.btnVerFactura.TabIndex = 0;
-            this.btnVerFactura.Text = "Ver Factura";
-            this.btnVerFactura.UseVisualStyleBackColor = true;
+            this.verButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.verButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verButton.Location = new System.Drawing.Point(192, 15);
+            this.verButton.Name = "verButton";
+            this.verButton.Size = new System.Drawing.Size(183, 50);
+            this.verButton.TabIndex = 0;
+            this.verButton.Text = "Ver Factura";
+            this.verButton.UseVisualStyleBackColor = true;
+            this.verButton.Click += new System.EventHandler(this.VerButton_Click);
             // 
-            // button2
+            // anularButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(570, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Anular Factura";
-            this.button2.UseVisualStyleBackColor = true;
+            this.anularButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.anularButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anularButton.Location = new System.Drawing.Point(570, 15);
+            this.anularButton.Name = "anularButton";
+            this.anularButton.Size = new System.Drawing.Size(183, 50);
+            this.anularButton.TabIndex = 1;
+            this.anularButton.Text = "Anular Factura";
+            this.anularButton.UseVisualStyleBackColor = true;
             // 
             // VerFactura
             // 
@@ -153,6 +154,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerFactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerFactura";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
@@ -172,7 +174,7 @@
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.DataGridView dgvFacturas;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnVerFactura;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button verButton;
+        private System.Windows.Forms.Button anularButton;
     }
 }

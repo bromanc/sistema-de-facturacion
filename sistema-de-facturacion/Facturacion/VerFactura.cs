@@ -18,6 +18,7 @@ namespace sistema_de_facturacion.Facturacion
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            verButton.Visible = false;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -46,6 +47,11 @@ namespace sistema_de_facturacion.Facturacion
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void VerButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

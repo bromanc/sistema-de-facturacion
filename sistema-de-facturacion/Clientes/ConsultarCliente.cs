@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using sistema_de_facturacion.Modelo;
 
 namespace sistema_de_facturacion.Clientes
 {
@@ -15,21 +16,28 @@ namespace sistema_de_facturacion.Clientes
     {
         public Form inicial;
         public String tipo;
+        Cliente buscar = new Cliente();
         public ConsultarCliente(String type,Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
             this.tipo = type;
+            clientesGrid.Update();
+            clientesGrid.Refresh();
             if(type.Equals("consultar"))
             {
+                labelIngreso.Text = "Consulta de Clientes";
                 accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
             {
+                labelIngreso.Text = "Modificación de Clientes";
                 accionButton.Text = "Modificar datos del cliente";
             }
             if (type.Equals("eliminar"))
             {
+
+                labelIngreso.Text = "Eliminación de Clientes";
                 accionButton.Text = "Eliminar cliente seleccionado";
             }
         }
@@ -74,18 +82,65 @@ namespace sistema_de_facturacion.Clientes
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (clientesGrid.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            if (clientesGrid.SelectedRows.Count > 0 && tipo.Equals("modificar")) 
             {
-                //Obtengo el cliente y despliego ventana con información.
-                new AgregarCliente(true, this).Visible = true;
-
+                string cedula = clientesGrid.SelectedRows[0].Cells[0].Value.ToString();
+                new AgregarCliente(true, this,cedula).Visible = true;
                 this.Visible = false;
             }
-            if (clientesGrid.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            if (clientesGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) 
             {
-                //Elimino el cliente seleccionado.
-                MessageBox.Show("Cliente eliminado exitosamente.");
+                string cedula = clientesGrid.SelectedRows[0].Cells[0].Value.ToString();
+                string estado = clientesGrid.SelectedRows[0].Cells[9].Value.ToString();
+                MessageBox.Show(cedula+" ESTADO: "+estado);
+                
+                if (estado.Equals("1"))
+                {
+                    if (buscar.darDeBajaCliente(cedula)==0)
+                    {
+                        MessageBox.Show("Estado del cliente cambiado exitosamente.");
+                        clientesGrid.Update();
+                        clientesGrid.Refresh();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cambiar el estado del cliente.");
+                    }
+                }
+                else
+                {
+                    if (buscar.darDeAltaCliente(cedula) == 0)
+                    {
+                        MessageBox.Show("Estado del cliente cambiado exitosamente.");
+                        clientesGrid.Update();
+                        clientesGrid.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cambiar el estado del cliente.");
+                    }
+                }
+                
             }
+        }
+
+        private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (parametroBox.Text.Length > 0)
+            {
+                clientesGrid.DataSource = buscar.buscarCliente(parametroBox.SelectedIndex, parametroField.Text);
+            }
+            else
+            {
+                MessageBox.Show("Elija un parámetro.");
+                parametroField.Clear();
+            }
+        }
+
+        private void ParametroField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

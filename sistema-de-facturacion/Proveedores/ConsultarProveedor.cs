@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using sistema_de_facturacion.Modelo;
 
 namespace sistema_de_facturacion.Proveedores
 {
@@ -15,21 +16,27 @@ namespace sistema_de_facturacion.Proveedores
     {
         public Form inicial;
         public String tipo;
+        Proveedor buscar = new Proveedor();
         public ConsultarProveedor(String type, Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            proveedorGrid.Update();
+            proveedorGrid.Refresh();
             this.tipo = type;
             if (type.Equals("consultar"))
             {
+                labelIngreso.Text = "Consulta de Proveedores";
                 accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
             {
+                labelIngreso.Text = "Modificación de Proveedores";
                 accionButton.Text = "Modificar datos del proveedor";
             }
             if (type.Equals("eliminar"))
             {
+                labelIngreso.Text = "Eliminación de Proveedores";
                 accionButton.Text = "Eliminar proveedor seleccionado";
             }
         }
@@ -84,18 +91,67 @@ namespace sistema_de_facturacion.Proveedores
 
         private void AccionButton_Click(object sender, EventArgs e)
         {
-            if (proveedorGrid.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            if (proveedorGrid.SelectedRows.Count > 0 && tipo.Equals("modificar")) //Cambiar a 0.
             {
                 //Obtengo el proveedor y despliego ventana con información.
-                new AgregarProveedor(true, this).Visible = true;
+                string ruc = proveedorGrid.SelectedRows[0].Cells[0].Value.ToString();
+                new AgregarProveedor(true, this,ruc).Visible = true;
                 this.Visible = false;
             }
-            if (proveedorGrid.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            if (proveedorGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) //Cambiar a 0.
             {
-                //Elimino proveedor seleccionado.
-                
-                
+                string ruc = proveedorGrid.SelectedRows[0].Cells[0].Value.ToString();
+                string estado = proveedorGrid.SelectedRows[0].Cells[8].Value.ToString();
+                MessageBox.Show(ruc + " ESTADO: " + estado);
+
+                if (estado.Equals("1"))
+                {
+                    if (buscar.darDeBajaProveedor(ruc) == 0)
+                    {
+                        MessageBox.Show("Estado del proveedor cambiado exitosamente.");
+                        proveedorGrid.Update();
+                        proveedorGrid.Refresh();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cambiar el estado del proveedor.");
+                    }
+                }
+                else
+                {
+                    if (buscar.darDeAltaProveedor(ruc) == 0)
+                    {
+                        MessageBox.Show("Estado del proveedor cambiado exitosamente.");
+                        proveedorGrid.Update();
+                        proveedorGrid.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cambiar el estado del proveedor.");
+                    }
+                }
+
+
             }
+        }
+
+        private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (parametroBox.Text.Length > 0)
+            {
+                proveedorGrid.DataSource = buscar.buscarProveedor(parametroBox.SelectedIndex, parametroField.Text);
+            }
+            else
+            {
+                MessageBox.Show("Elija un parámetro.");
+                parametroField.Clear();
+            }
+        }
+
+        private void ParametroField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

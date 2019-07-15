@@ -35,9 +35,9 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.nuevoButton = new System.Windows.Forms.Button();
+            this.editarButton = new System.Windows.Forms.Button();
+            this.eliminarButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -111,9 +111,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.nuevoButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.editarButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.eliminarButton, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 513);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -121,40 +121,41 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(777, 86);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // button1
+            // nuevoButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(49, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Nuevo producto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.nuevoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nuevoButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevoButton.Location = new System.Drawing.Point(49, 18);
+            this.nuevoButton.Name = "nuevoButton";
+            this.nuevoButton.Size = new System.Drawing.Size(160, 50);
+            this.nuevoButton.TabIndex = 0;
+            this.nuevoButton.Text = "Nuevo producto";
+            this.nuevoButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // editarButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(307, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Editar producto";
-            this.button2.UseVisualStyleBackColor = true;
+            this.editarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editarButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarButton.Location = new System.Drawing.Point(308, 18);
+            this.editarButton.Name = "editarButton";
+            this.editarButton.Size = new System.Drawing.Size(160, 50);
+            this.editarButton.TabIndex = 1;
+            this.editarButton.Text = "Editar producto";
+            this.editarButton.UseVisualStyleBackColor = true;
+            this.editarButton.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // button3
+            // eliminarButton
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(566, 18);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Eliminar producto";
-            this.button3.UseVisualStyleBackColor = true;
+            this.eliminarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.eliminarButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarButton.Location = new System.Drawing.Point(567, 18);
+            this.eliminarButton.Name = "eliminarButton";
+            this.eliminarButton.Size = new System.Drawing.Size(160, 50);
+            this.eliminarButton.TabIndex = 2;
+            this.eliminarButton.Text = "Eliminar producto";
+            this.eliminarButton.UseVisualStyleBackColor = true;
             // 
-            // OperacionesInventario
+            // VerInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,7 +164,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "OperacionesInventario";
+            this.Name = "VerInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OperacionesInventario";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
@@ -183,8 +185,8 @@
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button nuevoButton;
+        private System.Windows.Forms.Button editarButton;
+        private System.Windows.Forms.Button eliminarButton;
     }
 }

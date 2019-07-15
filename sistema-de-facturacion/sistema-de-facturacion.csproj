@@ -112,6 +112,10 @@
     <Compile Include="Login\IngresoAlSistema.Designer.cs">
       <DependentUpon>IngresoAlSistema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\ConexionDB.cs" />
+    <Compile Include="Modelo\Proveedor.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Parámetros\Parametro.cs">
       <SubType>Form</SubType>
     </Compile>

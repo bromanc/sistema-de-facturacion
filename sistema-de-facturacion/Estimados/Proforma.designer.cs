@@ -150,6 +150,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(124, 9);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ShortcutsEnabled = false;
             this.textBox1.Size = new System.Drawing.Size(382, 20);
             this.textBox1.TabIndex = 1;
             // 
@@ -180,6 +181,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(124, 47);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ShortcutsEnabled = false;
             this.textBox2.Size = new System.Drawing.Size(382, 20);
             this.textBox2.TabIndex = 4;
             // 
@@ -199,6 +201,7 @@
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(124, 85);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ShortcutsEnabled = false;
             this.textBox3.Size = new System.Drawing.Size(382, 20);
             this.textBox3.TabIndex = 6;
             // 
@@ -270,6 +273,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Proforma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proforma";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();

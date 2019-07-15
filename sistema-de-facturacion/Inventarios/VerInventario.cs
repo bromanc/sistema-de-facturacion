@@ -18,6 +18,9 @@ namespace sistema_de_facturacion.Inventarios
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            nuevoButton.Visible = false;
+            editarButton.Visible = false;
+            
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -46,6 +49,11 @@ namespace sistema_de_facturacion.Inventarios
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

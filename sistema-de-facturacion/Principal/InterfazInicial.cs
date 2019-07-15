@@ -95,6 +95,7 @@ namespace sistema_de_facturacion.Principal
             submenuInventario.Visible = false;
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
+            submenuAyuda.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
         }
@@ -141,6 +142,8 @@ namespace sistema_de_facturacion.Principal
             submenuProveedores.Visible = false;
             submenuInventario.Visible = true;
             submenuEstimados.Visible = false;
+            submenuAyuda.Visible = false;
+
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
@@ -152,6 +155,7 @@ namespace sistema_de_facturacion.Principal
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
             submenuInventario.Visible = false;
+            submenuAyuda.Visible = false;
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = true;
             submenuUsuarios.Visible = false;
@@ -166,6 +170,7 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuAyuda.Visible = false;
             submenuEstadisticas.Visible = false;
         }
 
@@ -176,6 +181,7 @@ namespace sistema_de_facturacion.Principal
             submenuInventario.Visible = false;
             submenuEstimados.Visible = true;
             submenuFacturacion.Visible = false;
+            submenuAyuda.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
         }
@@ -184,6 +190,7 @@ namespace sistema_de_facturacion.Principal
         {
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
+            submenuAyuda.Visible = false;
             submenuInventario.Visible = false;
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
@@ -232,6 +239,7 @@ namespace sistema_de_facturacion.Principal
             submenuProveedores.Visible = false;
             submenuInventario.Visible = false;
             submenuEstimados.Visible = false;
+            submenuAyuda.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = true;
             submenuEstadisticas.Visible = false;
@@ -245,7 +253,9 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuAyuda.Visible = false;
             submenuEstadisticas.Visible = false;
+            submenuAdministracion.Visible = false;
             new Parametro(this).Visible = true;
             this.Visible = false;
         }
@@ -254,6 +264,7 @@ namespace sistema_de_facturacion.Principal
         {
             new AgregarUsuario(this).Visible = true;
             submenuUsuarios.Visible = false;
+            submenuAdministracion.Visible = false;
             this.Visible = false;
         }
 
@@ -261,6 +272,7 @@ namespace sistema_de_facturacion.Principal
         {
             new ConsultarUsuario("consultar",this).Visible = true;
             submenuUsuarios.Visible = false;
+            submenuAdministracion.Visible = false;
             this.Visible = false;
         }
 
@@ -268,6 +280,7 @@ namespace sistema_de_facturacion.Principal
         {
             new ConsultarUsuario("modificar", this).Visible = true;
             submenuUsuarios.Visible = false;
+            submenuAdministracion.Visible = false;
             this.Visible = false;
         }
 
@@ -275,6 +288,7 @@ namespace sistema_de_facturacion.Principal
         {
             new ConsultarUsuario("eliminar", this).Visible = true;
             submenuUsuarios.Visible = false;
+            submenuAdministracion.Visible = false;
             this.Visible = false;
         }
 
@@ -371,6 +385,8 @@ namespace sistema_de_facturacion.Principal
             submenuInventario.Visible = true;
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
+            submenuAyuda.Visible = false;
+            submenuAdministracion.Visible = false;
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
@@ -384,6 +400,8 @@ namespace sistema_de_facturacion.Principal
             submenuProveedores.Visible = false;
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
+            submenuAyuda.Visible = false;
+            submenuAdministracion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
         }
@@ -396,6 +414,8 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = true;
             submenuUsuarios.Visible = false;
+            submenuAdministracion.Visible = false;
+            submenuAyuda.Visible = false;
             submenuEstadisticas.Visible = false;
         }
 
@@ -407,6 +427,8 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuAyuda.Visible = false;
+            submenuAdministracion.Visible = false;
             submenuEstadisticas.Visible = false;
         }
 
@@ -414,11 +436,13 @@ namespace sistema_de_facturacion.Principal
         {
             submenuClientes.Visible = false;
             submenuProveedores.Visible = true;
+            submenuAyuda.Visible = false;
             submenuInventario.Visible = false;
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
+            submenuAdministracion.Visible = false;
         }
 
         private void EstimadosButton_MouseMove(object sender, MouseEventArgs e)
@@ -427,13 +451,17 @@ namespace sistema_de_facturacion.Principal
             submenuProveedores.Visible = false;
             submenuInventario.Visible = false;
             submenuEstimados.Visible = true;
+            submenuAyuda.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
+            submenuAdministracion.Visible = false;
+           
         }
 
         private void EstadisticasButton_MouseMove(object sender, MouseEventArgs e)
         {
+            submenuAdministracion.Visible = false;
             submenuClientes.Visible = false;
             submenuProveedores.Visible = false;
             submenuInventario.Visible = false;
@@ -441,6 +469,8 @@ namespace sistema_de_facturacion.Principal
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = true;
+            submenuAdministracion.Visible = false;
+            submenuAyuda.Visible = false;
         }
 
         private void Button7_MouseMove(object sender, MouseEventArgs e)
@@ -452,6 +482,8 @@ namespace sistema_de_facturacion.Principal
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = true;
             submenuEstadisticas.Visible = false;
+            submenuAyuda.Visible = false;
+
         }
 
         private void Contenedor_Click(object sender, EventArgs e)
@@ -462,6 +494,8 @@ namespace sistema_de_facturacion.Principal
             submenuEstimados.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
+            submenuAyuda.Visible = false;
+            submenuAdministracion.Visible = false;
             submenuEstadisticas.Visible = false;
         }
 
@@ -471,6 +505,7 @@ namespace sistema_de_facturacion.Principal
             submenuProveedores.Visible = false;
             submenuInventario.Visible = false;
             submenuEstimados.Visible = false;
+            submenuAyuda.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
@@ -482,6 +517,7 @@ namespace sistema_de_facturacion.Principal
             submenuProveedores.Visible = false;
             submenuInventario.Visible = false;
             submenuEstimados.Visible = false;
+            submenuAyuda.Visible = false;
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
@@ -506,11 +542,52 @@ namespace sistema_de_facturacion.Principal
             submenuFacturacion.Visible = false;
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
+            submenuAyuda.Visible = false;
+            submenuAdministracion.Visible = false;
         }
 
         private void LblFecha_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+            submenuAdministracion.Visible = true;
+            submenuAyuda.Visible = false;
+        }
+
+        private void AyudaButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            submenuAyuda.Visible = true;
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+            submenuAdministracion.Visible = false;
+        }
+
+        private void AyudaButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuAyuda.Visible = true;
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+            submenuAdministracion.Visible = false;
         }
     }
 }

@@ -37,6 +37,7 @@
             this.labelIVA = new System.Windows.Forms.Label();
             this.ivaField = new System.Windows.Forms.TextBox();
             this.regresarButton = new System.Windows.Forms.Button();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
@@ -47,6 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.labelIngreso);
             this.panel1.Controls.Add(this.minimizarButton);
             this.panel1.Controls.Add(this.maximizarButton);
             this.panel1.Controls.Add(this.cerrarButton);
@@ -129,6 +131,7 @@
             this.ivaField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ivaField.Location = new System.Drawing.Point(132, 34);
             this.ivaField.Name = "ivaField";
+            this.ivaField.ShortcutsEnabled = false;
             this.ivaField.Size = new System.Drawing.Size(665, 20);
             this.ivaField.TabIndex = 1;
             // 
@@ -143,6 +146,17 @@
             this.regresarButton.UseVisualStyleBackColor = true;
             this.regresarButton.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(325, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(178, 18);
+            this.labelIngreso.TabIndex = 8;
+            this.labelIngreso.Text = "Parámetros del Sistema";
+            // 
             // Parametro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +170,7 @@
             this.Text = "Parametro";
             this.Load += new System.EventHandler(this.Parametro_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).EndInit();
@@ -175,5 +190,6 @@
         private System.Windows.Forms.Label labelIVA;
         private System.Windows.Forms.TextBox ivaField;
         private System.Windows.Forms.Button regresarButton;
+        private System.Windows.Forms.Label labelIngreso;
     }
 }

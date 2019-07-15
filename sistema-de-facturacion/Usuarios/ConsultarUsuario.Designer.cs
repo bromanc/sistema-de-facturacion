@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizarButton = new System.Windows.Forms.PictureBox();
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
@@ -39,29 +40,24 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelElegir = new System.Windows.Forms.Label();
             this.parametroBox = new System.Windows.Forms.ComboBox();
-            this.usuariosGrid = new System.Windows.Forms.DataGridView();
-            this.cedulaPasaporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.accionButton = new System.Windows.Forms.Button();
             this.regresarButton = new System.Windows.Forms.Button();
+            this.usuarioGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosGrid)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.labelIngreso);
             this.panel1.Controls.Add(this.minimizarButton);
             this.panel1.Controls.Add(this.maximizarButton);
             this.panel1.Controls.Add(this.cerrarButton);
@@ -71,6 +67,18 @@
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 3;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
+            // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(325, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(151, 18);
+            this.labelIngreso.TabIndex = 8;
+            this.labelIngreso.Text = "Gestión de Clientes";
+            this.labelIngreso.Click += new System.EventHandler(this.LabelIngreso_Click);
             // 
             // minimizarButton
             // 
@@ -130,20 +138,24 @@
             // 
             // parametroField
             // 
-            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.parametroField.Location = new System.Drawing.Point(192, 21);
+            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroField.Location = new System.Drawing.Point(192, 39);
             this.parametroField.Name = "parametroField";
+            this.parametroField.ShortcutsEnabled = false;
             this.parametroField.Size = new System.Drawing.Size(391, 20);
             this.parametroField.TabIndex = 0;
+            this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
             // 
             // labelParametro
             // 
-            this.labelParametro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelParametro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelParametro.AutoSize = true;
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametro.Location = new System.Drawing.Point(6, 20);
+            this.labelParametro.Location = new System.Drawing.Point(3, 41);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(177, 21);
+            this.labelParametro.Size = new System.Drawing.Size(183, 21);
             this.labelParametro.TabIndex = 1;
             this.labelParametro.Text = "Ingrese el parámetro:";
             // 
@@ -176,70 +188,16 @@
             // parametroBox
             // 
             this.parametroBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
             "Nombre de usuario",
-            "Cédula/Pasaporte"});
+            "Rol",
+            "Correo Electrónico"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
             this.parametroBox.Size = new System.Drawing.Size(202, 21);
             this.parametroBox.TabIndex = 1;
-            // 
-            // usuariosGrid
-            // 
-            this.usuariosGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.usuariosGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.usuariosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.usuariosGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cedulaPasaporte,
-            this.NombreUsuario,
-            this.Telefono,
-            this.Direccion,
-            this.Correo,
-            this.tipoUsuario});
-            this.usuariosGrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usuariosGrid.Location = new System.Drawing.Point(0, 112);
-            this.usuariosGrid.Name = "usuariosGrid";
-            this.usuariosGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.usuariosGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.usuariosGrid.Size = new System.Drawing.Size(800, 403);
-            this.usuariosGrid.TabIndex = 14;
-            // 
-            // cedulaPasaporte
-            // 
-            this.cedulaPasaporte.HeaderText = "Cédula/Pasaporte";
-            this.cedulaPasaporte.Name = "cedulaPasaporte";
-            this.cedulaPasaporte.Width = 118;
-            // 
-            // NombreUsuario
-            // 
-            this.NombreUsuario.HeaderText = "Nombre de Usuario";
-            this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.Width = 123;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Número de teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 125;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.Width = 77;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo Electrónico";
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 119;
-            // 
-            // tipoUsuario
-            // 
-            this.tipoUsuario.HeaderText = "Tipo de Usuario";
-            this.tipoUsuario.Name = "tipoUsuario";
-            this.tipoUsuario.Width = 107;
             // 
             // tableLayoutPanel4
             // 
@@ -278,13 +236,27 @@
             this.regresarButton.UseVisualStyleBackColor = true;
             this.regresarButton.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // usuarioGrid
+            // 
+            this.usuarioGrid.AllowUserToAddRows = false;
+            this.usuarioGrid.AllowUserToDeleteRows = false;
+            this.usuarioGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usuarioGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usuarioGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usuarioGrid.Location = new System.Drawing.Point(0, 112);
+            this.usuarioGrid.Name = "usuarioGrid";
+            this.usuarioGrid.ReadOnly = true;
+            this.usuarioGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usuarioGrid.Size = new System.Drawing.Size(800, 409);
+            this.usuarioGrid.TabIndex = 16;
+            // 
             // ConsultarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 579);
+            this.Controls.Add(this.usuarioGrid);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.usuariosGrid);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -292,6 +264,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarUsuario";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).EndInit();
@@ -299,8 +272,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosGrid)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,15 +290,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelElegir;
         private System.Windows.Forms.ComboBox parametroBox;
-        private System.Windows.Forms.DataGridView usuariosGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button accionButton;
         private System.Windows.Forms.Button regresarButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaPasaporte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoUsuario;
+        private System.Windows.Forms.Label labelIngreso;
+        private System.Windows.Forms.DataGridView usuarioGrid;
     }
 }

@@ -126,6 +126,7 @@
             this.usuarioField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.usuarioField.Location = new System.Drawing.Point(117, 26);
             this.usuarioField.Name = "usuarioField";
+            this.usuarioField.ShortcutsEnabled = false;
             this.usuarioField.Size = new System.Drawing.Size(465, 20);
             this.usuarioField.TabIndex = 9;
             // 
@@ -135,6 +136,7 @@
             this.passwordField.Location = new System.Drawing.Point(117, 98);
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '*';
+            this.passwordField.ShortcutsEnabled = false;
             this.passwordField.Size = new System.Drawing.Size(465, 20);
             this.passwordField.TabIndex = 10;
             this.passwordField.TextChanged += new System.EventHandler(this.PasswordField_TextChanged);

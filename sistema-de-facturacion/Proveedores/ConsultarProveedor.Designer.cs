@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarProveedor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizarButton = new System.Windows.Forms.PictureBox();
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
@@ -39,31 +40,24 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelElegir = new System.Windows.Forms.Label();
             this.parametroBox = new System.Windows.Forms.ComboBox();
-            this.proveedorGrid = new System.Windows.Forms.DataGridView();
-            this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonaContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.accionButton = new System.Windows.Forms.Button();
             this.regresarButton = new System.Windows.Forms.Button();
+            this.proveedorGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorGrid)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.labelIngreso);
             this.panel1.Controls.Add(this.minimizarButton);
             this.panel1.Controls.Add(this.maximizarButton);
             this.panel1.Controls.Add(this.cerrarButton);
@@ -74,6 +68,17 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
+            // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(325, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(151, 18);
+            this.labelIngreso.TabIndex = 8;
+            this.labelIngreso.Text = "Gestión de Clientes";
             // 
             // minimizarButton
             // 
@@ -133,20 +138,25 @@
             // 
             // parametroField
             // 
-            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.parametroField.Location = new System.Drawing.Point(192, 21);
+            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroField.Location = new System.Drawing.Point(192, 39);
             this.parametroField.Name = "parametroField";
+            this.parametroField.ShortcutsEnabled = false;
             this.parametroField.Size = new System.Drawing.Size(391, 20);
             this.parametroField.TabIndex = 0;
+            this.parametroField.TextChanged += new System.EventHandler(this.ParametroField_TextChanged);
+            this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
             // 
             // labelParametro
             // 
-            this.labelParametro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelParametro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelParametro.AutoSize = true;
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametro.Location = new System.Drawing.Point(6, 20);
+            this.labelParametro.Location = new System.Drawing.Point(3, 41);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(177, 21);
+            this.labelParametro.Size = new System.Drawing.Size(183, 21);
             this.labelParametro.TabIndex = 1;
             this.labelParametro.Text = "Ingrese el parámetro:";
             // 
@@ -179,85 +189,21 @@
             // parametroBox
             // 
             this.parametroBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
-            "Nombre del cliente",
             "RUC",
-            "Nombre de la organización"});
+            "Nombre del proveedor",
+            "Teléfono",
+            "Dirección de sus instalaciones",
+            "Ciudad",
+            "Correo Electrónico",
+            "Persona de Contacto",
+            "Número de Persona de Contacto"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
             this.parametroBox.Size = new System.Drawing.Size(202, 21);
             this.parametroBox.TabIndex = 1;
-            // 
-            // proveedorGrid
-            // 
-            this.proveedorGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.proveedorGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.proveedorGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.proveedorGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RUC,
-            this.NombreProveedor,
-            this.Telefono,
-            this.Direccion,
-            this.Correo,
-            this.Ciudad,
-            this.PersonaContacto,
-            this.TelefonoContacto});
-            this.proveedorGrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.proveedorGrid.Location = new System.Drawing.Point(0, 112);
-            this.proveedorGrid.Name = "proveedorGrid";
-            this.proveedorGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.proveedorGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.proveedorGrid.Size = new System.Drawing.Size(800, 299);
-            this.proveedorGrid.TabIndex = 13;
-            // 
-            // RUC
-            // 
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            this.RUC.Width = 55;
-            // 
-            // NombreProveedor
-            // 
-            this.NombreProveedor.HeaderText = "Nombre del Proveedor";
-            this.NombreProveedor.Name = "NombreProveedor";
-            this.NombreProveedor.Width = 138;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Número de teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 125;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.Width = 77;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo Electrónico";
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 119;
-            // 
-            // Ciudad
-            // 
-            this.Ciudad.HeaderText = "Ciudad";
-            this.Ciudad.Name = "Ciudad";
-            this.Ciudad.Width = 65;
-            // 
-            // PersonaContacto
-            // 
-            this.PersonaContacto.HeaderText = "Persona de Contacto";
-            this.PersonaContacto.Name = "PersonaContacto";
-            this.PersonaContacto.Width = 132;
-            // 
-            // TelefonoContacto
-            // 
-            this.TelefonoContacto.HeaderText = "Teléfono de Persona de Contacto";
-            this.TelefonoContacto.Name = "TelefonoContacto";
-            this.TelefonoContacto.Width = 192;
             // 
             // tableLayoutPanel4
             // 
@@ -296,13 +242,27 @@
             this.regresarButton.UseVisualStyleBackColor = true;
             this.regresarButton.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // proveedorGrid
+            // 
+            this.proveedorGrid.AllowUserToAddRows = false;
+            this.proveedorGrid.AllowUserToDeleteRows = false;
+            this.proveedorGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.proveedorGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.proveedorGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.proveedorGrid.Location = new System.Drawing.Point(0, 112);
+            this.proveedorGrid.Name = "proveedorGrid";
+            this.proveedorGrid.ReadOnly = true;
+            this.proveedorGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.proveedorGrid.Size = new System.Drawing.Size(800, 313);
+            this.proveedorGrid.TabIndex = 15;
+            // 
             // ConsultarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 483);
-            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.proveedorGrid);
+            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -311,6 +271,7 @@
             this.Text = "ConsultarProveedor";
             this.Load += new System.EventHandler(this.ConsultarProveedor_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).EndInit();
@@ -318,8 +279,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorGrid)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,17 +297,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelElegir;
         private System.Windows.Forms.ComboBox parametroBox;
-        private System.Windows.Forms.DataGridView proveedorGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button regresarButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PersonaContacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoContacto;
         private System.Windows.Forms.Button accionButton;
+        private System.Windows.Forms.Label labelIngreso;
+        private System.Windows.Forms.DataGridView proveedorGrid;
     }
 }

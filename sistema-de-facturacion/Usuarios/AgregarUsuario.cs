@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using sistema_de_facturacion.Modelo;
 
 namespace sistema_de_facturacion.Usuarios
 {
@@ -32,10 +33,10 @@ namespace sistema_de_facturacion.Usuarios
         public void modificarF()
         {
             huellaButton.Enabled = false;
-            cedulaField.ReadOnly = true;
             nombreField.ReadOnly = true;
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;
+            labelIngreso.Text = "Modificación de Usuarios";
         }
         private void Cerrar_Click(object sender, EventArgs e)
         {
@@ -45,13 +46,11 @@ namespace sistema_de_facturacion.Usuarios
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaField);
+
             fieldList.Add(nombreField);
             fieldList.Add(passwordField);
-            fieldList.Add(telefonoField);
-            fieldList.Add(direccionField);
             fieldList.Add(correoField);
-            string selected = this.usuarioBox.GetItemText(this.usuarioBox.SelectedItem);
+            int selected = usuarioBox.SelectedIndex;
             Boolean lleno = false;
             if (modificar == false)
             {
@@ -59,9 +58,8 @@ namespace sistema_de_facturacion.Usuarios
                 //Registro usuario
                 foreach (TextBox singleItem in fieldList)
                 {
-                    if (selected.Equals(""))
+                    if (selected.Equals(null))
                     {
-                        
                         lleno = true;
                         break;
                     }
@@ -78,18 +76,31 @@ namespace sistema_de_facturacion.Usuarios
                 }
                 else
                 {
-                    MessageBox.Show("Usuario registrado exitosamente.");
-                    inicial.Visible = true;
-                    this.Close();
+                    Usuario user = new Usuario(nombreField.Text,passwordField.Text,correoField.Text,selected,"STRING HUELLA5");
+                    int hecho = user.agregarUsuario(user);
+                    if (hecho == 0)
+                    {
+                        MessageBox.Show("Usuario registrado exitosamente.");
+                        inicial.Visible = true;
+                        this.Close();
+                    }
+                    else if (hecho == -1)
+                    {
+                        MessageBox.Show("El usuario especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se produjo un error al registrar el usuario.");
+                    }
                 }
             }
             else
             {
                 //Guardo usuario modificado
-                
                 foreach (TextBox singleItem in fieldList)
                 {
-                    if (selected.Equals(""))
+                    if (selected.Equals(null))
                     {
                         lleno = true;
                         break;
@@ -142,15 +153,13 @@ namespace sistema_de_facturacion.Usuarios
 
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaField);
+
             fieldList.Add(nombreField);
             fieldList.Add(passwordField);
-            fieldList.Add(telefonoField);
-            fieldList.Add(direccionField);
             fieldList.Add(correoField);
             foreach (TextBox singleItem in fieldList)
             {
-                singleItem.Text = "";
+                singleItem.Clear();
             }
         }
 
@@ -158,6 +167,11 @@ namespace sistema_de_facturacion.Usuarios
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void LabelIngreso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

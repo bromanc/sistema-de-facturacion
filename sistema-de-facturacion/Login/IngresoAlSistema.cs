@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using sistema_de_facturacion.Principal;
 using System.Windows.Forms;
+using sistema_de_facturacion.Modelo;
 
 namespace sistema_de_facturacion.Login
 {
@@ -15,6 +16,7 @@ namespace sistema_de_facturacion.Login
     {
         public List<TextBox> fieldList = new List<TextBox>();
         public Form principal = new InterfazInicial();
+        Usuario verificar = new Usuario();
         public IngresoAlSistema()
         {
             InitializeComponent();
@@ -44,8 +46,13 @@ namespace sistema_de_facturacion.Login
             }
             else
             {
-                if (usuarioField.Text.Equals("JordyGarofalo") && passwordField.Text.Equals("surtiraderas"))
+                String[] datos = new String[3];
+                datos[0] = usuarioField.Text;
+                datos[1] = passwordField.Text;
+                datos[2] = "";
+                if (verificar.validarIngreso(datos,0)==1)
                 {
+                    //Aquí se le pasa el nombre de usuario a la interfaz principal para obtener el usuario y su rol.
                     principal.Visible = true;
                     this.Visible = false;
                 }
