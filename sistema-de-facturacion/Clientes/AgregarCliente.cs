@@ -308,5 +308,10 @@ namespace sistema_de_facturacion.Clientes
         {
 
         }
+
+        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

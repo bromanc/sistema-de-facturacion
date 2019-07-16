@@ -14,13 +14,29 @@ namespace sistema_de_facturacion.Inventarios
     public partial class VerInventario : Form
     {
         public Form inicial;
-        public VerInventario(Form interfazInicial)
+        public String tipo;
+        public VerInventario(String type, Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-            nuevoButton.Visible = false;
-            editarButton.Visible = false;
-            
+            this.tipo = type;
+            if (type.Equals("consultar"))
+            {
+                labelIngreso.Text = "Gestión de Productos";
+                accionButton.Visible = false;
+            }
+            if (type.Equals("modificar"))
+            {
+                labelIngreso.Text = "Modificación de Productos";
+                accionButton.Text = "Modificar datos del producto";
+            }
+            if (type.Equals("eliminar"))
+            {
+
+                labelIngreso.Text = "Eliminación de Productos";
+                accionButton.Text = "Eliminar producto seleccionado";
+            }
+
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -54,6 +70,35 @@ namespace sistema_de_facturacion.Inventarios
         private void Button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            inicial.Visible = true;
+            this.Close();
+        }
+
+        private void MaximizarButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void MinimizarButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void RegresarButton_Click(object sender, EventArgs e)
+        {
+            inicial.Visible = true;
+            this.Close();
         }
     }
 }

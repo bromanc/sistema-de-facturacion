@@ -85,6 +85,7 @@
             this.editarProductoButton = new System.Windows.Forms.Button();
             this.nuevoProductoButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.categoriaB = new System.Windows.Forms.Button();
             this.panelVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctrLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -380,9 +381,9 @@
             // 
             // contenedor
             // 
+            this.contenedor.Controls.Add(this.submenuAdministracion);
             this.contenedor.Controls.Add(this.submenuAyuda);
             this.contenedor.Controls.Add(this.submenuUsuarios);
-            this.contenedor.Controls.Add(this.submenuAdministracion);
             this.contenedor.Controls.Add(this.lblFecha);
             this.contenedor.Controls.Add(this.lblhora);
             this.contenedor.Controls.Add(this.submenuEstadisticas);
@@ -525,11 +526,12 @@
             // 
             // submenuAdministracion
             // 
+            this.submenuAdministracion.Controls.Add(this.categoriaB);
             this.submenuAdministracion.Controls.Add(this.button7);
             this.submenuAdministracion.Controls.Add(this.button8);
             this.submenuAdministracion.Location = new System.Drawing.Point(0, 429);
             this.submenuAdministracion.Name = "submenuAdministracion";
-            this.submenuAdministracion.Size = new System.Drawing.Size(273, 118);
+            this.submenuAdministracion.Size = new System.Drawing.Size(273, 178);
             this.submenuAdministracion.TabIndex = 31;
             this.submenuAdministracion.Visible = false;
             // 
@@ -961,6 +963,24 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
+            // categoriaB
+            // 
+            this.categoriaB.FlatAppearance.BorderSize = 0;
+            this.categoriaB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.categoriaB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.categoriaB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoriaB.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.categoriaB.Image = ((System.Drawing.Image)(resources.GetObject("categoriaB.Image")));
+            this.categoriaB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.categoriaB.Location = new System.Drawing.Point(1, 126);
+            this.categoriaB.Name = "categoriaB";
+            this.categoriaB.Size = new System.Drawing.Size(270, 52);
+            this.categoriaB.TabIndex = 33;
+            this.categoriaB.Text = "Categorías";
+            this.categoriaB.UseVisualStyleBackColor = true;
+            this.categoriaB.Click += new System.EventHandler(this.CategoriaB_Click);
+            this.categoriaB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CategoriaB_MouseMove);
+            // 
             // InterfazInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,5 +1071,6 @@
         private System.Windows.Forms.Panel submenuAyuda;
         private System.Windows.Forms.Button infoButton;
         private System.Windows.Forms.Button manuaButton;
+        private System.Windows.Forms.Button categoriaB;
     }
 }

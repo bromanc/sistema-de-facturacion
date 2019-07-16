@@ -16,6 +16,7 @@ using sistema_de_facturacion.Parámetros;
 using sistema_de_facturacion.Facturacion;
 using sistema_de_facturacion.Estimados;
 using sistema_de_facturacion.Inventarios;
+using sistema_de_facturacion.Categoría;
 //using sistema_de_facturacion.
 
 namespace sistema_de_facturacion.Principal
@@ -588,6 +589,25 @@ namespace sistema_de_facturacion.Principal
             submenuUsuarios.Visible = false;
             submenuEstadisticas.Visible = false;
             submenuAdministracion.Visible = false;
+        }
+
+        private void CategoriaB_MouseMove(object sender, MouseEventArgs e)
+        {
+            submenuClientes.Visible = false;
+            submenuProveedores.Visible = false;
+            submenuInventario.Visible = false;
+            submenuEstimados.Visible = false;
+            submenuAyuda.Visible = false;
+            submenuFacturacion.Visible = false;
+            submenuUsuarios.Visible = false;
+            submenuEstadisticas.Visible = false;
+        }
+
+        private void CategoriaB_Click(object sender, EventArgs e)
+        {
+            new ConsultarCategoria(this).Visible = true;
+            submenuAdministracion.Visible = false;
+            this.Visible = false;
         }
     }
 }

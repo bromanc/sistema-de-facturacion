@@ -38,15 +38,15 @@ namespace sistema_de_facturacion.Modelo
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                string[] datos = new string[3];
+                string[] datos = new string[4];
                 int rol = 99;
                 while (reader.Read())
                 {
                     datos[0] = reader.GetString(0).TrimEnd();
                     datos[1] = reader.GetString(1).TrimEnd();
                     datos[2] = reader.GetString(2).TrimEnd();
-                    datos[3] = reader.GetString(4).TrimEnd();
                     rol = reader.GetInt32(3);
+                    datos[3] = reader.GetString(4).TrimEnd();
                 }
                 conexion.cerrarConexion();
                 Usuario obtenido = new Usuario(datos[0], datos[1], datos[2], rol, datos[3]);
@@ -70,7 +70,7 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = contrasena;
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.correo;
             cmd.Parameters.Add("@rol", SqlDbType.VarChar).Value = usuario.rol;
-            cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = usuario.huella;
+            cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = usuario.huella+new Random().Next(0, 99);
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
             retval.Direction = ParameterDirection.ReturnValue;
             cmd.ExecuteNonQuery();

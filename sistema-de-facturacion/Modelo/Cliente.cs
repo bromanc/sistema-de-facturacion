@@ -57,7 +57,7 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@direccionDomiciliaria", SqlDbType.VarChar).Value = cliente.direccion;
             cmd.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = cliente.ciudad;
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = cliente.correo;
-            cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = cliente.huella;
+            cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = cliente.huella+ new Random().Next(0, 99);
             cmd.Parameters.Add("@tipo", SqlDbType.VarChar).Value = cliente.tipo;
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
             retval.Direction = ParameterDirection.ReturnValue;

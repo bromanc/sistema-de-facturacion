@@ -53,18 +53,18 @@
             this.telefonoField = new System.Windows.Forms.TextBox();
             this.labelRazon = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
-            this.labelHuella = new System.Windows.Forms.Label();
-            this.huellaButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ciudadField = new System.Windows.Forms.TextBox();
+            this.labelHuella = new System.Windows.Forms.Label();
+            this.huellaButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.inactivo = new System.Windows.Forms.RadioButton();
+            this.activo = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.registrarButton = new System.Windows.Forms.Button();
             this.limpiarButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.activo = new System.Windows.Forms.RadioButton();
-            this.inactivo = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
@@ -72,8 +72,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -387,6 +387,25 @@
             this.labelApellido.TabIndex = 14;
             this.labelApellido.Text = "Apellido(s):";
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(67, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 21);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Ciudad:";
+            // 
+            // ciudadField
+            // 
+            this.ciudadField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ciudadField.Location = new System.Drawing.Point(210, 342);
+            this.ciudadField.Name = "ciudadField";
+            this.ciudadField.Size = new System.Drawing.Size(587, 20);
+            this.ciudadField.TabIndex = 16;
+            // 
             // labelHuella
             // 
             this.labelHuella.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -408,24 +427,52 @@
             this.huellaButton.Text = "Tomar Huella";
             this.huellaButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label2
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 21);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Ciudad:";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(69, 389);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 21);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Estado:";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // ciudadField
+            // groupBox2
             // 
-            this.ciudadField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ciudadField.Location = new System.Drawing.Point(210, 342);
-            this.ciudadField.Name = "ciudadField";
-            this.ciudadField.Size = new System.Drawing.Size(587, 20);
-            this.ciudadField.TabIndex = 16;
+            this.groupBox2.Controls.Add(this.inactivo);
+            this.groupBox2.Controls.Add(this.activo);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(210, 379);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(587, 41);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            // 
+            // inactivo
+            // 
+            this.inactivo.AutoSize = true;
+            this.inactivo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inactivo.Location = new System.Drawing.Point(376, 14);
+            this.inactivo.Name = "inactivo";
+            this.inactivo.Size = new System.Drawing.Size(89, 24);
+            this.inactivo.TabIndex = 1;
+            this.inactivo.TabStop = true;
+            this.inactivo.Text = "Inactivo";
+            this.inactivo.UseVisualStyleBackColor = true;
+            // 
+            // activo
+            // 
+            this.activo.AutoSize = true;
+            this.activo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activo.Location = new System.Drawing.Point(86, 16);
+            this.activo.Name = "activo";
+            this.activo.Size = new System.Drawing.Size(76, 24);
+            this.activo.TabIndex = 0;
+            this.activo.TabStop = true;
+            this.activo.Text = "Activo";
+            this.activo.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -443,6 +490,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(800, 107);
             this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
             // 
             // registrarButton
             // 
@@ -480,53 +528,6 @@
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 389);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Estado:";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.inactivo);
-            this.groupBox2.Controls.Add(this.activo);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(210, 379);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(587, 41);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            // 
-            // activo
-            // 
-            this.activo.AutoSize = true;
-            this.activo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activo.Location = new System.Drawing.Point(86, 16);
-            this.activo.Name = "activo";
-            this.activo.Size = new System.Drawing.Size(76, 24);
-            this.activo.TabIndex = 0;
-            this.activo.TabStop = true;
-            this.activo.Text = "Activo";
-            this.activo.UseVisualStyleBackColor = true;
-            // 
-            // inactivo
-            // 
-            this.inactivo.AutoSize = true;
-            this.inactivo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inactivo.Location = new System.Drawing.Point(376, 14);
-            this.inactivo.Name = "inactivo";
-            this.inactivo.Size = new System.Drawing.Size(89, 24);
-            this.inactivo.TabIndex = 1;
-            this.inactivo.TabStop = true;
-            this.inactivo.Text = "Inactivo";
-            this.inactivo.UseVisualStyleBackColor = true;
-            // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,9 +552,9 @@
             this.tableLayoutPanel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

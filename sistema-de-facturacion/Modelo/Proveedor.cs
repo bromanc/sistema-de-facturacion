@@ -74,6 +74,17 @@ namespace sistema_de_facturacion.Modelo
             conexion.cerrarConexion();
             return dtProveedores;
         }
+        public DataTable todoProveedor()
+        {
+            DataTable dtProveedores = new DataTable();
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspObtenerTodosProveedores", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dtProveedores.Load(reader);
+            conexion.cerrarConexion();
+            return dtProveedores;
+        }
         public Proveedor obtenerProveedor(String cadena)
         {
             conexion.abrirConexion();
@@ -148,6 +159,21 @@ namespace sistema_de_facturacion.Modelo
             int retorno = (int)cmd.Parameters["@retorno"].Value;
             conexion.cerrarConexion();
             return retorno;
+        }
+        public String obtenerRUCProveedor(String cadena)
+        {
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspObtenerRUCProveedor", conexion.obtenerConexion());
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader reader = cmd.ExecuteReader();
+            String ruc = "";
+            while (reader.Read())
+            {
+                ruc = reader.GetString(0);
+            }
+            conexion.cerrarConexion();
+            return ruc;
         }
     }
 }
