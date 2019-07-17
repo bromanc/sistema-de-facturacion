@@ -146,6 +146,17 @@ namespace sistema_de_facturacion.Usuarios
 
         private void ParametroField_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            
+        }
+
+        private void ParametroField_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void ParametroField_KeyUp(object sender, KeyEventArgs e)
+        {
+
             if (parametroBox.Text.Length > 0)
             {
                 labelAdvertencia.Visible = false;

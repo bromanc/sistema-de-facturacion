@@ -58,5 +58,10 @@ namespace sistema_de_facturacion.Facturacion
             inicial.Visible = true;
             this.Visible = false;
         }
+
+        private void TableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

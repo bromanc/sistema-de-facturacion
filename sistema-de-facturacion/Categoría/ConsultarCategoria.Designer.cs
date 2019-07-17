@@ -139,6 +139,7 @@
             this.parametroField.SizeChanged += new System.EventHandler(this.ParametroField_SizeChanged);
             this.parametroField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyDown);
             this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
+            this.parametroField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyUp);
             this.parametroField.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.ParametroField_PreviewKeyDown);
             // 
             // labelParametro

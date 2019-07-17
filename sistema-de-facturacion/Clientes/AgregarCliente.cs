@@ -313,5 +313,10 @@ namespace sistema_de_facturacion.Clientes
         {
 
         }
+
+        private void CedulaRUCField_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

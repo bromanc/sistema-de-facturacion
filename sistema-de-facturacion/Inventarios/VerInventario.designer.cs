@@ -145,6 +145,7 @@
             this.parametroField.Size = new System.Drawing.Size(427, 20);
             this.parametroField.TabIndex = 0;
             this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
+            this.parametroField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyUp);
             // 
             // labelParametro
             // 

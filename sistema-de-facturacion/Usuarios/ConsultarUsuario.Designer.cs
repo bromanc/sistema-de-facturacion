@@ -39,22 +39,22 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelElegir = new System.Windows.Forms.Label();
             this.parametroBox = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.parametroField = new System.Windows.Forms.TextBox();
+            this.labelAdvertencia = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.accionButton = new System.Windows.Forms.Button();
             this.regresarButton = new System.Windows.Forms.Button();
             this.usuarioGrid = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.parametroField = new System.Windows.Forms.TextBox();
-            this.labelAdvertencia = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioGrid)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -192,6 +192,47 @@
             this.parametroBox.Size = new System.Drawing.Size(202, 21);
             this.parametroBox.TabIndex = 1;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.parametroField, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelAdvertencia, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(192, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(391, 56);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // parametroField
+            // 
+            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroField.Location = new System.Drawing.Point(3, 33);
+            this.parametroField.Name = "parametroField";
+            this.parametroField.ShortcutsEnabled = false;
+            this.parametroField.Size = new System.Drawing.Size(385, 20);
+            this.parametroField.TabIndex = 1;
+            this.parametroField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyDown);
+            this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress_1);
+            this.parametroField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyUp);
+            // 
+            // labelAdvertencia
+            // 
+            this.labelAdvertencia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelAdvertencia.AutoSize = true;
+            this.labelAdvertencia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.labelAdvertencia.Location = new System.Drawing.Point(56, 3);
+            this.labelAdvertencia.Name = "labelAdvertencia";
+            this.labelAdvertencia.Size = new System.Drawing.Size(279, 21);
+            this.labelAdvertencia.TabIndex = 2;
+            this.labelAdvertencia.Text = "Debe elegir un parámetro primero!";
+            this.labelAdvertencia.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -243,45 +284,6 @@
             this.usuarioGrid.Size = new System.Drawing.Size(800, 409);
             this.usuarioGrid.TabIndex = 16;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.parametroField, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.labelAdvertencia, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(192, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(391, 56);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // parametroField
-            // 
-            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.parametroField.Location = new System.Drawing.Point(3, 33);
-            this.parametroField.Name = "parametroField";
-            this.parametroField.ShortcutsEnabled = false;
-            this.parametroField.Size = new System.Drawing.Size(385, 20);
-            this.parametroField.TabIndex = 1;
-            this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress_1);
-            // 
-            // labelAdvertencia
-            // 
-            this.labelAdvertencia.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelAdvertencia.AutoSize = true;
-            this.labelAdvertencia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdvertencia.ForeColor = System.Drawing.Color.Red;
-            this.labelAdvertencia.Location = new System.Drawing.Point(56, 3);
-            this.labelAdvertencia.Name = "labelAdvertencia";
-            this.labelAdvertencia.Size = new System.Drawing.Size(279, 21);
-            this.labelAdvertencia.TabIndex = 2;
-            this.labelAdvertencia.Text = "Debe elegir un parámetro primero!";
-            this.labelAdvertencia.Click += new System.EventHandler(this.Label1_Click);
-            // 
             // ConsultarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,10 +306,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioGrid)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioGrid)).EndInit();
             this.ResumeLayout(false);
 
         }

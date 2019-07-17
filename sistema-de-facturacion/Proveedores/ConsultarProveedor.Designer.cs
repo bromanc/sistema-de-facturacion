@@ -147,6 +147,7 @@
             this.parametroField.TabIndex = 0;
             this.parametroField.TextChanged += new System.EventHandler(this.ParametroField_TextChanged);
             this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
+            this.parametroField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyUp);
             // 
             // labelParametro
             // 

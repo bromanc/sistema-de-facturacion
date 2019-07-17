@@ -104,6 +104,11 @@ namespace sistema_de_facturacion.Inventarios
 
         private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+        }
+
+        private void ParametroField_KeyUp(object sender, KeyEventArgs e)
+        {
             if (parametroBox.Text.Length > 0)
             {
                 productosGrid.DataSource = new Producto().buscarProducto(parametroBox.SelectedIndex, parametroField.Text);

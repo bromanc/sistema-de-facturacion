@@ -138,6 +138,16 @@ namespace sistema_de_facturacion.Proveedores
 
         private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+        }
+
+        private void ParametroField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParametroField_KeyUp(object sender, KeyEventArgs e)
+        {
             if (parametroBox.Text.Length > 0)
             {
                 proveedorGrid.DataSource = buscar.buscarProveedor(parametroBox.SelectedIndex, parametroField.Text);
@@ -147,11 +157,6 @@ namespace sistema_de_facturacion.Proveedores
                 MessageBox.Show("Elija un parámetro.");
                 parametroField.Clear();
             }
-        }
-
-        private void ParametroField_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

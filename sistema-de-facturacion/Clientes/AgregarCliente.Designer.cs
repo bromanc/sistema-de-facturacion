@@ -202,6 +202,7 @@
             this.cedulaRUCField.ShortcutsEnabled = false;
             this.cedulaRUCField.Size = new System.Drawing.Size(587, 20);
             this.cedulaRUCField.TabIndex = 6;
+            this.cedulaRUCField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaRUCField_KeyDown);
             // 
             // labelNombre
             // 

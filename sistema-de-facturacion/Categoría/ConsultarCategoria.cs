@@ -63,16 +63,7 @@ namespace sistema_de_facturacion.Categoría
 
         private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (new Validacion().IsNaturalNumber(parametroField))
-            {
-                MessageBox.Show("No se permiten caracteres especiales");
-                e.Handled = true;
-                parametroField.Clear();
-            }
-            else
-            {
-                categoriasGrid.DataSource = buscar.buscarCategoria(parametroField.Text.TrimEnd());
-            }
+            
         }
         public bool IsNaturalNumber(String cadena)
         {
@@ -93,6 +84,20 @@ namespace sistema_de_facturacion.Categoría
         private void ParametroField_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             
+        }
+
+        private void ParametroField_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (new Validacion().IsNaturalNumber(parametroField))
+            {
+                MessageBox.Show("No se permiten caracteres especiales");
+                e.Handled = true;
+                parametroField.Clear();
+            }
+            else
+            {
+                categoriasGrid.DataSource = buscar.buscarCategoria(parametroField.Text.TrimEnd());
+            }
         }
     }
 }
