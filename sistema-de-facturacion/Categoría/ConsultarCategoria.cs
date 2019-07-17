@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace sistema_de_facturacion.Categoría
         public Form inicial;
         String tipo;
         Categoria buscar = new Categoria();
+        
+
         public ConsultarCategoria(Form interfazInicial)
         {
             InitializeComponent();
@@ -30,9 +33,10 @@ namespace sistema_de_facturacion.Categoría
 
         private void AgregarB_Click(object sender, EventArgs e)
         {
-            new AgregarCategoria(this).Visible = true;
+            new AgregarCategoria(inicial).Visible = true;
             this.Visible = false;
         }
+       
 
         private void CancelarB_Click(object sender, EventArgs e)
         {
@@ -46,7 +50,7 @@ namespace sistema_de_facturacion.Categoría
             {
                 string nombre = categoriasGrid.SelectedRows[0].Cells[1].Value.ToString();
                 Categoria obtenida = buscar.obtenerCategoria(nombre);
-                new AgregarCategoria(true, this, obtenida).Visible = true;
+                new AgregarCategoria(true, inicial, obtenida).Visible = true;
                 this.Visible = false;
             }
         }
@@ -59,7 +63,36 @@ namespace sistema_de_facturacion.Categoría
 
         private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            categoriasGrid.DataSource = buscar.buscarCategoria(parametroField.Text.TrimEnd());
+            if (new Validacion().IsNaturalNumber(parametroField))
+            {
+                MessageBox.Show("No se permiten caracteres especiales");
+                e.Handled = true;
+                parametroField.Clear();
+            }
+            else
+            {
+                categoriasGrid.DataSource = buscar.buscarCategoria(parametroField.Text.TrimEnd());
+            }
+        }
+        public bool IsNaturalNumber(String cadena)
+        {
+            Regex objNaturalPattern = new Regex("[$/&+,':;=?@#|]");
+            return objNaturalPattern.IsMatch(cadena);
+        }
+
+        private void ParametroField_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void ParametroField_SizeChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ParametroField_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            
         }
     }
 }

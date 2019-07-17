@@ -136,7 +136,10 @@
             this.parametroField.ShortcutsEnabled = false;
             this.parametroField.Size = new System.Drawing.Size(536, 20);
             this.parametroField.TabIndex = 0;
+            this.parametroField.SizeChanged += new System.EventHandler(this.ParametroField_SizeChanged);
+            this.parametroField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ParametroField_KeyDown);
             this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
+            this.parametroField.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.ParametroField_PreviewKeyDown);
             // 
             // labelParametro
             // 
@@ -223,6 +226,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "ConsultarCategoria";
             this.Text = "ConsultarCategoria";
             this.panel1.ResumeLayout(false);

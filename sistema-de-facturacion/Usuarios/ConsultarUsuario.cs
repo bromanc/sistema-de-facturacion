@@ -56,7 +56,7 @@ namespace sistema_de_facturacion.Usuarios
                 //Obtengo el usuario y despliego ventana con información.
                 string usuario = usuarioGrid.SelectedRows[0].Cells[0].Value.ToString();
                 Usuario rol = buscar.obtenerUsuario(usuario);
-                new AgregarUsuario(rol,true, this).Visible = true;
+                new AgregarUsuario(rol,true, inicial).Visible = true;
 
                 this.Visible = false;
             }

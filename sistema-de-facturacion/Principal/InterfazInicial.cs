@@ -653,5 +653,12 @@ namespace sistema_de_facturacion.Principal
             this.Visible = false;
             submenuAyuda.Visible = false;
         }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+           
+            String info = "SOCHEF\nVersión 0\nSoftware Development Laboratories";
+            MessageBox.Show(info);
+        }
     }
 }

@@ -139,6 +139,7 @@
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Proveedor.cs" />
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Validacion.cs" />
     <Compile Include="Parámetros\Parametro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\VerFactura.resx">
       <DependentUpon>VerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventarios\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
