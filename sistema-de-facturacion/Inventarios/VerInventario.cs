@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using sistema_de_facturacion.Modelo;
 
 namespace sistema_de_facturacion.Inventarios
 {
@@ -99,6 +100,19 @@ namespace sistema_de_facturacion.Inventarios
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (parametroBox.Text.Length > 0)
+            {
+                productosGrid.DataSource = new Producto().buscarProducto(parametroBox.SelectedIndex, parametroField.Text);
+            }
+            else
+            {
+                MessageBox.Show("Elija un parámetro.");
+                parametroField.Clear();
+            }
         }
     }
 }

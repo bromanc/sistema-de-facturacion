@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace sistema_de_facturacion.Modelo
 {
-    class Categoria
+    public class Categoria
     {
         public String nombre { get; set; }
         ConexionDB conexion = new ConexionDB();
@@ -89,6 +89,34 @@ namespace sistema_de_facturacion.Modelo
             }
             conexion.cerrarConexion();
             return id;
+        }
+        public DataTable buscarCategoria(String cadena)
+        {
+            DataTable dtCategorias = new DataTable();
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspBuscarCategoria", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dtCategorias.Load(reader);
+            conexion.cerrarConexion();
+            return dtCategorias;
+        }
+        public int modificarCategoria(Categoria antigua, Categoria categoria)
+        {
+            
+            int id = categoria.obtenerIDCategoria(antigua.nombre);
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspModificarCategoria", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = categoria.nombre;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
         }
     }
 }

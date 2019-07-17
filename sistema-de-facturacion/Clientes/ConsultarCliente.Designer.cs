@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 50);
+            this.panel1.Size = new System.Drawing.Size(874, 50);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             // 
@@ -73,7 +73,7 @@
             this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelIngreso.AutoSize = true;
             this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngreso.Location = new System.Drawing.Point(330, 16);
+            this.labelIngreso.Location = new System.Drawing.Point(367, 16);
             this.labelIngreso.Name = "labelIngreso";
             this.labelIngreso.Size = new System.Drawing.Size(151, 18);
             this.labelIngreso.TabIndex = 7;
@@ -84,7 +84,7 @@
             this.minimizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizarButton.Image")));
-            this.minimizarButton.Location = new System.Drawing.Point(703, 12);
+            this.minimizarButton.Location = new System.Drawing.Point(777, 12);
             this.minimizarButton.Name = "minimizarButton";
             this.minimizarButton.Size = new System.Drawing.Size(24, 24);
             this.minimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,7 +97,7 @@
             this.maximizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.maximizarButton.Image = ((System.Drawing.Image)(resources.GetObject("maximizarButton.Image")));
-            this.maximizarButton.Location = new System.Drawing.Point(733, 12);
+            this.maximizarButton.Location = new System.Drawing.Point(807, 12);
             this.maximizarButton.Name = "maximizarButton";
             this.maximizarButton.Size = new System.Drawing.Size(24, 24);
             this.maximizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,7 +110,7 @@
             this.cerrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarButton.Image")));
-            this.cerrarButton.Location = new System.Drawing.Point(763, 12);
+            this.cerrarButton.Location = new System.Drawing.Point(837, 12);
             this.cerrarButton.Name = "cerrarButton";
             this.cerrarButton.Size = new System.Drawing.Size(24, 24);
             this.cerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -132,17 +132,17 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 62);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(874, 62);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // parametroField
             // 
             this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.parametroField.Location = new System.Drawing.Point(192, 39);
+            this.parametroField.Location = new System.Drawing.Point(209, 39);
             this.parametroField.Name = "parametroField";
             this.parametroField.ShortcutsEnabled = false;
-            this.parametroField.Size = new System.Drawing.Size(391, 20);
+            this.parametroField.Size = new System.Drawing.Size(427, 20);
             this.parametroField.TabIndex = 0;
             this.parametroField.TextChanged += new System.EventHandler(this.ParametroField_TextChanged);
             this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
@@ -154,7 +154,7 @@
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelParametro.Location = new System.Drawing.Point(3, 41);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(183, 21);
+            this.labelParametro.Size = new System.Drawing.Size(200, 21);
             this.labelParametro.TabIndex = 1;
             this.labelParametro.Text = "Ingrese el parámetro:";
             // 
@@ -165,12 +165,12 @@
             this.tableLayoutPanel2.Controls.Add(this.labelElegir, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.parametroBox, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(589, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(642, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(208, 56);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(229, 56);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // labelElegir
@@ -178,7 +178,7 @@
             this.labelElegir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelElegir.AutoSize = true;
             this.labelElegir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelElegir.Location = new System.Drawing.Point(23, 0);
+            this.labelElegir.Location = new System.Drawing.Point(34, 0);
             this.labelElegir.Name = "labelElegir";
             this.labelElegir.Size = new System.Drawing.Size(161, 28);
             this.labelElegir.TabIndex = 0;
@@ -200,7 +200,7 @@
             "Huella"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
-            this.parametroBox.Size = new System.Drawing.Size(202, 21);
+            this.parametroBox.Size = new System.Drawing.Size(223, 21);
             this.parametroBox.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -215,13 +215,13 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(800, 58);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(874, 58);
             this.tableLayoutPanel4.TabIndex = 13;
             // 
             // accionButton
             // 
             this.accionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.accionButton.Location = new System.Drawing.Point(132, 3);
+            this.accionButton.Location = new System.Drawing.Point(151, 3);
             this.accionButton.Name = "accionButton";
             this.accionButton.Size = new System.Drawing.Size(135, 52);
             this.accionButton.TabIndex = 2;
@@ -232,7 +232,7 @@
             // regresarButton
             // 
             this.regresarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.regresarButton.Location = new System.Drawing.Point(532, 3);
+            this.regresarButton.Location = new System.Drawing.Point(588, 3);
             this.regresarButton.Name = "regresarButton";
             this.regresarButton.Size = new System.Drawing.Size(135, 52);
             this.regresarButton.TabIndex = 1;
@@ -251,14 +251,14 @@
             this.clientesGrid.Name = "clientesGrid";
             this.clientesGrid.ReadOnly = true;
             this.clientesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientesGrid.Size = new System.Drawing.Size(800, 305);
+            this.clientesGrid.Size = new System.Drawing.Size(874, 305);
             this.clientesGrid.TabIndex = 14;
             // 
             // ConsultarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.ClientSize = new System.Drawing.Size(874, 475);
             this.Controls.Add(this.clientesGrid);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel1);

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Windows.Forms;
+using System.Configuration;
 
 namespace sistema_de_facturacion.Modelo
 {
-    class Usuario
+    public class Usuario
     {
         public String usuario { get; set; }
         public String contrasena { get; set; }
@@ -97,9 +99,10 @@ namespace sistema_de_facturacion.Modelo
             conexion.abrirConexion();
             SqlCommand cmd = new SqlCommand("uspModificarUsuario", conexion.obtenerConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario;
-            cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = usuario.contrasena;
-            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.correo;
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario.TrimEnd();
+            String contrasena = md5_string(usuario.contrasena.TrimEnd());
+            cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = contrasena;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.correo.TrimEnd();
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
             retval.Direction = ParameterDirection.ReturnValue;
             cmd.ExecuteNonQuery();
@@ -152,8 +155,8 @@ namespace sistema_de_facturacion.Modelo
             conexion.abrirConexion();
             SqlCommand cmd = new SqlCommand("uspLogeo", conexion.obtenerConexion());
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@usera", SqlDbType.VarChar).Value = usuario[0];
-            String contrasena = md5_string(usuario[1]);
+            cmd.Parameters.Add("@usera", SqlDbType.VarChar).Value = usuario[0].TrimEnd();
+            String contrasena = md5_string(usuario[1].TrimEnd());
             cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = contrasena;
             cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = usuario[2];
             cmd.Parameters.Add("@decision", SqlDbType.VarChar).Value = decision;

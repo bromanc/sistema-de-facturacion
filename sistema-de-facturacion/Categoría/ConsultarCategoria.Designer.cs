@@ -136,17 +136,18 @@
             this.parametroField.ShortcutsEnabled = false;
             this.parametroField.Size = new System.Drawing.Size(536, 20);
             this.parametroField.TabIndex = 0;
+            this.parametroField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParametroField_KeyPress);
             // 
             // labelParametro
             // 
             this.labelParametro.AutoSize = true;
             this.labelParametro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametro.Location = new System.Drawing.Point(3, 41);
+            this.labelParametro.Location = new System.Drawing.Point(3, 20);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(252, 21);
+            this.labelParametro.Size = new System.Drawing.Size(252, 42);
             this.labelParametro.TabIndex = 1;
-            this.labelParametro.Text = "Ingrese el parámetro:";
+            this.labelParametro.Text = "Ingrese el nombre de la cateogoría:";
             // 
             // tableLayoutPanel2
             // 

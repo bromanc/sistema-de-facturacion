@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using sistema_de_facturacion.Modelo;
+using System.Threading;
 
 namespace sistema_de_facturacion.Usuarios
 {
@@ -17,11 +18,19 @@ namespace sistema_de_facturacion.Usuarios
         public Form inicial;
         public String tipo;
         Usuario buscar = new Usuario();
+       public ConsultarUsuario()
+        {
+
+        }
         public ConsultarUsuario(String type, Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
             this.tipo = type;
+            usuarioGrid.Update();
+            usuarioGrid.Refresh();
+            labelAdvertencia.Visible = false;
+            
             if (type.Equals("consultar"))
             {
                 labelIngreso.Text = "Consulta de Usuarios";
@@ -38,17 +47,20 @@ namespace sistema_de_facturacion.Usuarios
                 accionButton.Text = "Eliminar usuario seleccionado";
             }
         }
+        
 
         private void AccionV_Click(object sender, EventArgs e)
         {
-            if (usuarioGrid.SelectedRows.Count > -1 && tipo.Equals("modificar")) //Cambiar a 0.
+            if (usuarioGrid.SelectedRows.Count > 0 && tipo.Equals("modificar")) //Cambiar a 0.
             {
                 //Obtengo el usuario y despliego ventana con información.
-                new AgregarUsuario(true, this).Visible = true;
+                string usuario = usuarioGrid.SelectedRows[0].Cells[0].Value.ToString();
+                Usuario rol = buscar.obtenerUsuario(usuario);
+                new AgregarUsuario(rol,true, this).Visible = true;
 
                 this.Visible = false;
             }
-            if (usuarioGrid.SelectedRows.Count > -1 && tipo.Equals("eliminar")) //Cambiar a 0.
+            if (usuarioGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) //Cambiar a 0.
             {
                 //Elimino el usuario seleccionado.
                 string usuario = usuarioGrid.SelectedRows[0].Cells[0].Value.ToString();
@@ -112,11 +124,36 @@ namespace sistema_de_facturacion.Usuarios
         {
             if (parametroBox.Text.Length > 0)
             {
+                labelAdvertencia.Visible = false;
                 usuarioGrid.DataSource = buscar.buscarUsuario(parametroBox.SelectedIndex, parametroField.Text);
             }
             else
             {
-                MessageBox.Show("Elija un parámetro.");
+                labelAdvertencia.Visible = true;
+                parametroField.Clear();
+            }
+        }
+
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParametroField_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (parametroBox.Text.Length > 0)
+            {
+                labelAdvertencia.Visible = false;
+                usuarioGrid.DataSource = buscar.buscarUsuario(parametroBox.SelectedIndex, parametroField.Text);
+            }
+            else
+            {
+                labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
         }

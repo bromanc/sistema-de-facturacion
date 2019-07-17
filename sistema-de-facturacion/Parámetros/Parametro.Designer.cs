@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parametro));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizarButton = new System.Windows.Forms.PictureBox();
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
@@ -37,7 +38,7 @@
             this.labelIVA = new System.Windows.Forms.Label();
             this.ivaField = new System.Windows.Forms.TextBox();
             this.regresarButton = new System.Windows.Forms.Button();
-            this.labelIngreso = new System.Windows.Forms.Label();
+            this.guardarB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
@@ -58,6 +59,17 @@
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
+            // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(325, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(178, 18);
+            this.labelIngreso.TabIndex = 8;
+            this.labelIngreso.Text = "Parámetros del Sistema";
             // 
             // minimizarButton
             // 
@@ -105,7 +117,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.875F));
             this.tableLayoutPanel1.Controls.Add(this.labelIVA, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.ivaField, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.regresarButton, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.regresarButton, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.guardarB, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -138,7 +151,7 @@
             // regresarButton
             // 
             this.regresarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.regresarButton.Location = new System.Drawing.Point(427, 93);
+            this.regresarButton.Location = new System.Drawing.Point(27, 93);
             this.regresarButton.Name = "regresarButton";
             this.regresarButton.Size = new System.Drawing.Size(75, 23);
             this.regresarButton.TabIndex = 2;
@@ -146,16 +159,16 @@
             this.regresarButton.UseVisualStyleBackColor = true;
             this.regresarButton.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // labelIngreso
+            // guardarB
             // 
-            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelIngreso.AutoSize = true;
-            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngreso.Location = new System.Drawing.Point(325, 16);
-            this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(178, 18);
-            this.labelIngreso.TabIndex = 8;
-            this.labelIngreso.Text = "Parámetros del Sistema";
+            this.guardarB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guardarB.Location = new System.Drawing.Point(397, 93);
+            this.guardarB.Name = "guardarB";
+            this.guardarB.Size = new System.Drawing.Size(134, 23);
+            this.guardarB.TabIndex = 3;
+            this.guardarB.Text = "Guardar Cambios";
+            this.guardarB.UseVisualStyleBackColor = true;
+            this.guardarB.Click += new System.EventHandler(this.GuardarB_Click);
             // 
             // Parametro
             // 
@@ -191,5 +204,6 @@
         private System.Windows.Forms.TextBox ivaField;
         private System.Windows.Forms.Button regresarButton;
         private System.Windows.Forms.Label labelIngreso;
+        private System.Windows.Forms.Button guardarB;
     }
 }

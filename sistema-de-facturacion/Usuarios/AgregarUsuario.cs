@@ -16,27 +16,62 @@ namespace sistema_de_facturacion.Usuarios
     {
         public Form inicial;
         public List<TextBox> fieldList = new List<TextBox>();
+        public Boolean rol;
         public Boolean modificar;
+        public Usuario obtenido = new Usuario();
         public AgregarUsuario(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
         }
-        public AgregarUsuario(Boolean modificacion, Form ventana)
+        public AgregarUsuario(Usuario obtenido,Boolean modificacion, Form ventana)
         {
             InitializeComponent();
             this.modificar = modificacion;
+            this.rol = true;
+            this.obtenido = obtenido;
             this.inicial = ventana;
             modificarF();
-
         }
-        public void modificarF()
+        public AgregarUsuario(Usuario obtenido, Form ventana)
         {
+            InitializeComponent();
+            this.inicial = ventana;
+            this.obtenido = obtenido;
+            this.modificar = true;
+            modificarMis();
+            
+        }
+        public void modificarMis()
+        {
+            usuarioBox.Enabled = false;
             huellaButton.Enabled = false;
             nombreField.ReadOnly = true;
+            labelPassword.Text = "Nueva Contraseña:";
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;
             labelIngreso.Text = "Modificación de Usuarios";
+            establecerDatos();
+        }
+        public void establecerDatos()
+        {
+            nombreField.Text = obtenido.usuario;
+            passwordField.Text = "";
+            correoField.Text = obtenido.correo;
+            usuarioBox.SelectedIndex = obtenido.rol;
+        }
+        public void modificarF()
+        {
+            
+            huellaButton.Enabled = false;
+            nombreField.ReadOnly = true;
+            registrarButton.Text = "Guardar Cambios";
+            passwordField.ReadOnly = true;
+            limpiarButton.Visible = false;
+            correoField.ReadOnly = true;
+            labelIngreso.Text = "Modificación de Rol";
+            establecerDatos();
+            passwordField.Text = obtenido.contrasena;
         }
         private void Cerrar_Click(object sender, EventArgs e)
         {
@@ -97,30 +132,55 @@ namespace sistema_de_facturacion.Usuarios
             }
             else
             {
-                //Guardo usuario modificado
-                foreach (TextBox singleItem in fieldList)
+                if (rol)
                 {
-                    if (selected.Equals(null))
+                    obtenido.rol = usuarioBox.SelectedIndex;
+                    if (obtenido.modificarRol(obtenido) == 0)
                     {
-                        lleno = true;
-                        break;
+                        MessageBox.Show("Rol modificado exitosamente.");
+                        inicial.Visible = true;
+                        this.Close();
                     }
-                    if (singleItem.Text.Equals(""))
+                    else
                     {
-                        lleno = true;
-                        break;
+                        MessageBox.Show("Se produjo un error al modificar el rol.");
                     }
-                   
-                }
-                if (lleno)
-                {
-                    MessageBox.Show("Se requiere llenar todos los campos.");
                 }
                 else
                 {
-                    MessageBox.Show("Usuario modificado exitosamente.");
-                    inicial.Visible = true;
-                    this.Close();
+                    
+                    foreach (TextBox singleItem in fieldList)
+                    {
+                        if (selected.Equals(null))
+                        {
+                            lleno = true;
+                            break;
+                        }
+                        if (singleItem.Text.Equals(""))
+                        {
+                            lleno = true;
+                            break;
+                        }
+
+                    }
+                    if (lleno)
+                    {
+                        MessageBox.Show("Se requiere llenar todos los campos.");
+                    }
+                    else
+                    {
+                        Usuario modificado = new Usuario(nombreField.Text, passwordField.Text, correoField.Text, usuarioBox.SelectedIndex, "HUELLA");
+                        if (obtenido.modificarUsuario(modificado) == 0)
+                        {
+                            MessageBox.Show("Usuario modificado exitosamente.");
+                            inicial.Visible = true;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se produjo un error al guardar los cambios.");
+                        }
+                    }
                 }
             }
         }

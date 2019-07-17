@@ -114,5 +114,18 @@ namespace sistema_de_facturacion.Modelo
             conexion.cerrarConexion();
             return retorno;
         }
+        public DataTable buscarProducto(int decision, String cadena)
+        {
+            DataTable dtClientes = new DataTable();
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspBuscarProducto", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@decision", SqlDbType.VarChar).Value = decision;
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dtClientes.Load(reader);
+            conexion.cerrarConexion();
+            return dtClientes;
+        }
     }
 }

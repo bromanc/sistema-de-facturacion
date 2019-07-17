@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sistema_de_facturacion.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace sistema_de_facturacion.Categoría
     {
         public Form inicial;
         String tipo;
+        Categoria buscar = new Categoria();
         public ConsultarCategoria(Form interfazInicial)
         {
             InitializeComponent();
@@ -42,7 +44,10 @@ namespace sistema_de_facturacion.Categoría
         {
             if (categoriasGrid.SelectedRows.Count > 0)
             {
-                
+                string nombre = categoriasGrid.SelectedRows[0].Cells[1].Value.ToString();
+                Categoria obtenida = buscar.obtenerCategoria(nombre);
+                new AgregarCategoria(true, this, obtenida).Visible = true;
+                this.Visible = false;
             }
         }
 
@@ -50,6 +55,11 @@ namespace sistema_de_facturacion.Categoría
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            categoriasGrid.DataSource = buscar.buscarCategoria(parametroField.Text.TrimEnd());
         }
     }
 }

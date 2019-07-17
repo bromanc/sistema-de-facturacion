@@ -16,10 +16,22 @@ namespace sistema_de_facturacion.Categoría
     {
         public Form inicial;
         public List<TextBox> fieldList = new List<TextBox>();
+        Categoria modificar = new Categoria();
+        Boolean mod = false;
         public AgregarCategoria(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+        }
+        public AgregarCategoria(Boolean mod,Form interfazInicial,Categoria categoria)
+        {
+            InitializeComponent();
+            this.modificar = categoria;
+            this.inicial = interfazInicial;
+            nombreField.Text = categoria.nombre;
+            this.mod = true;
+            agregarB.Text = "Guardar Cambios";
+            labelIngreso.Text = "Modificación de categorias";
         }
 
         private void MinimizarButton_Click(object sender, EventArgs e)
@@ -66,39 +78,63 @@ namespace sistema_de_facturacion.Categoría
 
         private void AgregarB_Click(object sender, EventArgs e)
         {
-            fieldList.Add(nombreField);
-            Boolean lleno = false;
-            foreach (TextBox singleItem in fieldList)
+            if (mod == false)
             {
-                if (singleItem.Text.Equals(""))
+                fieldList.Add(nombreField);
+                Boolean lleno = false;
+                foreach (TextBox singleItem in fieldList)
                 {
-                    lleno = true;
-                    break;
-                }
+                    if (singleItem.Text.Equals(""))
+                    {
+                        lleno = true;
+                        break;
+                    }
 
-            }
-            if (lleno)
-            {
-                MessageBox.Show("Se requiere llenar todos los campos.");
-            }
-            else
-            {
-                Categoria nueva = new Categoria(nombreField.Text);
-                int hecho = nueva.agregarCategoria(nueva);
-                if (hecho == 0)
-                {
-                    MessageBox.Show("Categoría registrada exitosamente.");
-                    inicial.Visible = true;
-                    this.Close();
                 }
-                else if (hecho == -1)
+                if (lleno)
                 {
-                    MessageBox.Show("La categoría especificada ya se encuentra registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MessageBox.Show("Se requiere llenar todos los campos.");
                 }
                 else
                 {
-                    MessageBox.Show("Se produjo un error al registrar la categoría.");
+                    Categoria nueva = new Categoria(nombreField.Text);
+                    int hecho = nueva.agregarCategoria(nueva);
+                    if (hecho == 0)
+                    {
+                        MessageBox.Show("Categoría registrada exitosamente.");
+                        inicial.Visible = true;
+                        this.Close();
+                    }
+                    else if (hecho == -1)
+                    {
+                        MessageBox.Show("La categoría especificada ya se encuentra registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se produjo un error al registrar la categoría.");
+                    }
+                }
+            }
+            else
+            {
+                if (nombreField.Text.Equals(""))
+                {
+                    MessageBox.Show("Se requiere llenar todos los campos.");
+                }
+                else
+                {
+                    Categoria nuevo = new Categoria(nombreField.Text);
+                    if (modificar.modificarCategoria(this.modificar,nuevo) == 0)
+                    {
+                        MessageBox.Show("Cambios guardados.");
+                        this.Visible = false;
+                        inicial.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se produjo un error al guardar los cambios.");
+                    }
                 }
             }
         }
