@@ -173,6 +173,7 @@
             // agregarB
             // 
             this.agregarB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.agregarB.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarB.Location = new System.Drawing.Point(80, 25);
             this.agregarB.Name = "agregarB";
             this.agregarB.Size = new System.Drawing.Size(106, 50);
@@ -184,6 +185,7 @@
             // modificarB
             // 
             this.modificarB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.modificarB.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificarB.Location = new System.Drawing.Point(346, 25);
             this.modificarB.Name = "modificarB";
             this.modificarB.Size = new System.Drawing.Size(106, 50);
@@ -195,6 +197,7 @@
             // cancelarB
             // 
             this.cancelarB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelarB.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarB.Location = new System.Drawing.Point(613, 25);
             this.cancelarB.Name = "cancelarB";
             this.cancelarB.Size = new System.Drawing.Size(106, 50);

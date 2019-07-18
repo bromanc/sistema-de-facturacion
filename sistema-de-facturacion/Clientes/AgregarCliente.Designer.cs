@@ -56,11 +56,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ciudadField = new System.Windows.Forms.TextBox();
             this.labelHuella = new System.Windows.Forms.Label();
-            this.huellaButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.inactivo = new System.Windows.Forms.RadioButton();
             this.activo = new System.Windows.Forms.RadioButton();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.siRadio = new System.Windows.Forms.RadioButton();
+            this.noRadio = new System.Windows.Forms.RadioButton();
+            this.huellaButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.registrarButton = new System.Windows.Forms.Button();
             this.limpiarButton = new System.Windows.Forms.Button();
@@ -73,6 +78,9 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,9 +170,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ciudadField, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelHuella, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.huellaButton, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -202,7 +210,8 @@
             this.cedulaRUCField.ShortcutsEnabled = false;
             this.cedulaRUCField.Size = new System.Drawing.Size(587, 20);
             this.cedulaRUCField.TabIndex = 6;
-            this.cedulaRUCField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaRUCField_KeyDown);
+            this.cedulaRUCField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CedulaRUCField_KeyUp);
+            this.cedulaRUCField.Leave += new System.EventHandler(this.CedulaRUCField_Leave);
             // 
             // labelNombre
             // 
@@ -244,6 +253,8 @@
             this.nombreField.ShortcutsEnabled = false;
             this.nombreField.Size = new System.Drawing.Size(441, 20);
             this.nombreField.TabIndex = 0;
+            this.nombreField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NombreField_KeyUp);
+            this.nombreField.Leave += new System.EventHandler(this.NombreField_Leave);
             // 
             // groupBox1
             // 
@@ -295,6 +306,8 @@
             this.razonField.ShortcutsEnabled = false;
             this.razonField.Size = new System.Drawing.Size(441, 20);
             this.razonField.TabIndex = 1;
+            this.razonField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RazonField_KeyUp);
+            this.razonField.Leave += new System.EventHandler(this.RazonField_Leave);
             // 
             // apellidoField
             // 
@@ -304,6 +317,8 @@
             this.apellidoField.ShortcutsEnabled = false;
             this.apellidoField.Size = new System.Drawing.Size(441, 20);
             this.apellidoField.TabIndex = 3;
+            this.apellidoField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ApellidoField_KeyUp);
+            this.apellidoField.Leave += new System.EventHandler(this.ApellidoField_Leave);
             // 
             // labelCorreo
             // 
@@ -325,6 +340,7 @@
             this.correoField.ShortcutsEnabled = false;
             this.correoField.Size = new System.Drawing.Size(587, 20);
             this.correoField.TabIndex = 10;
+            this.correoField.Leave += new System.EventHandler(this.CorreoField_Leave);
             // 
             // labelDireccion
             // 
@@ -345,6 +361,8 @@
             this.direccionField.ShortcutsEnabled = false;
             this.direccionField.Size = new System.Drawing.Size(587, 20);
             this.direccionField.TabIndex = 9;
+            this.direccionField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DireccionField_KeyUp);
+            this.direccionField.Leave += new System.EventHandler(this.DireccionField_Leave);
             // 
             // labelNumero
             // 
@@ -365,6 +383,9 @@
             this.telefonoField.ShortcutsEnabled = false;
             this.telefonoField.Size = new System.Drawing.Size(587, 20);
             this.telefonoField.TabIndex = 8;
+            this.telefonoField.Enter += new System.EventHandler(this.TelefonoField_Enter);
+            this.telefonoField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TelefonoField_KeyUp);
+            this.telefonoField.Leave += new System.EventHandler(this.TelefonoField_Leave);
             // 
             // labelRazon
             // 
@@ -406,6 +427,8 @@
             this.ciudadField.Name = "ciudadField";
             this.ciudadField.Size = new System.Drawing.Size(587, 20);
             this.ciudadField.TabIndex = 16;
+            this.ciudadField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CiudadField_KeyUp);
+            this.ciudadField.Leave += new System.EventHandler(this.CiudadField_Leave);
             // 
             // labelHuella
             // 
@@ -417,16 +440,6 @@
             this.labelHuella.Size = new System.Drawing.Size(128, 21);
             this.labelHuella.TabIndex = 5;
             this.labelHuella.Text = "Huella Dactilar:";
-            // 
-            // huellaButton
-            // 
-            this.huellaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.huellaButton.Location = new System.Drawing.Point(427, 427);
-            this.huellaButton.Name = "huellaButton";
-            this.huellaButton.Size = new System.Drawing.Size(153, 46);
-            this.huellaButton.TabIndex = 11;
-            this.huellaButton.Text = "Tomar Huella";
-            this.huellaButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -474,6 +487,84 @@
             this.activo.TabStop = true;
             this.activo.Text = "Activo";
             this.activo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.75809F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.24191F));
+            this.tableLayoutPanel4.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.huellaButton, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(210, 426);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(587, 48);
+            this.tableLayoutPanel4.TabIndex = 19;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tableLayoutPanel5);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(379, 42);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel5.Controls.Add(this.siRadio, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.noRadio, 1, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(373, 23);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // siRadio
+            // 
+            this.siRadio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.siRadio.AutoSize = true;
+            this.siRadio.Location = new System.Drawing.Point(83, 5);
+            this.siRadio.Name = "siRadio";
+            this.siRadio.Size = new System.Drawing.Size(36, 15);
+            this.siRadio.TabIndex = 0;
+            this.siRadio.TabStop = true;
+            this.siRadio.Text = "Sí";
+            this.siRadio.UseVisualStyleBackColor = true;
+            this.siRadio.CheckedChanged += new System.EventHandler(this.SiRadio_CheckedChanged);
+            // 
+            // noRadio
+            // 
+            this.noRadio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.noRadio.AutoSize = true;
+            this.noRadio.Location = new System.Drawing.Point(268, 5);
+            this.noRadio.Name = "noRadio";
+            this.noRadio.Size = new System.Drawing.Size(39, 15);
+            this.noRadio.TabIndex = 1;
+            this.noRadio.TabStop = true;
+            this.noRadio.Text = "No";
+            this.noRadio.UseVisualStyleBackColor = true;
+            this.noRadio.CheckedChanged += new System.EventHandler(this.NoRadio_CheckedChanged);
+            // 
+            // huellaButton
+            // 
+            this.huellaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.huellaButton.Location = new System.Drawing.Point(417, 4);
+            this.huellaButton.Name = "huellaButton";
+            this.huellaButton.Size = new System.Drawing.Size(137, 39);
+            this.huellaButton.TabIndex = 11;
+            this.huellaButton.Text = "Tomar Huella";
+            this.huellaButton.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -555,6 +646,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -598,5 +693,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton inactivo;
         private System.Windows.Forms.RadioButton activo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.RadioButton siRadio;
+        private System.Windows.Forms.RadioButton noRadio;
     }
 }

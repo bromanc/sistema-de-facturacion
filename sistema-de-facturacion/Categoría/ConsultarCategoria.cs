@@ -88,7 +88,7 @@ namespace sistema_de_facturacion.Categoría
 
         private void ParametroField_KeyUp(object sender, KeyEventArgs e)
         {
-            if (new Validacion().IsNaturalNumber(parametroField))
+            if (new Validacion().caracteres(parametroField))
             {
                 MessageBox.Show("No se permiten caracteres especiales");
                 e.Handled = true;

@@ -20,7 +20,7 @@ namespace sistema_de_facturacion
 
         private void TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (new Validacion().IsNaturalNumber(textBox1))
+            if (new Validacion().caracteres(textBox1))
             {
                 MessageBox.Show("No se permiten caracteres especiales");
                 e.Handled = true;
