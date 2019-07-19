@@ -8,17 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using sistema_de_facturacion.Modelo;
+
 namespace sistema_de_facturacion.Parámetros
 {
     public partial class Parametro : Form
     {
         public Form inicial;
+        ParametroM IVA = new ParametroM();
         public Parametro(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-        }
+            establecerIVA();
 
+        }
+        private void establecerIVA()
+        {
+            ParametroM iva = IVA.obtenerIVA();
+            ivaField.Text = Convert.ToString(iva.iva);
+        }
         private void Parametro_Load(object sender, EventArgs e)
         {
 
@@ -60,6 +69,25 @@ namespace sistema_de_facturacion.Parámetros
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void GuardarB_Click(object sender, EventArgs e)
+        {
+            if (ivaField.Text.Length > 0)
+            {
+                ParametroM nuevo = new ParametroM(Convert.ToDecimal(ivaField.Text), 1);
+                if (IVA.modificarIVA(nuevo) == 0)
+                {
+                    MessageBox.Show("Cambios guardados.");
+                    this.Visible = false;
+                    inicial.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Se produjo un error al guardar los cambios.");
+                }
+
+            }
         }
     }
 }

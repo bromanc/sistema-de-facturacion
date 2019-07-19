@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,22 +14,13 @@ namespace sistema_de_facturacion.Facturacion
     public partial class VerFactura : Form
     {
         public Form inicial;
-        //op 1 revisar
-        //op 2 anular
-        public VerFactura(Form interfazInicial, int op)
+        public VerFactura(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-            switch(op){
-                case 1:
-                    this.btnGeneral.Text = "Revisar Factura";
-                    break;
-                case 2:
-                    this.btnGeneral.Text = "Anular Factura";
-                    break;
-            }
+            verButton.Visible = false;
         }
-      
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -56,6 +47,11 @@ namespace sistema_de_facturacion.Facturacion
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void VerButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,19 +14,10 @@ namespace sistema_de_facturacion.Estimados
     public partial class VerProforma : Form
     {
         public Form inicial;
-        public VerProforma(Form interfazInicial, int op)
+        public VerProforma(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-            switch (op)
-            {
-                case 1:
-                    this.btnGeneral.Text = "Revisar Proforma";
-                    break;
-                case 2:
-                    this.btnGeneral.Text = "Anular Proforma";
-                    break;
-            }
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

@@ -1,4 +1,4 @@
-﻿namespace sistema_de_facturacion.Facturacion
+namespace sistema_de_facturacion.Facturacion
 {
     partial class VerFactura
     {
@@ -35,8 +35,8 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnGeneral = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.verButton = new System.Windows.Forms.Button();
+            this.anularButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -98,9 +98,6 @@
             // 
             // dgvFacturas
             // 
-            this.dgvFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas.Location = new System.Drawing.Point(12, 56);
             this.dgvFacturas.Name = "dgvFacturas";
@@ -115,37 +112,37 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.btnGeneral, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 470);
+            this.tableLayoutPanel1.Controls.Add(this.verButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.anularButton, 3, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 458);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(945, 80);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // btnGeneral
+            // verButton
             // 
-            this.btnGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGeneral.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGeneral.Location = new System.Drawing.Point(197, 15);
-            this.btnGeneral.Name = "btnGeneral";
-            this.btnGeneral.Size = new System.Drawing.Size(188, 50);
-            this.btnGeneral.TabIndex = 0;
-            this.btnGeneral.Text = "Ver Factura";
-            this.btnGeneral.UseVisualStyleBackColor = true;
+            this.verButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.verButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verButton.Location = new System.Drawing.Point(192, 15);
+            this.verButton.Name = "verButton";
+            this.verButton.Size = new System.Drawing.Size(183, 50);
+            this.verButton.TabIndex = 0;
+            this.verButton.Text = "Ver Factura";
+            this.verButton.UseVisualStyleBackColor = true;
+            this.verButton.Click += new System.EventHandler(this.VerButton_Click);
             // 
-            // btnCancelar
+            // anularButton
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(585, 15);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(188, 50);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.anularButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.anularButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anularButton.Location = new System.Drawing.Point(570, 15);
+            this.anularButton.Name = "anularButton";
+            this.anularButton.Size = new System.Drawing.Size(183, 50);
+            this.anularButton.TabIndex = 1;
+            this.anularButton.Text = "Anular Factura";
+            this.anularButton.UseVisualStyleBackColor = true;
             // 
             // VerFactura
             // 
@@ -157,6 +154,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerFactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerFactura";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
@@ -176,7 +174,7 @@
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.DataGridView dgvFacturas;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnGeneral;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button verButton;
+        private System.Windows.Forms.Button anularButton;
     }
 }

@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazInicial));
             this.panelVertical = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.ayudaButton = new System.Windows.Forms.Button();
+            this.administracionButton = new System.Windows.Forms.Button();
             this.estadisticasButton = new System.Windows.Forms.Button();
             this.estimadosButton = new System.Windows.Forms.Button();
             this.proveedoresButton = new System.Windows.Forms.Button();
@@ -46,13 +46,21 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.pctrMenu = new System.Windows.Forms.PictureBox();
             this.contenedor = new System.Windows.Forms.Panel();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblhora = new System.Windows.Forms.Label();
+            this.submenuAdministracion = new System.Windows.Forms.Panel();
+            this.categoriaB = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.submenuAyuda = new System.Windows.Forms.Panel();
+            this.infoButton = new System.Windows.Forms.Button();
+            this.manuaButton = new System.Windows.Forms.Button();
             this.submenuUsuarios = new System.Windows.Forms.Panel();
+            this.misDatosButton = new System.Windows.Forms.Button();
             this.gestionarUsuarioButton = new System.Windows.Forms.Button();
             this.eliminarUsuarioButton = new System.Windows.Forms.Button();
             this.modificarUsuarioButton = new System.Windows.Forms.Button();
             this.agregarUsuarioButton = new System.Windows.Forms.Button();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblhora = new System.Windows.Forms.Label();
             this.submenuEstadisticas = new System.Windows.Forms.Panel();
             this.ventasPeriodoButton = new System.Windows.Forms.Button();
             this.submenuEstimados = new System.Windows.Forms.Panel();
@@ -87,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctrMenu)).BeginInit();
             this.contenedor.SuspendLayout();
+            this.submenuAdministracion.SuspendLayout();
+            this.submenuAyuda.SuspendLayout();
             this.submenuUsuarios.SuspendLayout();
             this.submenuEstadisticas.SuspendLayout();
             this.submenuEstimados.SuspendLayout();
@@ -99,8 +109,8 @@
             // panelVertical
             // 
             this.panelVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
-            this.panelVertical.Controls.Add(this.button8);
-            this.panelVertical.Controls.Add(this.button7);
+            this.panelVertical.Controls.Add(this.ayudaButton);
+            this.panelVertical.Controls.Add(this.administracionButton);
             this.panelVertical.Controls.Add(this.estadisticasButton);
             this.panelVertical.Controls.Add(this.estimadosButton);
             this.panelVertical.Controls.Add(this.proveedoresButton);
@@ -116,41 +126,40 @@
             this.panelVertical.Click += new System.EventHandler(this.PanelVertical_Click);
             this.panelVertical.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelVertical_MouseDown);
             // 
-            // button8
+            // ayudaButton
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 545);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(280, 52);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Parámetros";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click_1);
-            this.button8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button8_MouseMove);
+            this.ayudaButton.FlatAppearance.BorderSize = 0;
+            this.ayudaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.ayudaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ayudaButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ayudaButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.ayudaButton.Image = ((System.Drawing.Image)(resources.GetObject("ayudaButton.Image")));
+            this.ayudaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ayudaButton.Location = new System.Drawing.Point(0, 546);
+            this.ayudaButton.Name = "ayudaButton";
+            this.ayudaButton.Size = new System.Drawing.Size(280, 52);
+            this.ayudaButton.TabIndex = 32;
+            this.ayudaButton.Text = "Ayuda";
+            this.ayudaButton.UseVisualStyleBackColor = true;
+            this.ayudaButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AyudaButton_MouseDown);
+            this.ayudaButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AyudaButton_MouseMove);
             // 
-            // button7
+            // administracionButton
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 481);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(280, 52);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Usuarios";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click_1);
-            this.button7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button7_MouseMove);
+            this.administracionButton.FlatAppearance.BorderSize = 0;
+            this.administracionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.administracionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.administracionButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.administracionButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.administracionButton.Image = ((System.Drawing.Image)(resources.GetObject("administracionButton.Image")));
+            this.administracionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.administracionButton.Location = new System.Drawing.Point(0, 484);
+            this.administracionButton.Name = "administracionButton";
+            this.administracionButton.Size = new System.Drawing.Size(280, 52);
+            this.administracionButton.TabIndex = 31;
+            this.administracionButton.Text = "Administración";
+            this.administracionButton.UseVisualStyleBackColor = true;
+            this.administracionButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button1_MouseMove);
             // 
             // estadisticasButton
             // 
@@ -337,9 +346,11 @@
             // 
             // contenedor
             // 
+            this.contenedor.Controls.Add(this.submenuAdministracion);
+            this.contenedor.Controls.Add(this.submenuAyuda);
+            this.contenedor.Controls.Add(this.submenuUsuarios);
             this.contenedor.Controls.Add(this.lblFecha);
             this.contenedor.Controls.Add(this.lblhora);
-            this.contenedor.Controls.Add(this.submenuUsuarios);
             this.contenedor.Controls.Add(this.submenuEstadisticas);
             this.contenedor.Controls.Add(this.submenuEstimados);
             this.contenedor.Controls.Add(this.submenuProveedores);
@@ -355,6 +366,213 @@
             this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
             this.contenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Contenedor_MouseDown);
             this.contenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Contenedor_MouseMove);
+            // 
+            // submenuAdministracion
+            // 
+            this.submenuAdministracion.Controls.Add(this.categoriaB);
+            this.submenuAdministracion.Controls.Add(this.button7);
+            this.submenuAdministracion.Controls.Add(this.button8);
+            this.submenuAdministracion.Location = new System.Drawing.Point(0, 429);
+            this.submenuAdministracion.Name = "submenuAdministracion";
+            this.submenuAdministracion.Size = new System.Drawing.Size(273, 178);
+            this.submenuAdministracion.TabIndex = 31;
+            this.submenuAdministracion.Visible = false;
+            // 
+            // categoriaB
+            // 
+            this.categoriaB.FlatAppearance.BorderSize = 0;
+            this.categoriaB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.categoriaB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.categoriaB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoriaB.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.categoriaB.Image = ((System.Drawing.Image)(resources.GetObject("categoriaB.Image")));
+            this.categoriaB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.categoriaB.Location = new System.Drawing.Point(1, 126);
+            this.categoriaB.Name = "categoriaB";
+            this.categoriaB.Size = new System.Drawing.Size(270, 52);
+            this.categoriaB.TabIndex = 33;
+            this.categoriaB.Text = "Categorías";
+            this.categoriaB.UseVisualStyleBackColor = true;
+            this.categoriaB.Click += new System.EventHandler(this.CategoriaB_Click);
+            this.categoriaB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CategoriaB_MouseMove);
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(0, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(270, 52);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Usuarios";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click_1);
+            this.button7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button7_MouseMove);
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(0, 61);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(270, 52);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Parámetros";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click_1);
+            this.button8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button8_MouseMove);
+            // 
+            // submenuAyuda
+            // 
+            this.submenuAyuda.Controls.Add(this.infoButton);
+            this.submenuAyuda.Controls.Add(this.manuaButton);
+            this.submenuAyuda.Location = new System.Drawing.Point(1, 485);
+            this.submenuAyuda.Name = "submenuAyuda";
+            this.submenuAyuda.Size = new System.Drawing.Size(273, 121);
+            this.submenuAyuda.TabIndex = 32;
+            this.submenuAyuda.Visible = false;
+            // 
+            // infoButton
+            // 
+            this.infoButton.FlatAppearance.BorderSize = 0;
+            this.infoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infoButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.infoButton.Image = ((System.Drawing.Image)(resources.GetObject("infoButton.Image")));
+            this.infoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.infoButton.Location = new System.Drawing.Point(-3, 61);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(286, 52);
+            this.infoButton.TabIndex = 6;
+            this.infoButton.Text = "Acerca de Sochef";
+            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.InfoButton_Click);
+            // 
+            // manuaButton
+            // 
+            this.manuaButton.FlatAppearance.BorderSize = 0;
+            this.manuaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.manuaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manuaButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manuaButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.manuaButton.Image = ((System.Drawing.Image)(resources.GetObject("manuaButton.Image")));
+            this.manuaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.manuaButton.Location = new System.Drawing.Point(-3, 3);
+            this.manuaButton.Name = "manuaButton";
+            this.manuaButton.Size = new System.Drawing.Size(286, 52);
+            this.manuaButton.TabIndex = 4;
+            this.manuaButton.Text = "Manual de Usuario";
+            this.manuaButton.UseVisualStyleBackColor = true;
+            this.manuaButton.Click += new System.EventHandler(this.ManuaButton_Click_1);
+            // 
+            // submenuUsuarios
+            // 
+            this.submenuUsuarios.Controls.Add(this.misDatosButton);
+            this.submenuUsuarios.Controls.Add(this.gestionarUsuarioButton);
+            this.submenuUsuarios.Controls.Add(this.eliminarUsuarioButton);
+            this.submenuUsuarios.Controls.Add(this.modificarUsuarioButton);
+            this.submenuUsuarios.Controls.Add(this.agregarUsuarioButton);
+            this.submenuUsuarios.Location = new System.Drawing.Point(274, 429);
+            this.submenuUsuarios.Name = "submenuUsuarios";
+            this.submenuUsuarios.Size = new System.Drawing.Size(273, 290);
+            this.submenuUsuarios.TabIndex = 7;
+            this.submenuUsuarios.Visible = false;
+            // 
+            // misDatosButton
+            // 
+            this.misDatosButton.FlatAppearance.BorderSize = 0;
+            this.misDatosButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.misDatosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.misDatosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.misDatosButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.misDatosButton.Image = ((System.Drawing.Image)(resources.GetObject("misDatosButton.Image")));
+            this.misDatosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.misDatosButton.Location = new System.Drawing.Point(-3, 177);
+            this.misDatosButton.Name = "misDatosButton";
+            this.misDatosButton.Size = new System.Drawing.Size(286, 52);
+            this.misDatosButton.TabIndex = 7;
+            this.misDatosButton.Text = "Modificar Mis Datos";
+            this.misDatosButton.UseVisualStyleBackColor = true;
+            this.misDatosButton.Click += new System.EventHandler(this.MisDatosButton_Click);
+            // 
+            // gestionarUsuarioButton
+            // 
+            this.gestionarUsuarioButton.FlatAppearance.BorderSize = 0;
+            this.gestionarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.gestionarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestionarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestionarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.gestionarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("gestionarUsuarioButton.Image")));
+            this.gestionarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gestionarUsuarioButton.Location = new System.Drawing.Point(-3, 61);
+            this.gestionarUsuarioButton.Name = "gestionarUsuarioButton";
+            this.gestionarUsuarioButton.Size = new System.Drawing.Size(286, 52);
+            this.gestionarUsuarioButton.TabIndex = 6;
+            this.gestionarUsuarioButton.Text = "Ver usuarios";
+            this.gestionarUsuarioButton.UseVisualStyleBackColor = true;
+            this.gestionarUsuarioButton.Click += new System.EventHandler(this.Button15_Click);
+            // 
+            // eliminarUsuarioButton
+            // 
+            this.eliminarUsuarioButton.FlatAppearance.BorderSize = 0;
+            this.eliminarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.eliminarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.eliminarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("eliminarUsuarioButton.Image")));
+            this.eliminarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.eliminarUsuarioButton.Location = new System.Drawing.Point(-3, 235);
+            this.eliminarUsuarioButton.Name = "eliminarUsuarioButton";
+            this.eliminarUsuarioButton.Size = new System.Drawing.Size(286, 52);
+            this.eliminarUsuarioButton.TabIndex = 4;
+            this.eliminarUsuarioButton.Text = "Dar de Baja Usuario";
+            this.eliminarUsuarioButton.UseVisualStyleBackColor = true;
+            this.eliminarUsuarioButton.Click += new System.EventHandler(this.Button16_Click);
+            // 
+            // modificarUsuarioButton
+            // 
+            this.modificarUsuarioButton.FlatAppearance.BorderSize = 0;
+            this.modificarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.modificarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modificarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.modificarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("modificarUsuarioButton.Image")));
+            this.modificarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modificarUsuarioButton.Location = new System.Drawing.Point(-3, 119);
+            this.modificarUsuarioButton.Name = "modificarUsuarioButton";
+            this.modificarUsuarioButton.Size = new System.Drawing.Size(286, 52);
+            this.modificarUsuarioButton.TabIndex = 4;
+            this.modificarUsuarioButton.Text = "Modificar Rol Usuario";
+            this.modificarUsuarioButton.UseVisualStyleBackColor = true;
+            this.modificarUsuarioButton.Click += new System.EventHandler(this.Button17_Click);
+            // 
+            // agregarUsuarioButton
+            // 
+            this.agregarUsuarioButton.FlatAppearance.BorderSize = 0;
+            this.agregarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.agregarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.agregarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.agregarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarUsuarioButton.Image")));
+            this.agregarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.agregarUsuarioButton.Location = new System.Drawing.Point(-3, 3);
+            this.agregarUsuarioButton.Name = "agregarUsuarioButton";
+            this.agregarUsuarioButton.Size = new System.Drawing.Size(286, 52);
+            this.agregarUsuarioButton.TabIndex = 4;
+            this.agregarUsuarioButton.Text = "Agregar Usuario";
+            this.agregarUsuarioButton.UseVisualStyleBackColor = true;
+            this.agregarUsuarioButton.Click += new System.EventHandler(this.Button18_Click);
             // 
             // lblFecha
             // 
@@ -387,86 +605,6 @@
             this.lblhora.TabIndex = 29;
             this.lblhora.Text = "10:59:58";
             this.lblhora.Click += new System.EventHandler(this.Lblhora_Click);
-            // 
-            // submenuUsuarios
-            // 
-            this.submenuUsuarios.Controls.Add(this.gestionarUsuarioButton);
-            this.submenuUsuarios.Controls.Add(this.eliminarUsuarioButton);
-            this.submenuUsuarios.Controls.Add(this.modificarUsuarioButton);
-            this.submenuUsuarios.Controls.Add(this.agregarUsuarioButton);
-            this.submenuUsuarios.Location = new System.Drawing.Point(0, 431);
-            this.submenuUsuarios.Name = "submenuUsuarios";
-            this.submenuUsuarios.Size = new System.Drawing.Size(273, 232);
-            this.submenuUsuarios.TabIndex = 7;
-            this.submenuUsuarios.Visible = false;
-            // 
-            // gestionarUsuarioButton
-            // 
-            this.gestionarUsuarioButton.FlatAppearance.BorderSize = 0;
-            this.gestionarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.gestionarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestionarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.gestionarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("gestionarUsuarioButton.Image")));
-            this.gestionarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.gestionarUsuarioButton.Location = new System.Drawing.Point(-3, 61);
-            this.gestionarUsuarioButton.Name = "gestionarUsuarioButton";
-            this.gestionarUsuarioButton.Size = new System.Drawing.Size(286, 52);
-            this.gestionarUsuarioButton.TabIndex = 6;
-            this.gestionarUsuarioButton.Text = "Ver usuarios";
-            this.gestionarUsuarioButton.UseVisualStyleBackColor = true;
-            this.gestionarUsuarioButton.Click += new System.EventHandler(this.Button15_Click);
-            // 
-            // eliminarUsuarioButton
-            // 
-            this.eliminarUsuarioButton.FlatAppearance.BorderSize = 0;
-            this.eliminarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.eliminarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.eliminarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("eliminarUsuarioButton.Image")));
-            this.eliminarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eliminarUsuarioButton.Location = new System.Drawing.Point(0, 177);
-            this.eliminarUsuarioButton.Name = "eliminarUsuarioButton";
-            this.eliminarUsuarioButton.Size = new System.Drawing.Size(286, 52);
-            this.eliminarUsuarioButton.TabIndex = 4;
-            this.eliminarUsuarioButton.Text = "Eliminar Usuario";
-            this.eliminarUsuarioButton.UseVisualStyleBackColor = true;
-            this.eliminarUsuarioButton.Click += new System.EventHandler(this.Button16_Click);
-            // 
-            // modificarUsuarioButton
-            // 
-            this.modificarUsuarioButton.FlatAppearance.BorderSize = 0;
-            this.modificarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.modificarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.modificarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("modificarUsuarioButton.Image")));
-            this.modificarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.modificarUsuarioButton.Location = new System.Drawing.Point(-3, 119);
-            this.modificarUsuarioButton.Name = "modificarUsuarioButton";
-            this.modificarUsuarioButton.Size = new System.Drawing.Size(286, 52);
-            this.modificarUsuarioButton.TabIndex = 4;
-            this.modificarUsuarioButton.Text = "Modificar Usuario";
-            this.modificarUsuarioButton.UseVisualStyleBackColor = true;
-            this.modificarUsuarioButton.Click += new System.EventHandler(this.Button17_Click);
-            // 
-            // agregarUsuarioButton
-            // 
-            this.agregarUsuarioButton.FlatAppearance.BorderSize = 0;
-            this.agregarUsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
-            this.agregarUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.agregarUsuarioButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarUsuarioButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.agregarUsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarUsuarioButton.Image")));
-            this.agregarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.agregarUsuarioButton.Location = new System.Drawing.Point(-3, 3);
-            this.agregarUsuarioButton.Name = "agregarUsuarioButton";
-            this.agregarUsuarioButton.Size = new System.Drawing.Size(286, 52);
-            this.agregarUsuarioButton.TabIndex = 4;
-            this.agregarUsuarioButton.Text = "Agregar Usuario";
-            this.agregarUsuarioButton.UseVisualStyleBackColor = true;
-            this.agregarUsuarioButton.Click += new System.EventHandler(this.Button18_Click);
             // 
             // submenuEstadisticas
             // 
@@ -884,6 +1022,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctrMenu)).EndInit();
             this.contenedor.ResumeLayout(false);
             this.contenedor.PerformLayout();
+            this.submenuAdministracion.ResumeLayout(false);
+            this.submenuAyuda.ResumeLayout(false);
             this.submenuUsuarios.ResumeLayout(false);
             this.submenuEstadisticas.ResumeLayout(false);
             this.submenuEstimados.ResumeLayout(false);
@@ -946,5 +1086,13 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button administracionButton;
+        private System.Windows.Forms.Panel submenuAdministracion;
+        private System.Windows.Forms.Button ayudaButton;
+        private System.Windows.Forms.Panel submenuAyuda;
+        private System.Windows.Forms.Button infoButton;
+        private System.Windows.Forms.Button manuaButton;
+        private System.Windows.Forms.Button categoriaB;
+        private System.Windows.Forms.Button misDatosButton;
     }
 }

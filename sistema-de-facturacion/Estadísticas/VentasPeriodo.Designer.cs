@@ -47,6 +47,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.regresarButton = new System.Windows.Forms.Button();
             this.accionButton = new System.Windows.Forms.Button();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.labelIngreso);
             this.panel1.Controls.Add(this.minimizarButton);
             this.panel1.Controls.Add(this.maximizarButton);
             this.panel1.Controls.Add(this.cerrarButton);
@@ -122,7 +124,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(334, 56);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 56);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // parametroBox
@@ -134,7 +136,7 @@
             "Categoría de producto"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
-            this.parametroBox.Size = new System.Drawing.Size(328, 21);
+            this.parametroBox.Size = new System.Drawing.Size(327, 21);
             this.parametroBox.TabIndex = 1;
             // 
             // labelParametro
@@ -166,7 +168,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.363636F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.10345F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
             this.tableLayoutPanel1.Controls.Add(this.labelVentas, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 4, 0);
@@ -186,7 +188,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.labelFin, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.fechaFinPicker, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(629, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(628, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -219,7 +221,7 @@
             this.tableLayoutPanel5.Controls.Add(this.labelInicio, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.fechaInicioPicker, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(468, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(467, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -281,6 +283,17 @@
             this.accionButton.Text = "Generar Reporte";
             this.accionButton.UseVisualStyleBackColor = true;
             // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(330, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(190, 18);
+            this.labelIngreso.TabIndex = 7;
+            this.labelIngreso.Text = "Generación de Reportes";
+            // 
             // VentasPeriodo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +307,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentasPeriodo";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarButton)).EndInit();
@@ -330,5 +344,6 @@
         private System.Windows.Forms.DateTimePicker fechaFinPicker;
         private System.Windows.Forms.DateTimePicker fechaInicioPicker;
         private System.Windows.Forms.Button regresarButton;
+        private System.Windows.Forms.Label labelIngreso;
     }
 }

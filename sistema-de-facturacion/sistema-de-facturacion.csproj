@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ayuda\ManualDeUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\ManualDeUsuario.Designer.cs">
+      <DependentUpon>ManualDeUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categoría\AgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categoría\AgregarCategoria.Designer.cs">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categoría\ConsultarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categoría\ConsultarCategoria.Designer.cs">
+      <DependentUpon>ConsultarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\AgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,16 @@
     <Compile Include="Login\IngresoAlSistema.Designer.cs">
       <DependentUpon>IngresoAlSistema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Categoria.cs" />
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\ConexionDB.cs" />
+    <Compile Include="Modelo\DetalleFactura.cs" />
+    <Compile Include="Modelo\Factura.cs" />
+    <Compile Include="Modelo\ParametroM.cs" />
+    <Compile Include="Modelo\Producto.cs" />
+    <Compile Include="Modelo\Proveedor.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Validacion.cs" />
     <Compile Include="Parámetros\Parametro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +178,15 @@
     <Compile Include="Usuarios\ConsultarUsuario.Designer.cs">
       <DependentUpon>ConsultarUsuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ayuda\ManualDeUsuario.resx">
+      <DependentUpon>ManualDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categoría\AgregarCategoria.resx">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categoría\ConsultarCategoria.resx">
+      <DependentUpon>ConsultarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes\AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\VerFactura.resx">
       <DependentUpon>VerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventarios\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -222,7 +262,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Properties\ModifyIcon.png" />
   </ItemGroup>
