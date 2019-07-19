@@ -1,4 +1,4 @@
-﻿namespace sistema_de_facturacion.Facturacion
+namespace sistema_de_facturacion.Facturacion
 {
     partial class Facturas
     {

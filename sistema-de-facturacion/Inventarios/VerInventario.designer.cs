@@ -1,4 +1,4 @@
-﻿namespace sistema_de_facturacion.Inventarios
+namespace sistema_de_facturacion.Inventarios
 {
     partial class VerInventario
     {
