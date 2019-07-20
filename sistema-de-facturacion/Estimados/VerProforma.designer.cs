@@ -1,4 +1,4 @@
-﻿namespace sistema_de_facturacion.Estimados
+namespace sistema_de_facturacion.Estimados
 {
     partial class VerProforma
     {
