@@ -173,5 +173,11 @@ namespace sistema_de_facturacion.Inventarios
             inicial.Visible = true;
             this.Close();
         }
+        
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

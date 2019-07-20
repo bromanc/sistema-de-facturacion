@@ -24,6 +24,7 @@ namespace sistema_de_facturacion.Clientes
             this.tipo = type;
             clientesGrid.Update();
             clientesGrid.Refresh();
+            labelAdvertencia.Visible = false;
             if(type.Equals("consultar"))
             {
                 labelIngreso.Text = "Consulta de Clientes";
@@ -137,13 +138,19 @@ namespace sistema_de_facturacion.Clientes
 
         private void ParametroField_KeyUp(object sender, KeyEventArgs e)
         {
+            
+        }
+
+        private void ParametroField_KeyUp_1(object sender, KeyEventArgs e)
+        {
             if (parametroBox.Text.Length > 0)
             {
+                labelAdvertencia.Visible = false;
                 clientesGrid.DataSource = buscar.buscarCliente(parametroBox.SelectedIndex, parametroField.Text);
             }
             else
             {
-                MessageBox.Show("Elija un parámetro.");
+                labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
         }

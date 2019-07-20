@@ -233,6 +233,7 @@
             this.KeyPreview = true;
             this.Name = "ConsultarCategoria";
             this.Text = "ConsultarCategoria";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ConsultarCategoria_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).EndInit();

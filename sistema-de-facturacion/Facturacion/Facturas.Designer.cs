@@ -42,12 +42,14 @@ namespace sistema_de_facturacion.Facturacion
             this.huellaB = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.parametroField = new System.Windows.Forms.TextBox();
             this.labelParametro = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelElegir = new System.Windows.Forms.Label();
             this.parametroBox = new System.Windows.Forms.ComboBox();
             this.parametroB = new System.Windows.Forms.Button();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.parametroField = new System.Windows.Forms.TextBox();
+            this.consumidorButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -91,6 +93,7 @@ namespace sistema_de_facturacion.Facturacion
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -254,11 +257,11 @@ namespace sistema_de_facturacion.Facturacion
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.95491F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.24528F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.81132F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
-            this.tableLayoutPanel3.Controls.Add(this.parametroField, 1, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tableLayoutPanel3.Controls.Add(this.labelParametro, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.parametroB, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -267,16 +270,6 @@ namespace sistema_de_facturacion.Facturacion
             this.tableLayoutPanel3.Size = new System.Drawing.Size(651, 52);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
-            // parametroField
-            // 
-            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.parametroField.Location = new System.Drawing.Point(113, 29);
-            this.parametroField.Name = "parametroField";
-            this.parametroField.ShortcutsEnabled = false;
-            this.parametroField.Size = new System.Drawing.Size(253, 20);
-            this.parametroField.TabIndex = 0;
-            // 
             // labelParametro
             // 
             this.labelParametro.AutoSize = true;
@@ -284,7 +277,7 @@ namespace sistema_de_facturacion.Facturacion
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelParametro.Location = new System.Drawing.Point(3, 18);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(104, 34);
+            this.labelParametro.Size = new System.Drawing.Size(103, 34);
             this.labelParametro.TabIndex = 1;
             this.labelParametro.Text = "Ingrese el parámetro:";
             // 
@@ -295,12 +288,12 @@ namespace sistema_de_facturacion.Facturacion
             this.tableLayoutPanel4.Controls.Add(this.labelElegir, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.parametroBox, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(372, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(370, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(151, 46);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(150, 46);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // labelElegir
@@ -308,7 +301,7 @@ namespace sistema_de_facturacion.Facturacion
             this.labelElegir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelElegir.AutoSize = true;
             this.labelElegir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelElegir.Location = new System.Drawing.Point(8, 0);
+            this.labelElegir.Location = new System.Drawing.Point(7, 0);
             this.labelElegir.Name = "labelElegir";
             this.labelElegir.Size = new System.Drawing.Size(135, 23);
             this.labelElegir.TabIndex = 0;
@@ -330,18 +323,53 @@ namespace sistema_de_facturacion.Facturacion
             "Huella"});
             this.parametroBox.Location = new System.Drawing.Point(3, 26);
             this.parametroBox.Name = "parametroBox";
-            this.parametroBox.Size = new System.Drawing.Size(145, 21);
+            this.parametroBox.Size = new System.Drawing.Size(144, 21);
             this.parametroBox.TabIndex = 1;
             // 
             // parametroB
             // 
             this.parametroB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parametroB.Location = new System.Drawing.Point(529, 3);
+            this.parametroB.Location = new System.Drawing.Point(526, 3);
             this.parametroB.Name = "parametroB";
-            this.parametroB.Size = new System.Drawing.Size(119, 46);
+            this.parametroB.Size = new System.Drawing.Size(122, 46);
             this.parametroB.TabIndex = 3;
             this.parametroB.Text = "Buscar";
             this.parametroB.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.parametroField, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.consumidorButton, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(112, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.86956F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.13044F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(252, 46);
+            this.tableLayoutPanel10.TabIndex = 4;
+            // 
+            // parametroField
+            // 
+            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroField.Location = new System.Drawing.Point(3, 30);
+            this.parametroField.Name = "parametroField";
+            this.parametroField.ShortcutsEnabled = false;
+            this.parametroField.Size = new System.Drawing.Size(246, 20);
+            this.parametroField.TabIndex = 1;
+            // 
+            // consumidorButton
+            // 
+            this.consumidorButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consumidorButton.Location = new System.Drawing.Point(3, 3);
+            this.consumidorButton.Name = "consumidorButton";
+            this.consumidorButton.Size = new System.Drawing.Size(246, 21);
+            this.consumidorButton.TabIndex = 2;
+            this.consumidorButton.Text = "Consumidor Final";
+            this.consumidorButton.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel5
             // 
@@ -752,6 +780,8 @@ namespace sistema_de_facturacion.Facturacion
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -781,7 +811,6 @@ namespace sistema_de_facturacion.Facturacion
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button huellaB;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox parametroField;
         private System.Windows.Forms.Label labelParametro;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label labelElegir;
@@ -818,5 +847,8 @@ namespace sistema_de_facturacion.Facturacion
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TextBox parametroField;
+        private System.Windows.Forms.Button consumidorButton;
     }
 }

@@ -21,6 +21,7 @@ namespace sistema_de_facturacion.Inventarios
             InitializeComponent();
             this.inicial = interfazInicial;
             this.tipo = type;
+            labelAdvertencia.Visible = false;
             if (type.Equals("consultar"))
             {
                 labelIngreso.Text = "Gestión de Productos";
@@ -116,6 +117,26 @@ namespace sistema_de_facturacion.Inventarios
             else
             {
                 MessageBox.Show("Elija un parámetro.");
+                parametroField.Clear();
+            }
+        }
+
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void ParametroField_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            if (parametroBox.Text.Length > 0)
+            {
+                labelAdvertencia.Visible = false;
+                productosGrid.DataSource = new Producto().buscarProducto(parametroBox.SelectedIndex, parametroField.Text);
+            }
+            else
+            {
+                labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
         }

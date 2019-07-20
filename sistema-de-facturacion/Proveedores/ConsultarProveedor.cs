@@ -24,6 +24,7 @@ namespace sistema_de_facturacion.Proveedores
             proveedorGrid.Update();
             proveedorGrid.Refresh();
             this.tipo = type;
+            labelAdvertencia.Visible = false;
             if (type.Equals("consultar"))
             {
                 labelIngreso.Text = "Consulta de Proveedores";
@@ -148,13 +149,19 @@ namespace sistema_de_facturacion.Proveedores
 
         private void ParametroField_KeyUp(object sender, KeyEventArgs e)
         {
+            
+        }
+
+        private void ParametroField_KeyUp_1(object sender, KeyEventArgs e)
+        {
             if (parametroBox.Text.Length > 0)
             {
+                labelAdvertencia.Visible = false;
                 proveedorGrid.DataSource = buscar.buscarProveedor(parametroBox.SelectedIndex, parametroField.Text);
             }
             else
             {
-                MessageBox.Show("Elija un parámetro.");
+                labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
         }

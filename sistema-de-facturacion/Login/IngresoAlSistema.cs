@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using sistema_de_facturacion.Principal;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using sistema_de_facturacion.Modelo;
 
@@ -81,6 +82,15 @@ namespace sistema_de_facturacion.Login
         private void Cerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
