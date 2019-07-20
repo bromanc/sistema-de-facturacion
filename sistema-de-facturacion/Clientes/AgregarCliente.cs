@@ -213,7 +213,7 @@ namespace sistema_de_facturacion.Clientes
                     {
                         //huella = null
                     }
-                    //Verificar primero con regex antes de declarar el nuevo objeto cliente.
+                    //Verificar primero con regex antes de declarar el nuevo objeto cliente. Aquí mando if, invoco función.
                     Cliente client = new Cliente(cedulaRUCField.Text,nombre,apellidoField.Text,telefonoField.Text,direccionField.Text,ciudadField.Text,correoField.Text,"STRING HUELLA5",tipo,estado);
                     int hecho = client.agregarCliente(client);
                     if (hecho == 0)
@@ -595,6 +595,11 @@ namespace sistema_de_facturacion.Clientes
                     tt.Show("No deje este campo vacío.", cedulaRUCField, 0, -40, VisibleTime);
                 }
             
+        }
+
+        private void LabelCRP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

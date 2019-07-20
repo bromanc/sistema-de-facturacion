@@ -195,12 +195,13 @@
             // 
             this.labelCRP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCRP.AutoSize = true;
-            this.labelCRP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCRP.Location = new System.Drawing.Point(3, 13);
+            this.labelCRP.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCRP.Location = new System.Drawing.Point(6, 13);
             this.labelCRP.Name = "labelCRP";
-            this.labelCRP.Size = new System.Drawing.Size(200, 21);
+            this.labelCRP.Size = new System.Drawing.Size(194, 20);
             this.labelCRP.TabIndex = 0;
-            this.labelCRP.Text = "Cédula/RUC/Pasaporte:";
+            this.labelCRP.Text = "Cédula/RUC/Pasaporte*:";
+            this.labelCRP.Click += new System.EventHandler(this.LabelCRP_Click);
             // 
             // cedulaRUCField
             // 
@@ -218,11 +219,11 @@
             this.labelNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(56, 60);
+            this.labelNombre.Location = new System.Drawing.Point(53, 60);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(95, 21);
+            this.labelNombre.Size = new System.Drawing.Size(101, 21);
             this.labelNombre.TabIndex = 1;
-            this.labelNombre.Text = "Nombre(s):";
+            this.labelNombre.Text = "Nombre(s)*:";
             // 
             // tableLayoutPanel3
             // 
@@ -325,11 +326,11 @@
             this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCorreo.AutoSize = true;
             this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorreo.Location = new System.Drawing.Point(24, 295);
+            this.labelCorreo.Location = new System.Drawing.Point(21, 295);
             this.labelCorreo.Name = "labelCorreo";
-            this.labelCorreo.Size = new System.Drawing.Size(158, 21);
+            this.labelCorreo.Size = new System.Drawing.Size(164, 21);
             this.labelCorreo.TabIndex = 4;
-            this.labelCorreo.Text = "Correo Electrónico:";
+            this.labelCorreo.Text = "Correo Electrónico*:";
             this.labelCorreo.Click += new System.EventHandler(this.Label5_Click);
             // 
             // correoField
@@ -347,11 +348,11 @@
             this.labelDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDireccion.Location = new System.Drawing.Point(13, 248);
+            this.labelDireccion.Location = new System.Drawing.Point(10, 248);
             this.labelDireccion.Name = "labelDireccion";
-            this.labelDireccion.Size = new System.Drawing.Size(180, 21);
+            this.labelDireccion.Size = new System.Drawing.Size(186, 21);
             this.labelDireccion.TabIndex = 3;
-            this.labelDireccion.Text = "Dirección Domiciliaria:";
+            this.labelDireccion.Text = "Dirección Domiciliaria*:";
             // 
             // direccionField
             // 
@@ -369,11 +370,11 @@
             this.labelNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNumero.AutoSize = true;
             this.labelNumero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumero.Location = new System.Drawing.Point(16, 201);
+            this.labelNumero.Location = new System.Drawing.Point(13, 201);
             this.labelNumero.Name = "labelNumero";
-            this.labelNumero.Size = new System.Drawing.Size(174, 21);
+            this.labelNumero.Size = new System.Drawing.Size(180, 21);
             this.labelNumero.TabIndex = 2;
-            this.labelNumero.Text = "Número de teléfono: ";
+            this.labelNumero.Text = "Número de teléfono*: ";
             // 
             // telefonoField
             // 
@@ -392,11 +393,11 @@
             this.labelRazon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelRazon.AutoSize = true;
             this.labelRazon.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.labelRazon.Location = new System.Drawing.Point(48, 154);
+            this.labelRazon.Location = new System.Drawing.Point(45, 154);
             this.labelRazon.Name = "labelRazon";
-            this.labelRazon.Size = new System.Drawing.Size(111, 21);
+            this.labelRazon.Size = new System.Drawing.Size(117, 21);
             this.labelRazon.TabIndex = 12;
-            this.labelRazon.Text = "Razón Social:";
+            this.labelRazon.Text = "Razón Social*:";
             // 
             // labelApellido
             // 
@@ -414,11 +415,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 342);
+            this.label1.Location = new System.Drawing.Point(64, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 21);
+            this.label1.Size = new System.Drawing.Size(79, 21);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Ciudad:";
+            this.label1.Text = "Ciudad*:";
             // 
             // ciudadField
             // 

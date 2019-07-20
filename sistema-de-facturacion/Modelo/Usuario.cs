@@ -133,6 +133,9 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
             SqlDataReader reader = cmd.ExecuteReader();
             dtUsuarios.Load(reader);
+            dtUsuarios.Columns[0].ColumnName = "Nombre de Usuario";
+            dtUsuarios.Columns[1].ColumnName = "Dirección de correo electrónico";
+            dtUsuarios.Columns[2].ColumnName = "Rol";
             conexion.cerrarConexion();
             return dtUsuarios;
         }

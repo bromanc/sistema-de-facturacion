@@ -71,6 +71,15 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
             SqlDataReader reader = cmd.ExecuteReader();
             dtProveedores.Load(reader);
+            dtProveedores.Columns[0].ColumnName = "RUC";
+            dtProveedores.Columns[1].ColumnName = "Nombre";
+            dtProveedores.Columns[2].ColumnName = "Teléfono";
+            dtProveedores.Columns[3].ColumnName = "Dirección";
+            dtProveedores.Columns[4].ColumnName = "Ciudad";
+            dtProveedores.Columns[5].ColumnName = "Dirección de Correo Electrónico";
+            dtProveedores.Columns[6].ColumnName = "Nombre de Persona de Contacto";
+            dtProveedores.Columns[7].ColumnName = "Número de teléfono de persona de contacto";
+            dtProveedores.Columns[8].ColumnName = "Activo";
             conexion.cerrarConexion();
             return dtProveedores;
         }

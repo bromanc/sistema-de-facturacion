@@ -116,16 +116,30 @@ namespace sistema_de_facturacion.Modelo
         }
         public DataTable buscarProducto(int decision, String cadena)
         {
-            DataTable dtClientes = new DataTable();
+            DataTable dtProductos = new DataTable();
             conexion.abrirConexion();
             SqlCommand cmd = new SqlCommand("uspBuscarProducto", conexion.obtenerConexion());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@decision", SqlDbType.VarChar).Value = decision;
             cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
             SqlDataReader reader = cmd.ExecuteReader();
-            dtClientes.Load(reader);
+            dtProductos.Load(reader);
+            dtProductos.Columns[0].ColumnName = "Código";
+            dtProductos.Columns[1].ColumnName = "Nombre";
+            dtProductos.Columns[2].ColumnName = "Unidades Disponibles";
+            dtProductos.Columns[3].ColumnName = "Precio Unitario";
+            dtProductos.Columns[4].ColumnName = "Descuento";
+            dtProductos.Columns[5].ColumnName = "Unidad de Venta";
+            dtProductos.Columns[6].ColumnName = "Unidades Vendidas";
+            dtProductos.Columns[7].ColumnName = "Precio Original";
+            dtProductos.Columns[8].ColumnName = "Último Reabastecimiento";
+            dtProductos.Columns[9].ColumnName = "Ganancia Mínima";
+            dtProductos.Columns[10].ColumnName = "RUC Proveedor";
+            dtProductos.Columns[11].ColumnName = "Activo";
+            dtProductos.Columns[12].ColumnName = "Código Categoría";
+            dtProductos.Columns[13].ColumnName = "Stock Mínimo";
             conexion.cerrarConexion();
-            return dtClientes;
+            return dtProductos;
         }
     }
 }

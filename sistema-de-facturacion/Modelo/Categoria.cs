@@ -99,6 +99,8 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
             SqlDataReader reader = cmd.ExecuteReader();
             dtCategorias.Load(reader);
+            dtCategorias.Columns[0].ColumnName = "Código de Categoría";
+            dtCategorias.Columns[1].ColumnName = "Nombre de la Categoría";
             conexion.cerrarConexion();
             return dtCategorias;
         }

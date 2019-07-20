@@ -33,21 +33,34 @@
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.parametroField = new System.Windows.Forms.TextBox();
+            this.labelAdvertencia = new System.Windows.Forms.Label();
+            this.labelParametro = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelElegir = new System.Windows.Forms.Label();
+            this.parametroBox = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.accionButton = new System.Windows.Forms.Button();
+            this.regresarButton = new System.Windows.Forms.Button();
+            this.clientesGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.labelIngreso);
             this.panel1.Controls.Add(this.minimizar);
             this.panel1.Controls.Add(this.maximizar);
             this.panel1.Controls.Add(this.cerrar);
@@ -96,71 +109,197 @@
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
-            // dataGridView1
+            // labelIngreso
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(945, 396);
-            this.dataGridView1.TabIndex = 8;
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(409, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(164, 18);
+            this.labelIngreso.TabIndex = 9;
+            this.labelIngreso.Text = "Gestión de Proformas";
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 458);
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.625F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.625F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.75F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelParametro, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(945, 80);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 62);
+            this.tableLayoutPanel1.TabIndex = 13;
             // 
-            // button1
+            // tableLayoutPanel3
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(192, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ver Proforma";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.parametroField, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelAdvertencia, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(232, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(475, 56);
+            this.tableLayoutPanel3.TabIndex = 4;
             // 
-            // button2
+            // parametroField
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(570, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Anular Proforma";
-            this.button2.UseVisualStyleBackColor = true;
+            this.parametroField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroField.Location = new System.Drawing.Point(3, 33);
+            this.parametroField.Name = "parametroField";
+            this.parametroField.ShortcutsEnabled = false;
+            this.parametroField.Size = new System.Drawing.Size(469, 20);
+            this.parametroField.TabIndex = 1;
+            // 
+            // labelAdvertencia
+            // 
+            this.labelAdvertencia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelAdvertencia.AutoSize = true;
+            this.labelAdvertencia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.labelAdvertencia.Location = new System.Drawing.Point(98, 3);
+            this.labelAdvertencia.Name = "labelAdvertencia";
+            this.labelAdvertencia.Size = new System.Drawing.Size(279, 21);
+            this.labelAdvertencia.TabIndex = 2;
+            this.labelAdvertencia.Text = "Debe elegir un parámetro primero!";
+            // 
+            // labelParametro
+            // 
+            this.labelParametro.AutoSize = true;
+            this.labelParametro.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelParametro.Location = new System.Drawing.Point(3, 41);
+            this.labelParametro.Name = "labelParametro";
+            this.labelParametro.Size = new System.Drawing.Size(223, 21);
+            this.labelParametro.TabIndex = 1;
+            this.labelParametro.Text = "Ingrese el parámetro:";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.labelElegir, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.parametroBox, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(713, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 56);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // labelElegir
+            // 
+            this.labelElegir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelElegir.AutoSize = true;
+            this.labelElegir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelElegir.Location = new System.Drawing.Point(46, 0);
+            this.labelElegir.Name = "labelElegir";
+            this.labelElegir.Size = new System.Drawing.Size(161, 28);
+            this.labelElegir.TabIndex = 0;
+            this.labelElegir.Text = "Elegir el parámetro:";
+            // 
+            // parametroBox
+            // 
+            this.parametroBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.parametroBox.FormattingEnabled = true;
+            this.parametroBox.Items.AddRange(new object[] {
+            "Cédula de Identidad/RUC",
+            "Nombre/Razón Social"});
+            this.parametroBox.Location = new System.Drawing.Point(3, 31);
+            this.parametroBox.Name = "parametroBox";
+            this.parametroBox.Size = new System.Drawing.Size(248, 21);
+            this.parametroBox.TabIndex = 1;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.accionButton, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.regresarButton, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 492);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(970, 58);
+            this.tableLayoutPanel4.TabIndex = 15;
+            // 
+            // accionButton
+            // 
+            this.accionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.accionButton.Location = new System.Drawing.Point(175, 3);
+            this.accionButton.Name = "accionButton";
+            this.accionButton.Size = new System.Drawing.Size(135, 52);
+            this.accionButton.TabIndex = 2;
+            this.accionButton.Text = "Revisar Proforma";
+            this.accionButton.UseVisualStyleBackColor = true;
+            // 
+            // regresarButton
+            // 
+            this.regresarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.regresarButton.Location = new System.Drawing.Point(660, 3);
+            this.regresarButton.Name = "regresarButton";
+            this.regresarButton.Size = new System.Drawing.Size(135, 52);
+            this.regresarButton.TabIndex = 1;
+            this.regresarButton.Text = "Regresar";
+            this.regresarButton.UseVisualStyleBackColor = true;
+            this.regresarButton.Click += new System.EventHandler(this.RegresarButton_Click);
+            // 
+            // clientesGrid
+            // 
+            this.clientesGrid.AllowUserToAddRows = false;
+            this.clientesGrid.AllowUserToDeleteRows = false;
+            this.clientesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clientesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientesGrid.Location = new System.Drawing.Point(0, 112);
+            this.clientesGrid.Name = "clientesGrid";
+            this.clientesGrid.ReadOnly = true;
+            this.clientesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientesGrid.Size = new System.Drawing.Size(970, 380);
+            this.clientesGrid.TabIndex = 16;
             // 
             // VerProforma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 550);
+            this.Controls.Add(this.clientesGrid);
+            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerProforma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerProforma";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clientesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,9 +310,18 @@
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox maximizar;
         private System.Windows.Forms.PictureBox cerrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelIngreso;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox parametroField;
+        private System.Windows.Forms.Label labelAdvertencia;
+        private System.Windows.Forms.Label labelParametro;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label labelElegir;
+        private System.Windows.Forms.ComboBox parametroBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button accionButton;
+        private System.Windows.Forms.Button regresarButton;
+        private System.Windows.Forms.DataGridView clientesGrid;
     }
 }

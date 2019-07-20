@@ -52,5 +52,11 @@ namespace sistema_de_facturacion.Estimados
         {
 
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            inicial.Visible = true;
+            this.Close();
+        }
     }
 }
