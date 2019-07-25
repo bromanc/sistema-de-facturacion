@@ -20,7 +20,22 @@ namespace sistema_de_facturacion.Facturacion
             this.inicial = interfazInicial;
             //verButton.Visible = false;
         }
-
+        public VerFactura(String modificar,Form interfazInicial)
+        {
+            InitializeComponent();
+            this.inicial = interfazInicial;
+            this.accionButton.Text = "Revisar factura seleccionada";
+            labelIngreso.Text = "Revisión de Facturas";
+            //verButton.Visible = false;
+        }
+        public VerFactura(Boolean anular, Form interfazInicial)
+        {
+            InitializeComponent();
+            this.inicial = interfazInicial;
+            this.accionButton.Text = "Anular factura seleccionada";
+            labelIngreso.Text = "Anulación de Facturas";
+            //verButton.Visible = false;
+        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -58,6 +73,11 @@ namespace sistema_de_facturacion.Facturacion
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void AccionButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

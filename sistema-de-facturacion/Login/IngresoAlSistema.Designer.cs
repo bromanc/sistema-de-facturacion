@@ -85,8 +85,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.48718F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.51282F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.02564F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.97436F));
             this.tableLayoutPanel1.Controls.Add(this.labelUsuario, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelPassword, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.usuarioField, 1, 0);
@@ -105,18 +105,18 @@
             this.labelUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(24, 27);
+            this.labelUsuario.Location = new System.Drawing.Point(6, 27);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(66, 18);
+            this.labelUsuario.Size = new System.Drawing.Size(109, 18);
             this.labelUsuario.TabIndex = 7;
-            this.labelUsuario.Text = "Usuario:";
+            this.labelUsuario.Text = "ID de Usuario:";
             // 
             // labelPassword
             // 
             this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(8, 99);
+            this.labelPassword.Location = new System.Drawing.Point(12, 99);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(97, 18);
             this.labelPassword.TabIndex = 8;
@@ -125,20 +125,20 @@
             // usuarioField
             // 
             this.usuarioField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.usuarioField.Location = new System.Drawing.Point(117, 26);
+            this.usuarioField.Location = new System.Drawing.Point(125, 26);
             this.usuarioField.Name = "usuarioField";
             this.usuarioField.ShortcutsEnabled = false;
-            this.usuarioField.Size = new System.Drawing.Size(465, 20);
+            this.usuarioField.Size = new System.Drawing.Size(457, 20);
             this.usuarioField.TabIndex = 9;
             // 
             // passwordField
             // 
             this.passwordField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordField.Location = new System.Drawing.Point(117, 98);
+            this.passwordField.Location = new System.Drawing.Point(125, 98);
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '*';
             this.passwordField.ShortcutsEnabled = false;
-            this.passwordField.Size = new System.Drawing.Size(465, 20);
+            this.passwordField.Size = new System.Drawing.Size(457, 20);
             this.passwordField.TabIndex = 10;
             this.passwordField.TextChanged += new System.EventHandler(this.PasswordField_TextChanged);
             this.passwordField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordField_KeyPress);

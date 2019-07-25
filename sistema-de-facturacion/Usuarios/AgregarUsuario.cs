@@ -16,9 +16,11 @@ namespace sistema_de_facturacion.Usuarios
     {
         public Form inicial;
         public List<TextBox> fieldList = new List<TextBox>();
-        public Boolean rol;
+        public Boolean rol, valido;
         public Boolean modificar;
         public Usuario obtenido = new Usuario();
+        public Validacion validar = new Validacion();
+        int VisibleTime = 3250;
         public AgregarUsuario(Form interfazInicial)
         {
             InitializeComponent();
@@ -57,8 +59,18 @@ namespace sistema_de_facturacion.Usuarios
         {
             nombreField.Text = obtenido.usuario;
             passwordField.Text = "";
-            correoField.Text = obtenido.correo;
-            usuarioBox.SelectedIndex = obtenido.rol;
+            nombresField.Text = obtenido.nombres;
+            if (obtenido.rol.Equals("Gerente"))
+            {
+                usuarioBox.SelectedIndex = 0;
+            } else if (obtenido.rol.Equals("Vendedor"))
+            {
+                usuarioBox.SelectedIndex = 1;
+            } else if (obtenido.rol.Equals("Bodeguero"))
+            {
+                usuarioBox.SelectedIndex = 2;
+            }
+            apellidoField.Text = obtenido.apellidos;
         }
         public void modificarF()
         {
@@ -68,7 +80,7 @@ namespace sistema_de_facturacion.Usuarios
             registrarButton.Text = "Guardar Cambios";
             passwordField.ReadOnly = true;
             limpiarButton.Visible = false;
-            correoField.ReadOnly = true;
+            nombresField.ReadOnly = true;
             labelIngreso.Text = "Modificación de Rol";
             establecerDatos();
             passwordField.Text = obtenido.contrasena;
@@ -84,7 +96,7 @@ namespace sistema_de_facturacion.Usuarios
 
             fieldList.Add(nombreField);
             fieldList.Add(passwordField);
-            fieldList.Add(correoField);
+            fieldList.Add(nombresField);
             int selected = usuarioBox.SelectedIndex;
             Boolean lleno = false;
             if (modificar == false)
@@ -111,7 +123,8 @@ namespace sistema_de_facturacion.Usuarios
                 }
                 else
                 {
-                    Usuario user = new Usuario(nombreField.Text,passwordField.Text,correoField.Text,selected,"STRING HUELLA5");
+                   
+                    Usuario user = new Usuario(nombreField.Text,passwordField.Text,nombresField.Text,apellidoField.Text,(String)usuarioBox.SelectedItem,"STRING HUELLAU");
                     int hecho = user.agregarUsuario(user);
                     if (hecho == 0)
                     {
@@ -134,7 +147,7 @@ namespace sistema_de_facturacion.Usuarios
             {
                 if (rol)
                 {
-                    obtenido.rol = usuarioBox.SelectedIndex;
+                    obtenido.rol = (String)usuarioBox.SelectedItem;
                     if (obtenido.modificarRol(obtenido) == 0)
                     {
                         MessageBox.Show("Rol modificado exitosamente.");
@@ -169,7 +182,7 @@ namespace sistema_de_facturacion.Usuarios
                     }
                     else
                     {
-                        Usuario modificado = new Usuario(nombreField.Text, passwordField.Text, correoField.Text, usuarioBox.SelectedIndex, "HUELLA");
+                        Usuario modificado = new Usuario(nombreField.Text, passwordField.Text,nombresField.Text,apellidoField.Text,(String)usuarioBox.SelectedItem, "HUELLA");
                         if (obtenido.modificarUsuario(modificado) == 0)
                         {
                             MessageBox.Show("Usuario modificado exitosamente.");
@@ -216,7 +229,9 @@ namespace sistema_de_facturacion.Usuarios
 
             fieldList.Add(nombreField);
             fieldList.Add(passwordField);
-            fieldList.Add(correoField);
+            fieldList.Add(nombresField);
+            fieldList.Add(apellidoField);
+
             foreach (TextBox singleItem in fieldList)
             {
                 singleItem.Clear();
@@ -232,6 +247,73 @@ namespace sistema_de_facturacion.Usuarios
         private void LabelIngreso_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void NombreField_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!validar.letras(nombreField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente letras.", nombreField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void PasswordField_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!validar.letras(nombreField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente números y letras.", nombreField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void NombreField_Leave(object sender, EventArgs e)
+        {
+            if (nombreField.Text.Length > 12)
+            {
+                    ToolTip tt = new ToolTip();
+                    tt.IsBalloon = true;
+                    tt.Show("Ingrese un nombre de usuario de entre 8 y 12 caracteres.", nombreField, 0, -40, VisibleTime);
+                
+            }
+            if (string.IsNullOrWhiteSpace(nombreField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", nombreField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void PasswordField_Leave(object sender, EventArgs e)
+        {
+            if (nombreField.Text.Length > 15)
+            {
+
+                this.valido = false;
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese un nombre de usuario de entre 8 y 15 caracteres.", nombreField, 0, -40, VisibleTime);
+
+            }
+            if (string.IsNullOrWhiteSpace(passwordField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", passwordField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void CorreoField_Leave(object sender, EventArgs e)
+        {
+            if (!validar.letras(nombresField))
+            {
+                this.valido = false;
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese sólo letras", nombresField, 0, -40, VisibleTime);
+            }
         }
     }
 }

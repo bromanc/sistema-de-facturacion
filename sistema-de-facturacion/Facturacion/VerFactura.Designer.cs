@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerFactura));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
-            this.labelIngreso = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.parametroField = new System.Windows.Forms.TextBox();
@@ -69,6 +69,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(833, 50);
             this.panel1.TabIndex = 5;
+            // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(329, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(153, 18);
+            this.labelIngreso.TabIndex = 8;
+            this.labelIngreso.Text = "Gestión de Facturas";
             // 
             // minimizar
             // 
@@ -108,17 +119,6 @@
             this.cerrar.TabIndex = 3;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.Cerrar_Click);
-            // 
-            // labelIngreso
-            // 
-            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelIngreso.AutoSize = true;
-            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngreso.Location = new System.Drawing.Point(329, 16);
-            this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(153, 18);
-            this.labelIngreso.TabIndex = 8;
-            this.labelIngreso.Text = "Gestión de Facturas";
             // 
             // tableLayoutPanel1
             // 
@@ -248,6 +248,7 @@
             this.accionButton.TabIndex = 2;
             this.accionButton.Text = "Revisar Factura";
             this.accionButton.UseVisualStyleBackColor = true;
+            this.accionButton.Click += new System.EventHandler(this.AccionButton_Click);
             // 
             // regresarButton
             // 

@@ -817,7 +817,7 @@
             this.eliminarClienteButton.Name = "eliminarClienteButton";
             this.eliminarClienteButton.Size = new System.Drawing.Size(286, 52);
             this.eliminarClienteButton.TabIndex = 4;
-            this.eliminarClienteButton.Text = "Eliminar Cliente";
+            this.eliminarClienteButton.Text = "Cambio Estado Cliente";
             this.eliminarClienteButton.UseVisualStyleBackColor = true;
             this.eliminarClienteButton.Click += new System.EventHandler(this.Button9_Click);
             // 
@@ -959,7 +959,7 @@
             this.eliminarProductoButton.Name = "eliminarProductoButton";
             this.eliminarProductoButton.Size = new System.Drawing.Size(286, 52);
             this.eliminarProductoButton.TabIndex = 4;
-            this.eliminarProductoButton.Text = "Eliminar Producto";
+            this.eliminarProductoButton.Text = "Cambiar Estado Producto";
             this.eliminarProductoButton.UseVisualStyleBackColor = true;
             this.eliminarProductoButton.Click += new System.EventHandler(this.EliminarProductoButton_Click);
             // 

@@ -33,11 +33,11 @@ namespace sistema_de_facturacion.Principal
             InitializeComponent();
             this.obtenido = obtenido;
             this.WindowState = FormWindowState.Maximized;
-            if (obtenido.rol == 1)
+            if (obtenido.rol.Equals("Vendedor"))
             {
                 interfazVendedor();
             }
-            if (obtenido.rol == 2)
+            if (obtenido.rol.Equals("Bodeguero"))
             {
                 interfazBodeguero();
             }
@@ -337,21 +337,21 @@ namespace sistema_de_facturacion.Principal
 
         private void RevisarProformaButton_Click(object sender, EventArgs e)
         {
-            new VerProforma(this).Visible = true;
+            new VerProforma("revisar",this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void RevisarFacturaButton_Click(object sender, EventArgs e)
         {
-            new VerFactura(this).Visible = true;
+            new VerFactura("Revisar",this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
 
         private void AnularFacturaButton_Click(object sender, EventArgs e)
         {
-            new VerFactura(this).Visible = true;
+            new VerFactura(true,this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
@@ -386,7 +386,7 @@ namespace sistema_de_facturacion.Principal
 
         private void AnularProformaButton_Click(object sender, EventArgs e)
         {
-            new VerProforma(this).Visible = true;
+            new VerProforma(true,this).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }

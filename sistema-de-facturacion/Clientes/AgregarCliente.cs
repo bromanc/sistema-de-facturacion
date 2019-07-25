@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using sistema_de_facturacion.Principal;
 using sistema_de_facturacion.Modelo;
 using System.Text.RegularExpressions;
+using System.Windows.Input;
 
 namespace sistema_de_facturacion.Clientes
 {
@@ -22,7 +23,7 @@ namespace sistema_de_facturacion.Clientes
         public String identificacion;
         Validacion validar = new Validacion();
         Cliente modificarC= new Cliente();
-        int VisibleTime = 3500;
+        int VisibleTime = 2250;
         public AgregarCliente(Form interfazInicial)
         {
             InitializeComponent();
@@ -31,32 +32,54 @@ namespace sistema_de_facturacion.Clientes
             siRadio.Checked = true;
             natural.Checked = true;
             activo.Checked = true;
-
-
+            cedulaR.Checked = true;
+            cedulaField.Enabled = true;
+            pasaporteR.Enabled = true;
+            pasaporteField.Enabled = false;
+            rucR.Enabled = false;
+            rucField.Enabled = false;
+            inactivo.Enabled = false;
+            huellaButton.Enabled = true;
         }
         public AgregarCliente(Boolean modificacion, Form ventana, String identificacion)
         {
             InitializeComponent();
             this.modificar = modificacion;
             this.inicial = ventana;
-            this.identificacion = identificacion;
+            this.identificacion = identificacion.TrimEnd();
             modificarF();
-
+            siRadio.Select();
         }
         public void modificarF()
         {
             
             Cliente existente = modificarC.obtenerCliente(identificacion);
-            cedulaRUCField.Text = existente.cRUC;
-            if (existente.tipo.Equals('N'))
+            
+            if (existente.tipo.TrimEnd().Equals("Natural"))
             {
+
                 natural.Checked = true;
                 razonField.Text = "";
                 nombreField.Text = existente.nombre;
                 apellidoField.Text = existente.apellido;
+                if (validar.numeros2(existente.cRUC))
+                {
+                    cedulaR.Checked = true;
+                    cedulaField.Text = existente.cRUC;
+
+                }
+                else
+                {
+                    pasaporteR.Checked = true;
+                    pasaporteField.Text = existente.cRUC;
+                }
+
+                
             }
             else
             {
+                rucField.Text = existente.cRUC;
+                rucR.Checked = true;
                 nombreField.Text = "";
                 apellidoField.Text = "";
                 juridica.Checked = true;
@@ -66,7 +89,7 @@ namespace sistema_de_facturacion.Clientes
             direccionField.Text = existente.direccion;
             correoField.Text = existente.correo;
             ciudadField.Text = existente.ciudad;
-            if (existente.baja == 0)
+            if (existente.baja.Equals("Inactivo"))
             {
                 inactivo.Checked = true;
             }
@@ -75,13 +98,20 @@ namespace sistema_de_facturacion.Clientes
                 activo.Checked = true;
             }
             huellaButton.Enabled = false;
-            cedulaRUCField.ReadOnly = true;
-            nombreField.ReadOnly = true;
-            apellidoField.ReadOnly = true;
-            razonField.ReadOnly = true;
+            cedulaR.Enabled = false;
+            pasaporteField.Enabled = false;
+            cedulaField.Enabled = false;
+            rucR.Enabled = false;
+            pasaporteR.Enabled = false;
+            rucField.Enabled = false;
+            razonField.Enabled = false;
+            nombreField.Enabled = false;
+            apellidoField.Enabled = false;
             natural.Enabled = false;
             juridica.Enabled = false;
             activo.Enabled = false;
+            siRadio.Enabled = false;
+            noRadio.Enabled = false;
             inactivo.Enabled = false;
             labelIngreso.Text = "Modificación de Clientes";
             registrarButton.Text = "Guardar Cambios";
@@ -135,17 +165,82 @@ namespace sistema_de_facturacion.Clientes
             inicial.Visible = true;
             this.Close();
         }
-        public Boolean camposVacios()
+        public Boolean verificarCampos()
         {
-            fieldList.Add(cedulaRUCField);
+            Boolean correcto = false;
             if (natural.Checked)
             {
-                fieldList.Add(nombreField);
-                fieldList.Add(apellidoField);
-               
+                if (cedulaR.Checked)
+                {
+                    if (!validar.VerificaCedula(cedulaField.Text) || cedulaField.Text.Length < 10)
+                    {
+                        correcto = true;
+                        cedulaField.BackColor = Color.LightBlue;
+                    }
+                }
+                if (pasaporteR.Checked) //Verificar Pasaporte
+                {
+
+                }
+                if (!validar.letras(nombreField))
+                {
+                    correcto = true;
+                    nombreField.BackColor = Color.LightBlue;
+                }
+                
+                if (apellidoField.Text.Length>0 && !validar.letras(apellidoField))
+                {
+                    correcto = true;
+                    apellidoField.BackColor = Color.LightBlue;
+                }
             }
-            if (juridica.Checked)
+            else if(juridica.Checked)
             {
+                if (!validar.RucPersonaNatural(rucField.Text))
+                {
+                    correcto = true;
+                    rucField.BackColor = Color.LightBlue;
+                }
+                if (!validar.letras(razonField)) 
+                {
+                    correcto =  true;
+                    razonField.BackColor = Color.LightBlue;
+                }
+            }
+            if (!validar.numeros(telefonoField))
+            {
+                correcto = true;
+                telefonoField.BackColor = Color.LightBlue;
+            }
+            //-----Dirección-----
+            if (!validar.correo(correoField))
+            {
+                correcto = true;
+                correoField.BackColor = Color.LightBlue;
+            }
+            if (!validar.letras(ciudadField))
+            {
+                correcto = true;
+                ciudadField.BackColor = Color.LightBlue;
+            }
+            return correcto;
+        }
+        public Boolean camposVacios()
+        {
+            if (natural.Checked)
+            {
+                if (cedulaR.Checked)
+                {
+                    fieldList.Add(cedulaField);
+                }
+                if(pasaporteR.Checked)
+                {
+                    fieldList.Add(pasaporteField);
+                }
+                fieldList.Add(nombreField);
+            }else if (juridica.Checked)
+            {
+                fieldList.Add(rucField);
                 fieldList.Add(razonField);
 
             }
@@ -159,7 +254,7 @@ namespace sistema_de_facturacion.Clientes
                 if (singleItem.Text.Trim().Equals(""))
                 {
                     lleno = true;
-                    singleItem.BackColor = Color.Red;
+                    singleItem.BackColor = Color.IndianRed;
                 }
                 else
                 {
@@ -183,99 +278,129 @@ namespace sistema_de_facturacion.Clientes
                 }
                 else
                 {
-                    Char tipo = 'V';
-                    int estado = -1;
-                    String nombre, huella;
-                    if (natural.Checked)
+                    if (verificarCampos())
                     {
-                         tipo = 'N';
-                        nombre = nombreField.Text;
+                        MessageBox.Show("Llenar correctamente todos los campos.");
                     }
                     else
                     {
-                         tipo = 'J';
-                        nombre = razonField.Text;
-                        apellidoField.Text = null;
-                    }
-                    if (activo.Checked)
-                    {
-                         estado = 1;
-                    }
-                    else
-                    {
-                         estado = 0;
-                    }
-                    if (siRadio.Checked)
-                    {
-                        //Setear valor a huella
-                    }
-                    else
-                    {
-                        //huella = null
-                    }
-                    //Verificar primero con regex antes de declarar el nuevo objeto cliente. Aquí mando if, invoco función.
-                    Cliente client = new Cliente(cedulaRUCField.Text,nombre,apellidoField.Text,telefonoField.Text,direccionField.Text,ciudadField.Text,correoField.Text,"STRING HUELLA5",tipo,estado);
-                    int hecho = client.agregarCliente(client);
-                    if (hecho == 0)
-                    {
-                        MessageBox.Show("Cliente registrado exitosamente.");
-                        inicial.Visible = true;
-                        this.Close();
-                    } else if (hecho == -1)
-                    {
-                        MessageBox.Show("El cliente especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                        String nombre, huella, estado, tipo;
+                        String crp = "";
+                        if (natural.Checked)
+                        {
+                            tipo = "Natural";
+                            nombre = nombreField.Text;
+                            if (cedulaR.Checked)
+                            {
+                                crp = cedulaField.Text;
+                            }
+                            else if (pasaporteR.Checked)
+                            {
+                                crp = pasaporteField.Text;
+                            }
+                        }
+                        else
+                        {
+                            tipo = "Jurídica";
+                            crp = rucField.Text;
+                            nombre = razonField.Text;
+                            apellidoField.Text = null;
+                        }
+                        if (activo.Checked)
+                        {
+                            estado = "Activo";
+                        }
+                        else
+                        {
+                            estado = "Inactivo";
+                        }
+                        if (siRadio.Checked)
+                        {
+                            //Setear valor a huella
+                        }
+                        else
+                        {
+                            huella = null;
+                        }
+                        //Verificar primero con regex antes de declarar el nuevo objeto cliente. Aquí mando if, invoco función.
+                        Cliente client = new Cliente(crp, nombre, apellidoField.Text.TrimEnd(), telefonoField.Text.TrimEnd(), direccionField.Text.TrimEnd(), ciudadField.Text.TrimEnd(), correoField.Text.TrimEnd(), "STRING HUELLA", tipo, estado);
+                        int hecho = client.agregarCliente(client);
+                        if (hecho == 0)
+                        {
+                            MessageBox.Show("Cliente registrado con éxito.");
+                            inicial.Visible = true;
+                            this.Close();
+                        }
+                        else if (hecho == -1)
+                        {
+                            MessageBox.Show("El cliente especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se produjo un error al registrar el cliente.");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Se produjo un error al registrar el cliente.");
-                    }
-                    
                 }
             }
             else
             {
                 //Guardo cliente modificado
-                
-                
+
+
                 if (camposVacios())
                 {
                     MessageBox.Show("Se requiere llenar todos los campos.");
                 }
-                else
-                {
-                    Cliente client = new Cliente(cedulaRUCField.Text, nombreField.Text, apellidoField.Text, telefonoField.Text, direccionField.Text, ciudadField.Text, correoField.Text, "STRING HUELLA5", 'M', 1);
+                else { 
+                    String crp = "";
+                    if (cedulaR.Checked)
+                    {
+                        crp = cedulaField.Text;
+                    }else if (rucR.Checked)
+                    {
+                        crp = rucField.Text;
+                    }else if (pasaporteR.Checked)
+                    {
+                        crp = pasaporteField.Text;
+                    }
+                    Cliente client = new Cliente(crp, nombreField.Text.TrimEnd(), apellidoField.Text.TrimEnd(), telefonoField.Text.TrimEnd(), direccionField.Text.TrimEnd(), ciudadField.Text.TrimEnd(), correoField.Text.TrimEnd(), "STRING HUELLA5", "NJ", "IA");
                     if (client.modificarCliente(client) == 0)
                     {
                         MessageBox.Show("Cliente modificado exitosamente.");
-                        inicial.Visible = true;
                         this.Close();
+                        inicial.Visible = true;
                     }
                     else
                     {
                         MessageBox.Show("Se produjo un error al modificar el cliente.");
                     }
-                    
-                    
+
+
                 }
             }
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
-            fieldList.Add(cedulaRUCField);
+            //fieldList.Add(cedulaRUCField);
             if (natural.Checked)
             {
                 fieldList.Add(nombreField);
                 fieldList.Add(apellidoField);
+                fieldList.Add(cedulaField);
+                fieldList.Add(pasaporteField);
             }
             if (juridica.Checked)
             {
                 fieldList.Add(razonField);
+                fieldList.Add(rucField);
             }
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(correoField);
+            fieldList.Add(ciudadField);
             foreach (TextBox singleItem in fieldList)
             {
                 singleItem.Text = "";
@@ -303,8 +428,19 @@ namespace sistema_de_facturacion.Clientes
             {
                 nombreField.BackColor = Color.White;
                 apellidoField.BackColor = Color.White;
+                cedulaField.BackColor = Color.White;
+                pasaporteField.BackColor = Color.White;
+                cedulaField.Text = "";
+                pasaporteField.Text = "";
             }
-            
+
+            cedulaR.Enabled = false;
+            cedulaField.Enabled = false;
+            pasaporteR.Enabled = false;
+            pasaporteField.Enabled = false;
+            rucR.Enabled = true;
+            rucR.Checked = true;
+            rucField.Enabled = true;
             nombreField.Enabled = false;
             apellidoField.Enabled = false;
             razonField.Enabled = true;
@@ -321,7 +457,16 @@ namespace sistema_de_facturacion.Clientes
             if (natural.Checked)
             {
                 razonField.BackColor = Color.White;
+                rucField.BackColor = Color.White;
+                cedulaR.Checked = true;
+                rucField.Text = "";
             }
+            pasaporteField.Enabled = false;
+            cedulaR.Enabled = true;
+            rucR.Enabled = false;
+            cedulaField.Enabled = true;
+            pasaporteR.Enabled = true;
+            rucField.Enabled = false;
             nombreField.Enabled = true;
             apellidoField.Enabled = true;
             razonField.Enabled = false;
@@ -355,27 +500,11 @@ namespace sistema_de_facturacion.Clientes
             huellaButton.Enabled = true;
         }
 
-        private void CedulaRUCField_KeyUp(object sender, KeyEventArgs e)
-        {
-            cedulaRUCField.BackColor = Color.White;
-            if (!validar.numeros(cedulaRUCField))
-            {
-                int VisibleTime = 4000;
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente números.", cedulaRUCField, 0, -40, VisibleTime);
-            }
-        }
+
 
         private void NombreField_KeyUp(object sender, KeyEventArgs e)
         {
-            nombreField.BackColor = Color.White;
-            if (!validar.letras(nombreField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente letras.", nombreField, 0, -40, VisibleTime);
-            }
+
             String sinEspacios = nombreField.Text;
             if ((nombreField.Text.Length - sinEspacios.Trim().Length) > 1)
             {
@@ -388,13 +517,7 @@ namespace sistema_de_facturacion.Clientes
 
         private void ApellidoField_KeyUp(object sender, KeyEventArgs e)
         {
-            apellidoField.BackColor = Color.White;
-            if (!validar.letras(apellidoField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente letras.", apellidoField, 0, -40, VisibleTime);
-            }
+
             String sinEspacios = apellidoField.Text;
             if ((apellidoField.Text.Length - sinEspacios.Trim().Length) > 1)
             {
@@ -406,13 +529,7 @@ namespace sistema_de_facturacion.Clientes
 
         private void RazonField_KeyUp(object sender, KeyEventArgs e)
         {
-            razonField.BackColor = Color.White;
-            if (!validar.letras(razonField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente letras.", razonField, 0, -40, VisibleTime);
-            }
+
             String sinEspacios = razonField.Text;
             if ((razonField.Text.Length - sinEspacios.Trim().Length) > 1)
             {
@@ -424,24 +541,11 @@ namespace sistema_de_facturacion.Clientes
 
         private void TelefonoField_KeyUp(object sender, KeyEventArgs e)
         {
-            telefonoField.BackColor = Color.White;
-            if (!validar.numeros(telefonoField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente números.", telefonoField, 0, -40, VisibleTime);
-            }
+
         }
 
         private void DireccionField_KeyUp(object sender, KeyEventArgs e)
         {
-            direccionField.BackColor = Color.White;
-            if (!validar.letrasNumeros(direccionField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese sólo letras y números.", direccionField, 0, -40, VisibleTime);
-            }
             String sinEspacios = direccionField.Text;
             if ((direccionField.Text.Length - sinEspacios.Trim().Length) > 1)
             {
@@ -453,24 +557,18 @@ namespace sistema_de_facturacion.Clientes
 
         private void CiudadField_KeyUp(object sender, KeyEventArgs e)
         {
-            ciudadField.BackColor = Color.White;
-            if (!validar.letras(ciudadField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente letras.", ciudadField, 0, -40, VisibleTime);
-            }
+ 
             
         }
 
         private void CorreoField_Leave(object sender, EventArgs e)
         {
-            correoField.BackColor = Color.White;
+
             if (!validar.correo(correoField))
             {
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
-                tt.Show("Ingrese un correo válido, ejemplo: persona@dominio.com", correoField, 0, -40, VisibleTime);
+                tt.Show("Correo electrónico incorrecto", correoField, 0, -40, VisibleTime);
             }
 
         }
@@ -492,6 +590,7 @@ namespace sistema_de_facturacion.Clientes
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", nombreField, 0, -40, VisibleTime);
             }
+            
         }
 
         private void CiudadField_Leave(object sender, EventArgs e)
@@ -524,12 +623,7 @@ namespace sistema_de_facturacion.Clientes
                     tt.Show("No deje un espacio al final de la cadena.", apellidoField, 0, -40, VisibleTime);
                 }
             }
-            else
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("No deje este campo vacío.", apellidoField, 0, -40, VisibleTime);
-            }
+            
         }
 
         private void RazonField_Leave(object sender, EventArgs e)
@@ -559,6 +653,13 @@ namespace sistema_de_facturacion.Clientes
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", telefonoField, 0, -40, VisibleTime);
             }
+            if (!validar.numeros(telefonoField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente letras.", telefonoField, 0, -40, VisibleTime);
+                telefonoField.Text = "";
+            }
         }
 
         private void DireccionField_Leave(object sender, EventArgs e)
@@ -582,24 +683,245 @@ namespace sistema_de_facturacion.Clientes
 
         private void TelefonoField_Enter(object sender, EventArgs e)
         {
-
+            telefonoField.BackColor = Color.White;
         }
 
-        private void CedulaRUCField_Leave(object sender, EventArgs e)
-        {
-            
-                if (string.IsNullOrWhiteSpace(cedulaRUCField.Text))
-                {
-                    ToolTip tt = new ToolTip();
-                    tt.IsBalloon = true;
-                    tt.Show("No deje este campo vacío.", cedulaRUCField, 0, -40, VisibleTime);
-                }
-            
-        }
+        
 
         private void LabelCRP_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CedulaR_CheckedChanged(object sender, EventArgs e)
+        {
+            pasaporteR.Checked = false;
+            cedulaField.Enabled = true;
+            pasaporteField.Enabled = false;
+        }
+
+        private void PasaporteR_CheckedChanged(object sender, EventArgs e)
+        {
+            cedulaR.Checked = false;
+            pasaporteField.Enabled = true;
+            cedulaField.Enabled = false;
+        }
+
+        private void CedulaField_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (!validar.numeros(cedulaField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente números.", cedulaField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void RucField_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (!validar.numeros(rucField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente números.", rucField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void PasaporteField_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (!validar.letrasNumeros(pasaporteField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente caracteres alfanuméricos.", pasaporteField, 0, -40, VisibleTime);
+            }
+        }
+
+        
+
+       
+
+        private void PasaporteField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(pasaporteField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", pasaporteField, 0, -40, VisibleTime);
+            }
+        }
+        private void CedulaR_CheckedChanged_1(object sender, EventArgs e)
+        {
+            cedulaField.BackColor = Color.White;
+            cedulaField.Enabled = true;
+            pasaporteField.Enabled = false;
+
+        }
+        private void PasaporteR_CheckedChanged_1(object sender, EventArgs e)
+        {
+            pasaporteField.BackColor = Color.White;
+            pasaporteField.Enabled = true;
+            cedulaField.Enabled = false;
+        }
+        private void CorreoField_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void CedulaField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back)){
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void CedulaField_Leave_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cedulaField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", cedulaField, 0, -40, VisibleTime);
+            }
+            if (!validar.VerificaCedula(cedulaField.Text) || cedulaField.Text.Length<10)
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Cédula Incorrecta.", cedulaField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void CedulaField_Enter(object sender, EventArgs e)
+        {
+            cedulaField.BackColor = Color.White;
+        }
+
+        private void RucField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void RucField_Leave_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(rucField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", rucField, 0, -40, VisibleTime);
+            }
+            if (!validar.RucPersonaNatural(rucField.Text) || rucField.Text.Length < 13)
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("RUC Incorrecto", rucField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void PasaporteField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void NombreField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ApellidoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void RazonField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TelefonoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void CiudadField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void CedulaField_KeyUp_1(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void RucField_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void RucField_Enter(object sender, EventArgs e)
+        {
+            rucField.BackColor = Color.White;
+        }
+
+        private void PasaporteField_Enter(object sender, EventArgs e)
+        {
+            pasaporteField.BackColor = Color.White;
+        }
+
+        private void NombreField_Enter(object sender, EventArgs e)
+        {
+            nombreField.BackColor = Color.White;
+        }
+
+        private void RazonField_Enter(object sender, EventArgs e)
+        {
+            razonField.BackColor = Color.White;
+        }
+
+        private void DireccionField_Enter(object sender, EventArgs e)
+        {
+            direccionField.BackColor = Color.White;
+        }
+
+        private void CorreoField_Enter(object sender, EventArgs e)
+        {
+            correoField.BackColor = Color.White;
+        }
+
+        private void CiudadField_Enter(object sender, EventArgs e)
+        {
+            ciudadField.BackColor = Color.White;
         }
     }
 }

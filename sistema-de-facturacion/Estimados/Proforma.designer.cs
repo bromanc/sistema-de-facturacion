@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proforma));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
-            this.labelIngreso = new System.Windows.Forms.Label();
             this.clienteGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -110,6 +110,17 @@
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(322, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(160, 18);
+            this.labelIngreso.TabIndex = 9;
+            this.labelIngreso.Text = "Registro de Proforma";
+            // 
             // minimizar
             // 
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -148,17 +159,6 @@
             this.cerrar.TabIndex = 3;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.Cerrar_Click);
-            // 
-            // labelIngreso
-            // 
-            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelIngreso.AutoSize = true;
-            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngreso.Location = new System.Drawing.Point(322, 16);
-            this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(160, 18);
-            this.labelIngreso.TabIndex = 9;
-            this.labelIngreso.Text = "Registro de Proforma";
             // 
             // clienteGroup
             // 
@@ -224,7 +224,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.95491F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.24528F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.81132F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel3.Controls.Add(this.labelParametro, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.parametroB, 3, 0);
@@ -260,7 +260,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(151, 46);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(150, 46);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // labelElegir
@@ -268,7 +268,7 @@
             this.labelElegir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelElegir.AutoSize = true;
             this.labelElegir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelElegir.Location = new System.Drawing.Point(8, 0);
+            this.labelElegir.Location = new System.Drawing.Point(7, 0);
             this.labelElegir.Name = "labelElegir";
             this.labelElegir.Size = new System.Drawing.Size(135, 23);
             this.labelElegir.TabIndex = 0;
@@ -290,15 +290,15 @@
             "Huella"});
             this.parametroBox.Location = new System.Drawing.Point(3, 26);
             this.parametroBox.Name = "parametroBox";
-            this.parametroBox.Size = new System.Drawing.Size(145, 21);
+            this.parametroBox.Size = new System.Drawing.Size(144, 21);
             this.parametroBox.TabIndex = 1;
             // 
             // parametroB
             // 
             this.parametroB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parametroB.Location = new System.Drawing.Point(529, 3);
+            this.parametroB.Location = new System.Drawing.Point(528, 3);
             this.parametroB.Name = "parametroB";
-            this.parametroB.Size = new System.Drawing.Size(122, 46);
+            this.parametroB.Size = new System.Drawing.Size(123, 46);
             this.parametroB.TabIndex = 3;
             this.parametroB.Text = "Buscar";
             this.parametroB.UseVisualStyleBackColor = true;

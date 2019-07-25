@@ -23,7 +23,22 @@ namespace sistema_de_facturacion.Estimados
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
+        public VerProforma(String modificar, Form interfazInicial)
+        {
+            InitializeComponent();
+            this.inicial = interfazInicial;
+            this.accionButton.Text = "Revisar proforma seleccionada";
+            labelIngreso.Text = "Revisión de Proformas";
+            //verButton.Visible = false;
+        }
+        public VerProforma(Boolean anular, Form interfazInicial)
+        {
+            InitializeComponent();
+            this.inicial = interfazInicial;
+            this.accionButton.Text = "Anular proforma seleccionada";
+            labelIngreso.Text = "Anulación de Proforma";
+            //verButton.Visible = false;
+        }
         private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -51,6 +66,11 @@ namespace sistema_de_facturacion.Estimados
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void LabelIngreso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

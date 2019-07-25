@@ -35,8 +35,6 @@
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelCRP = new System.Windows.Forms.Label();
-            this.cedulaRUCField = new System.Windows.Forms.TextBox();
             this.labelNombre = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.nombreField = new System.Windows.Forms.TextBox();
@@ -45,6 +43,7 @@
             this.natural = new System.Windows.Forms.RadioButton();
             this.razonField = new System.Windows.Forms.TextBox();
             this.apellidoField = new System.Windows.Forms.TextBox();
+            this.labelCRP = new System.Windows.Forms.Label();
             this.labelCorreo = new System.Windows.Forms.Label();
             this.correoField = new System.Windows.Forms.TextBox();
             this.labelDireccion = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.telefonoField = new System.Windows.Forms.TextBox();
             this.labelRazon = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.ciudadField = new System.Windows.Forms.TextBox();
             this.labelHuella = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,6 +64,15 @@
             this.siRadio = new System.Windows.Forms.RadioButton();
             this.noRadio = new System.Windows.Forms.RadioButton();
             this.huellaButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.cedulaR = new System.Windows.Forms.RadioButton();
+            this.rucR = new System.Windows.Forms.RadioButton();
+            this.pasaporteR = new System.Windows.Forms.RadioButton();
+            this.cedulaField = new System.Windows.Forms.TextBox();
+            this.rucField = new System.Windows.Forms.TextBox();
+            this.pasaporteField = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.registrarButton = new System.Windows.Forms.Button();
             this.limpiarButton = new System.Windows.Forms.Button();
@@ -81,6 +88,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,12 +162,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.875F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.125F));
-            this.tableLayoutPanel1.Controls.Add(this.labelCRP, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cedulaRUCField, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76F));
             this.tableLayoutPanel1.Controls.Add(this.labelNombre, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelCRP, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelCorreo, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.correoField, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelDireccion, 0, 5);
@@ -167,16 +175,20 @@
             this.tableLayoutPanel1.Controls.Add(this.telefonoField, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelRazon, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.labelApellido, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ciudadField, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelHuella, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.1341F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.662835F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.088122F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -184,42 +196,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 477);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 522);
+            this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
-            // 
-            // labelCRP
-            // 
-            this.labelCRP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCRP.AutoSize = true;
-            this.labelCRP.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCRP.Location = new System.Drawing.Point(6, 13);
-            this.labelCRP.Name = "labelCRP";
-            this.labelCRP.Size = new System.Drawing.Size(194, 20);
-            this.labelCRP.TabIndex = 0;
-            this.labelCRP.Text = "Cédula/RUC/Pasaporte*:";
-            this.labelCRP.Click += new System.EventHandler(this.LabelCRP_Click);
-            // 
-            // cedulaRUCField
-            // 
-            this.cedulaRUCField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cedulaRUCField.Location = new System.Drawing.Point(210, 13);
-            this.cedulaRUCField.Name = "cedulaRUCField";
-            this.cedulaRUCField.ShortcutsEnabled = false;
-            this.cedulaRUCField.Size = new System.Drawing.Size(587, 20);
-            this.cedulaRUCField.TabIndex = 6;
-            this.cedulaRUCField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CedulaRUCField_KeyUp);
-            this.cedulaRUCField.Leave += new System.EventHandler(this.CedulaRUCField_Leave);
             // 
             // labelNombre
             // 
             this.labelNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(53, 60);
+            this.labelNombre.Location = new System.Drawing.Point(45, 88);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(101, 21);
             this.labelNombre.TabIndex = 1;
@@ -235,25 +221,28 @@
             this.tableLayoutPanel3.Controls.Add(this.razonField, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.apellidoField, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(210, 50);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(195, 82);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel1.SetRowSpan(this.tableLayoutPanel3, 3);
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(587, 135);
-            this.tableLayoutPanel3.TabIndex = 13;
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(602, 123);
+            this.tableLayoutPanel3.TabIndex = 1;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel3_Paint);
             // 
             // nombreField
             // 
             this.nombreField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nombreField.Location = new System.Drawing.Point(3, 12);
+            this.nombreField.Location = new System.Drawing.Point(3, 10);
+            this.nombreField.MaxLength = 50;
             this.nombreField.Name = "nombreField";
             this.nombreField.ShortcutsEnabled = false;
-            this.nombreField.Size = new System.Drawing.Size(441, 20);
+            this.nombreField.Size = new System.Drawing.Size(453, 20);
             this.nombreField.TabIndex = 0;
+            this.nombreField.Enter += new System.EventHandler(this.NombreField_Enter);
+            this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
             this.nombreField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NombreField_KeyUp);
             this.nombreField.Leave += new System.EventHandler(this.NombreField_Leave);
             // 
@@ -263,10 +252,10 @@
             this.groupBox1.Controls.Add(this.natural);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(450, 3);
+            this.groupBox1.Location = new System.Drawing.Point(462, 3);
             this.groupBox1.Name = "groupBox1";
             this.tableLayoutPanel3.SetRowSpan(this.groupBox1, 3);
-            this.groupBox1.Size = new System.Drawing.Size(134, 129);
+            this.groupBox1.Size = new System.Drawing.Size(137, 117);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo:";
@@ -276,7 +265,7 @@
             this.juridica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.juridica.AutoSize = true;
             this.juridica.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.juridica.Location = new System.Drawing.Point(6, 86);
+            this.juridica.Location = new System.Drawing.Point(6, 80);
             this.juridica.Name = "juridica";
             this.juridica.Size = new System.Drawing.Size(123, 21);
             this.juridica.TabIndex = 1;
@@ -290,7 +279,7 @@
             this.natural.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.natural.AutoSize = true;
             this.natural.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.natural.Location = new System.Drawing.Point(6, 23);
+            this.natural.Location = new System.Drawing.Point(6, 17);
             this.natural.Name = "natural";
             this.natural.Size = new System.Drawing.Size(120, 21);
             this.natural.TabIndex = 0;
@@ -302,31 +291,48 @@
             // razonField
             // 
             this.razonField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.razonField.Location = new System.Drawing.Point(3, 102);
+            this.razonField.Location = new System.Drawing.Point(3, 92);
+            this.razonField.MaxLength = 50;
             this.razonField.Name = "razonField";
             this.razonField.ShortcutsEnabled = false;
-            this.razonField.Size = new System.Drawing.Size(441, 20);
+            this.razonField.Size = new System.Drawing.Size(453, 20);
             this.razonField.TabIndex = 1;
+            this.razonField.Enter += new System.EventHandler(this.RazonField_Enter);
+            this.razonField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RazonField_KeyPress);
             this.razonField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RazonField_KeyUp);
             this.razonField.Leave += new System.EventHandler(this.RazonField_Leave);
             // 
             // apellidoField
             // 
             this.apellidoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.apellidoField.Location = new System.Drawing.Point(3, 57);
+            this.apellidoField.Location = new System.Drawing.Point(3, 51);
+            this.apellidoField.MaxLength = 50;
             this.apellidoField.Name = "apellidoField";
             this.apellidoField.ShortcutsEnabled = false;
-            this.apellidoField.Size = new System.Drawing.Size(441, 20);
+            this.apellidoField.Size = new System.Drawing.Size(453, 20);
             this.apellidoField.TabIndex = 3;
+            this.apellidoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoField_KeyPress);
             this.apellidoField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ApellidoField_KeyUp);
             this.apellidoField.Leave += new System.EventHandler(this.ApellidoField_Leave);
+            // 
+            // labelCRP
+            // 
+            this.labelCRP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCRP.AutoSize = true;
+            this.labelCRP.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCRP.Location = new System.Drawing.Point(35, 29);
+            this.labelCRP.Name = "labelCRP";
+            this.labelCRP.Size = new System.Drawing.Size(121, 20);
+            this.labelCRP.TabIndex = 0;
+            this.labelCRP.Text = "Identificación*:";
+            this.labelCRP.Click += new System.EventHandler(this.LabelCRP_Click);
             // 
             // labelCorreo
             // 
             this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCorreo.AutoSize = true;
             this.labelCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorreo.Location = new System.Drawing.Point(21, 295);
+            this.labelCorreo.Location = new System.Drawing.Point(14, 327);
             this.labelCorreo.Name = "labelCorreo";
             this.labelCorreo.Size = new System.Drawing.Size(164, 21);
             this.labelCorreo.TabIndex = 4;
@@ -336,11 +342,14 @@
             // correoField
             // 
             this.correoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.correoField.Location = new System.Drawing.Point(210, 295);
+            this.correoField.Location = new System.Drawing.Point(195, 328);
+            this.correoField.MaxLength = 50;
             this.correoField.Name = "correoField";
             this.correoField.ShortcutsEnabled = false;
-            this.correoField.Size = new System.Drawing.Size(587, 20);
+            this.correoField.Size = new System.Drawing.Size(602, 20);
             this.correoField.TabIndex = 10;
+            this.correoField.Enter += new System.EventHandler(this.CorreoField_Enter);
+            this.correoField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CorreoField_KeyUp);
             this.correoField.Leave += new System.EventHandler(this.CorreoField_Leave);
             // 
             // labelDireccion
@@ -348,7 +357,7 @@
             this.labelDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDireccion.Location = new System.Drawing.Point(10, 248);
+            this.labelDireccion.Location = new System.Drawing.Point(3, 275);
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(186, 21);
             this.labelDireccion.TabIndex = 3;
@@ -357,11 +366,13 @@
             // direccionField
             // 
             this.direccionField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.direccionField.Location = new System.Drawing.Point(210, 248);
+            this.direccionField.Location = new System.Drawing.Point(195, 276);
+            this.direccionField.MaxLength = 60;
             this.direccionField.Name = "direccionField";
             this.direccionField.ShortcutsEnabled = false;
-            this.direccionField.Size = new System.Drawing.Size(587, 20);
+            this.direccionField.Size = new System.Drawing.Size(602, 20);
             this.direccionField.TabIndex = 9;
+            this.direccionField.Enter += new System.EventHandler(this.DireccionField_Enter);
             this.direccionField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DireccionField_KeyUp);
             this.direccionField.Leave += new System.EventHandler(this.DireccionField_Leave);
             // 
@@ -370,7 +381,7 @@
             this.labelNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNumero.AutoSize = true;
             this.labelNumero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumero.Location = new System.Drawing.Point(13, 201);
+            this.labelNumero.Location = new System.Drawing.Point(6, 223);
             this.labelNumero.Name = "labelNumero";
             this.labelNumero.Size = new System.Drawing.Size(180, 21);
             this.labelNumero.TabIndex = 2;
@@ -379,12 +390,14 @@
             // telefonoField
             // 
             this.telefonoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.telefonoField.Location = new System.Drawing.Point(210, 201);
+            this.telefonoField.Location = new System.Drawing.Point(195, 224);
+            this.telefonoField.MaxLength = 15;
             this.telefonoField.Name = "telefonoField";
             this.telefonoField.ShortcutsEnabled = false;
-            this.telefonoField.Size = new System.Drawing.Size(587, 20);
+            this.telefonoField.Size = new System.Drawing.Size(602, 20);
             this.telefonoField.TabIndex = 8;
             this.telefonoField.Enter += new System.EventHandler(this.TelefonoField_Enter);
+            this.telefonoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoField_KeyPress);
             this.telefonoField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TelefonoField_KeyUp);
             this.telefonoField.Leave += new System.EventHandler(this.TelefonoField_Leave);
             // 
@@ -393,7 +406,7 @@
             this.labelRazon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelRazon.AutoSize = true;
             this.labelRazon.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.labelRazon.Location = new System.Drawing.Point(45, 154);
+            this.labelRazon.Location = new System.Drawing.Point(37, 171);
             this.labelRazon.Name = "labelRazon";
             this.labelRazon.Size = new System.Drawing.Size(117, 21);
             this.labelRazon.TabIndex = 12;
@@ -404,30 +417,22 @@
             this.labelApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.labelApellido.Location = new System.Drawing.Point(55, 107);
+            this.labelApellido.Location = new System.Drawing.Point(48, 127);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(96, 21);
             this.labelApellido.TabIndex = 14;
             this.labelApellido.Text = "Apellido(s):";
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 21);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Ciudad*:";
-            // 
             // ciudadField
             // 
             this.ciudadField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ciudadField.Location = new System.Drawing.Point(210, 342);
+            this.ciudadField.Location = new System.Drawing.Point(195, 380);
+            this.ciudadField.MaxLength = 20;
             this.ciudadField.Name = "ciudadField";
-            this.ciudadField.Size = new System.Drawing.Size(587, 20);
+            this.ciudadField.Size = new System.Drawing.Size(602, 20);
             this.ciudadField.TabIndex = 16;
+            this.ciudadField.Enter += new System.EventHandler(this.CiudadField_Enter);
+            this.ciudadField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CiudadField_KeyPress);
             this.ciudadField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CiudadField_KeyUp);
             this.ciudadField.Leave += new System.EventHandler(this.CiudadField_Leave);
             // 
@@ -436,7 +441,7 @@
             this.labelHuella.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelHuella.AutoSize = true;
             this.labelHuella.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHuella.Location = new System.Drawing.Point(39, 439);
+            this.labelHuella.Location = new System.Drawing.Point(32, 484);
             this.labelHuella.Name = "labelHuella";
             this.labelHuella.Size = new System.Drawing.Size(128, 21);
             this.labelHuella.TabIndex = 5;
@@ -447,7 +452,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 389);
+            this.label2.Location = new System.Drawing.Point(62, 431);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 21);
             this.label2.TabIndex = 17;
@@ -459,10 +464,10 @@
             this.groupBox2.Controls.Add(this.inactivo);
             this.groupBox2.Controls.Add(this.activo);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(210, 379);
+            this.groupBox2.Location = new System.Drawing.Point(195, 419);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(587, 41);
-            this.groupBox2.TabIndex = 18;
+            this.groupBox2.Size = new System.Drawing.Size(602, 46);
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // inactivo
@@ -497,12 +502,12 @@
             this.tableLayoutPanel4.Controls.Add(this.groupBox3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.huellaButton, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(210, 426);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(195, 471);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(587, 48);
-            this.tableLayoutPanel4.TabIndex = 19;
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(602, 48);
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -510,7 +515,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(379, 42);
+            this.groupBox3.Size = new System.Drawing.Size(389, 42);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
@@ -528,14 +533,14 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(373, 23);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(383, 23);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // siRadio
             // 
             this.siRadio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.siRadio.AutoSize = true;
-            this.siRadio.Location = new System.Drawing.Point(83, 5);
+            this.siRadio.Location = new System.Drawing.Point(88, 5);
             this.siRadio.Name = "siRadio";
             this.siRadio.Size = new System.Drawing.Size(36, 15);
             this.siRadio.TabIndex = 0;
@@ -548,7 +553,7 @@
             // 
             this.noRadio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.noRadio.AutoSize = true;
-            this.noRadio.Location = new System.Drawing.Point(268, 5);
+            this.noRadio.Location = new System.Drawing.Point(278, 5);
             this.noRadio.Name = "noRadio";
             this.noRadio.Size = new System.Drawing.Size(39, 15);
             this.noRadio.TabIndex = 1;
@@ -560,12 +565,126 @@
             // huellaButton
             // 
             this.huellaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.huellaButton.Location = new System.Drawing.Point(417, 4);
+            this.huellaButton.Location = new System.Drawing.Point(430, 4);
             this.huellaButton.Name = "huellaButton";
             this.huellaButton.Size = new System.Drawing.Size(137, 39);
             this.huellaButton.TabIndex = 11;
             this.huellaButton.Text = "Tomar Huella";
             this.huellaButton.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(56, 379);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 21);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Ciudad*:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tableLayoutPanel6);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(195, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(602, 73);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.cedulaR, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.rucR, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.pasaporteR, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.cedulaField, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.rucField, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.pasaporteField, 2, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.34146F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.65854F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(596, 54);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // cedulaR
+            // 
+            this.cedulaR.AutoSize = true;
+            this.cedulaR.Location = new System.Drawing.Point(3, 3);
+            this.cedulaR.Name = "cedulaR";
+            this.cedulaR.Size = new System.Drawing.Size(113, 17);
+            this.cedulaR.TabIndex = 0;
+            this.cedulaR.TabStop = true;
+            this.cedulaR.Text = "Número de Cédula";
+            this.cedulaR.UseVisualStyleBackColor = true;
+            this.cedulaR.CheckedChanged += new System.EventHandler(this.CedulaR_CheckedChanged_1);
+            // 
+            // rucR
+            // 
+            this.rucR.AutoSize = true;
+            this.rucR.Location = new System.Drawing.Point(201, 3);
+            this.rucR.Name = "rucR";
+            this.rucR.Size = new System.Drawing.Size(103, 17);
+            this.rucR.TabIndex = 1;
+            this.rucR.TabStop = true;
+            this.rucR.Text = "Número de RUC";
+            this.rucR.UseVisualStyleBackColor = true;
+            // 
+            // pasaporteR
+            // 
+            this.pasaporteR.AutoSize = true;
+            this.pasaporteR.Location = new System.Drawing.Point(399, 3);
+            this.pasaporteR.Name = "pasaporteR";
+            this.pasaporteR.Size = new System.Drawing.Size(128, 17);
+            this.pasaporteR.TabIndex = 2;
+            this.pasaporteR.TabStop = true;
+            this.pasaporteR.Text = "Número de Pasaporte";
+            this.pasaporteR.UseVisualStyleBackColor = true;
+            this.pasaporteR.CheckedChanged += new System.EventHandler(this.PasaporteR_CheckedChanged_1);
+            // 
+            // cedulaField
+            // 
+            this.cedulaField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cedulaField.Location = new System.Drawing.Point(3, 28);
+            this.cedulaField.MaxLength = 10;
+            this.cedulaField.Name = "cedulaField";
+            this.cedulaField.Size = new System.Drawing.Size(192, 20);
+            this.cedulaField.TabIndex = 3;
+            this.cedulaField.Enter += new System.EventHandler(this.CedulaField_Enter);
+            this.cedulaField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaField_KeyPress);
+            this.cedulaField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CedulaField_KeyUp_1);
+            this.cedulaField.Leave += new System.EventHandler(this.CedulaField_Leave_1);
+            // 
+            // rucField
+            // 
+            this.rucField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rucField.Location = new System.Drawing.Point(201, 28);
+            this.rucField.MaxLength = 13;
+            this.rucField.Name = "rucField";
+            this.rucField.Size = new System.Drawing.Size(192, 20);
+            this.rucField.TabIndex = 4;
+            this.rucField.Enter += new System.EventHandler(this.RucField_Enter);
+            this.rucField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RucField_KeyPress);
+            this.rucField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RucField_KeyUp_1);
+            this.rucField.Leave += new System.EventHandler(this.RucField_Leave_1);
+            // 
+            // pasaporteField
+            // 
+            this.pasaporteField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pasaporteField.Location = new System.Drawing.Point(399, 28);
+            this.pasaporteField.MaxLength = 13;
+            this.pasaporteField.Name = "pasaporteField";
+            this.pasaporteField.Size = new System.Drawing.Size(194, 20);
+            this.pasaporteField.TabIndex = 5;
+            this.pasaporteField.Enter += new System.EventHandler(this.PasaporteField_Enter);
+            this.pasaporteField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasaporteField_KeyPress);
             // 
             // tableLayoutPanel2
             // 
@@ -577,19 +696,19 @@
             this.tableLayoutPanel2.Controls.Add(this.limpiarButton, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.cancelarButton, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 527);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 572);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(800, 107);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(800, 123);
+            this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
             // 
             // registrarButton
             // 
             this.registrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registrarButton.Location = new System.Drawing.Point(53, 32);
+            this.registrarButton.Location = new System.Drawing.Point(53, 40);
             this.registrarButton.Name = "registrarButton";
             this.registrarButton.Size = new System.Drawing.Size(160, 43);
             this.registrarButton.TabIndex = 0;
@@ -601,7 +720,7 @@
             // 
             this.limpiarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.limpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limpiarButton.Location = new System.Drawing.Point(319, 32);
+            this.limpiarButton.Location = new System.Drawing.Point(319, 40);
             this.limpiarButton.Name = "limpiarButton";
             this.limpiarButton.Size = new System.Drawing.Size(160, 43);
             this.limpiarButton.TabIndex = 1;
@@ -613,7 +732,7 @@
             // 
             this.cancelarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.Location = new System.Drawing.Point(586, 32);
+            this.cancelarButton.Location = new System.Drawing.Point(586, 40);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(160, 43);
             this.cancelarButton.TabIndex = 2;
@@ -625,7 +744,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 634);
+            this.ClientSize = new System.Drawing.Size(800, 695);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -651,6 +770,9 @@
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -669,7 +791,6 @@
         private System.Windows.Forms.Label labelDireccion;
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelHuella;
-        private System.Windows.Forms.TextBox cedulaRUCField;
         private System.Windows.Forms.TextBox correoField;
         private System.Windows.Forms.TextBox direccionField;
         private System.Windows.Forms.TextBox telefonoField;
@@ -699,5 +820,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.RadioButton siRadio;
         private System.Windows.Forms.RadioButton noRadio;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.RadioButton cedulaR;
+        private System.Windows.Forms.RadioButton rucR;
+        private System.Windows.Forms.RadioButton pasaporteR;
+        private System.Windows.Forms.TextBox cedulaField;
+        private System.Windows.Forms.TextBox rucField;
+        private System.Windows.Forms.TextBox pasaporteField;
     }
 }

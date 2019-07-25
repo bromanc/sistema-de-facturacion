@@ -15,18 +15,22 @@ namespace sistema_de_facturacion.Modelo
     {
         public String usuario { get; set; }
         public String contrasena { get; set; }
-        public String correo { get; set; }
-        public int rol { get; set; }
+        public String nombres{ get; set; }
+        public String apellidos { get; set; }
+        public String rol { get; set; }
         public String huella { get; set; }
         ConexionDB conexion = new ConexionDB();
-        public Usuario(string usuario, string contrasena, string correo, int rol, string huella)
+
+        public Usuario(string usuario, string contrasena, string nombres, string apellidos, string rol, string huella)
         {
             this.usuario = usuario;
             this.contrasena = contrasena;
-            this.correo = correo;
+            this.nombres = nombres;
+            this.apellidos = apellidos;
             this.rol = rol;
             this.huella = huella;
         }
+
         public Usuario()
         {
 
@@ -40,18 +44,18 @@ namespace sistema_de_facturacion.Modelo
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                string[] datos = new string[4];
-                int rol = 99;
+                string[] datos = new string[6];
                 while (reader.Read())
                 {
                     datos[0] = reader.GetString(0).TrimEnd();
                     datos[1] = reader.GetString(1).TrimEnd();
                     datos[2] = reader.GetString(2).TrimEnd();
-                    rol = reader.GetInt32(3);
-                    datos[3] = reader.GetString(4).TrimEnd();
+                    datos[3] = reader.GetString(3).TrimEnd();
+                    datos[4] = reader.GetString(4).TrimEnd();
+                    datos[5] = reader.GetString(5).TrimEnd();
                 }
                 conexion.cerrarConexion();
-                Usuario obtenido = new Usuario(datos[0], datos[1], datos[2], rol, datos[3]);
+                Usuario obtenido = new Usuario(datos[0], datos[1], datos[2], datos[3],datos[4],datos[5]);
                 return obtenido;
             }
             conexion.cerrarConexion();
@@ -70,7 +74,8 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario;
             String contrasena = md5_string(usuario.contrasena);
             cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = contrasena;
-            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.correo;
+            cmd.Parameters.Add("@nombres", SqlDbType.VarChar).Value = usuario.nombres;
+            cmd.Parameters.Add("@apellidos", SqlDbType.VarChar).Value = usuario.apellidos;
             cmd.Parameters.Add("@rol", SqlDbType.VarChar).Value = usuario.rol;
             cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = usuario.huella+new Random().Next(0, 99);
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
@@ -102,7 +107,6 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario.TrimEnd();
             String contrasena = md5_string(usuario.contrasena.TrimEnd());
             cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = contrasena;
-            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.correo.TrimEnd();
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
             retval.Direction = ParameterDirection.ReturnValue;
             cmd.ExecuteNonQuery();
@@ -133,9 +137,10 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
             SqlDataReader reader = cmd.ExecuteReader();
             dtUsuarios.Load(reader);
-            dtUsuarios.Columns[0].ColumnName = "Nombre de Usuario";
-            dtUsuarios.Columns[1].ColumnName = "Dirección de correo electrónico";
-            dtUsuarios.Columns[2].ColumnName = "Rol";
+            dtUsuarios.Columns[0].ColumnName = "ID de Usuario";
+            dtUsuarios.Columns[1].ColumnName = "Nombres";
+            dtUsuarios.Columns[2].ColumnName = "Apellidos";
+            dtUsuarios.Columns[3].ColumnName = "Rol";
             conexion.cerrarConexion();
             return dtUsuarios;
         }

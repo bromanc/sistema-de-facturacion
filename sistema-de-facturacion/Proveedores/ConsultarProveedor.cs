@@ -37,8 +37,8 @@ namespace sistema_de_facturacion.Proveedores
             }
             if (type.Equals("eliminar"))
             {
-                labelIngreso.Text = "Eliminación de Proveedores";
-                accionButton.Text = "Eliminar proveedor seleccionado";
+                labelIngreso.Text = "Cambio de Estado de Proveedores";
+                accionButton.Text = "Cambiar estado de proveedor seleccionado";
             }
         }
 
@@ -157,13 +157,60 @@ namespace sistema_de_facturacion.Proveedores
             if (parametroBox.Text.Length > 0)
             {
                 labelAdvertencia.Visible = false;
-                proveedorGrid.DataSource = buscar.buscarProveedor(parametroBox.SelectedIndex, parametroField.Text);
+                DataTable aux = buscar.buscarProveedor(parametroBox.SelectedIndex, parametroField.Text);
+                ChangeColumnDataType(aux, "Estado", typeof(String));
+                proveedorGrid.DataSource = aux;
+                for (int i = 0; i < proveedorGrid.Rows.Count; i++)
+                {
+                    if ((String)proveedorGrid.Rows[i].Cells[8].Value=="1")
+                    {
+                        proveedorGrid.Rows[i].Cells[8].Value = "Activo";
+                    }
+                    else
+                    {
+                        proveedorGrid.Rows[i].Cells[8].Value = "Inactivo";
+                    }
+
+                }
             }
             else
             {
                 labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
+        }
+        public static bool ChangeColumnDataType(DataTable table, string columnname, Type newtype)
+        {
+            if (table.Columns.Contains(columnname) == false)
+                return false;
+
+            DataColumn column = table.Columns[columnname];
+            if (column.DataType == newtype)
+                return true;
+
+            try
+            {
+                DataColumn newcolumn = new DataColumn("temporary", newtype);
+                table.Columns.Add(newcolumn);
+                foreach (DataRow row in table.Rows)
+                {
+                    try
+                    {
+                        row["temporary"] = Convert.ChangeType(row[columnname], newtype);
+                    }
+                    catch
+                    {
+                    }
+                }
+                table.Columns.Remove(columnname);
+                newcolumn.ColumnName = columnname;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -25,6 +25,8 @@ namespace sistema_de_facturacion.Clientes
             clientesGrid.Update();
             clientesGrid.Refresh();
             labelAdvertencia.Visible = false;
+            parametroBox.SelectedIndex = 0;
+            actualizarTabla();
             if(type.Equals("consultar"))
             {
                 labelIngreso.Text = "Consulta de Clientes";
@@ -38,8 +40,8 @@ namespace sistema_de_facturacion.Clientes
             if (type.Equals("eliminar"))
             {
 
-                labelIngreso.Text = "Eliminación de Clientes";
-                accionButton.Text = "Eliminar cliente seleccionado";
+                labelIngreso.Text = "Cambio de Estado de Clientes";
+                accionButton.Text = "Cambiar Estado de Cliente Seleccionado";
             }
         }
 
@@ -86,22 +88,19 @@ namespace sistema_de_facturacion.Clientes
             if (clientesGrid.SelectedRows.Count > 0 && tipo.Equals("modificar")) 
             {
                 string cedula = clientesGrid.SelectedRows[0].Cells[0].Value.ToString();
-                new AgregarCliente(true, this,cedula).Visible = true;
+                new AgregarCliente(true, inicial,cedula).Visible = true;
                 this.Visible = false;
             }
             if (clientesGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) 
             {
                 string cedula = clientesGrid.SelectedRows[0].Cells[0].Value.ToString();
-                string estado = clientesGrid.SelectedRows[0].Cells[9].Value.ToString();
-                MessageBox.Show(cedula+" ESTADO: "+estado);
-                
-                if (estado.Equals("1"))
+                string estado = clientesGrid.SelectedRows[0].Cells[9].Value.ToString().TrimEnd();
+                if (estado.Equals("Activo"))
                 {
                     if (buscar.darDeBajaCliente(cedula)==0)
                     {
                         MessageBox.Show("Estado del cliente cambiado exitosamente.");
-                        clientesGrid.Update();
-                        clientesGrid.Refresh();
+                        actualizarTabla();
                         
                     }
                     else
@@ -116,6 +115,7 @@ namespace sistema_de_facturacion.Clientes
                         MessageBox.Show("Estado del cliente cambiado exitosamente.");
                         clientesGrid.Update();
                         clientesGrid.Refresh();
+                        actualizarTabla();
                     }
                     else
                     {
@@ -153,6 +153,10 @@ namespace sistema_de_facturacion.Clientes
                 labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
+        }
+        public void actualizarTabla()
+        {
+            clientesGrid.DataSource = buscar.buscarCliente(1, "");
         }
     }
 }

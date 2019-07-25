@@ -39,7 +39,7 @@ namespace sistema_de_facturacion.Usuarios
             if (type.Equals("modificar"))
             {
                 labelIngreso.Text = "Modificación de usuarios";
-                accionButton.Text = "Modificar datos del usuario";
+                accionButton.Text = "Modificar Rol del usuario";
             }
             if (type.Equals("eliminar"))
             {

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace sistema_de_facturacion.Modelo
 {
@@ -79,7 +80,7 @@ namespace sistema_de_facturacion.Modelo
             dtProveedores.Columns[5].ColumnName = "Dirección de Correo Electrónico";
             dtProveedores.Columns[6].ColumnName = "Nombre de Persona de Contacto";
             dtProveedores.Columns[7].ColumnName = "Número de teléfono de persona de contacto";
-            dtProveedores.Columns[8].ColumnName = "Activo";
+            dtProveedores.Columns[8].ColumnName = "Estado";
             conexion.cerrarConexion();
             return dtProveedores;
         }

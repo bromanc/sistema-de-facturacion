@@ -20,12 +20,13 @@ namespace sistema_de_facturacion.Modelo
         public String ciudad { get; set; }
         public String correo { get; set; }
         public String huella { get; set; }
-        public char tipo { get; set; }
-        public int baja { get; set; }
+        public String tipo { get; set; }
+        public String baja { get; set; }
         ConexionDB conexion = new ConexionDB();
-        public Cliente(String cRuc, String nombre, String apellido, String telefono, String direccion, String ciudad, String correo, String huella, Char tipo, int baja)
+
+        public Cliente(string cRUC, string nombre, string apellido, string telefono, string direccion, string ciudad, string correo, string huella, string tipo, string baja)
         {
-            this.cRUC = cRuc;
+            this.cRUC = cRUC;
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
@@ -36,6 +37,7 @@ namespace sistema_de_facturacion.Modelo
             this.tipo = tipo;
             this.baja = baja;
         }
+
         public Cliente()
         {
           
@@ -85,7 +87,7 @@ namespace sistema_de_facturacion.Modelo
             dtClientes.Columns[6].ColumnName = "Dirección de Correo Electrónico";
             dtClientes.Columns[7].ColumnName = "Huella Digital";
             dtClientes.Columns[8].ColumnName = "Tipo de Persona";
-            dtClientes.Columns[9].ColumnName = "Activo";
+            dtClientes.Columns[9].ColumnName = "Estado";
             conexion.cerrarConexion();
             return dtClientes;
         }
@@ -99,8 +101,7 @@ namespace sistema_de_facturacion.Modelo
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                string[] datos = new string[9];
-                int baja = 99;
+                string[] datos = new string[10];
                 while (reader.Read())
                 {
                     datos[0] = reader.GetString(0).TrimEnd();
@@ -112,9 +113,9 @@ namespace sistema_de_facturacion.Modelo
                     datos[6] = reader.GetString(6).TrimEnd();
                     datos[7] = reader.GetString(7).TrimEnd();
                     datos[8] = reader.GetString(8).TrimEnd();
-                    baja = reader.GetInt32(9);
+                    datos[9] = reader.GetString(9).TrimEnd();
                 }
-                Cliente obtenido = new Cliente(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], char.Parse(datos[8]), baja);
+                Cliente obtenido = new Cliente(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9]);
                 conexion.cerrarConexion();
                 return obtenido;
             }
