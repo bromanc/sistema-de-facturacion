@@ -35,6 +35,8 @@
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.apellidoField = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.nombreField = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -42,15 +44,13 @@
             this.labelNombres = new System.Windows.Forms.Label();
             this.nombresField = new System.Windows.Forms.TextBox();
             this.labelTipo = new System.Windows.Forms.Label();
-            this.usuarioBox = new System.Windows.Forms.ComboBox();
             this.labelHuella = new System.Windows.Forms.Label();
+            this.usuarioBox = new System.Windows.Forms.ComboBox();
             this.huellaButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.registrarButton = new System.Windows.Forms.Button();
             this.limpiarButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.apellidoField = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
@@ -154,6 +154,30 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 613);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // apellidoField
+            // 
+            this.apellidoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.apellidoField.Location = new System.Drawing.Point(210, 347);
+            this.apellidoField.MaxLength = 50;
+            this.apellidoField.Name = "apellidoField";
+            this.apellidoField.ShortcutsEnabled = false;
+            this.apellidoField.Size = new System.Drawing.Size(587, 20);
+            this.apellidoField.TabIndex = 17;
+            this.apellidoField.Enter += new System.EventHandler(this.ApellidoField_Enter);
+            this.apellidoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoField_KeyPress);
+            this.apellidoField.Leave += new System.EventHandler(this.ApellidoField_Leave);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(55, 346);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Apellido(s):";
+            // 
             // labelNombre
             // 
             this.labelNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -169,10 +193,13 @@
             // 
             this.nombreField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nombreField.Location = new System.Drawing.Point(210, 41);
+            this.nombreField.MaxLength = 12;
             this.nombreField.Name = "nombreField";
             this.nombreField.ShortcutsEnabled = false;
             this.nombreField.Size = new System.Drawing.Size(587, 20);
             this.nombreField.TabIndex = 7;
+            this.nombreField.Enter += new System.EventHandler(this.NombreField_Enter);
+            this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
             this.nombreField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NombreField_KeyUp);
             this.nombreField.Leave += new System.EventHandler(this.NombreField_Leave);
             // 
@@ -191,11 +218,14 @@
             // 
             this.passwordField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordField.Location = new System.Drawing.Point(210, 143);
+            this.passwordField.MaxLength = 15;
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '*';
             this.passwordField.ShortcutsEnabled = false;
             this.passwordField.Size = new System.Drawing.Size(587, 20);
             this.passwordField.TabIndex = 13;
+            this.passwordField.Enter += new System.EventHandler(this.PasswordField_Enter);
+            this.passwordField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordField_KeyPress);
             this.passwordField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PasswordField_KeyUp);
             this.passwordField.Leave += new System.EventHandler(this.PasswordField_Leave);
             // 
@@ -214,10 +244,13 @@
             // 
             this.nombresField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nombresField.Location = new System.Drawing.Point(210, 245);
+            this.nombresField.MaxLength = 50;
             this.nombresField.Name = "nombresField";
             this.nombresField.ShortcutsEnabled = false;
             this.nombresField.Size = new System.Drawing.Size(587, 20);
             this.nombresField.TabIndex = 10;
+            this.nombresField.Enter += new System.EventHandler(this.NombresField_Enter);
+            this.nombresField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresField_KeyPress);
             this.nombresField.Leave += new System.EventHandler(this.CorreoField_Leave);
             // 
             // labelTipo
@@ -230,6 +263,17 @@
             this.labelTipo.Size = new System.Drawing.Size(131, 21);
             this.labelTipo.TabIndex = 14;
             this.labelTipo.Text = "Tipo de Usuario:";
+            // 
+            // labelHuella
+            // 
+            this.labelHuella.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelHuella.AutoSize = true;
+            this.labelHuella.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHuella.Location = new System.Drawing.Point(39, 551);
+            this.labelHuella.Name = "labelHuella";
+            this.labelHuella.Size = new System.Drawing.Size(128, 21);
+            this.labelHuella.TabIndex = 5;
+            this.labelHuella.Text = "Huella Dactilar:";
             // 
             // usuarioBox
             // 
@@ -244,17 +288,6 @@
             this.usuarioBox.Name = "usuarioBox";
             this.usuarioBox.Size = new System.Drawing.Size(587, 21);
             this.usuarioBox.TabIndex = 15;
-            // 
-            // labelHuella
-            // 
-            this.labelHuella.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelHuella.AutoSize = true;
-            this.labelHuella.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHuella.Location = new System.Drawing.Point(39, 551);
-            this.labelHuella.Name = "labelHuella";
-            this.labelHuella.Size = new System.Drawing.Size(128, 21);
-            this.labelHuella.TabIndex = 5;
-            this.labelHuella.Text = "Huella Dactilar:";
             // 
             // huellaButton
             // 
@@ -318,26 +351,6 @@
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 346);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Apellido(s):";
-            // 
-            // apellidoField
-            // 
-            this.apellidoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.apellidoField.Location = new System.Drawing.Point(210, 347);
-            this.apellidoField.Name = "apellidoField";
-            this.apellidoField.ShortcutsEnabled = false;
-            this.apellidoField.Size = new System.Drawing.Size(587, 20);
-            this.apellidoField.TabIndex = 17;
             // 
             // AgregarUsuario
             // 

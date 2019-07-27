@@ -736,7 +736,7 @@
             this.eliminarProveedorButton.Name = "eliminarProveedorButton";
             this.eliminarProveedorButton.Size = new System.Drawing.Size(286, 52);
             this.eliminarProveedorButton.TabIndex = 4;
-            this.eliminarProveedorButton.Text = "Eliminar Proveedor";
+            this.eliminarProveedorButton.Text = "Cambiar Estado Proveedor";
             this.eliminarProveedorButton.UseVisualStyleBackColor = true;
             this.eliminarProveedorButton.Click += new System.EventHandler(this.EliminarProveedorButton_Click);
             // 

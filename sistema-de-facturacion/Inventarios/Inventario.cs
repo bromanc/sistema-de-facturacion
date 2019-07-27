@@ -179,5 +179,96 @@ namespace sistema_de_facturacion.Inventarios
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void LabelIngreso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CodigoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void NombreField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void DisponiblesField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void UnitarioField_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UnitarioField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsPunctuation(e.KeyChar)) && (e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.OemPeriod))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void DescuentoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsPunctuation(e.KeyChar)) && (e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.OemPeriod))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void UnidadField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void AdquisicionField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsPunctuation(e.KeyChar)) && (e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.OemPeriod))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void GananciaField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsPunctuation(e.KeyChar)) && (e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.OemPeriod))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void MinimoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

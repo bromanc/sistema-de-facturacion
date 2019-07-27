@@ -25,6 +25,7 @@ namespace sistema_de_facturacion.Usuarios
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            usuarioBox.SelectedIndex = 0;
         }
         public AgregarUsuario(Usuario obtenido,Boolean modificacion, Form ventana)
         {
@@ -94,53 +95,40 @@ namespace sistema_de_facturacion.Usuarios
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
 
-            fieldList.Add(nombreField);
-            fieldList.Add(passwordField);
-            fieldList.Add(nombresField);
+            
             int selected = usuarioBox.SelectedIndex;
-            Boolean lleno = false;
             if (modificar == false)
             {
                 
-                //Registro usuario
-                foreach (TextBox singleItem in fieldList)
-                {
-                    if (selected.Equals(null))
-                    {
-                        lleno = true;
-                        break;
-                    }
-                    if (singleItem.Text.Equals("") )
-                    {
-                        lleno = true;
-                        break;
-                    }
-                    
-                }
-                if (lleno)
+                
+                if (camposVacios())
                 {
                     MessageBox.Show("Se requiere llenar todos los campos.");
                 }
                 else
                 {
-                   
-                    Usuario user = new Usuario(nombreField.Text,passwordField.Text,nombresField.Text,apellidoField.Text,(String)usuarioBox.SelectedItem,"STRING HUELLAU");
-                    int hecho = user.agregarUsuario(user);
-                    if (hecho == 0)
-                    {
-                        MessageBox.Show("Usuario registrado exitosamente.");
-                        inicial.Visible = true;
-                        this.Close();
-                    }
-                    else if (hecho == -1)
-                    {
-                        MessageBox.Show("El usuario especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (verificarCampos()) {
+                        MessageBox.Show("Llene correctamente todos los campos.");
+                    } else {
+                        Usuario user = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, "STRING HUELLAU");
+                        int hecho = user.agregarUsuario(user);
+                        if (hecho == 0)
+                        {
+                            MessageBox.Show("Usuario registrado exitosamente.");
+                            inicial.Visible = true;
+                            this.Close();
+                        }
+                        else if (hecho == -1)
+                        {
+                            MessageBox.Show("El usuario especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se produjo un error al registrar el usuario.");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Se produjo un error al registrar el usuario.");
-                    }
+                    
                 }
             }
             else
@@ -162,37 +150,30 @@ namespace sistema_de_facturacion.Usuarios
                 else
                 {
                     
-                    foreach (TextBox singleItem in fieldList)
-                    {
-                        if (selected.Equals(null))
-                        {
-                            lleno = true;
-                            break;
-                        }
-                        if (singleItem.Text.Equals(""))
-                        {
-                            lleno = true;
-                            break;
-                        }
-
-                    }
-                    if (lleno)
+                   
+                    if (camposVacios())
                     {
                         MessageBox.Show("Se requiere llenar todos los campos.");
                     }
                     else
                     {
-                        Usuario modificado = new Usuario(nombreField.Text, passwordField.Text,nombresField.Text,apellidoField.Text,(String)usuarioBox.SelectedItem, "HUELLA");
-                        if (obtenido.modificarUsuario(modificado) == 0)
+                        if (verificarCampos()) {
+                            MessageBox.Show("Llene correctamente todos los campos.");
+                        } else
                         {
-                            MessageBox.Show("Usuario modificado exitosamente.");
-                            inicial.Visible = true;
-                            this.Close();
+                            Usuario modificado = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, "HUELLA");
+                            if (obtenido.modificarUsuario(modificado) == 0)
+                            {
+                                MessageBox.Show("Usuario modificado exitosamente.");
+                                inicial.Visible = true;
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se produjo un error al guardar los cambios.");
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Se produjo un error al guardar los cambios.");
-                        }
+                        
                     }
                 }
             }
@@ -223,7 +204,27 @@ namespace sistema_de_facturacion.Usuarios
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        public Boolean camposVacios()
+        {
+            Boolean lleno = false;
+            fieldList.Add(nombreField);
+            fieldList.Add(passwordField);
+            fieldList.Add(nombresField);
+            fieldList.Add(apellidoField);
+            foreach (TextBox singleItem in fieldList)
+            {
+                if (singleItem.Text.Trim().Equals(""))
+                {
+                    lleno = true;
+                    singleItem.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    singleItem.BackColor = Color.White;
+                }
+            }
+            return lleno;
+        }
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
 
@@ -237,8 +238,17 @@ namespace sistema_de_facturacion.Usuarios
                 singleItem.Clear();
             }
         }
-
-        private void CancelarButton_Click(object sender, EventArgs e)
+        public Boolean verificarCampos()
+        {
+            Boolean correcto = false;
+            if (!validar.contrasenia(passwordField))
+            {
+                correcto = true;
+                passwordField.BackColor = Color.LightBlue;
+            }
+            return correcto;
+        }
+            private void CancelarButton_Click(object sender, EventArgs e)
         {
             inicial.Visible = true;
             this.Close();
@@ -251,33 +261,17 @@ namespace sistema_de_facturacion.Usuarios
 
         private void NombreField_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!validar.letras(nombreField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente letras.", nombreField, 0, -40, VisibleTime);
-            }
+
         }
 
         private void PasswordField_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!validar.letras(nombreField))
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese únicamente números y letras.", nombreField, 0, -40, VisibleTime);
-            }
+
         }
 
         private void NombreField_Leave(object sender, EventArgs e)
         {
-            if (nombreField.Text.Length > 12)
-            {
-                    ToolTip tt = new ToolTip();
-                    tt.IsBalloon = true;
-                    tt.Show("Ingrese un nombre de usuario de entre 8 y 12 caracteres.", nombreField, 0, -40, VisibleTime);
-                
-            }
+            
             if (string.IsNullOrWhiteSpace(nombreField.Text))
             {
                 ToolTip tt = new ToolTip();
@@ -288,13 +282,13 @@ namespace sistema_de_facturacion.Usuarios
 
         private void PasswordField_Leave(object sender, EventArgs e)
         {
-            if (nombreField.Text.Length > 15)
+            if (passwordField.Text.Length > 15 || passwordField.Text.Length < 8)
             {
 
                 this.valido = false;
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
-                tt.Show("Ingrese un nombre de usuario de entre 8 y 15 caracteres.", nombreField, 0, -40, VisibleTime);
+                tt.Show("Ingrese una contraseña de entre 8 y 15 caracteres.", nombreField, 0, -40, VisibleTime);
 
             }
             if (string.IsNullOrWhiteSpace(passwordField.Text))
@@ -305,14 +299,95 @@ namespace sistema_de_facturacion.Usuarios
             }
         }
 
-        private void CorreoField_Leave(object sender, EventArgs e)
+        private void PasswordField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!validar.letras(nombresField))
+
+        }
+
+        private void ApellidoField_Leave(object sender, EventArgs e)
+        {
+            if (apellidoField.Text.Length > 50)
             {
-                this.valido = false;
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
-                tt.Show("Ingrese sólo letras", nombresField, 0, -40, VisibleTime);
+                tt.Show("Ingrese un apellido no mayor a 50 caracteres.", apellidoField, 0, -40, VisibleTime);
+
+            }
+            if (string.IsNullOrWhiteSpace(apellidoField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", apellidoField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void NombresField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void NombreField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ApellidoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void NombreField_Enter(object sender, EventArgs e)
+        {
+            nombreField.BackColor = Color.White;
+
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese un nombre de usuario de entre 8 y 12 caracteres.", nombreField, 0, -40, VisibleTime);
+
+            
+        }
+
+        private void PasswordField_Enter(object sender, EventArgs e)
+        {
+            passwordField.BackColor = Color.White;
+        }
+
+        private void NombresField_Enter(object sender, EventArgs e)
+        {
+            nombresField.BackColor = Color.White;
+        }
+
+        private void ApellidoField_Enter(object sender, EventArgs e)
+        {
+            apellidoField.BackColor = Color.White;
+        }
+
+        private void CorreoField_Leave(object sender, EventArgs e)
+        {
+            if (nombresField.Text.Length > 12 || nombresField.Text.Length < 8)
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese un nombre no mayor a 50 caracteres.", nombresField, 0, -40, VisibleTime);
+
+            }
+            if (string.IsNullOrWhiteSpace(nombresField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", nombresField, 0, -40, VisibleTime);
             }
         }
     }

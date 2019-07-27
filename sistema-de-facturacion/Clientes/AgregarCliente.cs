@@ -180,7 +180,11 @@ namespace sistema_de_facturacion.Clientes
                 }
                 if (pasaporteR.Checked) //Verificar Pasaporte
                 {
-
+                    if (!validar.letrasNumeros(pasaporteField))
+                    {
+                        correcto = true;
+                        pasaporteField.BackColor = Color.LightBlue;
+                    }
                 }
                 if (!validar.letras(nombreField))
                 {
@@ -432,6 +436,7 @@ namespace sistema_de_facturacion.Clientes
                 pasaporteField.BackColor = Color.White;
                 cedulaField.Text = "";
                 pasaporteField.Text = "";
+                
             }
 
             cedulaR.Enabled = false;
@@ -756,8 +761,17 @@ namespace sistema_de_facturacion.Clientes
         private void CedulaR_CheckedChanged_1(object sender, EventArgs e)
         {
             cedulaField.BackColor = Color.White;
-            cedulaField.Enabled = true;
             pasaporteField.Enabled = false;
+            if (cedulaR.Checked)
+            {
+                cedulaField.Enabled = true;
+            }
+            if (!modificar)
+            {
+                
+
+                pasaporteField.Text = "";
+            }
 
         }
         private void PasaporteR_CheckedChanged_1(object sender, EventArgs e)
@@ -765,6 +779,10 @@ namespace sistema_de_facturacion.Clientes
             pasaporteField.BackColor = Color.White;
             pasaporteField.Enabled = true;
             cedulaField.Enabled = false;
+            if (!modificar)
+            {
+                cedulaField.Text = "";
+            }
         }
         private void CorreoField_KeyUp(object sender, KeyEventArgs e)
         {
@@ -787,7 +805,7 @@ namespace sistema_de_facturacion.Clientes
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", cedulaField, 0, -40, VisibleTime);
             }
-            if (!validar.VerificaCedula(cedulaField.Text) || cedulaField.Text.Length<10)
+            if ((!validar.VerificaCedula(cedulaField.Text)&&cedulaField.Text.Length>0)|| (cedulaField.Text.Length<10 && cedulaField.Text.Length>0))
             {
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
@@ -817,7 +835,7 @@ namespace sistema_de_facturacion.Clientes
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", rucField, 0, -40, VisibleTime);
             }
-            if (!validar.RucPersonaNatural(rucField.Text) || rucField.Text.Length < 13)
+            if ((!validar.RucPersonaNatural(rucField.Text) && rucField.Text.Length>0) || (rucField.Text.Length < 13 && rucField.Text.Length>0))
             {
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
@@ -922,6 +940,16 @@ namespace sistema_de_facturacion.Clientes
         private void CiudadField_Enter(object sender, EventArgs e)
         {
             ciudadField.BackColor = Color.White;
+        }
+
+        private void PasaporteField_Leave_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(pasaporteField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", pasaporteField, 0, -40, VisibleTime);
+            }
         }
     }
 }

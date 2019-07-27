@@ -18,11 +18,15 @@ namespace sistema_de_facturacion.Proveedores
         public List<TextBox> fieldList = new List<TextBox>();
         public Boolean modificacion;
         public String ruc;
+        Validacion validar = new Validacion();
         Proveedor modificar = new Proveedor();
+        int VisibleTime = 2250;
         public AgregarProveedor(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            activo.Checked = true;
+            inactivo.Enabled = false;
         }
         public AgregarProveedor(Boolean modificar, Form interfaz, String ruc)
         {
@@ -86,83 +90,117 @@ namespace sistema_de_facturacion.Proveedores
             inicial.Visible = true;
             this.Close();
         }
-
-        private void RegistrarButton_Click(object sender, EventArgs e)
+        public Boolean verificarCampos()
         {
+            Boolean correcto = false;
+            if (!validar.RucPersonaNatural(RUCField.Text) || RUCField.Text.Length<13)
+            {
+                correcto = true;
+                RUCField.BackColor = Color.LightBlue;
+            }
+            if (!validar.letras(nombreField))
+            {
+                correcto = true;
+                nombreField.BackColor = Color.LightBlue;
+            }
+            if (!validar.letrasEspacio(ciudadField))
+            {
+                correcto = true;
+                ciudadField.BackColor = Color.LightBlue;
+            }
+            if (!validar.correo(correoField))
+            {
+                correcto = true;
+                correoField.BackColor = Color.LightBlue;
+            }
+            if (!validar.letras(contactoField))
+            {
+                correcto = true;
+                contactoField.BackColor = Color.LightBlue;
+            }
+            return correcto;
+        }
+        public Boolean camposVacios()
+        {
+            Boolean lleno = false;
             fieldList.Add(RUCField);
             fieldList.Add(nombreField);
+            fieldList.Add(telefonoCField);
             fieldList.Add(telefonoField);
             fieldList.Add(direccionField);
             fieldList.Add(ciudadField);
             fieldList.Add(correoField);
             fieldList.Add(contactoField);
-            fieldList.Add(telefonoCField);
-            Boolean lleno = false;
+            foreach (TextBox singleItem in fieldList)
+            {
+                if (singleItem.Text.Trim().Equals(""))
+                {
+                    lleno = true;
+                    singleItem.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    singleItem.BackColor = Color.White;
+                }
+            }
+            return lleno;
+        }
+        private void RegistrarButton_Click(object sender, EventArgs e)
+        {
             if (modificacion == false)
             {
-                //Registro proveedor
-                foreach (TextBox singleItem in fieldList)
-                {
-                    if (singleItem.Text.Equals(""))
-                    {
-                        lleno = true;
-                        break;
-                    }
-                }
-                if (lleno || (!(activo.Checked) && !(inactivo.Checked)))
+
+                if (camposVacios())
                 {
                     MessageBox.Show("Se requiere llenar todos los campos.");
                 }
                 else
                 {
-                    int estado = -1;
-                    if (activo.Checked)
+                    if (verificarCampos())
                     {
-                        estado = 1;
+                    MessageBox.Show("Llene correctamente todos los campos.");
                     }
                     else
                     {
-                        estado = 0;
-                    }
-                    //Verificar primero con regex antes de declarar el nuevo objeto cliente.
-                    Proveedor proveedor = new Proveedor(RUCField.Text, nombreField.Text, telefonoField.Text, direccionField.Text,ciudadField.Text, correoField.Text, contactoField.Text, telefonoCField.Text,estado);
-                    int hecho = proveedor.agregarProveedor(proveedor);
-                    if (hecho == 0)
-                    {
-                        MessageBox.Show("Proveedor registrado exitosamente.");
-                        inicial.Visible = true;
-                        this.Close();
-                    }
-                    else if (hecho == -1)
-                    {
-                        MessageBox.Show("El proveedor especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                        int estado = -1;
+                        if (activo.Checked)
+                        {
+                            estado = 1;
+                        }
+                        else
+                        {
+                            estado = 0;
+                        }
+                        //Verificar primero con regex antes de declarar el nuevo objeto cliente.
+                        Proveedor proveedor = new Proveedor(RUCField.Text, nombreField.Text, telefonoField.Text, direccionField.Text, ciudadField.Text, correoField.Text, contactoField.Text, telefonoCField.Text, estado);
+                        int hecho = proveedor.agregarProveedor(proveedor);
+                        if (hecho == 0)
+                        {
+                            MessageBox.Show("Proveedor registrado exitosamente.");
+                            inicial.Visible = true;
+                            this.Close();
+                        }
+                        else if (hecho == -1)
+                        {
+                            MessageBox.Show("El proveedor especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se produjo un error al registrar el proveedor.");
+
+                        }
 
                     }
-                    else
-                    {
-                        MessageBox.Show("Se produjo un error al registrar el proveedor.");
-
-                    }
-                    
                 }
             }
             else
             {
                 //Guardo proveedor modificado
 
-                foreach (TextBox singleItem in fieldList)
-                {
-                    
-                        if (singleItem.Text.Equals(""))
-                        {
-
-                            lleno = true;
-                            break;
-                        }
-                    
-                    
-                }
-                if (lleno)
+                if (camposVacios())
                 {
                     MessageBox.Show("Se requiere llenar todos los campos.");
                 }
@@ -209,6 +247,191 @@ namespace sistema_de_facturacion.Proveedores
         {
             inicial.Visible = true;
             this.Close();
+        }
+
+        private void RUCField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void NombreField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TelefonoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void CiudadField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ContactoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TelefonoCField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void RUCField_Enter(object sender, EventArgs e)
+        {
+            RUCField.BackColor = Color.White;
+        }
+
+        private void NombreField_Enter(object sender, EventArgs e)
+        {
+            nombreField.BackColor = Color.White;
+        }
+
+        private void TelefonoField_Enter(object sender, EventArgs e)
+        {
+            telefonoField.BackColor = Color.White;
+        }
+
+        private void DireccionField_Enter(object sender, EventArgs e)
+        {
+            direccionField.BackColor = Color.White;
+        }
+
+        private void CiudadField_Enter(object sender, EventArgs e)
+        {
+            ciudadField.BackColor = Color.White;
+        }
+
+        private void CorreoField_FontChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CorreoField_Enter(object sender, EventArgs e)
+        {
+            correoField.BackColor = Color.White;
+        }
+
+        private void ContactoField_Enter(object sender, EventArgs e)
+        {
+            contactoField.BackColor = Color.White;
+        }
+
+        private void TelefonoCField_Enter(object sender, EventArgs e)
+        {
+            telefonoCField.BackColor = Color.White;
+        }
+
+        private void RUCField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(RUCField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", RUCField, 0, -40, VisibleTime);
+            }
+            if ((!validar.RucPersonaNatural(RUCField.Text)&&RUCField.Text.Length>0) || (RUCField.Text.Length < 13 && RUCField.Text.Length > 0))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("RUC Incorrecto", RUCField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void CorreoField_Leave(object sender, EventArgs e)
+        {
+            if (!validar.correo(correoField))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Correo electrónico incorrecto", correoField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void NombreField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nombreField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", nombreField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void TelefonoField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(telefonoField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", telefonoField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void DireccionField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(direccionField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", direccionField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void CiudadField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ciudadField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", ciudadField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void ContactoField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(contactoField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", contactoField, 0, -40, VisibleTime);
+            }
+        }
+
+        private void TelefonoCField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(telefonoCField.Text))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("No deje este campo vacío.", telefonoCField, 0, -40, VisibleTime);
+            }
         }
     }
 }

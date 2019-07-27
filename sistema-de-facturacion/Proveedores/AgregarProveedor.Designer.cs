@@ -198,37 +198,52 @@
             // 
             this.ciudadField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ciudadField.Location = new System.Drawing.Point(185, 228);
+            this.ciudadField.MaxLength = 20;
             this.ciudadField.Name = "ciudadField";
             this.ciudadField.ShortcutsEnabled = false;
             this.ciudadField.Size = new System.Drawing.Size(544, 20);
             this.ciudadField.TabIndex = 10;
+            this.ciudadField.Enter += new System.EventHandler(this.CiudadField_Enter);
+            this.ciudadField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CiudadField_KeyPress);
+            this.ciudadField.Leave += new System.EventHandler(this.CiudadField_Leave);
             // 
             // direccionField
             // 
             this.direccionField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.direccionField.Location = new System.Drawing.Point(185, 175);
+            this.direccionField.MaxLength = 60;
             this.direccionField.Name = "direccionField";
             this.direccionField.ShortcutsEnabled = false;
             this.direccionField.Size = new System.Drawing.Size(544, 20);
             this.direccionField.TabIndex = 9;
+            this.direccionField.Enter += new System.EventHandler(this.DireccionField_Enter);
+            this.direccionField.Leave += new System.EventHandler(this.DireccionField_Leave);
             // 
             // telefonoField
             // 
             this.telefonoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.telefonoField.Location = new System.Drawing.Point(185, 122);
+            this.telefonoField.MaxLength = 15;
             this.telefonoField.Name = "telefonoField";
             this.telefonoField.ShortcutsEnabled = false;
             this.telefonoField.Size = new System.Drawing.Size(544, 20);
             this.telefonoField.TabIndex = 8;
+            this.telefonoField.Enter += new System.EventHandler(this.TelefonoField_Enter);
+            this.telefonoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoField_KeyPress);
+            this.telefonoField.Leave += new System.EventHandler(this.TelefonoField_Leave);
             // 
             // nombreField
             // 
             this.nombreField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nombreField.Location = new System.Drawing.Point(185, 69);
+            this.nombreField.MaxLength = 40;
             this.nombreField.Name = "nombreField";
             this.nombreField.ShortcutsEnabled = false;
             this.nombreField.Size = new System.Drawing.Size(544, 20);
             this.nombreField.TabIndex = 7;
+            this.nombreField.Enter += new System.EventHandler(this.NombreField_Enter);
+            this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
+            this.nombreField.Leave += new System.EventHandler(this.NombreField_Leave);
             // 
             // labelRUC
             // 
@@ -300,37 +315,53 @@
             // 
             this.RUCField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RUCField.Location = new System.Drawing.Point(185, 16);
+            this.RUCField.MaxLength = 13;
             this.RUCField.Name = "RUCField";
             this.RUCField.ShortcutsEnabled = false;
             this.RUCField.Size = new System.Drawing.Size(544, 20);
             this.RUCField.TabIndex = 6;
+            this.RUCField.Enter += new System.EventHandler(this.RUCField_Enter);
+            this.RUCField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RUCField_KeyPress);
+            this.RUCField.Leave += new System.EventHandler(this.RUCField_Leave);
             // 
             // correoField
             // 
             this.correoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.correoField.Location = new System.Drawing.Point(185, 281);
+            this.correoField.MaxLength = 50;
             this.correoField.Name = "correoField";
             this.correoField.ShortcutsEnabled = false;
             this.correoField.Size = new System.Drawing.Size(544, 20);
             this.correoField.TabIndex = 11;
+            this.correoField.FontChanged += new System.EventHandler(this.CorreoField_FontChanged);
+            this.correoField.Enter += new System.EventHandler(this.CorreoField_Enter);
+            this.correoField.Leave += new System.EventHandler(this.CorreoField_Leave);
             // 
             // contactoField
             // 
             this.contactoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.contactoField.Location = new System.Drawing.Point(185, 334);
+            this.contactoField.MaxLength = 80;
             this.contactoField.Name = "contactoField";
             this.contactoField.ShortcutsEnabled = false;
             this.contactoField.Size = new System.Drawing.Size(544, 20);
             this.contactoField.TabIndex = 13;
+            this.contactoField.Enter += new System.EventHandler(this.ContactoField_Enter);
+            this.contactoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactoField_KeyPress);
+            this.contactoField.Leave += new System.EventHandler(this.ContactoField_Leave);
             // 
             // telefonoCField
             // 
             this.telefonoCField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.telefonoCField.Location = new System.Drawing.Point(185, 387);
+            this.telefonoCField.MaxLength = 15;
             this.telefonoCField.Name = "telefonoCField";
             this.telefonoCField.ShortcutsEnabled = false;
             this.telefonoCField.Size = new System.Drawing.Size(544, 20);
             this.telefonoCField.TabIndex = 15;
+            this.telefonoCField.Enter += new System.EventHandler(this.TelefonoCField_Enter);
+            this.telefonoCField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoCField_KeyPress);
+            this.telefonoCField.Leave += new System.EventHandler(this.TelefonoCField_Leave);
             // 
             // label1
             // 

@@ -25,9 +25,11 @@ namespace sistema_de_facturacion.Proveedores
             proveedorGrid.Refresh();
             this.tipo = type;
             labelAdvertencia.Visible = false;
+            actualizarTabla();
+            parametroBox.SelectedIndex = 0;
             if (type.Equals("consultar"))
             {
-                labelIngreso.Text = "Consulta de Proveedores";
+                labelIngreso.Text = "Búsqueda de Proveedores";
                 accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
@@ -41,7 +43,24 @@ namespace sistema_de_facturacion.Proveedores
                 accionButton.Text = "Cambiar estado de proveedor seleccionado";
             }
         }
+        public void actualizarTabla()
+        {
+            DataTable aux = buscar.buscarProveedor(1, "");
+            ChangeColumnDataType(aux, "Estado", typeof(String));
+            proveedorGrid.DataSource = aux;
+            for (int i = 0; i < proveedorGrid.Rows.Count; i++)
+            {
+                if ((String)proveedorGrid.Rows[i].Cells[8].Value == "1")
+                {
+                    proveedorGrid.Rows[i].Cells[8].Value = "Activo";
+                }
+                else
+                {
+                    proveedorGrid.Rows[i].Cells[8].Value = "Inactivo";
+                }
 
+            } 
+        }
         private void ConsultarProveedor_Load(object sender, EventArgs e)
         {
 
@@ -96,7 +115,7 @@ namespace sistema_de_facturacion.Proveedores
             {
                 //Obtengo el proveedor y despliego ventana con información.
                 string ruc = proveedorGrid.SelectedRows[0].Cells[0].Value.ToString();
-                new AgregarProveedor(true, this,ruc).Visible = true;
+                new AgregarProveedor(true, inicial,ruc).Visible = true;
                 this.Visible = false;
             }
             if (proveedorGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) //Cambiar a 0.
@@ -105,13 +124,12 @@ namespace sistema_de_facturacion.Proveedores
                 string estado = proveedorGrid.SelectedRows[0].Cells[8].Value.ToString();
                 MessageBox.Show(ruc + " ESTADO: " + estado);
 
-                if (estado.Equals("1"))
+                if (estado.Equals("Activo"))
                 {
                     if (buscar.darDeBajaProveedor(ruc) == 0)
                     {
                         MessageBox.Show("Estado del proveedor cambiado exitosamente.");
-                        proveedorGrid.Update();
-                        proveedorGrid.Refresh();
+                        actualizarTabla();
 
                     }
                     else

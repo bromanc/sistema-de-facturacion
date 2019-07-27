@@ -22,6 +22,7 @@ namespace sistema_de_facturacion.Inventarios
             this.inicial = interfazInicial;
             this.tipo = type;
             labelAdvertencia.Visible = false;
+            parametroBox.SelectedIndex = 0;
             if (type.Equals("consultar"))
             {
                 labelIngreso.Text = "Gestión de Productos";
@@ -139,6 +140,11 @@ namespace sistema_de_facturacion.Inventarios
                 labelAdvertencia.Visible = true;
                 parametroField.Clear();
             }
+        }
+
+        private void AccionButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

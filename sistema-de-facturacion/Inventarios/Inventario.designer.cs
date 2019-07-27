@@ -90,9 +90,10 @@
             this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIngreso.Location = new System.Drawing.Point(322, 16);
             this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(160, 18);
+            this.labelIngreso.Size = new System.Drawing.Size(166, 18);
             this.labelIngreso.TabIndex = 7;
-            this.labelIngreso.Text = "Registro de Producto";
+            this.labelIngreso.Text = "Registro de Productos";
+            this.labelIngreso.Click += new System.EventHandler(this.LabelIngreso_Click);
             // 
             // minimizar
             // 
@@ -237,51 +238,62 @@
             // 
             this.codigoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.codigoField.Location = new System.Drawing.Point(235, 10);
+            this.codigoField.MaxLength = 25;
             this.codigoField.Name = "codigoField";
             this.codigoField.ShortcutsEnabled = false;
             this.codigoField.Size = new System.Drawing.Size(546, 20);
             this.codigoField.TabIndex = 8;
             this.codigoField.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.codigoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodigoField_KeyPress);
             // 
             // nombreField
             // 
             this.nombreField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nombreField.Location = new System.Drawing.Point(235, 50);
+            this.nombreField.MaxLength = 100;
             this.nombreField.Name = "nombreField";
             this.nombreField.ShortcutsEnabled = false;
             this.nombreField.Size = new System.Drawing.Size(546, 20);
             this.nombreField.TabIndex = 9;
             this.nombreField.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
             // 
             // disponiblesField
             // 
             this.disponiblesField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.disponiblesField.Location = new System.Drawing.Point(235, 90);
+            this.disponiblesField.MaxLength = 7;
             this.disponiblesField.Name = "disponiblesField";
             this.disponiblesField.ShortcutsEnabled = false;
             this.disponiblesField.Size = new System.Drawing.Size(546, 20);
             this.disponiblesField.TabIndex = 10;
             this.disponiblesField.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
+            this.disponiblesField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DisponiblesField_KeyPress);
             // 
             // unitarioField
             // 
             this.unitarioField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.unitarioField.Location = new System.Drawing.Point(235, 130);
+            this.unitarioField.MaxLength = 9;
             this.unitarioField.Name = "unitarioField";
             this.unitarioField.ShortcutsEnabled = false;
             this.unitarioField.Size = new System.Drawing.Size(546, 20);
             this.unitarioField.TabIndex = 11;
             this.unitarioField.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
+            this.unitarioField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitarioField_KeyPress);
+            this.unitarioField.Leave += new System.EventHandler(this.UnitarioField_Leave);
             // 
             // descuentoField
             // 
             this.descuentoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.descuentoField.Location = new System.Drawing.Point(235, 170);
+            this.descuentoField.MaxLength = 6;
             this.descuentoField.Name = "descuentoField";
             this.descuentoField.ShortcutsEnabled = false;
             this.descuentoField.Size = new System.Drawing.Size(546, 20);
             this.descuentoField.TabIndex = 12;
             this.descuentoField.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
+            this.descuentoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescuentoField_KeyPress);
             // 
             // label10
             // 
@@ -298,9 +310,11 @@
             // 
             this.minimoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.minimoField.Location = new System.Drawing.Point(235, 415);
+            this.minimoField.MaxLength = 7;
             this.minimoField.Name = "minimoField";
             this.minimoField.Size = new System.Drawing.Size(546, 20);
             this.minimoField.TabIndex = 19;
+            this.minimoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MinimoField_KeyPress);
             // 
             // label7
             // 
@@ -360,9 +374,11 @@
             // 
             this.gananciaField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.gananciaField.Location = new System.Drawing.Point(235, 290);
+            this.gananciaField.MaxLength = 9;
             this.gananciaField.Name = "gananciaField";
             this.gananciaField.Size = new System.Drawing.Size(546, 20);
             this.gananciaField.TabIndex = 17;
+            this.gananciaField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GananciaField_KeyPress);
             // 
             // label6
             // 
@@ -379,11 +395,13 @@
             // 
             this.adquisicionField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.adquisicionField.Location = new System.Drawing.Point(235, 250);
+            this.adquisicionField.MaxLength = 9;
             this.adquisicionField.Name = "adquisicionField";
             this.adquisicionField.ShortcutsEnabled = false;
             this.adquisicionField.Size = new System.Drawing.Size(546, 20);
             this.adquisicionField.TabIndex = 13;
             this.adquisicionField.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
+            this.adquisicionField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdquisicionField_KeyPress);
             // 
             // label11
             // 
@@ -400,9 +418,11 @@
             // 
             this.unidadField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.unidadField.Location = new System.Drawing.Point(235, 210);
+            this.unidadField.MaxLength = 20;
             this.unidadField.Name = "unidadField";
             this.unidadField.Size = new System.Drawing.Size(546, 20);
             this.unidadField.TabIndex = 21;
+            this.unidadField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnidadField_KeyPress);
             // 
             // tableLayoutPanel2
             // 
@@ -467,7 +487,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();

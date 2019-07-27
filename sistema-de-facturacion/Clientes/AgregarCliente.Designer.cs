@@ -685,6 +685,7 @@
             this.pasaporteField.TabIndex = 5;
             this.pasaporteField.Enter += new System.EventHandler(this.PasaporteField_Enter);
             this.pasaporteField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasaporteField_KeyPress);
+            this.pasaporteField.Leave += new System.EventHandler(this.PasaporteField_Leave_1);
             // 
             // tableLayoutPanel2
             // 
