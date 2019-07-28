@@ -12,11 +12,17 @@ namespace sistema_de_facturacion.Modelo
     {
         public decimal iva { get; set; }
         public int id { get; set; }
+        public string metodoPago { get; set; }
         ConexionDB conexion = new ConexionDB();
         public ParametroM(decimal iva, int id)
         {
             this.iva = iva;
             this.id = id;
+        }
+
+        public ParametroM(string metodoPago)
+        {
+            this.metodoPago = metodoPago;
         }
 
         public ParametroM()
@@ -56,6 +62,30 @@ namespace sistema_de_facturacion.Modelo
             int retorno = (int)cmd.Parameters["@retorno"].Value;
             conexion.cerrarConexion();
             return retorno;
+        }
+        public int añadirPago(String metodo)
+        {
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspInsertarPago", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@pago", SqlDbType.VarChar).Value = metodo;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
+        }
+        public DataTable todoPago()
+        {
+            DataTable dtPagos = new DataTable();
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspMetodosPago", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dtPagos.Load(reader);
+            conexion.cerrarConexion();
+            return dtPagos;
         }
     }
 }

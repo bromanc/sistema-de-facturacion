@@ -208,6 +208,12 @@ namespace sistema_de_facturacion.Inventarios
         }
         private void AccionButton_Click(object sender, EventArgs e)
         {
+            if (productosGrid.SelectedRows.Count > 0 && tipo.Equals("agregar"))
+            {
+                string codigo = productosGrid.SelectedRows[0].Cells[0].Value.ToString();
+                new Inventario(true, inicial, codigo).Visible = true;
+                this.Visible = false;
+            }
             if (productosGrid.SelectedRows.Count > 0 && tipo.Equals("modificar"))
             {
                 string codigo = productosGrid.SelectedRows[0].Cells[0].Value.ToString();
@@ -244,6 +250,19 @@ namespace sistema_de_facturacion.Inventarios
                     }
                 }
 
+            }
+        }
+
+        private void ParametroBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (parametroBox.SelectedIndex > 1)
+            {
+                productosGrid.DataSource = new Producto().segmentarProductos(parametroBox.SelectedIndex - 2);
+                parametroField.Enabled = false;
+            }
+            else
+            {
+                parametroField.Enabled = true;
             }
         }
     }

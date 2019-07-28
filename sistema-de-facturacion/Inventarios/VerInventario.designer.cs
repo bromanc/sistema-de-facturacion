@@ -221,11 +221,20 @@
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
             "Código",
-            "Descripción"});
+            "Descripción",
+            "Productos Más Vendidos",
+            "Productos Menos Vendidos",
+            "Precio de Mayor a Menor",
+            "Precio de Menor a Mayor",
+            "Más Unidades Disponibles",
+            "Menos Unidades Disponibles",
+            "Productos Más Antigüos",
+            "Productos Menos Antigüos"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
             this.parametroBox.Size = new System.Drawing.Size(223, 21);
             this.parametroBox.TabIndex = 1;
+            this.parametroBox.SelectedIndexChanged += new System.EventHandler(this.ParametroBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel4
             // 

@@ -323,7 +323,7 @@ namespace sistema_de_facturacion.Principal
 
         private void NuevaFacturaButton_Click(object sender, EventArgs e)
         {
-            new Facturas(this).Visible = true;
+            new Facturas(this,obtenido).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }

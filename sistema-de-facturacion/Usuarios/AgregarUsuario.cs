@@ -49,7 +49,7 @@ namespace sistema_de_facturacion.Usuarios
         {
             usuarioBox.Enabled = false;
             huellaButton.Enabled = false;
-            nombreField.ReadOnly = true;
+            nombreField.Enabled = false;
             labelPassword.Text = "Nueva Contraseña:";
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;

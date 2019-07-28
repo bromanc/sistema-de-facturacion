@@ -169,6 +169,23 @@ namespace sistema_de_facturacion.Modelo
             conexion.cerrarConexion();
             return dtProductos;
         }
+        public DataTable buscarProductoVender(String cadena)
+        {
+            DataTable dtProductos = new DataTable();
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspBuscarProductoVender", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = cadena;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dtProductos.Load(reader);
+            dtProductos.Columns[0].ColumnName = "Código";
+            dtProductos.Columns[1].ColumnName = "Nombre";
+            dtProductos.Columns[2].ColumnName = "Precio Unitario";
+            dtProductos.Columns[3].ColumnName = "Unidades Disponibles";
+            
+            conexion.cerrarConexion();
+            return dtProductos;
+        }
         public int darDeBajaProducto(String cadena)
         {
             conexion.abrirConexion();
@@ -194,6 +211,24 @@ namespace sistema_de_facturacion.Modelo
             int retorno = (int)cmd.Parameters["@retorno"].Value;
             conexion.cerrarConexion();
             return retorno;
+        }
+        public DataTable segmentarProductos(int decision)
+        {
+            DataTable dtProductos = new DataTable();
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspSegmentarProductos", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@decision", SqlDbType.VarChar).Value = decision;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dtProductos.Load(reader);
+            dtProductos.Columns[0].ColumnName = "Código";
+            dtProductos.Columns[1].ColumnName = "Nombre";
+            dtProductos.Columns[2].ColumnName = "Unidades Vendidas";
+            dtProductos.Columns[3].ColumnName = "Unidades Disponibles";
+            dtProductos.Columns[4].ColumnName = "Precio de Venta Unitario";
+            dtProductos.Columns[5].ColumnName = "Último Reabastecimiento";
+            conexion.cerrarConexion();
+            return dtProductos;
         }
     }
 }

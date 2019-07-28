@@ -183,11 +183,11 @@
             this.labelNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(22, 40);
+            this.labelNombre.Location = new System.Drawing.Point(70, 40);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(162, 21);
+            this.labelNombre.Size = new System.Drawing.Size(67, 21);
             this.labelNombre.TabIndex = 1;
-            this.labelNombre.Text = "Nombre de Usuario:";
+            this.labelNombre.Text = "User ID:";
             // 
             // nombreField
             // 

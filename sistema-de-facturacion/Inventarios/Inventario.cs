@@ -48,8 +48,8 @@ namespace sistema_de_facturacion.Inventarios
             unidadField.Text = producto.unidadVenta;
             adquisicionField.Text = Convert.ToString(producto.precioAdquisicion);
             gananciaField.Text = Convert.ToString(producto.precioGananciaMinima);
-            proveedorBox.SelectedText = new Proveedor().obtenerNombreProveedor(producto.proveedorRUC);
-            categoriaBox.SelectedText = new Categoria().obtenerNombreCategoria(producto.categoriaID);
+            proveedorBox.SelectedValue = new Proveedor().obtenerNombreProveedor(producto.proveedorRUC);
+            categoriaBox.SelectedValue = new Categoria().obtenerNombreCategoria(producto.categoriaID);
             minimoField.Text = Convert.ToString(producto.unidadesMinimas);
             nombreField.Enabled = false;
             codigoField.Enabled = false;

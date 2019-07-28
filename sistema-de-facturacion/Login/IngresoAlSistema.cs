@@ -50,7 +50,7 @@ namespace sistema_de_facturacion.Login
                 String[] datos = new String[3];
                 datos[0] = usuarioField.Text.TrimEnd();
                 datos[1] = passwordField.Text.TrimEnd();
-                datos[2] = "";
+                datos[2] = ""; //Huella
                 if (verificar.validarIngreso(datos,0)==1)
                 {
                     //Aquí se le pasa el nombre de usuario a la interfaz principal para obtener el usuario y su rol.
