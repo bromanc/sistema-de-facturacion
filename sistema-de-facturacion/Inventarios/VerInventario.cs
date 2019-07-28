@@ -23,6 +23,7 @@ namespace sistema_de_facturacion.Inventarios
             this.tipo = type;
             labelAdvertencia.Visible = false;
             parametroBox.SelectedIndex = 0;
+            actualizarTabla();
             if (type.Equals("consultar"))
             {
                 labelIngreso.Text = "Gestión de Productos";
@@ -113,7 +114,21 @@ namespace sistema_de_facturacion.Inventarios
         {
             if (parametroBox.Text.Length > 0)
             {
-                productosGrid.DataSource = new Producto().buscarProducto(parametroBox.SelectedIndex, parametroField.Text);
+                DataTable aux = new Producto().buscarProducto(parametroBox.SelectedIndex, parametroField.Text);
+                ChangeColumnDataType(aux, "Estado", typeof(String));
+                productosGrid.DataSource = aux;
+                for (int i = 0; i < productosGrid.Rows.Count; i++)
+                {
+                    if ((String)productosGrid.Rows[i].Cells[11].Value == "1")
+                    {
+                        productosGrid.Rows[i].Cells[11].Value = "Activo";
+                    }
+                    else
+                    {
+                        productosGrid.Rows[i].Cells[11].Value = "Inactivo";
+                    }
+
+                }
             }
             else
             {
@@ -121,7 +136,39 @@ namespace sistema_de_facturacion.Inventarios
                 parametroField.Clear();
             }
         }
+        public static bool ChangeColumnDataType(DataTable table, string columnname, Type newtype)
+        {
+            if (table.Columns.Contains(columnname) == false)
+                return false;
 
+            DataColumn column = table.Columns[columnname];
+            if (column.DataType == newtype)
+                return true;
+
+            try
+            {
+                DataColumn newcolumn = new DataColumn("temporary", newtype);
+                table.Columns.Add(newcolumn);
+                foreach (DataRow row in table.Rows)
+                {
+                    try
+                    {
+                        row["temporary"] = Convert.ChangeType(row[columnname], newtype);
+                    }
+                    catch
+                    {
+                    }
+                }
+                table.Columns.Remove(columnname);
+                newcolumn.ColumnName = columnname;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
         private void Panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -141,10 +188,63 @@ namespace sistema_de_facturacion.Inventarios
                 parametroField.Clear();
             }
         }
+        public void actualizarTabla()
+        {
+            DataTable aux = new Producto().buscarProducto(1, "");
+            ChangeColumnDataType(aux, "Estado", typeof(String));
+            productosGrid.DataSource = aux;
+            for (int i = 0; i < productosGrid.Rows.Count; i++)
+            {
+                if ((String)productosGrid.Rows[i].Cells[13].Value == "1")
+                {
+                    productosGrid.Rows[i].Cells[13].Value = "Activo";
+                }
+                else
+                {
+                    productosGrid.Rows[i].Cells[13].Value = "Inactivo";
+                }
 
+            }
+        }
         private void AccionButton_Click(object sender, EventArgs e)
         {
+            if (productosGrid.SelectedRows.Count > 0 && tipo.Equals("modificar"))
+            {
+                string codigo = productosGrid.SelectedRows[0].Cells[0].Value.ToString();
+                new Inventario(true, inicial, codigo).Visible = true;
+                this.Visible = false;
+            }
+            if (productosGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar"))
+            {
+                string codigo = productosGrid.SelectedRows[0].Cells[0].Value.ToString();
+                string estado = productosGrid.SelectedRows[0].Cells[13].Value.ToString().TrimEnd();
+                if (estado.Equals("Activo"))
+                {
+                    if (new Producto().darDeBajaProducto(codigo) == 0)
+                    {
+                        MessageBox.Show("Estado del producto cambiado exitosamente.");
+                        actualizarTabla();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cambiar el estado del producto.");
+                    }
+                }
+                else
+                {
+                    if (new Producto().darDeAltaProducto(codigo) == 0)
+                    {
+                        MessageBox.Show("Estado del producto cambiado exitosamente.");
+                        actualizarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cambiar el estado del producto.");
+                    }
+                }
+
+            }
         }
     }
 }

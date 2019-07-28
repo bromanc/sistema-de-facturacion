@@ -120,5 +120,20 @@ namespace sistema_de_facturacion.Modelo
             conexion.cerrarConexion();
             return retorno;
         }
+        public String obtenerNombreCategoria(int id)
+        {
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspNombreCategoria", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = id;
+            SqlDataReader reader = cmd.ExecuteReader();
+            String nombre = "";
+            while (reader.Read())
+            {
+                nombre = reader.GetString(0);
+            }
+            conexion.cerrarConexion();
+            return nombre;
+        }
     }
 }

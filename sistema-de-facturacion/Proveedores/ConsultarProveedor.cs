@@ -122,7 +122,7 @@ namespace sistema_de_facturacion.Proveedores
             {
                 string ruc = proveedorGrid.SelectedRows[0].Cells[0].Value.ToString();
                 string estado = proveedorGrid.SelectedRows[0].Cells[8].Value.ToString();
-                MessageBox.Show(ruc + " ESTADO: " + estado);
+                //MessageBox.Show(ruc + " ESTADO: " + estado);
 
                 if (estado.Equals("Activo"))
                 {

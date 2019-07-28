@@ -185,5 +185,20 @@ namespace sistema_de_facturacion.Modelo
             conexion.cerrarConexion();
             return ruc;
         }
+        public String obtenerNombreProveedor(String ruc)
+        {
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspNombreProveedor", conexion.obtenerConexion());
+            cmd.Parameters.Add("@busqueda", SqlDbType.VarChar).Value = ruc;
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader reader = cmd.ExecuteReader();
+            String nombre = "";
+            while (reader.Read())
+            {
+                nombre = reader.GetString(0);
+            }
+            conexion.cerrarConexion();
+            return nombre;
+        }
     }
 }

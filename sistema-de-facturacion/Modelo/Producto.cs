@@ -100,6 +100,34 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@precioUnitario", SqlDbType.Decimal).Value = producto.precioVentaUnitario;
             cmd.Parameters.Add("@descuento", SqlDbType.Decimal).Value = producto.descuento;
             cmd.Parameters.Add("@unidadVenta", SqlDbType.VarChar).Value = producto.unidadVenta;
+            cmd.Parameters.Add("@vendidos", SqlDbType.VarChar).Value = producto.unidadesVendidas;
+            cmd.Parameters.Add("@precioOriginal", SqlDbType.Decimal).Value = producto.precioAdquisicion;
+            //Realizar casting de Producto.DateTime hacia string.
+            cmd.Parameters.Add("@nultimoIngreso", SqlDbType.VarChar).Value = producto.ultimoIngreso;
+            cmd.Parameters.Add("@gananciaMin", SqlDbType.Decimal).Value = producto.precioGananciaMinima;
+            cmd.Parameters.Add("@proveedorRuc", SqlDbType.VarChar).Value = producto.proveedorRUC;
+            cmd.Parameters.Add("@categoria", SqlDbType.Int).Value = producto.categoriaID;
+            cmd.Parameters.Add("@unidadesMinimas", SqlDbType.Int).Value = producto.unidadesMinimas;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
+        }
+        public int modificarProducto(Producto producto)
+        {
+
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspModificarProducto", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = producto.codigo;
+            //cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = producto.nombre;
+            cmd.Parameters.Add("@unidadesDisponibles", SqlDbType.Int).Value = producto.unidadesDisponibles;
+            cmd.Parameters.Add("@precioUnitario", SqlDbType.Decimal).Value = producto.precioVentaUnitario;
+            cmd.Parameters.Add("@descuento", SqlDbType.Decimal).Value = producto.descuento;
+            cmd.Parameters.Add("@unidadVenta", SqlDbType.VarChar).Value = producto.unidadVenta;
+            cmd.Parameters.Add("@vendidos", SqlDbType.VarChar).Value = producto.unidadesVendidas;
             cmd.Parameters.Add("@precioOriginal", SqlDbType.Decimal).Value = producto.precioAdquisicion;
             //Realizar casting de Producto.DateTime hacia string.
             cmd.Parameters.Add("@nultimoIngreso", SqlDbType.VarChar).Value = producto.ultimoIngreso;
@@ -135,11 +163,37 @@ namespace sistema_de_facturacion.Modelo
             dtProductos.Columns[8].ColumnName = "Último Reabastecimiento";
             dtProductos.Columns[9].ColumnName = "Ganancia Mínima";
             dtProductos.Columns[10].ColumnName = "RUC Proveedor";
-            dtProductos.Columns[11].ColumnName = "Activo";
+            dtProductos.Columns[11].ColumnName = "Estado";
             dtProductos.Columns[12].ColumnName = "Código Categoría";
             dtProductos.Columns[13].ColumnName = "Stock Mínimo";
             conexion.cerrarConexion();
             return dtProductos;
+        }
+        public int darDeBajaProducto(String cadena)
+        {
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspDarBajaProducto", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = cadena;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
+        }
+        public int darDeAltaProducto(String cadena)
+        {
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspDarAltaProducto", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = cadena;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
         }
     }
 }
