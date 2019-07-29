@@ -229,6 +229,7 @@ namespace sistema_de_facturacion.Inventarios
         }
         private void Button3_Click(object sender, EventArgs e)
         {
+            
             inicial.Visible = true;
             this.Close();
         }

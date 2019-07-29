@@ -117,5 +117,18 @@ namespace sistema_de_facturacion.Modelo
             conexion.cerrarConexion();
             return null;
         }
+        public int insertarDetalleFactura()
+        {
+            int retorno = -1;
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspTraspasarPFaDF", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
+        }
     }
 }

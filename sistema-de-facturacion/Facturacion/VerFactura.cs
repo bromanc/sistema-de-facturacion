@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using sistema_de_facturacion.Modelo;
 
 namespace sistema_de_facturacion.Facturacion
 {
     public partial class VerFactura : Form
     {
         public Form inicial;
+        String revisar;
+        Boolean anular;
         public VerFactura(Form interfazInicial)
         {
             InitializeComponent();
@@ -26,15 +29,17 @@ namespace sistema_de_facturacion.Facturacion
             this.inicial = interfazInicial;
             this.accionButton.Text = "Revisar factura seleccionada";
             labelIngreso.Text = "Revisión de Facturas";
-            //verButton.Visible = false;
+            this.revisar = modificar;
+            parametroBox.SelectedIndex = 0;
         }
         public VerFactura(Boolean anular, Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
             this.accionButton.Text = "Anular factura seleccionada";
+            this.anular = anular;
             labelIngreso.Text = "Anulación de Facturas";
-            //verButton.Visible = false;
+            parametroBox.SelectedIndex = 0;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -77,7 +82,85 @@ namespace sistema_de_facturacion.Facturacion
 
         private void AccionButton_Click(object sender, EventArgs e)
         {
+            if ((this.revisar!=null) && facturasGrid.SelectedRows.Count>0)
+            {
+                int codigoFactura = (int)facturasGrid.SelectedRows[0].Cells[0].Value;
+                String idCliente = facturasGrid.SelectedRows[0].Cells[1].Value.ToString();
+                Cliente obtenido = new Cliente().obtenerCliente(idCliente);
+                Factura obtenida = new Factura().obtenerFactura(codigoFactura);
+                new Facturas(this, obtenido, obtenida).Visible = true ;
+                this.Visible = false;
+            }
+            if (this.anular && facturasGrid.SelectedRows.Count > 0)
+            {
+                int codigoFactura = (int)facturasGrid.SelectedRows[0].Cells[0].Value;
+                if (MessageBox.Show("¿Está seguro que desea anular la factura seleccionada?", "Cancelar", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if(new Factura().anularFactura(codigoFactura) == 1)
+                    {
+                        MessageBox.Show("Factura anulada con éxito");
+                        cargarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al intentar anular la factura.");
+                    }
+                }
+            }
+        }
 
+        private void ParametroField_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+        private void cargarTabla()
+        {
+            if (parametroBox.SelectedIndex == 0)
+            {
+                facturasGrid.DataSource = new Factura().buscarFacturaCliente(parametroField.Text);
+
+            }
+            else
+            {
+                if (parametroField.Text.Length > 0)
+                {
+                    facturasGrid.DataSource = new Factura().buscarFacturaCodigo(Convert.ToInt32(parametroField.Text));
+                }
+
+            }
+        }
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if (parametroBox.SelectedIndex == 0)
+            {
+                facturasGrid.DataSource = new Factura().buscarFacturaCliente(parametroField.Text);
+                if (facturasGrid.Rows.Count == 0)
+                {
+                    MessageBox.Show("Cliente no registrado en el sistema");
+                }
+            }
+            else
+            {
+                if (parametroField.Text.Length > 0)
+                {
+                    facturasGrid.DataSource = new Factura().buscarFacturaCodigo(Convert.ToInt32(parametroField.Text));
+                    if (facturasGrid.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Cliente no registrado en el sistema");
+                    }
+                }
+                
+            }
+        }
+
+        private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

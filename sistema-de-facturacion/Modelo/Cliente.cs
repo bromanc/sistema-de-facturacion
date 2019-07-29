@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace sistema_de_facturacion.Modelo
 {
-    class Cliente
+    public class Cliente
     {
         
         public String  cRUC { get; set; }
