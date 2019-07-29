@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using sistema_de_facturacion.Clientes;
 using sistema_de_facturacion.Modelo;
+using sistema_de_facturacion.Clientes;
 
-namespace sistema_de_facturacion.Facturacion
+namespace sistema_de_facturacion.Estimados
 {
-    public partial class Facturas : Form
+    public partial class Proformas : Form
     {
         public Form inicial;
         Usuario vendedor;
-        public Facturas(Form interfazInicial, Usuario vendedor)
+        public Proformas(Form interfazInicial, Usuario vendedor)
         {
             InitializeComponent();
             this.vendedor = vendedor;
@@ -32,7 +32,7 @@ namespace sistema_de_facturacion.Facturacion
             confirmarFButton.Enabled = false;
 
         }
-        public Facturas(Form interfazInicial, Cliente c, Factura f)
+        public Proformas(Form interfazInicial, Cliente c, Proforma f)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
@@ -41,7 +41,7 @@ namespace sistema_de_facturacion.Facturacion
             telefonotxt.Text = c.telefono;
             direcciontxt.Text = c.direccion;
             fechatx.Text = Convert.ToString(f.fecha);
-            numeroFacturatxt.Text = Convert.ToString(f.codigo);
+            numeroProformatxt.Text = Convert.ToString(f.codigo);
             vendedortxt.Text = f.vendedor;
             cargarPagos();
             consumidorButton.Enabled = false;
@@ -66,8 +66,8 @@ namespace sistema_de_facturacion.Facturacion
             confirmarFButton.Enabled = false;
             precompraGrid.DataSource = f.obtenerDetalle(f.codigo);
             precompraGrid.Enabled = false;
-        }
 
+        }
         private void habilitoCampos()
         {
             cargarPagos();
@@ -94,6 +94,7 @@ namespace sistema_de_facturacion.Facturacion
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -117,10 +118,8 @@ namespace sistema_de_facturacion.Facturacion
             this.Close();
         }
 
-        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
 
         }
 
@@ -132,17 +131,26 @@ namespace sistema_de_facturacion.Facturacion
                 {
                     string codigo = precompraGrid.Rows[i].Cells[1].Value.ToString();
                     int cantidad = Convert.ToInt32(precompraGrid.Rows[i].Cells[0].Value);
-                    new DetalleProforma().quitarProductoPrecompra(codigo, cantidad);
+                    new DetalleFactura().quitarProductoPrecompra(codigo, cantidad);
                 }
-                
+
             }
             inicial.Visible = true;
             this.Visible = false;
         }
 
-        private void TableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        private void ConsumidorButton_Click(object sender, EventArgs e)
         {
-
+            Cliente existente = new Cliente().obtenerCliente("999999999");
+            habilitoCampos();
+            citxt.Text = existente.cRUC;
+            nombretxt.Text = existente.nombre;
+            telefonotxt.Text = existente.telefono;
+            direcciontxt.Text = existente.direccion;
+            DateTime fecha = DateTime.Now;
+            fechatx.Text = Convert.ToString(fecha);
+            numeroProformatxt.Text = new Proforma().maxIdProforma().ToString();
+            vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -151,9 +159,7 @@ namespace sistema_de_facturacion.Facturacion
             this.Visible = false;
         }
 
-        
-
-        private void ParametroB_Click_1(object sender, EventArgs e)
+        private void ParametroB_Click(object sender, EventArgs e)
         {
             if (parametroField.Text.Length > 0)
             {
@@ -171,27 +177,11 @@ namespace sistema_de_facturacion.Facturacion
                     direcciontxt.Text = existente.direccion;
                     DateTime fecha = DateTime.Now;
                     fechatx.Text = Convert.ToString(fecha);
-                    numeroFacturatxt.Text = new Factura().maxIdFactura().ToString();
-                    vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos; 
+                    numeroProformatxt.Text = new Proforma().maxIdProforma().ToString();
+                    vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
 
                 }
             }
-        }
-
-        private void ConsumidorButton_Click(object sender, EventArgs e)
-        {
-            Cliente existente = new Cliente().obtenerCliente("999999999");
-            habilitoCampos();
-            citxt.Text = existente.cRUC;
-            nombretxt.Text = existente.nombre;
-            telefonotxt.Text = existente.telefono;
-            direcciontxt.Text = existente.direccion;
-            DateTime fecha = DateTime.Now;
-            fechatx.Text = Convert.ToString(fecha);
-            numeroFacturatxt.Text = new Factura().maxIdFactura().ToString();
-            vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
-
-            
         }
 
         private void ProductosField_KeyUp(object sender, KeyEventArgs e)
@@ -202,79 +192,77 @@ namespace sistema_de_facturacion.Facturacion
         {
             agregarGrid.DataSource = new Producto().buscarProductoVender("");
         }
-        //---------------------------ME QUEDÉ AQUÍ PROFORMA------------------------------//
+
         private void Button5_Click(object sender, EventArgs e)
         {
-            
-
-
-                if (agregarGrid.SelectedRows.Count > 0)
+            if (agregarGrid.SelectedRows.Count > 0)
+            {
+                if (String.IsNullOrEmpty(cantidadField.Text))
                 {
-                     if (String.IsNullOrEmpty(cantidadField.Text))
-                     {
                     MessageBox.Show("Ingrese un número en el campo 'Cantidad'.");
-                    }
-                    else if (Convert.ToInt32(cantidadField.Text) <= 0 )
-                    {
-                        MessageBox.Show("Cantidad no válida, ingrese un número mayor que 0.");
-                    }else if(Convert.ToInt32(cantidadField.Text.TrimEnd()) > Convert.ToInt32(agregarGrid.SelectedRows[0].Cells[3].Value))
-                    {
-                        MessageBox.Show("Cantidad insuficiente en stock");
-                    }
-                    else
-                    {
-                        string codigo = agregarGrid.SelectedRows[0].Cells[0].Value.ToString();
-                        Producto obtenido = new Producto().obtenerProducto(codigo);
-                        DetalleFactura df = new DetalleFactura(Convert.ToInt32(numeroFacturatxt.Text), Convert.ToInt32(cantidadField.Text.TrimEnd()), obtenido.codigo, obtenido.nombre, obtenido.descuento, obtenido.precioVentaUnitario, Convert.ToDecimal(0.0));
-                        if (df.obtenerRegistroPrecompraFactura(codigo) == null)
-                        {
-                            df.insertarProductoPrecompra(df);
-                            precompraGrid.DataSource = df.todaPrecompra();
-                            productosTabla();
-                            productosField.Text = "";
-                            cantidadField.Text = "";
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("El producto seleccionado ya se encuentra dentro del detalle.");
-                        }
-                    }
-
+                }
+                else if (Convert.ToInt32(cantidadField.Text) <= 0)
+                {
+                    MessageBox.Show("Cantidad no válida, ingrese un número mayor que 0.");
+                }
+                else if (Convert.ToInt32(cantidadField.Text.TrimEnd()) > Convert.ToInt32(agregarGrid.SelectedRows[0].Cells[3].Value))
+                {
+                    MessageBox.Show("Cantidad insuficiente en stock");
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione al menos un producto a ser agregado.");
+                    string codigo = agregarGrid.SelectedRows[0].Cells[0].Value.ToString();
+                    Producto obtenido = new Producto().obtenerProducto(codigo);
+                    DetalleProforma df = new DetalleProforma(Convert.ToInt32(numeroProformatxt.Text), Convert.ToInt32(cantidadField.Text.TrimEnd()), obtenido.codigo, obtenido.nombre, obtenido.descuento, obtenido.precioVentaUnitario, Convert.ToDecimal(0.0));
+                    if (df.obtenerRegistroPrecompraProforma(codigo) == null)
+                    {
+                        df.insertarProductoPrecompra(df);
+                        precompraGrid.DataSource = df.todaPrecompra();
+                        productosTabla();
+                        productosField.Text = "";
+                        cantidadField.Text = "";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El producto seleccionado ya se encuentra dentro del detalle.");
+                    }
                 }
-            
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione al menos un producto a ser agregado.");
+            }
         }
-        private void calculosFactura()
+        private void calculosProforma()
         {
             Decimal subtotal = 0;
             Decimal descuento = 0;
             if (descuentoField.Text.Length > 0)
             {
-               descuento = Convert.ToDecimal(descuentoField.Text);
+                descuento = Convert.ToDecimal(descuentoField.Text);
             }
             for (int i = 0; i < precompraGrid.Rows.Count; i++)
             {
                 subtotal = Convert.ToDecimal(precompraGrid.Rows[i].Cells[5].Value) + subtotal;
             }
             Decimal subtotalNeto = subtotal - ((subtotal * descuento) / 100);
-            Decimal total = Math.Round((subtotalNeto + ((subtotalNeto * Convert.ToDecimal(ivatxt.Text)) / 100)),2);
+            Decimal total = Math.Round((subtotalNeto + ((subtotalNeto * Convert.ToDecimal(ivatxt.Text)) / 100)), 2);
             subtotaltxt.Text = subtotal.ToString();
             subnetotxt.Text = subtotalNeto.ToString();
             totaltxt.Text = total.ToString();
 
         }
+
         private void QuitarButton_Click(object sender, EventArgs e)
         {
-            if(precompraGrid.SelectedRows.Count > 0)
+            if (precompraGrid.SelectedRows.Count > 0)
             {
                 string codigo = precompraGrid.SelectedRows[0].Cells[1].Value.ToString();
                 int cantidad = Convert.ToInt32(precompraGrid.SelectedRows[0].Cells[0].Value);
-                new DetalleFactura().quitarProductoPrecompra(codigo, cantidad);
-                precompraGrid.DataSource = new DetalleFactura().todaPrecompra();
+                new DetalleProforma().quitarProductoPrecompra(codigo, cantidad);
+                precompraGrid.DataSource = new DetalleProforma().todaPrecompra();
                 productosTabla();
                 productosField.Text = "";
                 cantidadField.Text = "";
@@ -285,32 +273,28 @@ namespace sistema_de_facturacion.Facturacion
             }
         }
 
-        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void CalcularFButton_Click(object sender, EventArgs e)
         {
-            if (descuentoField.Text.Length > 0 && precompraGrid.Rows.Count>0)
+            if (descuentoField.Text.Length > 0 && precompraGrid.Rows.Count > 0)
             {
-                if (Convert.ToDecimal(descuentoField.Text) > 15 )
+                if (Convert.ToDecimal(descuentoField.Text) > 15)
                 {
                     MessageBox.Show("Descuento global supera el 15%");
                 }
-                else if(Convert.ToDecimal(descuentoField.Text) < 0){
+                else if (Convert.ToDecimal(descuentoField.Text) < 0)
+                {
                     MessageBox.Show("Descuento debe ser mayor a 0%");
                 }
-                else {
-                    calculosFactura();
+                else
+                {
+                    calculosProforma();
                 }
-                
+
             }
             else
             {
-                MessageBox.Show("No hay suficientes datos para calcular el valor de la factura.");
+                MessageBox.Show("No hay suficientes datos para calcular el valor de la proforma.");
             }
-            
         }
 
         private void ConfirmarFButton_Click(object sender, EventArgs e)
@@ -318,13 +302,13 @@ namespace sistema_de_facturacion.Facturacion
             if (totaltxt.Text.Length > 0)
             {
                 DateTime fecha = DateTime.Now;
-                Factura factura = new Factura(0,citxt.Text,fecha,vendedortxt.Text, (String)pagoBox.SelectedValue,Convert.ToDecimal(subtotaltxt.Text),Convert.ToDecimal(descuentoField.Text),Convert.ToDecimal(subnetotxt.Text),Convert.ToDecimal(ivatxt.Text),Convert.ToDecimal(totaltxt.Text),1);
-                int hecho = factura.agregarFactura(factura);
+                Proforma proforma = new Proforma(0, citxt.Text, fecha, vendedortxt.Text, (String)pagoBox.SelectedValue, Convert.ToDecimal(subtotaltxt.Text), Convert.ToDecimal(descuentoField.Text), Convert.ToDecimal(subnetotxt.Text), Convert.ToDecimal(ivatxt.Text), Convert.ToDecimal(totaltxt.Text), 1);
+                int hecho = proforma.agregarProforma(proforma);
                 if (hecho != -1)
                 {
-                    if(new DetalleFactura().insertarDetalleFactura() == 0)
+                    if (new DetalleProforma().insertarDetalleProforma() == 0)
                     {
-                        MessageBox.Show("Factura generada con éxito");
+                        MessageBox.Show("Proforma generada con éxito");
                         inicial.Visible = true;
                         this.Dispose();
                     }

@@ -83,11 +83,11 @@
     <Compile Include="Estadísticas\VentasPeriodo.Designer.cs">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estimados\Proforma.cs">
+    <Compile Include="Estimados\Proformas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estimados\Proforma.designer.cs">
-      <DependentUpon>Proforma.cs</DependentUpon>
+    <Compile Include="Estimados\Proformas.designer.cs">
+      <DependentUpon>Proformas.cs</DependentUpon>
     </Compile>
     <Compile Include="Estimados\VerProforma.cs">
       <SubType>Form</SubType>
@@ -135,9 +135,11 @@
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\ConexionDB.cs" />
     <Compile Include="Modelo\DetalleFactura.cs" />
+    <Compile Include="Modelo\DetalleProforma.cs" />
     <Compile Include="Modelo\Factura.cs" />
     <Compile Include="Modelo\ParametroM.cs" />
     <Compile Include="Modelo\Producto.cs" />
+    <Compile Include="Modelo\Proforma.cs" />
     <Compile Include="Modelo\Proveedor.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Validacion.cs" />
@@ -197,8 +199,8 @@
     <EmbeddedResource Include="Estadísticas\VentasPeriodo.resx">
       <DependentUpon>VentasPeriodo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estimados\Proforma.resx">
-      <DependentUpon>Proforma.cs</DependentUpon>
+    <EmbeddedResource Include="Estimados\Proformas.resx">
+      <DependentUpon>Proformas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estimados\VerProforma.resx">
       <DependentUpon>VerProforma.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace sistema_de_facturacion.Estimados
 {
-    partial class Proforma
+    partial class Proformas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proforma));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proformas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizar = new System.Windows.Forms.PictureBox();
@@ -41,10 +41,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelParametro = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelElegir = new System.Windows.Forms.Label();
-            this.parametroBox = new System.Windows.Forms.ComboBox();
-            this.parametroB = new System.Windows.Forms.Button();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.parametroField = new System.Windows.Forms.TextBox();
             this.consumidorButton = new System.Windows.Forms.Button();
@@ -68,15 +64,36 @@
             this.pagoBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.confirmarFButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.precompraGrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.productosField = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cantidadField = new System.Windows.Forms.TextBox();
+            this.agregarGrid = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.quitarButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.subtotaltxt = new System.Windows.Forms.Label();
+            this.descuentoField = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.subnetotxt = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ivatxt = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
+            this.totaltxt = new System.Windows.Forms.Label();
+            this.calcularFButton = new System.Windows.Forms.Button();
+            this.parametroB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -86,14 +103,20 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.precompraGrid)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.agregarGrid)).BeginInit();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -220,14 +243,12 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.95491F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.24528F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.81132F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel3.Controls.Add(this.labelParametro, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.parametroB, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.parametroB, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
@@ -244,64 +265,9 @@
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelParametro.Location = new System.Drawing.Point(3, 18);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(104, 34);
+            this.labelParametro.Size = new System.Drawing.Size(131, 34);
             this.labelParametro.TabIndex = 1;
             this.labelParametro.Text = "Ingrese el parámetro:";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.labelElegir, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.parametroBox, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(372, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(150, 46);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // labelElegir
-            // 
-            this.labelElegir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.labelElegir.AutoSize = true;
-            this.labelElegir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelElegir.Location = new System.Drawing.Point(7, 0);
-            this.labelElegir.Name = "labelElegir";
-            this.labelElegir.Size = new System.Drawing.Size(135, 23);
-            this.labelElegir.TabIndex = 0;
-            this.labelElegir.Text = "Elegir el parámetro:";
-            // 
-            // parametroBox
-            // 
-            this.parametroBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.parametroBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.parametroBox.FormattingEnabled = true;
-            this.parametroBox.Items.AddRange(new object[] {
-            "Cédula de Identidad/RUC",
-            "Nombre/Razón Social",
-            "Apellidos",
-            "Teléfono",
-            "Dirección Domiciliaria",
-            "Ciudad",
-            "Correo Electrónico",
-            "Huella"});
-            this.parametroBox.Location = new System.Drawing.Point(3, 26);
-            this.parametroBox.Name = "parametroBox";
-            this.parametroBox.Size = new System.Drawing.Size(144, 21);
-            this.parametroBox.TabIndex = 1;
-            // 
-            // parametroB
-            // 
-            this.parametroB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parametroB.Location = new System.Drawing.Point(528, 3);
-            this.parametroB.Name = "parametroB";
-            this.parametroB.Size = new System.Drawing.Size(123, 46);
-            this.parametroB.TabIndex = 3;
-            this.parametroB.Text = "Buscar";
-            this.parametroB.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel10
             // 
@@ -310,12 +276,12 @@
             this.tableLayoutPanel10.Controls.Add(this.parametroField, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.consumidorButton, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(113, 3);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(140, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.86956F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.13044F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(253, 46);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(316, 46);
             this.tableLayoutPanel10.TabIndex = 4;
             // 
             // parametroField
@@ -325,7 +291,7 @@
             this.parametroField.Location = new System.Drawing.Point(3, 30);
             this.parametroField.Name = "parametroField";
             this.parametroField.ShortcutsEnabled = false;
-            this.parametroField.Size = new System.Drawing.Size(247, 20);
+            this.parametroField.Size = new System.Drawing.Size(310, 20);
             this.parametroField.TabIndex = 1;
             // 
             // consumidorButton
@@ -333,10 +299,11 @@
             this.consumidorButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consumidorButton.Location = new System.Drawing.Point(3, 3);
             this.consumidorButton.Name = "consumidorButton";
-            this.consumidorButton.Size = new System.Drawing.Size(247, 21);
+            this.consumidorButton.Size = new System.Drawing.Size(310, 21);
             this.consumidorButton.TabIndex = 2;
             this.consumidorButton.Text = "Consumidor Final";
             this.consumidorButton.UseVisualStyleBackColor = true;
+            this.consumidorButton.Click += new System.EventHandler(this.ConsumidorButton_Click);
             // 
             // groupBox3
             // 
@@ -560,17 +527,15 @@
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.ColumnCount = 4;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.button4, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.confirmarFButton, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.button4, 2, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 489);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 583);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -580,37 +545,29 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(47, 8);
+            this.button1.Location = new System.Drawing.Point(80, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "Nuevo Cliente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // button2
+            // confirmarFButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(246, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Crear Proforma";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(445, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 41);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Limpiar Datos de Proforma";
-            this.button3.UseVisualStyleBackColor = true;
+            this.confirmarFButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.confirmarFButton.Location = new System.Drawing.Point(345, 8);
+            this.confirmarFButton.Name = "confirmarFButton";
+            this.confirmarFButton.Size = new System.Drawing.Size(104, 41);
+            this.confirmarFButton.TabIndex = 1;
+            this.confirmarFButton.Text = "Guardar Proforma";
+            this.confirmarFButton.UseVisualStyleBackColor = true;
+            this.confirmarFButton.Click += new System.EventHandler(this.ConfirmarFButton_Click);
             // 
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(645, 8);
+            this.button4.Location = new System.Drawing.Point(611, 8);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 41);
             this.button4.TabIndex = 3;
@@ -618,90 +575,370 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // precompraGrid
+            // 
+            this.precompraGrid.AllowUserToAddRows = false;
+            this.precompraGrid.AllowUserToDeleteRows = false;
+            this.precompraGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.precompraGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.precompraGrid.Location = new System.Drawing.Point(254, 283);
+            this.precompraGrid.Name = "precompraGrid";
+            this.precompraGrid.ReadOnly = true;
+            this.precompraGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.precompraGrid.Size = new System.Drawing.Size(543, 300);
+            this.precompraGrid.TabIndex = 11;
+            // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBox1, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.dataGridView2, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.button5, 0, 3);
+            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 283);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 4;
+            this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(195, 206);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(254, 300);
             this.tableLayoutPanel9.TabIndex = 10;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel11, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel12, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.agregarGrid, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel13, 0, 3);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 4;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 186F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(248, 294);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.06452F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.93549F));
+            this.tableLayoutPanel11.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.productosField, 1, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(242, 31);
+            this.tableLayoutPanel11.TabIndex = 4;
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(68, 10);
+            this.label9.Location = new System.Drawing.Point(13, 2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.Size = new System.Drawing.Size(53, 26);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Productos:";
+            this.label9.Text = "Nombre Producto:";
             // 
-            // textBox1
+            // productosField
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 20);
-            this.textBox1.TabIndex = 1;
+            this.productosField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productosField.Location = new System.Drawing.Point(83, 3);
+            this.productosField.MaxLength = 30;
+            this.productosField.Name = "productosField";
+            this.productosField.Size = new System.Drawing.Size(156, 20);
+            this.productosField.TabIndex = 1;
+            this.productosField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductosField_KeyUp);
             // 
-            // dataGridView2
+            // tableLayoutPanel12
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 60);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(189, 104);
-            this.dataGridView2.TabIndex = 2;
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.06452F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.93549F));
+            this.tableLayoutPanel12.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.cantidadField, 1, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 40);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(242, 30);
+            this.tableLayoutPanel12.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Cantidad:";
+            // 
+            // cantidadField
+            // 
+            this.cantidadField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cantidadField.Location = new System.Drawing.Point(83, 3);
+            this.cantidadField.MaxLength = 7;
+            this.cantidadField.Name = "cantidadField";
+            this.cantidadField.Size = new System.Drawing.Size(156, 20);
+            this.cantidadField.TabIndex = 2;
+            // 
+            // agregarGrid
+            // 
+            this.agregarGrid.AllowUserToAddRows = false;
+            this.agregarGrid.AllowUserToDeleteRows = false;
+            this.agregarGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.agregarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.agregarGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.agregarGrid.Location = new System.Drawing.Point(3, 76);
+            this.agregarGrid.Name = "agregarGrid";
+            this.agregarGrid.ReadOnly = true;
+            this.agregarGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.agregarGrid.Size = new System.Drawing.Size(242, 180);
+            this.agregarGrid.TabIndex = 6;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.button5, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.quitarButton, 1, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 262);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(242, 29);
+            this.tableLayoutPanel13.TabIndex = 7;
             // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(3, 170);
+            this.button5.Location = new System.Drawing.Point(3, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(189, 33);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Agregar";
+            this.button5.Size = new System.Drawing.Size(115, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Agregar Producto";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // dataGridView1
+            // quitarButton
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(195, 283);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(602, 206);
-            this.dataGridView1.TabIndex = 11;
+            this.quitarButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quitarButton.Location = new System.Drawing.Point(124, 3);
+            this.quitarButton.Name = "quitarButton";
+            this.quitarButton.Size = new System.Drawing.Size(115, 23);
+            this.quitarButton.TabIndex = 5;
+            this.quitarButton.Text = "Quitar Producto";
+            this.quitarButton.UseVisualStyleBackColor = true;
+            this.quitarButton.Click += new System.EventHandler(this.QuitarButton_Click);
             // 
-            // Proforma
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 9;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.20626F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.76059F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.07551F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.07551F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.6814F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.182321F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.366483F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel14, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.subnetotxt, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label17, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ivatxt, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.total, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.totaltxt, 8, 0);
+            this.tableLayoutPanel1.Controls.Add(this.calcularFButton, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(254, 524);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(543, 59);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.Controls.Add(this.label10, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label13, 0, 1);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 2;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(82, 53);
+            this.tableLayoutPanel14.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Subtotal:";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 17);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Descuento:";
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.Controls.Add(this.subtotaltxt, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.descuentoField, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(91, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(47, 53);
+            this.tableLayoutPanel15.TabIndex = 12;
+            // 
+            // subtotaltxt
+            // 
+            this.subtotaltxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.subtotaltxt.AutoSize = true;
+            this.subtotaltxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotaltxt.Location = new System.Drawing.Point(3, 4);
+            this.subtotaltxt.Name = "subtotaltxt";
+            this.subtotaltxt.Size = new System.Drawing.Size(0, 17);
+            this.subtotaltxt.TabIndex = 2;
+            // 
+            // descuentoField
+            // 
+            this.descuentoField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.descuentoField.Location = new System.Drawing.Point(3, 29);
+            this.descuentoField.MaxLength = 6;
+            this.descuentoField.Name = "descuentoField";
+            this.descuentoField.Size = new System.Drawing.Size(41, 20);
+            this.descuentoField.TabIndex = 10;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(215, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 34);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "SubTotal Neto:";
+            // 
+            // subnetotxt
+            // 
+            this.subnetotxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.subnetotxt.AutoSize = true;
+            this.subnetotxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subnetotxt.Location = new System.Drawing.Point(286, 21);
+            this.subnetotxt.Name = "subnetotxt";
+            this.subnetotxt.Size = new System.Drawing.Size(0, 17);
+            this.subnetotxt.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(344, 12);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 34);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "IVA(%):";
+            // 
+            // ivatxt
+            // 
+            this.ivatxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ivatxt.AutoSize = true;
+            this.ivatxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ivatxt.Location = new System.Drawing.Point(383, 21);
+            this.ivatxt.Name = "ivatxt";
+            this.ivatxt.Size = new System.Drawing.Size(0, 17);
+            this.ivatxt.TabIndex = 7;
+            // 
+            // total
+            // 
+            this.total.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.total.AutoSize = true;
+            this.total.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total.Location = new System.Drawing.Point(423, 21);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(40, 17);
+            this.total.TabIndex = 8;
+            this.total.Text = "Total:";
+            // 
+            // totaltxt
+            // 
+            this.totaltxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.totaltxt.AutoSize = true;
+            this.totaltxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totaltxt.Location = new System.Drawing.Point(483, 21);
+            this.totaltxt.Name = "totaltxt";
+            this.totaltxt.Size = new System.Drawing.Size(0, 17);
+            this.totaltxt.TabIndex = 9;
+            // 
+            // calcularFButton
+            // 
+            this.calcularFButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.calcularFButton.Location = new System.Drawing.Point(144, 3);
+            this.calcularFButton.Name = "calcularFButton";
+            this.calcularFButton.Size = new System.Drawing.Size(65, 53);
+            this.calcularFButton.TabIndex = 13;
+            this.calcularFButton.Text = "Calcular Proforma";
+            this.calcularFButton.UseVisualStyleBackColor = true;
+            this.calcularFButton.Click += new System.EventHandler(this.CalcularFButton_Click);
+            // 
+            // parametroB
+            // 
+            this.parametroB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parametroB.Location = new System.Drawing.Point(462, 3);
+            this.parametroB.Name = "parametroB";
+            this.parametroB.Size = new System.Drawing.Size(189, 46);
+            this.parametroB.TabIndex = 3;
+            this.parametroB.Text = "Buscar";
+            this.parametroB.UseVisualStyleBackColor = true;
+            this.parametroB.Click += new System.EventHandler(this.ParametroB_Click);
+            // 
+            // Proformas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 547);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(797, 641);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.precompraGrid);
             this.Controls.Add(this.tableLayoutPanel9);
             this.Controls.Add(this.tableLayoutPanel8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.clienteGroup);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Proforma";
+            this.Name = "Proformas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proforma";
             this.panel1.ResumeLayout(false);
@@ -715,18 +952,27 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.precompraGrid)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.agregarGrid)).EndInit();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -745,10 +991,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelParametro;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label labelElegir;
-        private System.Windows.Forms.ComboBox parametroBox;
-        private System.Windows.Forms.Button parametroB;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TextBox parametroField;
         private System.Windows.Forms.Button consumidorButton;
@@ -772,14 +1014,35 @@
         private System.Windows.Forms.ComboBox pagoBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button confirmarFButton;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView precompraGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label subtotaltxt;
+        private System.Windows.Forms.TextBox descuentoField;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label subnetotxt;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label ivatxt;
+        private System.Windows.Forms.Label total;
+        private System.Windows.Forms.Label totaltxt;
+        private System.Windows.Forms.Button calcularFButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox productosField;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox cantidadField;
+        private System.Windows.Forms.DataGridView agregarGrid;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button quitarButton;
+        private System.Windows.Forms.Button parametroB;
     }
 }

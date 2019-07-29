@@ -330,7 +330,7 @@ namespace sistema_de_facturacion.Principal
 
         private void NuevaProformaButton_Click(object sender, EventArgs e)
         {
-            new Proforma(this).Visible = true;
+            new Proformas(this,this.obtenido).Visible = true;
             submenuEstimados.Visible = false;
             this.Visible = false;
         }
