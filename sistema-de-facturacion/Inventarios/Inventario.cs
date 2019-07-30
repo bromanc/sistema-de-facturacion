@@ -131,7 +131,11 @@ namespace sistema_de_facturacion.Inventarios
         {
 
         }
-
+        private Boolean verificarCampos()
+        {
+            Boolean correcto = false;
+            return correcto;
+        }
         private void Button1_Click(object sender, EventArgs e)
         {
             if (modificar == false)
@@ -142,26 +146,34 @@ namespace sistema_de_facturacion.Inventarios
                 }
                 else
                 {
-                    DateTime fecha = DateTime.Now;
-                    int idCategoria = new Categoria().obtenerIDCategoria(categoriaBox.Text);
-                    String rucProveedor = new Proveedor().obtenerRUCProveedor(proveedorBox.Text);
-                    Producto producto = new Producto(codigoField.Text, nombreField.Text, Convert.ToInt32(disponiblesField.Text), Convert.ToDecimal(unitarioField.Text), Convert.ToDecimal(descuentoField.Text), unidadField.Text, 0, Convert.ToDecimal(adquisicionField.Text), fecha, Convert.ToDecimal(gananciaField.Text), rucProveedor, 1, idCategoria, Convert.ToInt32(minimoField.Text));
-                    int hecho = producto.agregarProducto(producto);
-                    if (hecho == 0)
+                    if (Convert.ToDecimal(descuentoField.Text) == 100)
                     {
-                        MessageBox.Show("Producto registrado exitosamente.");
-                        inicial.Visible = true;
-                        this.Close();
-                    }
-                    else if (hecho == -1)
-                    {
-                        MessageBox.Show("El producto especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        MessageBox.Show("Descuento máximo excedido.");
                     }
                     else
                     {
-                        MessageBox.Show("Se produjo un error al registrar el producto.");
+                        DateTime fecha = DateTime.Now;
+                        int idCategoria = new Categoria().obtenerIDCategoria(categoriaBox.Text);
+                        String rucProveedor = new Proveedor().obtenerRUCProveedor(proveedorBox.Text);
+                        Producto producto = new Producto(codigoField.Text, nombreField.Text, Convert.ToInt32(disponiblesField.Text), Convert.ToDecimal(unitarioField.Text), Convert.ToDecimal(descuentoField.Text), unidadField.Text, 0, Convert.ToDecimal(adquisicionField.Text), fecha, Convert.ToDecimal(gananciaField.Text), rucProveedor, 1, idCategoria, Convert.ToInt32(minimoField.Text));
+                        int hecho = producto.agregarProducto(producto);
+                        if (hecho == 0)
+                        {
+                            MessageBox.Show("Producto registrado exitosamente.");
+                            inicial.Visible = true;
+                            this.Close();
+                        }
+                        else if (hecho == -1)
+                        {
+                            MessageBox.Show("El producto especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se produjo un error al registrar el producto.");
+                        }
                     }
+                    
                 }
             }
             else
@@ -247,7 +259,7 @@ namespace sistema_de_facturacion.Inventarios
 
         private void CodigoField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar.Equals('-')) && (e.KeyChar != (char)Keys.Back))
             {
                 e.Handled = true;
                 return;
@@ -346,6 +358,11 @@ namespace sistema_de_facturacion.Inventarios
             {
                 singleItem.Text = "";
             }
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

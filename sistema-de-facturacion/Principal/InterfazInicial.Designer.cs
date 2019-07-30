@@ -87,6 +87,7 @@
             this.editarProductoButton = new System.Windows.Forms.Button();
             this.nuevoProductoButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bienvenidatxt = new System.Windows.Forms.Label();
             this.panelVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctrLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -346,6 +347,7 @@
             // 
             // contenedor
             // 
+            this.contenedor.Controls.Add(this.bienvenidatxt);
             this.contenedor.Controls.Add(this.submenuAdministracion);
             this.contenedor.Controls.Add(this.submenuAyuda);
             this.contenedor.Controls.Add(this.submenuUsuarios);
@@ -1002,6 +1004,17 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
+            // bienvenidatxt
+            // 
+            this.bienvenidatxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bienvenidatxt.AutoSize = true;
+            this.bienvenidatxt.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bienvenidatxt.Location = new System.Drawing.Point(177, 0);
+            this.bienvenidatxt.Name = "bienvenidatxt";
+            this.bienvenidatxt.Size = new System.Drawing.Size(715, 78);
+            this.bienvenidatxt.TabIndex = 33;
+            this.bienvenidatxt.Text = "Bienvenido al Sistema";
+            // 
             // InterfazInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1094,5 +1107,6 @@
         private System.Windows.Forms.Button manuaButton;
         private System.Windows.Forms.Button categoriaB;
         private System.Windows.Forms.Button misDatosButton;
+        private System.Windows.Forms.Label bienvenidatxt;
     }
 }

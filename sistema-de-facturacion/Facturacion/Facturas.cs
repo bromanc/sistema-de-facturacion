@@ -115,6 +115,16 @@ namespace sistema_de_facturacion.Facturacion
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
+            if (precompraGrid.Rows.Count > 0)
+            {
+                for (int i = 0; i < precompraGrid.Rows.Count; i++)
+                {
+                    string codigo = precompraGrid.Rows[i].Cells[1].Value.ToString();
+                    int cantidad = Convert.ToInt32(precompraGrid.Rows[i].Cells[0].Value);
+                    new DetalleFactura().quitarProductoPrecompra(codigo, cantidad);
+                }
+
+            }
             inicial.Visible = true;
             this.Close();
         }
@@ -134,7 +144,7 @@ namespace sistema_de_facturacion.Facturacion
                 {
                     string codigo = precompraGrid.Rows[i].Cells[1].Value.ToString();
                     int cantidad = Convert.ToInt32(precompraGrid.Rows[i].Cells[0].Value);
-                    new DetalleProforma().quitarProductoPrecompra(codigo, cantidad);
+                    new DetalleFactura().quitarProductoPrecompra(codigo, cantidad);
                 }
                 
             }

@@ -40,6 +40,7 @@ namespace sistema_de_facturacion.Huella
             mFPM.SetTemplateFormat(SGFPMTemplateFormat.ANSI378);
             initalizeDevice();
             identificarButton.Visible = false;
+            registrarButton.Enabled = false;
             this.ag = inicial;
         }
         public Huellas(Facturas finicial)
@@ -50,6 +51,7 @@ namespace sistema_de_facturacion.Huella
             mFPM.SetTemplateFormat(SGFPMTemplateFormat.ANSI378);
             initalizeDevice();
             registrarButton.Visible = false;
+            identificarButton.Enabled = false;
             this.fi = finicial;
         }
         public Huellas(Proformas pinicial)
@@ -60,6 +62,7 @@ namespace sistema_de_facturacion.Huella
             mFPM.SetTemplateFormat(SGFPMTemplateFormat.ANSI378);
             initalizeDevice();
             registrarButton.Visible = false;
+            identificarButton.Enabled = false;
             this.pinicial = pinicial;
         }
         public Huellas(AgregarUsuario au)
@@ -70,6 +73,7 @@ namespace sistema_de_facturacion.Huella
             mFPM.SetTemplateFormat(SGFPMTemplateFormat.ANSI378);
             initalizeDevice();
             identificarButton.Visible = false;
+            registrarButton.Enabled = false;
             this.au = au;
         }
         public Huellas(IngresoAlSistema ias)
@@ -80,6 +84,7 @@ namespace sistema_de_facturacion.Huella
             mFPM.SetTemplateFormat(SGFPMTemplateFormat.ANSI378);
             initalizeDevice();
             registrarButton.Visible = false;
+            identificarButton.Enabled = false;
             this.ias = ias;
         }
         private void initalizeDevice()
