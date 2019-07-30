@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using sistema_de_facturacion.Modelo;
+using sistema_de_facturacion.Huella;
 
 namespace sistema_de_facturacion.Usuarios
 {
@@ -20,6 +21,7 @@ namespace sistema_de_facturacion.Usuarios
         public Boolean modificar;
         public Usuario obtenido = new Usuario();
         public Validacion validar = new Validacion();
+        public byte[] huella;
         int VisibleTime = 3250;
         public AgregarUsuario(Form interfazInicial)
         {
@@ -110,23 +112,47 @@ namespace sistema_de_facturacion.Usuarios
                     if (verificarCampos()) {
                         MessageBox.Show("Llene correctamente todos los campos.");
                     } else {
-                        Usuario user = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, "STRING HUELLAU");
-                        int hecho = user.agregarUsuario(user);
-                        if (hecho == 0)
+                        if(this.huella != null)
                         {
-                            MessageBox.Show("Usuario registrado exitosamente.");
-                            inicial.Visible = true;
-                            this.Close();
-                        }
-                        else if (hecho == -1)
-                        {
-                            MessageBox.Show("El usuario especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Usuario user = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, this.huella);
+                            int hecho = user.agregarUsuario(user);
+                            if (hecho == 0)
+                            {
+                                MessageBox.Show("Usuario registrado exitosamente.");
+                                inicial.Visible = true;
+                                this.Close();
+                            }
+                            else if (hecho == -1)
+                            {
+                                MessageBox.Show("El usuario especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se produjo un error al registrar el usuario.");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Se produjo un error al registrar el usuario.");
+                            Usuario user = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, null);
+                            int hecho = user.agregarUsuarioSinHuella(user);
+                            if (hecho == 0)
+                            {
+                                MessageBox.Show("Usuario registrado exitosamente.");
+                                inicial.Visible = true;
+                                this.Close();
+                            }
+                            else if (hecho == -1)
+                            {
+                                MessageBox.Show("El usuario especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se produjo un error al registrar el usuario.");
+                            }
                         }
+                        
                     }
                     
                 }
@@ -161,7 +187,7 @@ namespace sistema_de_facturacion.Usuarios
                             MessageBox.Show("Llene correctamente todos los campos.");
                         } else
                         {
-                            Usuario modificado = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, "HUELLA");
+                            Usuario modificado = new Usuario(nombreField.Text, passwordField.Text, nombresField.Text, apellidoField.Text, (String)usuarioBox.SelectedItem, this.huella);
                             if (obtenido.modificarUsuario(modificado) == 0)
                             {
                                 MessageBox.Show("Usuario modificado exitosamente.");
@@ -240,7 +266,12 @@ namespace sistema_de_facturacion.Usuarios
         }
         public Boolean verificarCampos()
         {
-            Boolean correcto = false;
+            Boolean correcto = false; 
+            if((nombreField.Text.Length <8 && nombreField.Text.Length > 0) || nombreField.Text.Length > 12)
+            {
+                correcto = true;
+                nombreField.BackColor = Color.LightBlue;
+            }
             if (!validar.contrasenia(passwordField))
             {
                 correcto = true;
@@ -277,6 +308,18 @@ namespace sistema_de_facturacion.Usuarios
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", nombreField, 0, -40, VisibleTime);
+            }
+            if (nombreField.Text.Length < 8 && nombreField.Text.Length > 0)
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("El User ID debe tener al menos 8 caracteres.", nombreField, 0, -40, VisibleTime);
+            }
+            if (nombreField.Text.Length > 12)
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("El User ID no debe sobrepasar más de 12 caracteres.", nombreField, 0, -40, VisibleTime);
             }
         }
 
@@ -372,6 +415,12 @@ namespace sistema_de_facturacion.Usuarios
         private void ApellidoField_Enter(object sender, EventArgs e)
         {
             apellidoField.BackColor = Color.White;
+        }
+
+        private void HuellaButton_Click(object sender, EventArgs e)
+        {
+            new Huellas(this).Visible = true;
+            this.Visible = false;
         }
 
         private void CorreoField_Leave(object sender, EventArgs e)

@@ -167,6 +167,7 @@
             this.huellaButton.TabIndex = 1;
             this.huellaButton.Text = "Ingreso por huella dactilar";
             this.huellaButton.UseVisualStyleBackColor = true;
+            this.huellaButton.Click += new System.EventHandler(this.HuellaButton_Click);
             // 
             // ingresarButton
             // 

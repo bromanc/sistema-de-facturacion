@@ -260,6 +260,7 @@
             this.huellaB.TabIndex = 0;
             this.huellaB.Text = "Buscar";
             this.huellaB.UseVisualStyleBackColor = true;
+            this.huellaB.Click += new System.EventHandler(this.HuellaB_Click);
             // 
             // groupBox2
             // 

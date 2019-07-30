@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using sistema_de_facturacion.Modelo;
 using sistema_de_facturacion.Clientes;
+using sistema_de_facturacion.Huella;
 
 namespace sistema_de_facturacion.Estimados
 {
@@ -17,6 +18,7 @@ namespace sistema_de_facturacion.Estimados
     {
         public Form inicial;
         Usuario vendedor;
+        public String idCliente;
         public Proformas(Form interfazInicial, Usuario vendedor)
         {
             InitializeComponent();
@@ -318,6 +320,39 @@ namespace sistema_de_facturacion.Estimados
             {
                 MessageBox.Show("No existen suficientes datos para generar la factura.");
             }
+        }
+
+        private void HuellaB_Click(object sender, EventArgs e)
+        {
+            new Huellas(this).Visible = true;
+            this.Visible = false;
+        }
+        public void obtenerConHuella()
+        {
+            if (this.idCliente != null)
+            {
+                Cliente existente = new Cliente().obtenerCliente(this.idCliente);
+                if (existente == null)
+                {
+                    MessageBox.Show("No se ha encontrado ningún cliente con esa identificación!");
+                }
+                else
+                {
+                    habilitoCampos();
+                    citxt.Text = existente.cRUC;
+                    nombretxt.Text = existente.nombre;
+                    telefonotxt.Text = existente.telefono;
+                    direcciontxt.Text = existente.direccion;
+                    DateTime fecha = DateTime.Now;
+                    fechatx.Text = Convert.ToString(fecha);
+                    numeroProformatxt.Text = new Proforma().maxIdProforma().ToString();
+                    vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
+
+                }
+            }
+
+
+
         }
     }
 }

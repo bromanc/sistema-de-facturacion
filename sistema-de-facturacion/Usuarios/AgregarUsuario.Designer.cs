@@ -298,6 +298,7 @@
             this.huellaButton.TabIndex = 11;
             this.huellaButton.Text = "Tomar Huella";
             this.huellaButton.UseVisualStyleBackColor = true;
+            this.huellaButton.Click += new System.EventHandler(this.HuellaButton_Click);
             // 
             // tableLayoutPanel2
             // 

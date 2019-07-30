@@ -10,6 +10,7 @@ using sistema_de_facturacion.Principal;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using sistema_de_facturacion.Modelo;
+using sistema_de_facturacion.Huella;
 
 namespace sistema_de_facturacion.Login
 {
@@ -18,6 +19,8 @@ namespace sistema_de_facturacion.Login
         public List<TextBox> fieldList = new List<TextBox>();
         
         Usuario verificar = new Usuario();
+        public String usuario;
+        int intentos = 0;
         public IngresoAlSistema()
         {
             InitializeComponent();
@@ -51,7 +54,12 @@ namespace sistema_de_facturacion.Login
                 datos[0] = usuarioField.Text.TrimEnd();
                 datos[1] = passwordField.Text.TrimEnd();
                 datos[2] = ""; //Huella
-                if (verificar.validarIngreso(datos,0)==1)
+                if (intentos >= 3)
+                {
+                    MessageBox.Show("Ha superado los tres intentos de sesión.");
+                    Application.Exit();
+                }
+                else if (verificar.validarIngreso(datos,0)==1)
                 {
                     //Aquí se le pasa el nombre de usuario a la interfaz principal para obtener el usuario y su rol.
                     Usuario obtenido = verificar.obtenerUsuario(datos[0]);
@@ -62,8 +70,16 @@ namespace sistema_de_facturacion.Login
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.");
+                    intentos++;
                 }
             }
+        }
+        public void ingresarConHuella()
+        {
+            Usuario obtenido = verificar.obtenerUsuario(this.usuario);
+            Form principal = new InterfazInicial(obtenido);
+            principal.Visible = true;
+            this.Visible = false;
         }
         private void PasswordField_TextChanged(object sender, EventArgs e)
         {
@@ -91,6 +107,12 @@ namespace sistema_de_facturacion.Login
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void HuellaButton_Click(object sender, EventArgs e)
+        {
+            new Huellas(this).Visible = true;
+            this.Visible = false;
         }
     }
 }

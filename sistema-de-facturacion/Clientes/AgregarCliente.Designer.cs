@@ -571,6 +571,7 @@
             this.huellaButton.TabIndex = 11;
             this.huellaButton.Text = "Tomar Huella";
             this.huellaButton.UseVisualStyleBackColor = true;
+            this.huellaButton.Click += new System.EventHandler(this.HuellaButton_Click);
             // 
             // label1
             // 
@@ -657,6 +658,7 @@
             this.cedulaField.Name = "cedulaField";
             this.cedulaField.Size = new System.Drawing.Size(192, 20);
             this.cedulaField.TabIndex = 3;
+            this.cedulaField.TextChanged += new System.EventHandler(this.CedulaField_TextChanged);
             this.cedulaField.Enter += new System.EventHandler(this.CedulaField_Enter);
             this.cedulaField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaField_KeyPress);
             this.cedulaField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CedulaField_KeyUp_1);

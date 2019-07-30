@@ -89,6 +89,7 @@ namespace sistema_de_facturacion.Clientes
             {
                 string cedula = clientesGrid.SelectedRows[0].Cells[0].Value.ToString();
                 new AgregarCliente(true, inicial,cedula).Visible = true;
+
                 this.Visible = false;
             }
             if (clientesGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) 
@@ -156,7 +157,55 @@ namespace sistema_de_facturacion.Clientes
         }
         public void actualizarTabla()
         {
-            clientesGrid.DataSource = buscar.buscarCliente(1, "");
+            DataTable aux = buscar.buscarCliente(1, "");
+            ChangeColumnDataType(aux, "Huella Digital", typeof(String));
+            clientesGrid.DataSource = aux;
+            for (int i = 0; i < clientesGrid.Rows.Count; i++)
+            {
+                if (!(System.Convert.IsDBNull(clientesGrid.Rows[i].Cells[9].Value)))
+                {
+                    clientesGrid.Rows[i].Cells[9].Value = "No";
+                }
+                else
+                {
+                    clientesGrid.Rows[i].Cells[9].Value = "Si";
+                }
+
+            }
+            
+        }
+        public static bool ChangeColumnDataType(DataTable table, string columnname, Type newtype)
+        {
+            if (table.Columns.Contains(columnname) == false)
+                return false;
+
+            DataColumn column = table.Columns[columnname];
+            if (column.DataType == newtype)
+                return true;
+
+            try
+            {
+                DataColumn newcolumn = new DataColumn("temporary", newtype);
+                table.Columns.Add(newcolumn);
+                foreach (DataRow row in table.Rows)
+                {
+                    try
+                    {
+                        row["temporary"] = Convert.ChangeType(row[columnname], newtype);
+                    }
+                    catch
+                    {
+                    }
+                }
+                table.Columns.Remove(columnname);
+                newcolumn.ColumnName = columnname;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

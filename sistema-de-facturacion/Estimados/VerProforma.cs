@@ -30,8 +30,8 @@ namespace sistema_de_facturacion.Estimados
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-            this.accionButton.Text = "Revisar factura seleccionada";
-            labelIngreso.Text = "Revisión de Facturas";
+            this.accionButton.Text = "Revisar proforma seleccionada";
+            labelIngreso.Text = "Revisión de Proformas";
             this.revisar = modificar;
             parametroBox.SelectedIndex = 0;
         }
@@ -39,9 +39,9 @@ namespace sistema_de_facturacion.Estimados
         {
             InitializeComponent();
             this.inicial = interfazInicial;
-            this.accionButton.Text = "Anular factura seleccionada";
+            this.accionButton.Text = "Anular proforma seleccionada";
             this.anular = anular;
-            labelIngreso.Text = "Anulación de Facturas";
+            labelIngreso.Text = "Anulación de Proformas";
             parametroBox.SelectedIndex = 0;
         }
         private void Minimizar_Click(object sender, EventArgs e)

@@ -35,15 +35,15 @@
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelIVA = new System.Windows.Forms.Label();
-            this.ivaField = new System.Windows.Forms.TextBox();
-            this.regresarButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guardarB = new System.Windows.Forms.Button();
             this.pagoButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pagoBox = new System.Windows.Forms.ComboBox();
+            this.labelIVA = new System.Windows.Forms.Label();
+            this.ivaField = new System.Windows.Forms.TextBox();
+            this.regresarButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pagoBox = new System.Windows.Forms.ComboBox();
             this.agregarField = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
@@ -139,36 +139,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 208);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // labelIVA
+            // label1
             // 
-            this.labelIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelIVA.AutoSize = true;
-            this.labelIVA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIVA.Location = new System.Drawing.Point(79, 24);
-            this.labelIVA.Name = "labelIVA";
-            this.labelIVA.Size = new System.Drawing.Size(43, 21);
-            this.labelIVA.TabIndex = 0;
-            this.labelIVA.Text = "IVA:";
-            // 
-            // ivaField
-            // 
-            this.ivaField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ivaField.Location = new System.Drawing.Point(204, 24);
-            this.ivaField.Name = "ivaField";
-            this.ivaField.ShortcutsEnabled = false;
-            this.ivaField.Size = new System.Drawing.Size(593, 20);
-            this.ivaField.TabIndex = 1;
-            // 
-            // regresarButton
-            // 
-            this.regresarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.regresarButton.Location = new System.Drawing.Point(48, 150);
-            this.regresarButton.Name = "regresarButton";
-            this.regresarButton.Size = new System.Drawing.Size(104, 45);
-            this.regresarButton.TabIndex = 2;
-            this.regresarButton.Text = "Regresar";
-            this.regresarButton.UseVisualStyleBackColor = true;
-            this.regresarButton.Click += new System.EventHandler(this.Button1_Click);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Métodos de Pago:";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -207,27 +188,37 @@
             this.pagoButton.UseVisualStyleBackColor = true;
             this.pagoButton.Click += new System.EventHandler(this.PagoButton_Click);
             // 
-            // label1
+            // labelIVA
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Métodos de Pago:";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.labelIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIVA.AutoSize = true;
+            this.labelIVA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIVA.Location = new System.Drawing.Point(79, 24);
+            this.labelIVA.Name = "labelIVA";
+            this.labelIVA.Size = new System.Drawing.Size(43, 21);
+            this.labelIVA.TabIndex = 0;
+            this.labelIVA.Text = "IVA:";
             // 
-            // pagoBox
+            // ivaField
             // 
-            this.pagoBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pagoBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pagoBox.FormattingEnabled = true;
-            this.pagoBox.Location = new System.Drawing.Point(3, 21);
-            this.pagoBox.Name = "pagoBox";
-            this.pagoBox.Size = new System.Drawing.Size(290, 21);
-            this.pagoBox.TabIndex = 9;
+            this.ivaField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ivaField.Location = new System.Drawing.Point(204, 24);
+            this.ivaField.Name = "ivaField";
+            this.ivaField.ShortcutsEnabled = false;
+            this.ivaField.Size = new System.Drawing.Size(593, 20);
+            this.ivaField.TabIndex = 1;
+            this.ivaField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IvaField_KeyPress);
+            // 
+            // regresarButton
+            // 
+            this.regresarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.regresarButton.Location = new System.Drawing.Point(48, 150);
+            this.regresarButton.Name = "regresarButton";
+            this.regresarButton.Size = new System.Drawing.Size(104, 45);
+            this.regresarButton.TabIndex = 2;
+            this.regresarButton.Text = "Regresar";
+            this.regresarButton.UseVisualStyleBackColor = true;
+            this.regresarButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -243,6 +234,16 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(593, 63);
             this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // pagoBox
+            // 
+            this.pagoBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pagoBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pagoBox.FormattingEnabled = true;
+            this.pagoBox.Location = new System.Drawing.Point(3, 21);
+            this.pagoBox.Name = "pagoBox";
+            this.pagoBox.Size = new System.Drawing.Size(290, 21);
+            this.pagoBox.TabIndex = 9;
             // 
             // agregarField
             // 

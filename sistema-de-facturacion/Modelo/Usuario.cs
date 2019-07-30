@@ -18,10 +18,10 @@ namespace sistema_de_facturacion.Modelo
         public String nombres{ get; set; }
         public String apellidos { get; set; }
         public String rol { get; set; }
-        public String huella { get; set; }
+        public byte[] huella { get; set; }
         ConexionDB conexion = new ConexionDB();
 
-        public Usuario(string usuario, string contrasena, string nombres, string apellidos, string rol, string huella)
+        public Usuario(string usuario, string contrasena, string nombres, string apellidos, string rol, byte[] huella)
         {
             this.usuario = usuario;
             this.contrasena = contrasena;
@@ -44,7 +44,8 @@ namespace sistema_de_facturacion.Modelo
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                string[] datos = new string[6];
+                string[] datos = new string[5];
+                byte[] huella = null;
                 while (reader.Read())
                 {
                     datos[0] = reader.GetString(0).TrimEnd();
@@ -52,10 +53,18 @@ namespace sistema_de_facturacion.Modelo
                     datos[2] = reader.GetString(2).TrimEnd();
                     datos[3] = reader.GetString(3).TrimEnd();
                     datos[4] = reader.GetString(4).TrimEnd();
-                    datos[5] = reader.GetString(5).TrimEnd();
+                    if (reader.IsDBNull(5))
+                    {
+                        huella = null;
+                    }
+                    else
+                    {
+                        huella = (byte[])reader[5];
+                    }
+
                 }
                 conexion.cerrarConexion();
-                Usuario obtenido = new Usuario(datos[0], datos[1], datos[2], datos[3],datos[4],datos[5]);
+                Usuario obtenido = new Usuario(datos[0], datos[1], datos[2], datos[3],datos[4],huella);
                 return obtenido;
             }
             conexion.cerrarConexion();
@@ -77,7 +86,30 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@nombres", SqlDbType.VarChar).Value = usuario.nombres;
             cmd.Parameters.Add("@apellidos", SqlDbType.VarChar).Value = usuario.apellidos;
             cmd.Parameters.Add("@rol", SqlDbType.VarChar).Value = usuario.rol;
-            cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = usuario.huella+new Random().Next(0, 99);
+            cmd.Parameters.Add("@huella", SqlDbType.VarBinary).Value = usuario.huella;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
+        }
+        public int agregarUsuarioSinHuella(Usuario usuario)
+        {
+
+            if (obtenerUsuario(usuario.usuario) != null)
+            {
+                return -1;
+            }
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspRegistrarUsuarioSinHuella", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario;
+            String contrasena = md5_string(usuario.contrasena);
+            cmd.Parameters.Add("@psswd", SqlDbType.VarChar).Value = contrasena;
+            cmd.Parameters.Add("@nombres", SqlDbType.VarChar).Value = usuario.nombres;
+            cmd.Parameters.Add("@apellidos", SqlDbType.VarChar).Value = usuario.apellidos;
+            cmd.Parameters.Add("@rol", SqlDbType.VarChar).Value = usuario.rol;
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
             retval.Direction = ParameterDirection.ReturnValue;
             cmd.ExecuteNonQuery();

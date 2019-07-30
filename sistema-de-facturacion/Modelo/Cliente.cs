@@ -19,12 +19,12 @@ namespace sistema_de_facturacion.Modelo
         public String direccion { get; set; }
         public String ciudad { get; set; }
         public String correo { get; set; }
-        public String huella { get; set; }
+        public byte[] huella { get; set; }
         public String tipo { get; set; }
         public String baja { get; set; }
         ConexionDB conexion = new ConexionDB();
 
-        public Cliente(string cRUC, string nombre, string apellido, string telefono, string direccion, string ciudad, string correo, string huella, string tipo, string baja)
+        public Cliente(string cRUC, string nombre, string apellido, string telefono, string direccion, string ciudad, string correo, byte[] huella, string tipo, string baja)
         {
             this.cRUC = cRUC;
             this.nombre = nombre;
@@ -59,7 +59,32 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@direccionDomiciliaria", SqlDbType.VarChar).Value = cliente.direccion;
             cmd.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = cliente.ciudad;
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = cliente.correo;
-            cmd.Parameters.Add("@huella", SqlDbType.VarChar).Value = cliente.huella+ new Random().Next(0, 99);
+            cmd.Parameters.Add("@huella", SqlDbType.VarBinary).Value = cliente.huella;
+            cmd.Parameters.Add("@tipo", SqlDbType.VarChar).Value = cliente.tipo;
+            SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
+            retval.Direction = ParameterDirection.ReturnValue;
+            cmd.ExecuteNonQuery();
+            int retorno = (int)cmd.Parameters["@retorno"].Value;
+            conexion.cerrarConexion();
+            return retorno;
+        }
+        public int agregarClienteSinHuella(Cliente cliente)
+        {
+
+            if (obtenerCliente(cliente.cRUC) != null)
+            {
+                return -1;
+            }
+            conexion.abrirConexion();
+            SqlCommand cmd = new SqlCommand("uspRegistrarClienteSinHuella", conexion.obtenerConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@rucCI", SqlDbType.VarChar).Value = cliente.cRUC;
+            cmd.Parameters.Add("@nombres", SqlDbType.VarChar).Value = cliente.nombre;
+            cmd.Parameters.Add("@apellidos", SqlDbType.VarChar).Value = cliente.apellido;
+            cmd.Parameters.Add("@telefono", SqlDbType.VarChar).Value = cliente.telefono;
+            cmd.Parameters.Add("@direccionDomiciliaria", SqlDbType.VarChar).Value = cliente.direccion;
+            cmd.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = cliente.ciudad;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = cliente.correo;
             cmd.Parameters.Add("@tipo", SqlDbType.VarChar).Value = cliente.tipo;
             SqlParameter retval = cmd.Parameters.Add("@retorno", SqlDbType.VarChar);
             retval.Direction = ParameterDirection.ReturnValue;
@@ -102,6 +127,7 @@ namespace sistema_de_facturacion.Modelo
             if (reader.HasRows)
             {
                 string[] datos = new string[10];
+                byte[] huella = null;
                 while (reader.Read())
                 {
                     datos[0] = reader.GetString(0).TrimEnd();
@@ -111,11 +137,19 @@ namespace sistema_de_facturacion.Modelo
                     datos[4] = reader.GetString(4).TrimEnd();
                     datos[5] = reader.GetString(5).TrimEnd();
                     datos[6] = reader.GetString(6).TrimEnd();
-                    datos[7] = reader.GetString(7).TrimEnd();
+                    if (reader.IsDBNull(7))
+                    {
+                        huella = null;
+                    }
+                    else
+                    {
+                        huella = (byte[])reader[7];
+                    }
+                    
                     datos[8] = reader.GetString(8).TrimEnd();
                     datos[9] = reader.GetString(9).TrimEnd();
                 }
-                Cliente obtenido = new Cliente(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9]);
+                Cliente obtenido = new Cliente(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], huella, datos[8], datos[9]);
                 conexion.cerrarConexion();
                 return obtenido;
             }

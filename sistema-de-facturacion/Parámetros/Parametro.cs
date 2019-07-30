@@ -138,5 +138,17 @@ namespace sistema_de_facturacion.Parámetros
 
             }
         }
+
+        private void IvaField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || e.KeyChar.Equals(',')) && (e.KeyChar != (char)Keys.Back))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("!Valor no válido!", ivaField, 0, -40, 2000);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

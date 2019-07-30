@@ -146,6 +146,7 @@
             this.nombreField.Name = "nombreField";
             this.nombreField.Size = new System.Drawing.Size(398, 20);
             this.nombreField.TabIndex = 1;
+            this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
             // 
             // tableLayoutPanel2
             // 

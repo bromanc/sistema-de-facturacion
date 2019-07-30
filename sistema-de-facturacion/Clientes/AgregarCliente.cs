@@ -12,6 +12,7 @@ using sistema_de_facturacion.Principal;
 using sistema_de_facturacion.Modelo;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using sistema_de_facturacion.Huella;
 
 namespace sistema_de_facturacion.Clientes
 {
@@ -24,6 +25,7 @@ namespace sistema_de_facturacion.Clientes
         Validacion validar = new Validacion();
         Cliente modificarC= new Cliente();
         int VisibleTime = 2250;
+        public byte[] huella;
         public AgregarCliente(Form interfazInicial)
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace sistema_de_facturacion.Clientes
             this.inicial = ventana;
             this.identificacion = identificacion.TrimEnd();
             modificarF();
-            siRadio.Select();
+            //siRadio.Select();
         }
         public void modificarF()
         {
@@ -57,7 +59,6 @@ namespace sistema_de_facturacion.Clientes
             
             if (existente.tipo.TrimEnd().Equals("Natural"))
             {
-
                 natural.Checked = true;
                 razonField.Text = "";
                 nombreField.Text = existente.nombre;
@@ -66,7 +67,6 @@ namespace sistema_de_facturacion.Clientes
                 {
                     cedulaR.Checked = true;
                     cedulaField.Text = existente.cRUC;
-
                 }
                 else
                 {
@@ -84,6 +84,13 @@ namespace sistema_de_facturacion.Clientes
                 apellidoField.Text = "";
                 juridica.Checked = true;
                 razonField.Text = existente.nombre;
+            }
+            if (existente.huella == null)
+            {
+                noRadio.Checked = true;
+            }
+            else {
+                siRadio.Checked = true;
             }
             telefonoField.Text = existente.telefono;
             direccionField.Text = existente.direccion;
@@ -289,7 +296,7 @@ namespace sistema_de_facturacion.Clientes
                     else
                     {
 
-                        String nombre, huella, estado, tipo;
+                        String nombre, estado, tipo;
                         String crp = "";
                         if (natural.Checked)
                         {
@@ -322,29 +329,55 @@ namespace sistema_de_facturacion.Clientes
                         if (siRadio.Checked)
                         {
                             //Setear valor a huella
+                            new Huellas(this).Visible = true;
+                            this.Visible = false;
                         }
                         else
                         {
-                            huella = null;
+                            this.huella = null;
                         }
                         //Verificar primero con regex antes de declarar el nuevo objeto cliente. Aquí mando if, invoco función.
-                        Cliente client = new Cliente(crp, nombre, apellidoField.Text.TrimEnd(), telefonoField.Text.TrimEnd(), direccionField.Text.TrimEnd(), ciudadField.Text.TrimEnd(), correoField.Text.TrimEnd(), "STRING HUELLA", tipo, estado);
-                        int hecho = client.agregarCliente(client);
-                        if (hecho == 0)
+                        Cliente client = new Cliente(crp, nombre, apellidoField.Text.TrimEnd(), telefonoField.Text.TrimEnd(), direccionField.Text.TrimEnd(), ciudadField.Text.TrimEnd(), correoField.Text.TrimEnd(), this.huella, tipo, estado);
+                        
+                        if (siRadio.Checked)
                         {
-                            MessageBox.Show("Cliente registrado con éxito.");
-                            inicial.Visible = true;
-                            this.Close();
-                        }
-                        else if (hecho == -1)
-                        {
-                            MessageBox.Show("El cliente especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            int hecho = client.agregarCliente(client);
+                            if (hecho == 0)
+                            {
+                                MessageBox.Show("Cliente registrado con éxito.");
+                                inicial.Visible = true;
+                                this.Close();
+                            }
+                            else if (hecho == -1)
+                            {
+                                MessageBox.Show("El cliente especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se produjo un error al registrar el cliente.");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Se produjo un error al registrar el cliente.");
+                            int hecho = client.agregarClienteSinHuella(client);
+                            if (hecho == 0)
+                            {
+                                MessageBox.Show("Cliente registrado con éxito.");
+                                inicial.Visible = true;
+                                this.Close();
+                            }
+                            else if (hecho == -1)
+                            {
+                                MessageBox.Show("El cliente especificado ya se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se produjo un error al registrar el cliente.");
+                            }
                         }
+                        
                     }
                 }
             }
@@ -369,7 +402,7 @@ namespace sistema_de_facturacion.Clientes
                     {
                         crp = pasaporteField.Text;
                     }
-                    Cliente client = new Cliente(crp, nombreField.Text.TrimEnd(), apellidoField.Text.TrimEnd(), telefonoField.Text.TrimEnd(), direccionField.Text.TrimEnd(), ciudadField.Text.TrimEnd(), correoField.Text.TrimEnd(), "STRING HUELLA5", "NJ", "IA");
+                    Cliente client = new Cliente(crp, nombreField.Text.TrimEnd(), apellidoField.Text.TrimEnd(), telefonoField.Text.TrimEnd(), direccionField.Text.TrimEnd(), ciudadField.Text.TrimEnd(), correoField.Text.TrimEnd(), huella, "NJ", "IA");
                     if (client.modificarCliente(client) == 0)
                     {
                         MessageBox.Show("Cliente modificado exitosamente.");
@@ -950,6 +983,16 @@ namespace sistema_de_facturacion.Clientes
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", pasaporteField, 0, -40, VisibleTime);
             }
+        }
+
+        private void HuellaButton_Click(object sender, EventArgs e)
+        {
+            new Huellas(this).Visible = true;
+        }
+
+        private void CedulaField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

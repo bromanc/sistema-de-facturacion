@@ -37,7 +37,7 @@ namespace sistema_de_facturacion.Inventarios
             if (type.Equals("eliminar"))
             {
 
-                labelIngreso.Text = "Cambiar de Estado de Productos";
+                labelIngreso.Text = "Cambio de Estado de Productos";
                 accionButton.Text = "Cambiar estado de producto seleccionado";
             }
 

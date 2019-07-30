@@ -144,5 +144,17 @@ namespace sistema_de_facturacion.Categoría
             inicial.Visible = true;
             this.Close();
         }
+
+        private void NombreField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese únicamente letras.", nombreField, 0, -40, 2000);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

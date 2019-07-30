@@ -41,6 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelParametro = new System.Windows.Forms.Label();
+            this.parametroB = new System.Windows.Forms.Button();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.parametroField = new System.Windows.Forms.TextBox();
             this.consumidorButton = new System.Windows.Forms.Button();
@@ -93,7 +94,6 @@
             this.total = new System.Windows.Forms.Label();
             this.totaltxt = new System.Windows.Forms.Label();
             this.calcularFButton = new System.Windows.Forms.Button();
-            this.parametroB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -229,6 +229,7 @@
             this.huellaB.TabIndex = 0;
             this.huellaB.Text = "Buscar";
             this.huellaB.UseVisualStyleBackColor = true;
+            this.huellaB.Click += new System.EventHandler(this.HuellaB_Click);
             // 
             // groupBox2
             // 
@@ -268,6 +269,17 @@
             this.labelParametro.Size = new System.Drawing.Size(131, 34);
             this.labelParametro.TabIndex = 1;
             this.labelParametro.Text = "Ingrese el parámetro:";
+            // 
+            // parametroB
+            // 
+            this.parametroB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parametroB.Location = new System.Drawing.Point(462, 3);
+            this.parametroB.Name = "parametroB";
+            this.parametroB.Size = new System.Drawing.Size(189, 46);
+            this.parametroB.TabIndex = 3;
+            this.parametroB.Text = "Buscar";
+            this.parametroB.UseVisualStyleBackColor = true;
+            this.parametroB.Click += new System.EventHandler(this.ParametroB_Click);
             // 
             // tableLayoutPanel10
             // 
@@ -913,17 +925,6 @@
             this.calcularFButton.Text = "Calcular Proforma";
             this.calcularFButton.UseVisualStyleBackColor = true;
             this.calcularFButton.Click += new System.EventHandler(this.CalcularFButton_Click);
-            // 
-            // parametroB
-            // 
-            this.parametroB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parametroB.Location = new System.Drawing.Point(462, 3);
-            this.parametroB.Name = "parametroB";
-            this.parametroB.Size = new System.Drawing.Size(189, 46);
-            this.parametroB.TabIndex = 3;
-            this.parametroB.Text = "Buscar";
-            this.parametroB.UseVisualStyleBackColor = true;
-            this.parametroB.Click += new System.EventHandler(this.ParametroB_Click);
             // 
             // Proformas
             // 

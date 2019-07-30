@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasPeriodo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIngreso = new System.Windows.Forms.Label();
             this.minimizarButton = new System.Windows.Forms.PictureBox();
             this.maximizarButton = new System.Windows.Forms.PictureBox();
             this.cerrarButton = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,6 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.regresarButton = new System.Windows.Forms.Button();
             this.accionButton = new System.Windows.Forms.Button();
-            this.labelIngreso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizarButton)).BeginInit();
@@ -72,6 +72,17 @@
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 3;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
+            // 
+            // labelIngreso
+            // 
+            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelIngreso.AutoSize = true;
+            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngreso.Location = new System.Drawing.Point(330, 16);
+            this.labelIngreso.Name = "labelIngreso";
+            this.labelIngreso.Size = new System.Drawing.Size(190, 18);
+            this.labelIngreso.TabIndex = 7;
+            this.labelIngreso.Text = "Generación de Reportes";
             // 
             // minimizarButton
             // 
@@ -124,19 +135,20 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 56);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(332, 56);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // parametroBox
             // 
             this.parametroBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.parametroBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
             "Fecha",
             "Categoría de producto"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
-            this.parametroBox.Size = new System.Drawing.Size(327, 21);
+            this.parametroBox.Size = new System.Drawing.Size(326, 21);
             this.parametroBox.TabIndex = 1;
             // 
             // labelParametro
@@ -144,7 +156,7 @@
             this.labelParametro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.labelParametro.AutoSize = true;
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametro.Location = new System.Drawing.Point(86, 0);
+            this.labelParametro.Location = new System.Drawing.Point(85, 0);
             this.labelParametro.Name = "labelParametro";
             this.labelParametro.Size = new System.Drawing.Size(161, 28);
             this.labelParametro.TabIndex = 0;
@@ -168,7 +180,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.363636F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.10345F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel1.Controls.Add(this.labelVentas, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 4, 0);
@@ -188,7 +200,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.labelFin, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.fechaFinPicker, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(628, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(627, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -221,7 +233,7 @@
             this.tableLayoutPanel5.Controls.Add(this.labelInicio, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.fechaInicioPicker, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(467, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(466, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -282,17 +294,6 @@
             this.accionButton.TabIndex = 2;
             this.accionButton.Text = "Generar Reporte";
             this.accionButton.UseVisualStyleBackColor = true;
-            // 
-            // labelIngreso
-            // 
-            this.labelIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelIngreso.AutoSize = true;
-            this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngreso.Location = new System.Drawing.Point(330, 16);
-            this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(190, 18);
-            this.labelIngreso.TabIndex = 7;
-            this.labelIngreso.Text = "Generación de Reportes";
             // 
             // VentasPeriodo
             // 
