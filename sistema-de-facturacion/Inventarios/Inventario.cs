@@ -345,18 +345,37 @@ namespace sistema_de_facturacion.Inventarios
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            fieldList.Add(codigoField);
-            fieldList.Add(nombreField);
-            fieldList.Add(disponiblesField);
-            fieldList.Add(unidadField);
-            fieldList.Add(unitarioField);
-            fieldList.Add(descuentoField);
-            fieldList.Add(adquisicionField);
-            fieldList.Add(gananciaField);
-            fieldList.Add(minimoField);
-            foreach (TextBox singleItem in fieldList)
+            if (modificar == false)
             {
-                singleItem.Text = "";
+
+
+                fieldList.Add(codigoField);
+                fieldList.Add(nombreField);
+                fieldList.Add(disponiblesField);
+                fieldList.Add(unidadField);
+                fieldList.Add(unitarioField);
+                fieldList.Add(descuentoField);
+                fieldList.Add(adquisicionField);
+                fieldList.Add(gananciaField);
+                fieldList.Add(minimoField);
+                foreach (TextBox singleItem in fieldList)
+                {
+                    singleItem.Text = "";
+                }
+            }
+            else
+            {
+                fieldList.Add(disponiblesField);
+                fieldList.Add(unidadField);
+                fieldList.Add(unitarioField);
+                fieldList.Add(descuentoField);
+                fieldList.Add(adquisicionField);
+                fieldList.Add(gananciaField);
+                fieldList.Add(minimoField);
+                foreach (TextBox singleItem in fieldList)
+                {
+                    singleItem.Text = "";
+                }
             }
         }
 

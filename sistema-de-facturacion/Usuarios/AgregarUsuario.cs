@@ -22,7 +22,7 @@ namespace sistema_de_facturacion.Usuarios
         public Usuario obtenido = new Usuario();
         public Validacion validar = new Validacion();
         public byte[] huella;
-        int VisibleTime = 3250;
+        int VisibleTime = 1750;
         public AgregarUsuario(Form interfazInicial)
         {
             InitializeComponent();
@@ -52,6 +52,8 @@ namespace sistema_de_facturacion.Usuarios
             usuarioBox.Enabled = false;
             huellaButton.Enabled = false;
             nombreField.Enabled = false;
+            nombresField.Enabled = false;
+            apellidoField.Enabled = false;
             labelPassword.Text = "Nueva Contraseña:";
             registrarButton.Text = "Guardar Cambios";
             limpiarButton.Visible = false;
@@ -79,11 +81,12 @@ namespace sistema_de_facturacion.Usuarios
         {
             
             huellaButton.Enabled = false;
-            nombreField.ReadOnly = true;
+            nombreField.Enabled = false;
+            nombresField.Enabled = false;
+            passwordField.Enabled = false;
+            apellidoField.Enabled = false;
             registrarButton.Text = "Guardar Cambios";
-            passwordField.ReadOnly = true;
             limpiarButton.Visible = false;
-            nombresField.ReadOnly = true;
             labelIngreso.Text = "Modificación de Rol";
             establecerDatos();
             passwordField.Text = obtenido.contrasena;
@@ -272,7 +275,7 @@ namespace sistema_de_facturacion.Usuarios
                 correcto = true;
                 nombreField.BackColor = Color.LightBlue;
             }
-            if (!validar.contrasenia(passwordField))
+            if (!validar.contrasenia(passwordField) || (passwordField.Text.Length > 15 || passwordField.Text.Length < 10))
             {
                 correcto = true;
                 passwordField.BackColor = Color.LightBlue;
@@ -302,36 +305,29 @@ namespace sistema_de_facturacion.Usuarios
 
         private void NombreField_Leave(object sender, EventArgs e)
         {
-            
+            if ((nombreField.Text.Length < 8 && nombreField.Text.Length > 0) || nombreField.Text.Length > 12)
+            {
+                ToolTip tt = new ToolTip();
+                tt.IsBalloon = true;
+                tt.Show("Ingrese un User ID entre 8 y 12 caracteres.", nombreField, 0, -40, VisibleTime);
+            }
             if (string.IsNullOrWhiteSpace(nombreField.Text))
             {
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
                 tt.Show("No deje este campo vacío.", nombreField, 0, -40, VisibleTime);
             }
-            if (nombreField.Text.Length < 8 && nombreField.Text.Length > 0)
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("El User ID debe tener al menos 8 caracteres.", nombreField, 0, -40, VisibleTime);
-            }
-            if (nombreField.Text.Length > 12)
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("El User ID no debe sobrepasar más de 12 caracteres.", nombreField, 0, -40, VisibleTime);
-            }
         }
 
         private void PasswordField_Leave(object sender, EventArgs e)
         {
-            if (passwordField.Text.Length > 15 || passwordField.Text.Length < 8)
+            if ((passwordField.Text.Length > 0 && passwordField.Text.Length < 10) || passwordField.Text.Length > 15)
             {
 
                 this.valido = false;
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
-                tt.Show("Ingrese una contraseña de entre 8 y 15 caracteres.", nombreField, 0, -40, VisibleTime);
+                tt.Show("Ingrese una contraseña de entre 10 y 15 caracteres.", passwordField, 0, -40, VisibleTime);
 
             }
             if (string.IsNullOrWhiteSpace(passwordField.Text))
@@ -395,10 +391,7 @@ namespace sistema_de_facturacion.Usuarios
         {
             nombreField.BackColor = Color.White;
 
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese un nombre de usuario de entre 8 y 12 caracteres.", nombreField, 0, -40, VisibleTime);
-
+                
             
         }
 
@@ -417,21 +410,8 @@ namespace sistema_de_facturacion.Usuarios
             apellidoField.BackColor = Color.White;
         }
 
-        private void HuellaButton_Click(object sender, EventArgs e)
+        private void NombresField_Leave(object sender, EventArgs e)
         {
-            new Huellas(this).Visible = true;
-            this.Visible = false;
-        }
-
-        private void CorreoField_Leave(object sender, EventArgs e)
-        {
-            if (nombresField.Text.Length > 12 || nombresField.Text.Length < 8)
-            {
-                ToolTip tt = new ToolTip();
-                tt.IsBalloon = true;
-                tt.Show("Ingrese un nombre no mayor a 50 caracteres.", nombresField, 0, -40, VisibleTime);
-
-            }
             if (string.IsNullOrWhiteSpace(nombresField.Text))
             {
                 ToolTip tt = new ToolTip();
@@ -439,5 +419,13 @@ namespace sistema_de_facturacion.Usuarios
                 tt.Show("No deje este campo vacío.", nombresField, 0, -40, VisibleTime);
             }
         }
+
+        private void HuellaButton_Click(object sender, EventArgs e)
+        {
+            new Huellas(this).Visible = true;
+            this.Visible = false;
+        }
+
+        
     }
 }

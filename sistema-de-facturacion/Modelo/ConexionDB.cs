@@ -26,7 +26,7 @@ namespace sistema_de_facturacion.Modelo
             }
             catch(Exception e)
             {
-               // MessageBox.Show("Conexión errónea, reintentando..."+e);
+               MessageBox.Show("Conexión errónea, reintentando..."+e);
             }
         }
         public void cerrarConexion()

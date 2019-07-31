@@ -54,7 +54,7 @@ namespace sistema_de_facturacion.Modelo
         }
         public bool contrasenia(TextBox campo)
         {
-            Regex objNaturalPattern = new Regex("^[\\p{L}\\p{M}\\d\\p{Zs}.-]+$");
+            Regex objNaturalPattern = new Regex("^[\\p{L}\\p{M}\\d\\p{Zs}._!#$%&()=?*-]+$");
             return objNaturalPattern.IsMatch(campo.Text);
         }
         public bool VerificaCedula(string ced)

@@ -172,7 +172,7 @@ namespace sistema_de_facturacion.Facturacion
                 Cliente existente = new Cliente().obtenerCliente(parametroField.Text);
                 if (existente == null)
                 {
-                    MessageBox.Show("No se ha encontrado ningún cliente con esa identificación!");
+                    MessageBox.Show("Cliente no registrado en el sistema");
                 }
                 else
                 {

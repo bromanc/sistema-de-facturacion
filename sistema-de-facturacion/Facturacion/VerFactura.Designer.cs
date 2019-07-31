@@ -42,10 +42,10 @@
             this.labelElegir = new System.Windows.Forms.Label();
             this.parametroBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.buscarButton = new System.Windows.Forms.Button();
             this.accionButton = new System.Windows.Forms.Button();
             this.regresarButton = new System.Windows.Forms.Button();
             this.facturasGrid = new System.Windows.Forms.DataGridView();
-            this.buscarButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
@@ -207,7 +207,7 @@
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
             "Cliente",
-            "Código de Factura"});
+            "Número de Factura"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
             this.parametroBox.Size = new System.Drawing.Size(212, 21);
@@ -229,6 +229,17 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(833, 58);
             this.tableLayoutPanel4.TabIndex = 14;
+            // 
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buscarButton.Location = new System.Drawing.Point(348, 3);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(135, 52);
+            this.buscarButton.TabIndex = 3;
+            this.buscarButton.Text = "Buscar";
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // accionButton
             // 
@@ -265,17 +276,6 @@
             this.facturasGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.facturasGrid.Size = new System.Drawing.Size(833, 296);
             this.facturasGrid.TabIndex = 15;
-            // 
-            // buscarButton
-            // 
-            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buscarButton.Location = new System.Drawing.Point(348, 3);
-            this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(135, 52);
-            this.buscarButton.TabIndex = 3;
-            this.buscarButton.Text = "Buscar";
-            this.buscarButton.UseVisualStyleBackColor = true;
-            this.buscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // VerFactura
             // 

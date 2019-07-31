@@ -94,7 +94,7 @@ namespace sistema_de_facturacion.Facturacion
             if (this.anular && facturasGrid.SelectedRows.Count > 0)
             {
                 int codigoFactura = (int)facturasGrid.SelectedRows[0].Cells[0].Value;
-                if (MessageBox.Show("¿Está seguro que desea anular la factura seleccionada?", "Cancelar", MessageBoxButtons.YesNo,
+                if (MessageBox.Show("¿Está seguro que desea anular la factura seleccionada?", "Advertencia", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if(new Factura().anularFactura(codigoFactura) == 1)
@@ -147,7 +147,7 @@ namespace sistema_de_facturacion.Facturacion
                     facturasGrid.DataSource = new Factura().buscarFacturaCodigo(Convert.ToInt32(parametroField.Text));
                     if (facturasGrid.Rows.Count == 0)
                     {
-                        MessageBox.Show("Cliente no registrado en el sistema");
+                        MessageBox.Show("Factura no encontrada en el sistema");
                     }
                 }
                 

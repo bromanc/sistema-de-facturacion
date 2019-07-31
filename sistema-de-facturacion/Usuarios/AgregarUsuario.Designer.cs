@@ -172,22 +172,22 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 346);
+            this.label1.Location = new System.Drawing.Point(52, 346);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(102, 21);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Apellido(s):";
+            this.label1.Text = "Apellido(s)*:";
             // 
             // labelNombre
             // 
             this.labelNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(70, 40);
+            this.labelNombre.Location = new System.Drawing.Point(67, 40);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(67, 21);
+            this.labelNombre.Size = new System.Drawing.Size(73, 21);
             this.labelNombre.TabIndex = 1;
-            this.labelNombre.Text = "User ID:";
+            this.labelNombre.Text = "User ID*:";
             // 
             // nombreField
             // 
@@ -200,7 +200,6 @@
             this.nombreField.TabIndex = 7;
             this.nombreField.Enter += new System.EventHandler(this.NombreField_Enter);
             this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
-            this.nombreField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NombreField_KeyUp);
             this.nombreField.Leave += new System.EventHandler(this.NombreField_Leave);
             // 
             // labelPassword
@@ -208,11 +207,11 @@
             this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.labelPassword.Location = new System.Drawing.Point(50, 142);
+            this.labelPassword.Location = new System.Drawing.Point(47, 142);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(107, 21);
+            this.labelPassword.Size = new System.Drawing.Size(113, 21);
             this.labelPassword.TabIndex = 12;
-            this.labelPassword.Text = "Contraseña:";
+            this.labelPassword.Text = "Contraseña*:";
             // 
             // passwordField
             // 
@@ -225,8 +224,6 @@
             this.passwordField.Size = new System.Drawing.Size(587, 20);
             this.passwordField.TabIndex = 13;
             this.passwordField.Enter += new System.EventHandler(this.PasswordField_Enter);
-            this.passwordField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordField_KeyPress);
-            this.passwordField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PasswordField_KeyUp);
             this.passwordField.Leave += new System.EventHandler(this.PasswordField_Leave);
             // 
             // labelNombres
@@ -234,11 +231,11 @@
             this.labelNombres.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNombres.AutoSize = true;
             this.labelNombres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombres.Location = new System.Drawing.Point(56, 244);
+            this.labelNombres.Location = new System.Drawing.Point(53, 244);
             this.labelNombres.Name = "labelNombres";
-            this.labelNombres.Size = new System.Drawing.Size(95, 21);
+            this.labelNombres.Size = new System.Drawing.Size(101, 21);
             this.labelNombres.TabIndex = 4;
-            this.labelNombres.Text = "Nombre(s):";
+            this.labelNombres.Text = "Nombre(s)*:";
             // 
             // nombresField
             // 
@@ -251,18 +248,18 @@
             this.nombresField.TabIndex = 10;
             this.nombresField.Enter += new System.EventHandler(this.NombresField_Enter);
             this.nombresField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresField_KeyPress);
-            this.nombresField.Leave += new System.EventHandler(this.CorreoField_Leave);
+            this.nombresField.Leave += new System.EventHandler(this.NombresField_Leave);
             // 
             // labelTipo
             // 
             this.labelTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.labelTipo.Location = new System.Drawing.Point(38, 448);
+            this.labelTipo.Location = new System.Drawing.Point(35, 448);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(131, 21);
+            this.labelTipo.Size = new System.Drawing.Size(137, 21);
             this.labelTipo.TabIndex = 14;
-            this.labelTipo.Text = "Tipo de Usuario:";
+            this.labelTipo.Text = "Tipo de Usuario*:";
             // 
             // labelHuella
             // 

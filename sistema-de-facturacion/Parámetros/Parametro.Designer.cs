@@ -252,6 +252,7 @@
             this.agregarField.Name = "agregarField";
             this.agregarField.Size = new System.Drawing.Size(291, 20);
             this.agregarField.TabIndex = 10;
+            this.agregarField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AgregarField_KeyPress);
             // 
             // Parametro
             // 

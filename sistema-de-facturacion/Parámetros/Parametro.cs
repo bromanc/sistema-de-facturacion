@@ -118,6 +118,11 @@ namespace sistema_de_facturacion.Parámetros
                     MessageBox.Show("Ocurrió un error al ingresar el parámetros.");
                 }
             }
+            else
+            {
+                MessageBox.Show("Ingrese un método de pago válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void GuardarB_Click_1(object sender, EventArgs e)
@@ -135,7 +140,7 @@ namespace sistema_de_facturacion.Parámetros
                 {
                     MessageBox.Show("Se produjo un error al guardar los cambios.");
                 }
-
+                
             }
         }
 
@@ -145,10 +150,15 @@ namespace sistema_de_facturacion.Parámetros
             {
                 ToolTip tt = new ToolTip();
                 tt.IsBalloon = true;
-                tt.Show("!Valor no válido!", ivaField, 0, -40, 2000);
+                tt.Show("!Valor no válido!", ivaField, 0, -40, 1250);
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void AgregarField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

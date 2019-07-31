@@ -78,9 +78,9 @@
             this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIngreso.Location = new System.Drawing.Point(325, 16);
             this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(151, 18);
+            this.labelIngreso.Size = new System.Drawing.Size(152, 18);
             this.labelIngreso.TabIndex = 8;
-            this.labelIngreso.Text = "Gestión de Clientes";
+            this.labelIngreso.Text = "Gestión de Usuarios";
             this.labelIngreso.Click += new System.EventHandler(this.LabelIngreso_Click);
             // 
             // minimizarButton

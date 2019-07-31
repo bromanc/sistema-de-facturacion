@@ -207,7 +207,7 @@
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
             "Cliente",
-            "Código Proforma"});
+            "Número de Proforma"});
             this.parametroBox.Location = new System.Drawing.Point(3, 31);
             this.parametroBox.Name = "parametroBox";
             this.parametroBox.Size = new System.Drawing.Size(248, 21);

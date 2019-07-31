@@ -89,9 +89,9 @@
             this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIngreso.Location = new System.Drawing.Point(291, 16);
             this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(184, 18);
+            this.labelIngreso.Size = new System.Drawing.Size(186, 18);
             this.labelIngreso.TabIndex = 8;
-            this.labelIngreso.Text = "Gestión de Proveedores";
+            this.labelIngreso.Text = "Registro de Proveedores";
             // 
             // minimizarButton
             // 

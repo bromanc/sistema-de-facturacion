@@ -16,22 +16,19 @@ namespace sistema_de_facturacion.Categoría
     public partial class ConsultarCategoria : Form
     {
         public Form inicial;
-        String tipo;
         Categoria buscar = new Categoria();
-        
+
 
         public ConsultarCategoria(Form interfazInicial)
         {
             InitializeComponent();
             this.inicial = interfazInicial;
+            cargarTabla();
         }
-        public ConsultarCategoria(Form interfazInicial, String tipo)
+        public void cargarTabla()
         {
-            InitializeComponent();
-            this.inicial = interfazInicial;
-            this.tipo = tipo;
+            categoriasGrid.DataSource = buscar.buscarCategoria("");
         }
-
         private void AgregarB_Click(object sender, EventArgs e)
         {
             new AgregarCategoria(inicial).Visible = true;
@@ -54,6 +51,11 @@ namespace sistema_de_facturacion.Categoría
                 new AgregarCategoria(true, inicial, obtenida).Visible = true;
                 this.Visible = false;
             }
+            else
+            {
+                MessageBox.Show("Seleccione al menos una categoría de la tabla.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void CerrarButton_Click(object sender, EventArgs e)
@@ -105,6 +107,11 @@ namespace sistema_de_facturacion.Categoría
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void ConsultarCategoria_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

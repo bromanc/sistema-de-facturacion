@@ -142,8 +142,7 @@ namespace sistema_de_facturacion.Proveedores
                     if (buscar.darDeAltaProveedor(ruc) == 0)
                     {
                         MessageBox.Show("Estado del proveedor cambiado exitosamente.");
-                        proveedorGrid.Update();
-                        proveedorGrid.Refresh();
+                        actualizarTabla();
                     }
                     else
                     {

@@ -221,7 +221,7 @@
             this.parametroBox.FormattingEnabled = true;
             this.parametroBox.Items.AddRange(new object[] {
             "Código",
-            "Descripción",
+            "Nombre del Producto",
             "Productos Más Vendidos",
             "Productos Menos Vendidos",
             "Precio de Mayor a Menor",

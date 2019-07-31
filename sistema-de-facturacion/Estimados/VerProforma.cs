@@ -31,7 +31,7 @@ namespace sistema_de_facturacion.Estimados
             InitializeComponent();
             this.inicial = interfazInicial;
             this.accionButton.Text = "Revisar proforma seleccionada";
-            labelIngreso.Text = "Revisión de Proformas";
+            labelIngreso.Text = "Búsqueda de Proformas";
             this.revisar = modificar;
             parametroBox.SelectedIndex = 0;
         }
@@ -150,7 +150,7 @@ namespace sistema_de_facturacion.Estimados
                     proformasGrid.DataSource = new Proforma().buscarProformaCodigo(Convert.ToInt32(parametroField.Text));
                     if (proformasGrid.Rows.Count == 0)
                     {
-                        MessageBox.Show("Cliente no registrado en el sistema");
+                        MessageBox.Show("Proforma no encontrada en el sistema");
                     }
                 }
 

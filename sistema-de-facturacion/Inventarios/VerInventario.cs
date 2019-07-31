@@ -26,7 +26,7 @@ namespace sistema_de_facturacion.Inventarios
             actualizarTabla();
             if (type.Equals("consultar"))
             {
-                labelIngreso.Text = "Gestión de Productos";
+                labelIngreso.Text = "Búsqueda de Productos";
                 accionButton.Visible = false;
             }
             if (type.Equals("modificar"))

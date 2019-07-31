@@ -30,10 +30,11 @@ namespace sistema_de_facturacion.Usuarios
             usuarioGrid.Update();
             usuarioGrid.Refresh();
             labelAdvertencia.Visible = false;
-            
+            parametroBox.SelectedIndex = 0;
+            cargarUsuarios();
             if (type.Equals("consultar"))
             {
-                labelIngreso.Text = "Consulta de Usuarios";
+                labelIngreso.Text = "Búsqueda de Usuarios";
                 accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
@@ -48,7 +49,10 @@ namespace sistema_de_facturacion.Usuarios
             }
         }
         
-
+        private void cargarUsuarios()
+        {
+            usuarioGrid.DataSource = buscar.buscarUsuario(0, "");
+        }
         private void AccionV_Click(object sender, EventArgs e)
         {
             if (usuarioGrid.SelectedRows.Count > 0 && tipo.Equals("modificar")) //Cambiar a 0.
@@ -57,22 +61,24 @@ namespace sistema_de_facturacion.Usuarios
                 string usuario = usuarioGrid.SelectedRows[0].Cells[0].Value.ToString();
                 Usuario rol = buscar.obtenerUsuario(usuario);
                 new AgregarUsuario(rol,true, inicial).Visible = true;
-
                 this.Visible = false;
             }
             if (usuarioGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) //Cambiar a 0.
             {
                 //Elimino el usuario seleccionado.
                 string usuario = usuarioGrid.SelectedRows[0].Cells[0].Value.ToString();
-                if (buscar.eliminarUsuario(usuario) == 0)
+                if (MessageBox.Show("¿Está seguro de eliminar al usuario seleccionado?", "Advertencia", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Usuario eliminado exitosamente.");
-                    usuarioGrid.Update();
-                    usuarioGrid.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show("Error al eliminar el usuario eliminado.");
+                    if (buscar.eliminarUsuario(usuario) == 0)
+                    {
+                        MessageBox.Show("Usuario eliminado exitosamente.");
+                        cargarUsuarios();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el usuario seleccionado.");
+                    }
                 }
             }
         }

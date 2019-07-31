@@ -63,6 +63,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 2;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             // 
             // labelIngreso
             // 
@@ -71,9 +72,9 @@
             this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIngreso.Location = new System.Drawing.Point(311, 18);
             this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(175, 18);
+            this.labelIngreso.Size = new System.Drawing.Size(173, 18);
             this.labelIngreso.TabIndex = 7;
-            this.labelIngreso.Text = "Registro de Categorías";
+            this.labelIngreso.Text = "Gestión de Categorías";
             // 
             // minimizarButton
             // 
@@ -151,7 +152,7 @@
             this.labelParametro.Name = "labelParametro";
             this.labelParametro.Size = new System.Drawing.Size(252, 42);
             this.labelParametro.TabIndex = 1;
-            this.labelParametro.Text = "Ingrese el nombre de la cateogoría:";
+            this.labelParametro.Text = "Ingrese el nombre de la cateogoría a buscar:";
             // 
             // tableLayoutPanel2
             // 
@@ -174,9 +175,9 @@
             // 
             this.agregarB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.agregarB.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarB.Location = new System.Drawing.Point(80, 25);
+            this.agregarB.Location = new System.Drawing.Point(62, 25);
             this.agregarB.Name = "agregarB";
-            this.agregarB.Size = new System.Drawing.Size(106, 50);
+            this.agregarB.Size = new System.Drawing.Size(141, 50);
             this.agregarB.TabIndex = 0;
             this.agregarB.Text = "Agregar Nueva Categoría";
             this.agregarB.UseVisualStyleBackColor = true;
@@ -232,6 +233,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "ConsultarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarCategoria";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ConsultarCategoria_MouseDown);
             this.panel1.ResumeLayout(false);

@@ -140,9 +140,9 @@
             this.labelIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIngreso.Location = new System.Drawing.Point(322, 16);
             this.labelIngreso.Name = "labelIngreso";
-            this.labelIngreso.Size = new System.Drawing.Size(160, 18);
+            this.labelIngreso.Size = new System.Drawing.Size(166, 18);
             this.labelIngreso.TabIndex = 9;
-            this.labelIngreso.Text = "Registro de Proforma";
+            this.labelIngreso.Text = "Registro de Proformas";
             // 
             // minimizar
             // 

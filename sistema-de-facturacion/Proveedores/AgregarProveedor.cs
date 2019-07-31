@@ -32,7 +32,6 @@ namespace sistema_de_facturacion.Proveedores
         {
             InitializeComponent();
             this.modificacion = modificar;
-            labelIngreso.Text = "Registro de Proveedores";
             this.inicial = interfaz;
             this.ruc = ruc;
             modificarF();
@@ -56,8 +55,8 @@ namespace sistema_de_facturacion.Proveedores
             {
                 inactivo.Checked = true;
             }
-            RUCField.ReadOnly = true;
-            nombreField.ReadOnly = true;
+            RUCField.Enabled = false;
+            nombreField.Enabled = false;
             activo.Enabled = false;
             inactivo.Enabled = false;
             labelIngreso.Text = "Modificación de Proveedores";

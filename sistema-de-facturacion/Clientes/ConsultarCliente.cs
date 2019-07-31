@@ -29,7 +29,7 @@ namespace sistema_de_facturacion.Clientes
             actualizarTabla();
             if(type.Equals("consultar"))
             {
-                labelIngreso.Text = "Consulta de Clientes";
+                labelIngreso.Text = "Búsqueda de Clientes";
                 accionButton.Visible = false;
             }
             if (type.Equals("modificar"))
@@ -95,7 +95,7 @@ namespace sistema_de_facturacion.Clientes
             if (clientesGrid.SelectedRows.Count > 0 && tipo.Equals("eliminar")) 
             {
                 string cedula = clientesGrid.SelectedRows[0].Cells[0].Value.ToString();
-                string estado = clientesGrid.SelectedRows[0].Cells[9].Value.ToString().TrimEnd();
+                string estado = clientesGrid.SelectedRows[0].Cells[8].Value.ToString().TrimEnd();
                 if (estado.Equals("Activo"))
                 {
                     if (buscar.darDeBajaCliente(cedula)==0)

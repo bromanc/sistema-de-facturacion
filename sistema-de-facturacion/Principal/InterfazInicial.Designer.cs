@@ -46,6 +46,7 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.pctrMenu = new System.Windows.Forms.PictureBox();
             this.contenedor = new System.Windows.Forms.Panel();
+            this.bienvenidatxt = new System.Windows.Forms.Label();
             this.submenuAdministracion = new System.Windows.Forms.Panel();
             this.categoriaB = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -87,7 +88,7 @@
             this.editarProductoButton = new System.Windows.Forms.Button();
             this.nuevoProductoButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bienvenidatxt = new System.Windows.Forms.Label();
+            this.salirButton = new System.Windows.Forms.Button();
             this.panelVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctrLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -110,6 +111,7 @@
             // panelVertical
             // 
             this.panelVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(196)))), ((int)(((byte)(63)))));
+            this.panelVertical.Controls.Add(this.salirButton);
             this.panelVertical.Controls.Add(this.ayudaButton);
             this.panelVertical.Controls.Add(this.administracionButton);
             this.panelVertical.Controls.Add(this.estadisticasButton);
@@ -369,6 +371,17 @@
             this.contenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Contenedor_MouseDown);
             this.contenedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Contenedor_MouseMove);
             // 
+            // bienvenidatxt
+            // 
+            this.bienvenidatxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bienvenidatxt.AutoSize = true;
+            this.bienvenidatxt.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bienvenidatxt.Location = new System.Drawing.Point(26, 0);
+            this.bienvenidatxt.Name = "bienvenidatxt";
+            this.bienvenidatxt.Size = new System.Drawing.Size(982, 78);
+            this.bienvenidatxt.TabIndex = 33;
+            this.bienvenidatxt.Text = "Bienvenido al Sistema SOCHEF";
+            // 
             // submenuAdministracion
             // 
             this.submenuAdministracion.Controls.Add(this.categoriaB);
@@ -538,7 +551,7 @@
             this.eliminarUsuarioButton.Name = "eliminarUsuarioButton";
             this.eliminarUsuarioButton.Size = new System.Drawing.Size(286, 52);
             this.eliminarUsuarioButton.TabIndex = 4;
-            this.eliminarUsuarioButton.Text = "Dar de Baja Usuario";
+            this.eliminarUsuarioButton.Text = "Eliminar Usuario";
             this.eliminarUsuarioButton.UseVisualStyleBackColor = true;
             this.eliminarUsuarioButton.Click += new System.EventHandler(this.Button16_Click);
             // 
@@ -978,7 +991,7 @@
             this.editarProductoButton.Name = "editarProductoButton";
             this.editarProductoButton.Size = new System.Drawing.Size(286, 52);
             this.editarProductoButton.TabIndex = 4;
-            this.editarProductoButton.Text = "Editar Producto";
+            this.editarProductoButton.Text = "Modificar Producto";
             this.editarProductoButton.UseVisualStyleBackColor = true;
             this.editarProductoButton.Click += new System.EventHandler(this.EditarProductoButton_Click);
             // 
@@ -1004,16 +1017,22 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
-            // bienvenidatxt
+            // salirButton
             // 
-            this.bienvenidatxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bienvenidatxt.AutoSize = true;
-            this.bienvenidatxt.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bienvenidatxt.Location = new System.Drawing.Point(177, 0);
-            this.bienvenidatxt.Name = "bienvenidatxt";
-            this.bienvenidatxt.Size = new System.Drawing.Size(715, 78);
-            this.bienvenidatxt.TabIndex = 33;
-            this.bienvenidatxt.Text = "Bienvenido al Sistema";
+            this.salirButton.FlatAppearance.BorderSize = 0;
+            this.salirButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(1)))));
+            this.salirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salirButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salirButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
+            this.salirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salirButton.Location = new System.Drawing.Point(0, 695);
+            this.salirButton.Name = "salirButton";
+            this.salirButton.Size = new System.Drawing.Size(280, 52);
+            this.salirButton.TabIndex = 33;
+            this.salirButton.Text = "Salir del Sistema";
+            this.salirButton.UseVisualStyleBackColor = true;
+            this.salirButton.Click += new System.EventHandler(this.SalirButton_Click);
             // 
             // InterfazInicial
             // 
@@ -1108,5 +1127,6 @@
         private System.Windows.Forms.Button categoriaB;
         private System.Windows.Forms.Button misDatosButton;
         private System.Windows.Forms.Label bienvenidatxt;
+        private System.Windows.Forms.Button salirButton;
     }
 }
