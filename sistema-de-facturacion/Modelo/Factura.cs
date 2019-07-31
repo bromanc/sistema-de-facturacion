@@ -142,7 +142,7 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@facturaId", SqlDbType.Int).Value = codigo;
             SqlDataReader reader = cmd.ExecuteReader();
             dtClientes.Load(reader);
-            dtClientes.Columns[0].ColumnName = "Código";
+            dtClientes.Columns[0].ColumnName = "Número de Factura";
             dtClientes.Columns[1].ColumnName = "ID Cliente";
             dtClientes.Columns[2].ColumnName = "Fecha";
             dtClientes.Columns[3].ColumnName = "Vendedor";
@@ -164,7 +164,7 @@ namespace sistema_de_facturacion.Modelo
             cmd.Parameters.Add("@clienteRucCI", SqlDbType.VarChar).Value = id;
             SqlDataReader reader = cmd.ExecuteReader();
             dtClientes.Load(reader);
-            dtClientes.Columns[0].ColumnName = "Código";
+            dtClientes.Columns[0].ColumnName = "Número de Factura";
             dtClientes.Columns[1].ColumnName = "ID Cliente";
             dtClientes.Columns[2].ColumnName = "Fecha";
             dtClientes.Columns[3].ColumnName = "Vendedor";

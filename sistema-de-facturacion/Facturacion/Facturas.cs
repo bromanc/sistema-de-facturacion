@@ -32,7 +32,7 @@ namespace sistema_de_facturacion.Facturacion
             descuentoField.Enabled = false;
             calcularFButton.Enabled = false;
             confirmarFButton.Enabled = false;
-
+            descuentoField.Text = "0,00";
         }
         public Facturas(Form interfazInicial, Cliente c, Factura f)
         {
@@ -250,9 +250,9 @@ namespace sistema_de_facturacion.Facturacion
                             productosTabla();
                             productosField.Text = "";
                             cantidadField.Text = "";
-                        subtotaltxt.Text = "";
-                        totaltxt.Text = "";
-                        subnetotxt.Text = "";
+                            subtotaltxt.Text = "";
+                            totaltxt.Text = "";
+                            subnetotxt.Text = "";
                         }
                         else
                         {
@@ -297,6 +297,9 @@ namespace sistema_de_facturacion.Facturacion
                 productosTabla();
                 productosField.Text = "";
                 cantidadField.Text = "";
+                subtotaltxt.Text = "";
+                totaltxt.Text = "";
+                subnetotxt.Text = "";
             }
             else
             {

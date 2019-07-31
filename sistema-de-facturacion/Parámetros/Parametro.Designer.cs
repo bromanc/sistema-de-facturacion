@@ -193,11 +193,11 @@
             this.labelIVA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelIVA.AutoSize = true;
             this.labelIVA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIVA.Location = new System.Drawing.Point(79, 24);
+            this.labelIVA.Location = new System.Drawing.Point(67, 24);
             this.labelIVA.Name = "labelIVA";
-            this.labelIVA.Size = new System.Drawing.Size(43, 21);
+            this.labelIVA.Size = new System.Drawing.Size(67, 21);
             this.labelIVA.TabIndex = 0;
-            this.labelIVA.Text = "IVA:";
+            this.labelIVA.Text = "IVA(%):";
             // 
             // ivaField
             // 

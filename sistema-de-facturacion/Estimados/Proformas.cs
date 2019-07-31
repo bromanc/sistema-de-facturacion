@@ -39,10 +39,10 @@ namespace sistema_de_facturacion.Estimados
             InitializeComponent();
             this.inicial = interfazInicial;
             citxt.Text = c.cRUC;
-            nombretxt.Text = c.nombre;
+            nombretxt.Text = c.nombre + c.apellido;
             telefonotxt.Text = c.telefono;
             direcciontxt.Text = c.direccion;
-            fechatx.Text = Convert.ToString(f.fecha);
+            fechatx.Text = Convert.ToString(f.fecha.ToString("dd/MM/yyyy"));
             numeroProformatxt.Text = Convert.ToString(f.codigo);
             vendedortxt.Text = f.vendedor;
             cargarPagos();
@@ -116,6 +116,16 @@ namespace sistema_de_facturacion.Estimados
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
+            if (precompraGrid.Rows.Count > 0)
+            {
+                for (int i = 0; i < precompraGrid.Rows.Count; i++)
+                {
+                    string codigo = precompraGrid.Rows[i].Cells[1].Value.ToString();
+                    int cantidad = Convert.ToInt32(precompraGrid.Rows[i].Cells[0].Value);
+                    new DetalleProforma().quitarProductoPrecompra(codigo, cantidad);
+                }
+
+            }
             inicial.Visible = true;
             this.Close();
         }
@@ -147,10 +157,10 @@ namespace sistema_de_facturacion.Estimados
             habilitoCampos();
             citxt.Text = existente.cRUC;
             nombretxt.Text = existente.nombre;
-            telefonotxt.Text = existente.telefono;
-            direcciontxt.Text = existente.direccion;
-            DateTime fecha = DateTime.Now;
-            fechatx.Text = Convert.ToString(fecha);
+            telefonotxt.Text = "********";
+            direcciontxt.Text = "********";
+            //DateTime fecha = DateTime.Today.ToString("dd-MM-yyyy");
+            fechatx.Text = DateTime.Today.ToString("dd/MM/yyyy");
             numeroProformatxt.Text = new Proforma().maxIdProforma().ToString();
             vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
         }
@@ -168,7 +178,7 @@ namespace sistema_de_facturacion.Estimados
                 Cliente existente = new Cliente().obtenerCliente(parametroField.Text);
                 if (existente == null)
                 {
-                    MessageBox.Show("No se ha encontrado ningún cliente con esa identificación!");
+                    MessageBox.Show("Cliente no registrado en el sistema");
                 }
                 else
                 {
@@ -177,12 +187,19 @@ namespace sistema_de_facturacion.Estimados
                     nombretxt.Text = existente.nombre;
                     telefonotxt.Text = existente.telefono;
                     direcciontxt.Text = existente.direccion;
-                    DateTime fecha = DateTime.Now;
-                    fechatx.Text = Convert.ToString(fecha);
+                    //DateTime fecha = DateTime.Today.ToString("dd-MM-yyyy");
+                    fechatx.Text = DateTime.Today.ToString("dd/MM/yyyy");
                     numeroProformatxt.Text = new Proforma().maxIdProforma().ToString();
                     vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
 
                 }
+
+            }
+            else
+            {
+                
+                    MessageBox.Show("Ingrese la identificación del cliente");
+                
             }
         }
 
@@ -223,7 +240,9 @@ namespace sistema_de_facturacion.Estimados
                         productosTabla();
                         productosField.Text = "";
                         cantidadField.Text = "";
-
+                        subtotaltxt.Text = "";
+                        totaltxt.Text = "";
+                        subnetotxt.Text = "";
                     }
                     else
                     {
@@ -268,6 +287,9 @@ namespace sistema_de_facturacion.Estimados
                 productosTabla();
                 productosField.Text = "";
                 cantidadField.Text = "";
+                subtotaltxt.Text = "";
+                totaltxt.Text = "";
+                subnetotxt.Text = "";
             }
             else
             {
@@ -279,24 +301,34 @@ namespace sistema_de_facturacion.Estimados
         {
             if (descuentoField.Text.Length > 0 && precompraGrid.Rows.Count > 0)
             {
-                if (Convert.ToDecimal(descuentoField.Text) > 15)
+                int count = descuentoField.Text.Split(',').Length - 1;
+                if (count > 1)
                 {
-                    MessageBox.Show("Descuento global supera el 15%");
-                }
-                else if (Convert.ToDecimal(descuentoField.Text) < 0)
-                {
-                    MessageBox.Show("Descuento debe ser mayor a 0%");
+                    MessageBox.Show("Ingrese un valor numérico válido en el campo Descuento.");
                 }
                 else
                 {
-                    calculosProforma();
+                    if (Convert.ToDecimal(descuentoField.Text) > 15)
+                    {
+                        MessageBox.Show("Descuento global supera el 15%");
+                    }
+                    else if (Convert.ToDecimal(descuentoField.Text) < 0)
+                    {
+                        MessageBox.Show("Descuento debe ser mayor a 0%");
+                    }
+                    else
+                    {
+                        calculosProforma();
+                    }
                 }
+
 
             }
             else
             {
                 MessageBox.Show("No hay suficientes datos para calcular el valor de la proforma.");
             }
+
         }
 
         private void ConfirmarFButton_Click(object sender, EventArgs e)
@@ -343,8 +375,8 @@ namespace sistema_de_facturacion.Estimados
                     nombretxt.Text = existente.nombre;
                     telefonotxt.Text = existente.telefono;
                     direcciontxt.Text = existente.direccion;
-                    DateTime fecha = DateTime.Now;
-                    fechatx.Text = Convert.ToString(fecha);
+                    //DateTime fecha = DateTime.Today;
+                    fechatx.Text = DateTime.Today.ToString("dd/MM/yyyy");
                     numeroProformatxt.Text = new Proforma().maxIdProforma().ToString();
                     vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
 
@@ -353,6 +385,30 @@ namespace sistema_de_facturacion.Estimados
 
 
 
+        }
+
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void CantidadField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void DescuentoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || e.KeyChar.Equals(',')) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

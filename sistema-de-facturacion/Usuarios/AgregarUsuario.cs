@@ -265,6 +265,7 @@ namespace sistema_de_facturacion.Usuarios
             foreach (TextBox singleItem in fieldList)
             {
                 singleItem.Clear();
+                singleItem.BackColor = Color.White;
             }
         }
         public Boolean verificarCampos()

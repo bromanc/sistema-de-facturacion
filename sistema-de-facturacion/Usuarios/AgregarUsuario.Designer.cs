@@ -162,7 +162,7 @@
             this.apellidoField.Name = "apellidoField";
             this.apellidoField.ShortcutsEnabled = false;
             this.apellidoField.Size = new System.Drawing.Size(587, 20);
-            this.apellidoField.TabIndex = 17;
+            this.apellidoField.TabIndex = 3;
             this.apellidoField.Enter += new System.EventHandler(this.ApellidoField_Enter);
             this.apellidoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoField_KeyPress);
             this.apellidoField.Leave += new System.EventHandler(this.ApellidoField_Leave);
@@ -197,7 +197,7 @@
             this.nombreField.Name = "nombreField";
             this.nombreField.ShortcutsEnabled = false;
             this.nombreField.Size = new System.Drawing.Size(587, 20);
-            this.nombreField.TabIndex = 7;
+            this.nombreField.TabIndex = 0;
             this.nombreField.Enter += new System.EventHandler(this.NombreField_Enter);
             this.nombreField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreField_KeyPress);
             this.nombreField.Leave += new System.EventHandler(this.NombreField_Leave);
@@ -222,7 +222,7 @@
             this.passwordField.PasswordChar = '*';
             this.passwordField.ShortcutsEnabled = false;
             this.passwordField.Size = new System.Drawing.Size(587, 20);
-            this.passwordField.TabIndex = 13;
+            this.passwordField.TabIndex = 1;
             this.passwordField.Enter += new System.EventHandler(this.PasswordField_Enter);
             this.passwordField.Leave += new System.EventHandler(this.PasswordField_Leave);
             // 
@@ -245,7 +245,7 @@
             this.nombresField.Name = "nombresField";
             this.nombresField.ShortcutsEnabled = false;
             this.nombresField.Size = new System.Drawing.Size(587, 20);
-            this.nombresField.TabIndex = 10;
+            this.nombresField.TabIndex = 2;
             this.nombresField.Enter += new System.EventHandler(this.NombresField_Enter);
             this.nombresField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresField_KeyPress);
             this.nombresField.Leave += new System.EventHandler(this.NombresField_Leave);
@@ -284,7 +284,7 @@
             this.usuarioBox.Location = new System.Drawing.Point(210, 448);
             this.usuarioBox.Name = "usuarioBox";
             this.usuarioBox.Size = new System.Drawing.Size(587, 21);
-            this.usuarioBox.TabIndex = 15;
+            this.usuarioBox.TabIndex = 4;
             // 
             // huellaButton
             // 
@@ -292,7 +292,7 @@
             this.huellaButton.Location = new System.Drawing.Point(427, 531);
             this.huellaButton.Name = "huellaButton";
             this.huellaButton.Size = new System.Drawing.Size(153, 61);
-            this.huellaButton.TabIndex = 11;
+            this.huellaButton.TabIndex = 5;
             this.huellaButton.Text = "Tomar Huella";
             this.huellaButton.UseVisualStyleBackColor = true;
             this.huellaButton.Click += new System.EventHandler(this.HuellaButton_Click);
@@ -321,7 +321,7 @@
             this.registrarButton.Location = new System.Drawing.Point(53, 9);
             this.registrarButton.Name = "registrarButton";
             this.registrarButton.Size = new System.Drawing.Size(160, 50);
-            this.registrarButton.TabIndex = 0;
+            this.registrarButton.TabIndex = 6;
             this.registrarButton.Text = "Registrar";
             this.registrarButton.UseVisualStyleBackColor = true;
             this.registrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
@@ -333,7 +333,7 @@
             this.limpiarButton.Location = new System.Drawing.Point(319, 9);
             this.limpiarButton.Name = "limpiarButton";
             this.limpiarButton.Size = new System.Drawing.Size(160, 50);
-            this.limpiarButton.TabIndex = 1;
+            this.limpiarButton.TabIndex = 7;
             this.limpiarButton.Text = "Limpiar Campos";
             this.limpiarButton.UseVisualStyleBackColor = true;
             this.limpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
@@ -345,7 +345,7 @@
             this.cancelarButton.Location = new System.Drawing.Point(586, 9);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(160, 50);
-            this.cancelarButton.TabIndex = 2;
+            this.cancelarButton.TabIndex = 8;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
