@@ -144,11 +144,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 93);
+            this.label1.Location = new System.Drawing.Point(31, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 21);
+            this.label1.Size = new System.Drawing.Size(139, 21);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Métodos de Pago:";
+            this.label1.Text = "Formas de Pago:";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // tableLayoutPanel2
@@ -184,7 +184,7 @@
             this.pagoButton.Name = "pagoButton";
             this.pagoButton.Size = new System.Drawing.Size(157, 47);
             this.pagoButton.TabIndex = 4;
-            this.pagoButton.Text = "Agregar Método de Pago";
+            this.pagoButton.Text = "Agregar Forma de Pago";
             this.pagoButton.UseVisualStyleBackColor = true;
             this.pagoButton.Click += new System.EventHandler(this.PagoButton_Click);
             // 

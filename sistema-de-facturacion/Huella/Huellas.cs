@@ -75,6 +75,7 @@ namespace sistema_de_facturacion.Huella
             identificarButton.Visible = false;
             registrarButton.Enabled = false;
             this.au = au;
+            
         }
         public Huellas(IngresoAlSistema ias)
         {
@@ -103,9 +104,8 @@ namespace sistema_de_facturacion.Huella
                 comboBox1.Items.Add(enumDevice);
 
             }
-            comboBox1.SelectedIndex = 0;
-            m_ImageWidth = 260;
-            m_ImageHeight = 300;
+            
+            
         }
 
         private void MinimizarButton_Click(object sender, EventArgs e)
@@ -178,7 +178,11 @@ namespace sistema_de_facturacion.Huella
 
         private void IniciarButton_Click(object sender, EventArgs e)
         {
-            
+            if (comboBox1.Items.Count > 0)
+            {
+                comboBox1.SelectedIndex = 0;
+                m_ImageWidth = 260;
+                m_ImageHeight = 300;
                 if (mFPM.NumberOfDevice == 0)
                     return;
 
@@ -197,6 +201,12 @@ namespace sistema_de_facturacion.Huella
                     registrarButton.Enabled = true;
                     identificarButton.Enabled = true;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Conecte el dispositivo y reinicie el programa!");
+            }
+            
             
         }
         public bool addFingerprintToDatabase(byte[] byteArray)

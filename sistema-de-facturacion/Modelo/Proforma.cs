@@ -102,6 +102,7 @@ namespace sistema_de_facturacion.Modelo
         public int maxIdProforma()
         {
             int valor = 0;
+            DataTable existente = buscarProformaCodigo(1);
             conexion.abrirConexion();
             SqlCommand cmd = new SqlCommand("uspMaxIdProforma", conexion.obtenerConexion());
             cmd.CommandType = CommandType.StoredProcedure;
@@ -110,8 +111,17 @@ namespace sistema_de_facturacion.Modelo
             {
                 while (reader.Read())
                 {
+
                     valor = Convert.ToInt32(reader.GetValue(0));
-                    if (valor > 1)
+                    if (valor == 1 && existente.Rows.Count == 0)
+                    {
+                        valor = 1;
+                    }
+                    else if (valor == 1 && existente.Rows.Count > 0)
+                    {
+                        valor = 2;
+                    }
+                    else
                     {
                         valor = valor + 1;
                     }

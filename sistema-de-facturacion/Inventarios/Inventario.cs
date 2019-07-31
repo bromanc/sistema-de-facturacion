@@ -305,6 +305,12 @@ namespace sistema_de_facturacion.Inventarios
                 e.Handled = true;
                 return;
             }
+            int count = descuentoField.Text.Split(',').Length - 1;
+            if (count>1)
+            {
+                e.Handled = true;
+                return;
+            }
         }
 
         private void UnidadField_KeyPress(object sender, KeyPressEventArgs e)

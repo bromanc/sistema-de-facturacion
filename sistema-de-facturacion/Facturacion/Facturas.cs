@@ -39,10 +39,10 @@ namespace sistema_de_facturacion.Facturacion
             InitializeComponent();
             this.inicial = interfazInicial;
             citxt.Text = c.cRUC;
-            nombretxt.Text = c.nombre;
+            nombretxt.Text = c.nombre + c.apellido;
             telefonotxt.Text = c.telefono;
             direcciontxt.Text = c.direccion;
-            fechatx.Text = Convert.ToString(f.fecha);
+            fechatx.Text = Convert.ToString(f.fecha.ToString("dd/MM/yyyy"));
             numeroFacturatxt.Text = Convert.ToString(f.codigo);
             vendedortxt.Text = f.vendedor;
             cargarPagos();
@@ -178,15 +178,19 @@ namespace sistema_de_facturacion.Facturacion
                 {
                     habilitoCampos();
                     citxt.Text = existente.cRUC;
-                    nombretxt.Text = existente.nombre;
+                    nombretxt.Text = existente.nombre + " " + existente.apellido;
                     telefonotxt.Text = existente.telefono;
                     direcciontxt.Text = existente.direccion;
-                    DateTime fecha = DateTime.Now;
-                    fechatx.Text = Convert.ToString(fecha);
+                    //DateTime fecha = DateTime.Today.ToString("dd-MM-yyyy");
+                    fechatx.Text = DateTime.Today.ToString("dd/MM/yyyy");
                     numeroFacturatxt.Text = new Factura().maxIdFactura().ToString();
                     vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos; 
 
                 }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese la identificación del cliente");
             }
         }
 
@@ -194,12 +198,13 @@ namespace sistema_de_facturacion.Facturacion
         {
             Cliente existente = new Cliente().obtenerCliente("999999999");
             habilitoCampos();
+            parametroField.Text = "";
             citxt.Text = existente.cRUC;
             nombretxt.Text = existente.nombre;
-            telefonotxt.Text = existente.telefono;
-            direcciontxt.Text = existente.direccion;
-            DateTime fecha = DateTime.Now;
-            fechatx.Text = Convert.ToString(fecha);
+            telefonotxt.Text = "********";
+            direcciontxt.Text = "********";
+            //DateTime fecha = DateTime.Today.ToString("dd-MM-yyyy");
+            fechatx.Text = DateTime.Today.ToString("dd/MM/yyyy");
             numeroFacturatxt.Text = new Factura().maxIdFactura().ToString();
             vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
 
@@ -245,7 +250,9 @@ namespace sistema_de_facturacion.Facturacion
                             productosTabla();
                             productosField.Text = "";
                             cantidadField.Text = "";
-
+                        subtotaltxt.Text = "";
+                        totaltxt.Text = "";
+                        subnetotxt.Text = "";
                         }
                         else
                         {
@@ -306,16 +313,27 @@ namespace sistema_de_facturacion.Facturacion
         {
             if (descuentoField.Text.Length > 0 && precompraGrid.Rows.Count>0)
             {
-                if (Convert.ToDecimal(descuentoField.Text) > 15 )
+                int count = descuentoField.Text.Split(',').Length-1;
+                if (count > 1)
                 {
-                    MessageBox.Show("Descuento global supera el 15%");
+                    MessageBox.Show("Ingrese un valor numérico válido en el campo Descuento.");
                 }
-                else if(Convert.ToDecimal(descuentoField.Text) < 0){
-                    MessageBox.Show("Descuento debe ser mayor a 0%");
+                else
+                {
+                    if (Convert.ToDecimal(descuentoField.Text) > 15)
+                    {
+                        MessageBox.Show("Descuento global supera el 15%");
+                    }
+                    else if (Convert.ToDecimal(descuentoField.Text) < 0)
+                    {
+                        MessageBox.Show("Descuento debe ser mayor a 0%");
+                    }
+                    else
+                    {
+                        calculosFactura();
+                    }
                 }
-                else {
-                    calculosFactura();
-                }
+                
                 
             }
             else
@@ -330,14 +348,19 @@ namespace sistema_de_facturacion.Facturacion
             if (totaltxt.Text.Length > 0)
             {
                 DateTime fecha = DateTime.Now;
-                Factura factura = new Factura(0,citxt.Text,fecha,vendedortxt.Text, (String)pagoBox.SelectedValue,Convert.ToDecimal(subtotaltxt.Text),Convert.ToDecimal(descuentoField.Text),Convert.ToDecimal(subnetotxt.Text),Convert.ToDecimal(ivatxt.Text),Convert.ToDecimal(totaltxt.Text),1);
+                Factura factura = new Factura(0,citxt.Text,Convert.ToDateTime(fechatx.Text),vendedortxt.Text, (String)pagoBox.SelectedValue,Convert.ToDecimal(subtotaltxt.Text),Convert.ToDecimal(descuentoField.Text),Convert.ToDecimal(subnetotxt.Text),Convert.ToDecimal(ivatxt.Text),Convert.ToDecimal(totaltxt.Text),1);
                 int hecho = factura.agregarFactura(factura);
                 if (hecho != -1)
                 {
                     if(new DetalleFactura().insertarDetalleFactura() == 0)
                     {
                         MessageBox.Show("Factura generada con éxito");
-                        inicial.Visible = true;
+                    //    if (MessageBox.Show("¿Desea imprimir la factura?", "", MessageBoxButtons.YesNo,
+                    //MessageBoxIcon.Question) == DialogResult.Yes)
+                    //    {
+
+                    //    }
+                            inicial.Visible = true;
                         this.Dispose();
                     }
                 }
@@ -369,8 +392,8 @@ namespace sistema_de_facturacion.Facturacion
                     nombretxt.Text = existente.nombre;
                     telefonotxt.Text = existente.telefono;
                     direcciontxt.Text = existente.direccion;
-                    DateTime fecha = DateTime.Now;
-                    fechatx.Text = Convert.ToString(fecha);
+                    //DateTime fecha = DateTime.Today;
+                    fechatx.Text = DateTime.Today.ToString("dd/MM/yyyy");
                     numeroFacturatxt.Text = new Factura().maxIdFactura().ToString();
                     vendedortxt.Text = vendedor.nombres + " " + vendedor.apellidos;
 
@@ -378,6 +401,30 @@ namespace sistema_de_facturacion.Facturacion
             }
 
             
+            
+        }
+
+        private void CantidadField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ProductosField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void DescuentoField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || e.KeyChar.Equals(',')) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
             
         }
     }

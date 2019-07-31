@@ -133,7 +133,7 @@ namespace sistema_de_facturacion.Estimados
                 {
                     string codigo = precompraGrid.Rows[i].Cells[1].Value.ToString();
                     int cantidad = Convert.ToInt32(precompraGrid.Rows[i].Cells[0].Value);
-                    new DetalleFactura().quitarProductoPrecompra(codigo, cantidad);
+                    new DetalleProforma().quitarProductoPrecompra(codigo, cantidad);
                 }
 
             }
@@ -318,7 +318,7 @@ namespace sistema_de_facturacion.Estimados
             }
             else
             {
-                MessageBox.Show("No existen suficientes datos para generar la factura.");
+                MessageBox.Show("No existen suficientes datos para generar la proforma.");
             }
         }
 

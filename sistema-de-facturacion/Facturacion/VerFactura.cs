@@ -90,6 +90,9 @@ namespace sistema_de_facturacion.Facturacion
                 Factura obtenida = new Factura().obtenerFactura(codigoFactura);
                 new Facturas(this, obtenido, obtenida).Visible = true ;
                 this.Visible = false;
+            }else if ((this.revisar != null) && facturasGrid.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Seleccione una factura para revisar");
             }
             if (this.anular && facturasGrid.SelectedRows.Count > 0)
             {
@@ -107,6 +110,9 @@ namespace sistema_de_facturacion.Facturacion
                         MessageBox.Show("Ocurrió un error al intentar anular la factura.");
                     }
                 }
+            }else if (this.anular && facturasGrid.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Seleccione una factura para anular");
             }
         }
 
@@ -132,35 +138,56 @@ namespace sistema_de_facturacion.Facturacion
         }
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (parametroBox.SelectedIndex == 0)
+            if (parametroField.Text.Trim().Equals("") && parametroBox.SelectedIndex==0)
             {
-                facturasGrid.DataSource = new Factura().buscarFacturaCliente(parametroField.Text);
-                if (facturasGrid.Rows.Count == 0)
-                {
-                    MessageBox.Show("Cliente no registrado en el sistema");
-                }
+                MessageBox.Show("Ingrese la identificación del cliente");
+            }else if(parametroField.Text.Trim().Equals("") && parametroBox.SelectedIndex == 1)
+            {
+                MessageBox.Show("Ingrese un número de factura");
             }
             else
             {
-                if (parametroField.Text.Length > 0)
+                if (parametroBox.SelectedIndex == 0)
                 {
-                    facturasGrid.DataSource = new Factura().buscarFacturaCodigo(Convert.ToInt32(parametroField.Text));
+                    facturasGrid.DataSource = new Factura().buscarFacturaCliente(parametroField.Text);
                     if (facturasGrid.Rows.Count == 0)
                     {
-                        MessageBox.Show("Factura no encontrada en el sistema");
+                        MessageBox.Show("Cliente no registrado en el sistema");
                     }
                 }
-                
+                else
+                {
+                    if (parametroField.Text.Length > 0)
+                    {
+                        facturasGrid.DataSource = new Factura().buscarFacturaCodigo(Convert.ToInt32(parametroField.Text));
+                        if (facturasGrid.Rows.Count == 0)
+                        {
+                            MessageBox.Show("Factura no encontrada en el sistema");
+                        }
+                    }
+
+                }
             }
+            
         }
 
         private void ParametroField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && parametroBox.SelectedIndex==1)
             {
                 e.Handled = true;
                 return;
             }
+            if (!(char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && parametroBox.SelectedIndex ==0)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ParametroBox_TextChanged(object sender, EventArgs e)
+        {
+            parametroField.Text = "";
         }
     }
 }

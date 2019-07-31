@@ -212,6 +212,7 @@
             this.parametroBox.Name = "parametroBox";
             this.parametroBox.Size = new System.Drawing.Size(212, 21);
             this.parametroBox.TabIndex = 1;
+            this.parametroBox.TextChanged += new System.EventHandler(this.ParametroBox_TextChanged);
             // 
             // tableLayoutPanel4
             // 

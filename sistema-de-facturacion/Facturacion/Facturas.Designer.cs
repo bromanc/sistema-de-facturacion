@@ -343,11 +343,11 @@
             this.labelParametro.AutoSize = true;
             this.labelParametro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelParametro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametro.Location = new System.Drawing.Point(3, 29);
+            this.labelParametro.Location = new System.Drawing.Point(3, 46);
             this.labelParametro.Name = "labelParametro";
-            this.labelParametro.Size = new System.Drawing.Size(166, 34);
+            this.labelParametro.Size = new System.Drawing.Size(166, 17);
             this.labelParametro.TabIndex = 1;
-            this.labelParametro.Text = "Ingrese el número de identificación:";
+            this.labelParametro.Text = "RUC/C.I:";
             // 
             // tableLayoutPanel5
             // 
@@ -427,7 +427,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "C.I./RUC:";
+            this.label1.Text = "RUC/C.I:";
             // 
             // label2
             // 
@@ -657,6 +657,7 @@
             this.productosField.Name = "productosField";
             this.productosField.Size = new System.Drawing.Size(219, 20);
             this.productosField.TabIndex = 1;
+            this.productosField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductosField_KeyPress);
             this.productosField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductosField_KeyUp);
             // 
             // tableLayoutPanel12
@@ -692,6 +693,7 @@
             this.cantidadField.Name = "cantidadField";
             this.cantidadField.Size = new System.Drawing.Size(219, 20);
             this.cantidadField.TabIndex = 2;
+            this.cantidadField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadField_KeyPress);
             // 
             // agregarGrid
             // 
@@ -797,8 +799,8 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 9;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.39174F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.635795F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -835,7 +837,7 @@
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(82, 55);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(101, 55);
             this.tableLayoutPanel14.TabIndex = 11;
             // 
             // label10
@@ -845,9 +847,9 @@
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 5);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.Size = new System.Drawing.Size(95, 17);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Subtotal:";
+            this.label10.Text = "Subtotal(USD):";
             // 
             // label13
             // 
@@ -867,12 +869,12 @@
             this.tableLayoutPanel15.Controls.Add(this.subtotaltxt, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.descuentoField, 0, 1);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(91, 3);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(110, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(82, 55);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(63, 55);
             this.tableLayoutPanel15.TabIndex = 12;
             // 
             // subtotaltxt
@@ -891,8 +893,9 @@
             this.descuentoField.Location = new System.Drawing.Point(3, 31);
             this.descuentoField.MaxLength = 6;
             this.descuentoField.Name = "descuentoField";
-            this.descuentoField.Size = new System.Drawing.Size(76, 20);
+            this.descuentoField.Size = new System.Drawing.Size(57, 20);
             this.descuentoField.TabIndex = 10;
+            this.descuentoField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescuentoField_KeyPress);
             // 
             // label15
             // 
@@ -901,9 +904,9 @@
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(267, 13);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 34);
+            this.label15.Size = new System.Drawing.Size(74, 34);
             this.label15.TabIndex = 4;
-            this.label15.Text = "SubTotal Neto:";
+            this.label15.Text = "SubTotal Neto(USD):";
             // 
             // subnetotxt
             // 
@@ -943,9 +946,9 @@
             this.total.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total.Location = new System.Drawing.Point(619, 22);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(40, 17);
+            this.total.Size = new System.Drawing.Size(73, 17);
             this.total.TabIndex = 8;
-            this.total.Text = "Total:";
+            this.total.Text = "Total(USD):";
             // 
             // totaltxt
             // 
